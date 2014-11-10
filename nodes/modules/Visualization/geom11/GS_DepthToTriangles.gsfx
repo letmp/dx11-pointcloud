@@ -1,0 +1,119 @@
+//@author: tmp 
+//@help: Displace the given mesh with the depth data of the kinect
+//@tags: DX11, Kinect, Mesh
+//@credits: vvvv
+
+struct pointData
+{
+	float4 pos;
+	float4 col;
+};
+StructuredBuffer<pointData> PointcloudBuffer;
+
+struct posData
+{
+	float4 pos;
+};
+StructuredBuffer<posData> PosBuffer;
+
+float4x4 tW <string uiname="Transform In";>;
+
+Texture2D texDepth <string uiname="Depth";>;
+float2 FOV;
+float maxDistance;
+float4x4 tFilter <string uiname="Transform Filter";>;
+
+struct VS_IN
+{
+	float4 pos : POSITION;
+	float3 normal : NORMAL;
+	float2 uv : TEXCOORD0;
+	uint ii : SV_VertexID;
+};
+
+struct VS_OUTPUT
+{
+	float4 pos : POSITION;
+	float3 norm : NORMAL;
+	float2 uv : TEXCOORD0;
+};
+
+struct TRIANGLE{
+	VS_OUTPUT p[3];
+};
+
+VS_OUTPUT VS(VS_IN input)
+{
+	VS_OUTPUT o;
+	//o.pos = input.pos;
+	o.pos = PointcloudBuffer[input.ii].pos;
+	o.norm = input.normal;
+	o.uv=input.uv;
+	
+    return o;
+}
+
+SamplerState sPoint : IMMUTABLE
+{
+    Filter = MIN_MAG_MIP_POINT;
+    AddressU = Border;
+    AddressV = Border;
+};
+
+[maxvertexcount(3)]
+void GS(triangle VS_OUTPUT input[3], inout TriangleStream<VS_OUTPUT> gsout)
+{
+	VS_OUTPUT elem = (VS_OUTPUT)0;
+	TRIANGLE tr;
+	
+	elem.pos.w=1.0;
+	// take a triangle of the mesh and displace the vertices
+	// with the kinect depth data
+	for(int i = 0; i < 3;i++){
+		/*float depth =  texDepth.SampleLevel(sPoint,input[i].uv.xy,0).r * 65.535 ;
+		float XtoZ = tan(FOV.x/2) * 2;
+	    float YtoZ = tan(FOV.y/2) * 2;
+		
+		elem.pos.x = ((input[i].uv.x - 0.5) * depth * XtoZ * -1);
+		elem.pos.y = ((0.5 - input[i].uv.y) * depth * YtoZ);
+		elem.pos.z = depth;
+		*/
+		elem.pos = input[i].pos;
+		
+		//elem.pos.xyz = input[i].pos.xyz + float3(0,0,depth);
+		elem.norm = input[i].norm;
+		elem.uv = input[i].uv;
+		
+		elem.pos = mul(elem.pos, tW);
+		tr.p[i] = elem; // append the vertex to our triangle struct
+	}
+	
+	// check if the distance between all 3 vertices of the triangle is 
+	// below the given threshold
+	
+	if( distance(tr.p[0].pos.xyz,tr.p[1].pos.xyz) < maxDistance &&
+		distance(tr.p[0].pos.xyz,tr.p[2].pos.xyz) < maxDistance && 
+		distance(tr.p[1].pos.xyz,tr.p[2].pos.xyz) < maxDistance
+		){
+			for(int i = 0; i < 3;i++){
+				if(tr.p[i].pos.x != 0) gsout.Append(tr.p[i]);
+				
+				
+			}
+	}
+	
+	gsout.RestartStrip();
+	
+}
+
+GeometryShader gsStreamOut = ConstructGSWithSO(CompileShader(gs_4_0, GS()), "POSITION.xyzw; NORMAL.xyz; TEXCOORD.xy", NULL, NULL, NULL, -1);
+
+technique10 Mesh
+{
+    pass P0
+    {
+        SetVertexShader(CompileShader(vs_4_0, VS()));
+        SetGeometryShader(gsStreamOut);
+    }  
+}
+
