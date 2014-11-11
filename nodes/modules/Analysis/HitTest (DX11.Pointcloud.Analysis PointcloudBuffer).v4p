@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta33.3_x64\packs\DX11.Pointcloud\nodes\modules\Analysis\HitTest (DX11.Pointcloud.Analysis PointcloudBuffer).v4p" systemname="Contains (DX11.Pointcloud.Analysis PointcloudBuffer)" filename="C:\apps\code\vvvv_45beta33.3_x64\packs\KinectToolkitDX11\nodes\modules\Analysis\Contains (DX11.Pointcloud.Analysis PointcloudBuffer).v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\apps\code\vvvv_45beta33.3_x64\packs\dx11-pointcloud\nodes\modules\Analysis\HitTest (DX11.Pointcloud.Analysis PointcloudBuffer).v4p" systemname="Contains (DX11.Pointcloud.Analysis PointcloudBuffer)" filename="C:\apps\code\vvvv_45beta33.3_x64\packs\KinectToolkitDX11\nodes\modules\Analysis\Contains (DX11.Pointcloud.Analysis PointcloudBuffer).v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="8775" top="2370" width="14250" height="7890">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.3.0">
@@ -430,90 +430,6 @@
    </NODE>
    <LINK srcnodeid="13" srcpinname="Query" dstnodeid="43" dstpinname="Input Node">
    </LINK>
-   <NODE systemname="GS_SuppressDiagonals (DX11.Effect)" filename="%VVVV%\packs\DX11.Pointcloud\nodes\modules\Common\geom11\GS_SuppressDiagonals.fx" nodename="GS_SuppressDiagonals (DX11.Effect)" componentmode="Hidden" id="30">
-   <BOUNDS type="Node" left="9030" top="4350" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Geometry" visible="1">
-   </PIN>
-   <PIN pinname="Transform In" visible="1">
-   </PIN>
-   <PIN pinname="Color" visible="1">
-   </PIN>
-   <PIN pinname="Layer" visible="1">
-   </PIN>
-   <PIN pinname="Technique" slicecount="1" values="RenderNoDiagonals">
-   </PIN>
-   <PIN pinname="Render State" visible="1">
-   </PIN>
-   <BOUNDS type="Box" left="9030" top="4350">
-   </BOUNDS>
-   </NODE>
-   <LINK srcnodeid="33" srcpinname="Geometry Out" dstnodeid="30" dstpinname="Geometry">
-   </LINK>
-   <LINK srcnodeid="31" srcpinname="Color Output" dstnodeid="30" dstpinname="Color" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="12180" y="2490">
-   </LINKPOINT>
-   <LINKPOINT x="10260" y="2490">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="29" srcpinname="Render State" dstnodeid="30" dstpinname="Render State" linkstyle="VHV">
-   <LINKPOINT x="8970" y="4148">
-   </LINKPOINT>
-   <LINKPOINT x="9315" y="4148">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="6" srcpinname="Output Node" dstnodeid="30" dstpinname="Transform In" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="7380" y="2475">
-   </LINKPOINT>
-   <LINKPOINT x="9915" y="2475">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="30" srcpinname="Layer" dstnodeid="35" dstpinname="Layer 1">
-   </LINK>
-   <NODE systemname="GS_SuppressDiagonals (DX11.Effect)" filename="%VVVV%\packs\DX11.Pointcloud\nodes\modules\Common\geom11\GS_SuppressDiagonals.fx" nodename="GS_SuppressDiagonals (DX11.Effect)" componentmode="Hidden" id="34">
-   <BOUNDS type="Node" left="10965" top="4350" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Geometry" visible="1">
-   </PIN>
-   <PIN pinname="Transform In" visible="1">
-   </PIN>
-   <PIN pinname="Color" visible="1">
-   </PIN>
-   <PIN pinname="Layer" visible="1">
-   </PIN>
-   <PIN pinname="Technique" slicecount="1" values="Render">
-   </PIN>
-   <PIN pinname="Render State" visible="1">
-   </PIN>
-   <BOUNDS type="Box" left="10965" top="4350">
-   </BOUNDS>
-   </NODE>
-   <LINK srcnodeid="34" srcpinname="Layer" dstnodeid="35" dstpinname="Layer 2" linkstyle="VHV">
-   <LINKPOINT x="10965" y="4795">
-   </LINKPOINT>
-   <LINKPOINT x="9270" y="4895">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="29" srcpinname="Render State" dstnodeid="34" dstpinname="Render State" linkstyle="VHV">
-   <LINKPOINT x="8970" y="4148">
-   </LINKPOINT>
-   <LINKPOINT x="11265" y="4148">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="33" srcpinname="Geometry Out" dstnodeid="34" dstpinname="Geometry" linkstyle="VHV">
-   <LINKPOINT x="9660" y="4148">
-   </LINKPOINT>
-   <LINKPOINT x="11550" y="4148">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="6" srcpinname="Output Node" dstnodeid="34" dstpinname="Transform In" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="7380" y="2468">
-   </LINKPOINT>
-   <LINKPOINT x="11835" y="2468">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="36" srcpinname="Output" dstnodeid="34" dstpinname="Color">
-   </LINK>
    <NODE nodename="IOBox (Color)" componentmode="InABox" id="47" systemname="IOBox (Color)">
    <BOUNDS type="Box" left="330" top="2010" width="7830" height="240">
    </BOUNDS>
@@ -566,4 +482,90 @@
    <PIN pinname="Size" slicecount="1" values="13">
    </PIN>
    </NODE>
+   <NODE systemname="GS_SuppressDiagonals (DX11.Effect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Analysis\geom11\GS_SuppressDiagonals.fx" nodename="GS_SuppressDiagonals (DX11.Effect)" componentmode="Hidden" id="48">
+   <BOUNDS type="Node" left="9030" top="4350" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Render State" visible="1">
+   </PIN>
+   <PIN pinname="Geometry" visible="1">
+   </PIN>
+   <PIN pinname="Color" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Technique" slicecount="1" values="RenderNoDiagonals">
+   </PIN>
+   <BOUNDS type="Box" left="9030" top="4350">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="GS_SuppressDiagonals (DX11.Effect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Analysis\geom11\GS_SuppressDiagonals.fx" nodename="GS_SuppressDiagonals (DX11.Effect)" componentmode="Hidden" id="49">
+   <BOUNDS type="Node" left="10995" top="4350" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Render State" visible="1">
+   </PIN>
+   <PIN pinname="Geometry" visible="1">
+   </PIN>
+   <PIN pinname="Color" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Technique" slicecount="1" values="Render">
+   </PIN>
+   <BOUNDS type="Box" left="10995" top="4350">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="29" srcpinname="Render State" dstnodeid="48" dstpinname="Render State" linkstyle="VHV">
+   <LINKPOINT x="8970" y="4133">
+   </LINKPOINT>
+   <LINKPOINT x="9315" y="4133">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="29" srcpinname="Render State" dstnodeid="49" dstpinname="Render State" linkstyle="VHV">
+   <LINKPOINT x="8970" y="4133">
+   </LINKPOINT>
+   <LINKPOINT x="11295" y="4133">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="33" srcpinname="Geometry Out" dstnodeid="48" dstpinname="Geometry">
+   </LINK>
+   <LINK srcnodeid="33" srcpinname="Geometry Out" dstnodeid="49" dstpinname="Geometry" linkstyle="VHV">
+   <LINKPOINT x="9660" y="4133">
+   </LINKPOINT>
+   <LINKPOINT x="11580" y="4133">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="31" srcpinname="Color Output" dstnodeid="48" dstpinname="Color" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="12180" y="2453">
+   </LINKPOINT>
+   <LINKPOINT x="10260" y="2453">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Output Node" dstnodeid="48" dstpinname="Transform In" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="7380" y="2453">
+   </LINKPOINT>
+   <LINKPOINT x="9915" y="2453">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Output Node" dstnodeid="49" dstpinname="Transform In" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="7380" y="2445">
+   </LINKPOINT>
+   <LINKPOINT x="11865" y="2445">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="36" srcpinname="Output" dstnodeid="49" dstpinname="Color">
+   </LINK>
+   <LINK srcnodeid="48" srcpinname="Layer" dstnodeid="35" dstpinname="Layer 1">
+   </LINK>
+   <LINK srcnodeid="49" srcpinname="Layer" dstnodeid="35" dstpinname="Layer 2" linkstyle="VHV">
+   <LINKPOINT x="10995" y="4823">
+   </LINKPOINT>
+   <LINKPOINT x="9270" y="4823">
+   </LINKPOINT>
+   </LINK>
    </PATCH>

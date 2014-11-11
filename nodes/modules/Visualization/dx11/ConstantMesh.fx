@@ -1,9 +1,9 @@
 //@author: tmp
-//@help: template for standard shaders
-//@tags: template
+//@help: Constant Shader for the Kinect Mesh
+//@tags: DX11, Pointcloud, Mesh
 //@credits: 
 
-Texture2D texture2d <string uiname="Texture";>;
+//Texture2D texture2d <string uiname="Texture";>;
 Texture2D texRGB <string uiname="RGB";>;
 Texture2D texRGBDepth <string uiname="RGBDepth";>;
 
@@ -47,7 +47,7 @@ vs2ps VS(VS_IN input)
 
 float4 PS(vs2ps In): SV_Target
 {
-    float2 coords = texRGBDepth.SampleLevel(sPoint,In.TexCd,0).rg;
+    float2 coords = texRGBDepth.SampleLevel(sPoint,In.TexCd.xy,0).rg;
     return texRGB.SampleLevel(sPoint,coords,0)* cAmb;
 }
 
@@ -59,7 +59,3 @@ technique10 MeshRGB
 		SetPixelShader( CompileShader( ps_4_0, PS() ) );
 	}
 }
-
-
-
-
