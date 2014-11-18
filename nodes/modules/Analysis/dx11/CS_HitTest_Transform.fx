@@ -4,7 +4,7 @@ struct pointData
 	float4 pos;
 	float4 col;
 };
-StructuredBuffer<pointData> pdBuffer;
+StructuredBuffer<pointData> pcBuffer;
 ByteAddressBuffer InputCountBuffer;
 RWStructuredBuffer<uint> hitBuffer : BACKBUFFER;
 int slice;
@@ -22,7 +22,7 @@ void CS_HitTest( uint3 i : SV_DispatchThreadID)
 	uint cnt = InputCountBuffer.Load(0);
 	if (i.x >=  cnt ) { return;}
 	
-	float4 test = mul(pdBuffer[i.x].pos, tFilter);
+	float4 test = mul(pcBuffer[i.x].pos, tFilter);
 	if(	!(test.x < -0.5 || test.x > 0.5 ||
 		test.y < -0.5 || test.y > 0.5 ||
 		test.z < -0.5 || test.z > 0.5

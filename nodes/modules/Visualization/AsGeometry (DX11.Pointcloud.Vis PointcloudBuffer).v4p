@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta33.3_x64\packs\DX11.Pointcloud\nodes\modules\Visualization\AsGeometry (DX11.Pointcloud.Vis).v4p" systemname="Constant (DX11.Buffer Pointcloud)" filename="D:\workspace\dev\packs\KinectToolkitDX11\nodes\modules\Visualization\Constant (DX11.Buffer Pointcloud).v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="14520" top="3405" width="8340" height="4935">
+   <PATCH nodename="C:\apps\code\vvvv_45beta33.3_x64\packs\dx11-pointcloud\nodes\modules\Visualization\AsGeometry (DX11.Pointcloud.Vis PointcloudBuffer).v4p" systemname="Constant (DX11.Buffer Pointcloud)" filename="D:\workspace\dev\packs\KinectToolkitDX11\nodes\modules\Visualization\Constant (DX11.Buffer Pointcloud).v4p" scrollx="0" scrolly="0">
+   <BOUNDS type="Window" left="29940" top="8580" width="8340" height="4935">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.3.0">
    </PACK>
@@ -56,16 +56,6 @@
    <PIN pinname="Input Node" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="6" systemname="IOBox (Node)">
-   <BOUNDS type="Box" left="6240" top="3330" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="6240" top="3330" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Descriptive Name" slicecount="1" values="Query">
-   </PIN>
-   <PIN pinname="Input Node" slicecount="1" values="||">
-   </PIN>
-   </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="9" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="1380" top="2220" width="945" height="240">
    </BOUNDS>
@@ -105,7 +95,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="5535" top="2220" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input Enum" slicecount="1" visible="1" values="Constant">
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="Rgb">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Technique">
    </PIN>
@@ -113,6 +103,12 @@
    <NODE systemname="ConstantGeometry (DX11.Effect)" filename="%VVVV%\packs\DX11.Pointcloud\nodes\modules\Visualization\dx11\ConstantGeometry.fx" nodename="ConstantGeometry (DX11.Effect)" componentmode="Hidden" id="18">
    <BOUNDS type="Node" left="675" top="2790" width="5640" height="270">
    </BOUNDS>
+   <PIN pinname="pcBuffer" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
    </NODE>
    <LINK srcnodeid="2" srcpinname="Output Node" dstnodeid="18" dstpinname="PointcloudBuffer" linkstyle="VHV">
    <LINKPOINT x="4125" y="1730">
@@ -124,8 +120,6 @@
    </LINK>
    <LINK srcnodeid="18" srcpinname="Layer" dstnodeid="4" dstpinname="Input Node">
    </LINK>
-   <LINK srcnodeid="18" srcpinname="Query" dstnodeid="6" dstpinname="Input Node">
-   </LINK>
    <LINK srcnodeid="9" srcpinname="Output Node" dstnodeid="18" dstpinname="Render State">
    </LINK>
    <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="18" dstpinname="Alpha">
@@ -133,5 +127,31 @@
    <LINK srcnodeid="13" srcpinname="Color Output" dstnodeid="18" dstpinname="Color">
    </LINK>
    <LINK srcnodeid="14" srcpinname="Output Enum" dstnodeid="18" dstpinname="Technique">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Output Node" dstnodeid="18" dstpinname="pcBuffer">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="19" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="7110" top="690" width="285" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7110" top="690" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Enabled">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="19" srcpinname="Y Output Value" dstnodeid="18" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="7110" y="1853">
+   </LINKPOINT>
+   <LINKPOINT x="6285" y="1853">
+   </LINKPOINT>
    </LINK>
    </PATCH>

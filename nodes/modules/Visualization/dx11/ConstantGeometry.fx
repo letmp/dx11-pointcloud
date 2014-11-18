@@ -1,14 +1,14 @@
-//@author: tmp
-//@help: constant shader to draw a pointcloudbuffer
-//@tags:
-//@credits: 
+//@author: tmp 
+//@help: Generates a colored PointCloud
+//@tags: DX11, Kinect, Pointcloud
+//@credits: vvvv
 
 struct pointData
 {
 	float4 pos;
 	float4 col;
 };
-StructuredBuffer<pointData> PointcloudBuffer;
+StructuredBuffer<pointData> pcBuffer;
 
 cbuffer cbPerDraw : register( b0 )
 {
@@ -17,6 +17,7 @@ cbuffer cbPerDraw : register( b0 )
 
 cbuffer cbPerObj : register( b1 )
 {
+	float4x4 tW : WORLD;
 	float Alpha <float uimin=0.0; float uimax=1.0;> = 1; 
 	float4 cAmb <bool color=true;String uiname="Color";> = { 1.0f,1.0f,1.0f,1.0f };
 };
@@ -27,42 +28,61 @@ struct vsInput
 	uint ii : SV_InstanceID;
 };
 
-struct psInput
+struct vs2ps
 {
     float4 pos: SV_POSITION;
 	float4 col: COLOR;
+	float4 col_pos : TEXCOORD0;
 };
 
-psInput VS(vsInput input)
+/* ===================== VERTEX SHADER ===================== */
+
+vs2ps VS(vsInput input)
 {
-    psInput output;	
-	
-	//Lookup index instead
+    vs2ps output = (vs2ps)0;
+    
 	uint idx = input.ii;
 	
 	float4 p = input.pos;
-	//Get position from full buffer
-	p.xyz += PointcloudBuffer[idx].pos.xyz;
-    output.pos = mul(p,tVP);
+	p.xyz += pcBuffer[idx].pos.xyz;
+	output.pos = mul(p,mul(tW,tVP));
 	
-	output.col = PointcloudBuffer[idx].col;
+	output.col = pcBuffer[idx].col;
+	output.col_pos = pcBuffer[idx].pos;
 	
-    return output;
+	return output;
 }
 
-float4 PS_Tex(psInput input): SV_Target
+/* ===================== PIXEL SHADER ===================== */
+
+float4 PS_RGB(vs2ps input): SV_Target
 {
 	float4 col = input.col * cAmb;
 	col.a *= Alpha;
     return col;
 }
 
+float4 PS_POS(vs2ps input): SV_Target
+{
+    return input.col_pos;
+}
 
-technique10 Constant
+/* ===================== TECHNIQUE ===================== */
+
+technique10 Rgb
 {
 	pass P0
 	{
 		SetVertexShader( CompileShader( vs_4_0, VS() ) );
-		SetPixelShader( CompileShader( ps_4_0, PS_Tex() ) );
+		SetPixelShader( CompileShader( ps_4_0, PS_RGB() ) );
+	}
+}
+
+technique10 Position
+{
+	pass P0
+	{
+		SetVertexShader( CompileShader( vs_4_0, VS() ) );
+		SetPixelShader( CompileShader( ps_4_0, PS_POS() ) );
 	}
 }

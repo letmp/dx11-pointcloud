@@ -460,16 +460,6 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="|Element Count Per Kinect|">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="77" systemname="IOBox (Node)">
-   <BOUNDS type="Box" left="4260" top="11310" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="4260" top="11310" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Descriptive Name" slicecount="1" values="Query">
-   </PIN>
-   <PIN pinname="Input Node" slicecount="1" values="||">
-   </PIN>
-   </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="102" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Node" left="15885" top="465" width="0" height="0">
    </BOUNDS>
@@ -499,7 +489,7 @@
    </PIN>
    </NODE>
    <NODE systemname="RenderState (DX11.Layer)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="RenderState (DX11.Layer)" componentmode="Hidden" id="100">
-   <BOUNDS type="Node" left="12945" top="9165" width="100" height="100">
+   <BOUNDS type="Node" left="14835" top="9165" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Layer In" visible="1">
    </PIN>
@@ -507,17 +497,17 @@
    </PIN>
    <PIN pinname="Render State" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="12945" top="9165">
+   <BOUNDS type="Box" left="14835" top="9165">
    </BOUNDS>
    </NODE>
    <NODE systemname="Rasterizer (DX11.RenderState)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Rasterizer (DX11.RenderState)" componentmode="Hidden" id="99">
-   <BOUNDS type="Node" left="12945" top="8325" width="100" height="100">
+   <BOUNDS type="Node" left="14835" top="8325" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Render State" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Mode" slicecount="1" values="NoCullSimple">
    </PIN>
-   <BOUNDS type="Box" left="12945" top="8325">
+   <BOUNDS type="Box" left="14835" top="8325">
    </BOUNDS>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="97" systemname="IOBox (Value Advanced)">
@@ -561,7 +551,7 @@
    <LINK srcnodeid="95" srcpinname="Geometry Out" dstnodeid="96" dstpinname="Geometry">
    </LINK>
    <NODE systemname="Group (DX11.Layer)" filename="%VVVV%\packs\vvvv-DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Group (DX11.Layer)" componentmode="Hidden" id="94">
-   <BOUNDS type="Node" left="13410" top="7695" width="750" height="270">
+   <BOUNDS type="Node" left="15300" top="7695" width="750" height="270">
    </BOUNDS>
    <PIN pinname="Layer 1" visible="1" slicecount="1" values="||">
    </PIN>
@@ -573,15 +563,15 @@
    </PIN>
    <PIN pinname="Layer 3" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="13410" top="7695">
+   <BOUNDS type="Box" left="15300" top="7695">
    </BOUNDS>
    <PIN pinname="Layer Out" visible="1">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="93" systemname="IOBox (Node)">
-   <BOUNDS type="Box" left="12945" top="9690" width="795" height="240">
+   <BOUNDS type="Box" left="14835" top="9690" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="12945" top="9690" width="0" height="0">
+   <BOUNDS type="Node" left="14835" top="9690" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Help Layer|">
    </PIN>
@@ -589,13 +579,13 @@
    </PIN>
    </NODE>
    <NODE systemname="Blend (DX11.RenderState)" filename="%VVVV%\packs\vvvv-DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Blend (DX11.RenderState)" componentmode="Hidden" id="90">
-   <BOUNDS type="Node" left="12945" top="8745" width="100" height="100">
+   <BOUNDS type="Node" left="14835" top="8745" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Render State" visible="1">
    </PIN>
    <PIN pinname="Mode" slicecount="1" values="AlphaAdd">
    </PIN>
-   <BOUNDS type="Box" left="12945" top="8745">
+   <BOUNDS type="Box" left="14835" top="8745">
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="99" srcpinname="Render State" dstnodeid="90" dstpinname="Render State">
@@ -725,9 +715,9 @@
    <LINK srcnodeid="79" srcpinname="Transform Out" dstnodeid="80" dstpinname="Transform In">
    </LINK>
    <LINK srcnodeid="96" srcpinname="Layer" dstnodeid="94" dstpinname="Layer 3" linkstyle="VHV">
-   <LINKPOINT x="15820" y="7328">
+   <LINKPOINT x="16450" y="7328">
    </LINKPOINT>
-   <LINKPOINT x="14000" y="7328">
+   <LINKPOINT x="15260" y="7328">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="94" srcpinname="Layer Out" dstnodeid="100" dstpinname="Layer In">
@@ -767,9 +757,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="78" srcpinname="Layer" dstnodeid="94" dstpinname="Layer 2" linkstyle="VHV">
-   <LINKPOINT x="13780" y="7343">
+   <LINKPOINT x="13815" y="7328">
    </LINKPOINT>
-   <LINKPOINT x="13775" y="7343">
+   <LINKPOINT x="15645" y="7328">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="44" srcpinname="Output Node" dstnodeid="79" dstpinname="Transform In" hiddenwhenlocked="1">
@@ -863,7 +853,7 @@
    </PIN>
    <PIN pinname="X Input Value" slicecount="2" values="640,480">
    </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="SizeXY">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Resolution">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
@@ -1048,12 +1038,6 @@
    <LINKPOINT x="1530" y="7605">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="33" srcpinname="Query" dstnodeid="77" dstpinname="Input Node" linkstyle="VHV">
-   <LINKPOINT x="2385" y="11078">
-   </LINKPOINT>
-   <LINKPOINT x="4260" y="11078">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="CS_BuildPcb_Kinect (DX11.Effect)" filename="%VVVV%\packs\KinectToolkitDX11\nodes\modules\IO\dx11\CS_BuildPcb_Kinect.fx" nodename="CS_BuildPcb_Kinect (DX11.Effect)" componentmode="Hidden" id="113">
    <BOUNDS type="Node" left="1335" top="9465" width="5820" height="270">
    </BOUNDS>
@@ -1109,15 +1093,29 @@
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="80" srcpinname="Layer" dstnodeid="94" dstpinname="Layer 1" linkstyle="VHV">
-   <LINKPOINT x="11170" y="7328">
+   <LINKPOINT x="11175" y="7328">
    </LINKPOINT>
-   <LINKPOINT x="13580" y="7328">
+   <LINKPOINT x="15465" y="7328">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="114" srcpinname="Render State" dstnodeid="80" dstpinname="Render State" linkstyle="VHV">
    <LINKPOINT x="10530" y="6608">
    </LINKPOINT>
    <LINKPOINT x="11280" y="6608">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="115" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="13155" top="4320" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="13155" top="4320" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="ViewProjection">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="88" srcpinname="ViewProjection" dstnodeid="115" dstpinname="Input Node" linkstyle="VHV">
+   <LINKPOINT x="14410" y="4185">
+   </LINKPOINT>
+   <LINKPOINT x="13940" y="4185">
    </LINKPOINT>
    </LINK>
    </PATCH>

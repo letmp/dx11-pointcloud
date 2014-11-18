@@ -19,7 +19,7 @@ struct pointData
 	float4 pos;
 	float4 col;
 };
-AppendStructuredBuffer<pointData> PointcloudBuffer : BACKBUFFER;
+AppendStructuredBuffer<pointData> pcBuffer : BACKBUFFER;
 
 //==============================================================================
 //COMPUTE SHADER ===============================================================
@@ -48,7 +48,7 @@ void CSBuildPointcloudBuffer( uint3 DTid : SV_DispatchThreadID )
 	
 	//float4 col = float4(uvc,1,1);
 	pointData pd = {pos, col};
-	PointcloudBuffer.Append(pd);
+	pcBuffer.Append(pd);
 }
 
 //==============================================================================

@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta33.3_x64\packs\dx11-pointcloud\nodes\modules\Visualization\AsMesh (DX11.Pointcloud.Vis Kinect).v4p" systemname="Mesh (DX11.Buffer)" filename="D:\workspace\dev\packs\KinectToolkitDX11\nodes\modules\Pointcloud\Mesh (DX11.Buffer).v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\apps\code\vvvv_45beta33.3_x64\packs\dx11-pointcloud\nodes\modules\Visualization\AsMesh (DX11.Pointcloud.Vis Kinect).v4p" systemname="Mesh (DX11.Buffer)" filename="D:\workspace\dev\packs\KinectToolkitDX11\nodes\modules\Pointcloud\Mesh (DX11.Buffer).v4p" scrollx="2520" scrolly="-360">
    <BOUNDS type="Window" left="8865" top="3330" width="12960" height="9675">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.3.0">
@@ -363,7 +363,7 @@
    </PIN>
    <PIN pinname="Transform In" visible="1">
    </PIN>
-   <PIN pinname="Enabled" slicecount="1" values="1">
+   <PIN pinname="Enabled" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Auto Layout" slicecount="1" visible="-1" pintype="Input" values="0">
    </PIN>
@@ -446,6 +446,38 @@
    <LINKPOINT x="1785" y="3390">
    </LINKPOINT>
    <LINKPOINT x="12345" y="3390">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="42" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="12555" top="645" width="480" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="12555" top="645" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Enabled">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="42" srcpinname="Y Output Value" dstnodeid="39" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="12540" y="2940">
+   </LINKPOINT>
+   <LINKPOINT x="9795" y="2940">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="42" srcpinname="Y Output Value" dstnodeid="37" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="12555" y="4343">
+   </LINKPOINT>
+   <LINKPOINT x="4755" y="4343">
    </LINKPOINT>
    </LINK>
    </PATCH>

@@ -31,7 +31,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="1950" top="5445" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Descriptive Name" slicecount="2" values="pdBuffer,pdBuffer">
+   <PIN pinname="Descriptive Name" slicecount="2" values="PointcloudBuffer,PointcloudBuffer">
    </PIN>
    </NODE>
    <LINK srcnodeid="7" srcpinname="Buffers" dstnodeid="6" dstpinname="Input Node">
@@ -43,7 +43,7 @@
    </BOUNDS>
    <PIN pinname="Input Node" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Descriptive Name" slicecount="2" values="pointDataBuffer,pointDataBuffer">
+   <PIN pinname="Descriptive Name" slicecount="2" values="PointcloudBuffer,PointcloudBuffer">
    </PIN>
    <PIN pinname="Output Node" visible="1">
    </PIN>
@@ -176,68 +176,6 @@
    <PIN pinname="Color Output" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="CS_FilterPcb (DX11.Effect)" filename="%VVVV%\packs\KinectToolkitDX11\nodes\modules\Filters\dx11\CS_FilterPcb.fx" nodename="CS_FilterPcb (DX11.Effect)" componentmode="Hidden" id="4">
-   <BOUNDS type="Node" left="390" top="3720" width="2970" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="390" top="3720">
-   </BOUNDS>
-   <PIN pinname="Technique" slicecount="1" values="Process">
-   </PIN>
-   <PIN pinname="cpBuffer" visible="1">
-   </PIN>
-   <PIN pinname="Transform Filter" visible="1">
-   </PIN>
-   <PIN pinname="elementcount" visible="1">
-   </PIN>
-   <PIN pinname="sbPosition" visible="1">
-   </PIN>
-   <PIN pinname="miny" visible="1">
-   </PIN>
-   <PIN pinname="pdBuffer" visible="1">
-   </PIN>
-   <PIN pinname="Geometry" visible="1">
-   </PIN>
-   <PIN pinname="InputCountBuffer" visible="1">
-   </PIN>
-   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="tFilter" visible="1">
-   </PIN>
-   <PIN pinname="Query" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="4" srcpinname="Layer" dstnodeid="7" dstpinname="Layer" linkstyle="VHV">
-   <LINKPOINT x="450" y="4463">
-   </LINKPOINT>
-   <LINKPOINT x="2250" y="4463">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="5" srcpinname="Output Node" dstnodeid="4" dstpinname="pdBuffer" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="2085" y="2185">
-   </LINKPOINT>
-   <LINKPOINT x="2085" y="2285">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="2" srcpinname="Geometry Out" dstnodeid="4" dstpinname="Geometry" linkstyle="VHV">
-   <LINKPOINT x="810" y="3420">
-   </LINKPOINT>
-   <LINKPOINT x="1125" y="3420">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="0" srcpinname="Buffer Out" dstnodeid="4" dstpinname="InputCountBuffer">
-   </LINK>
-   <LINK srcnodeid="9" srcpinname="Transform Out" dstnodeid="4" dstpinname="tFilter" linkstyle="VHV">
-   <LINKPOINT x="4280" y="2805">
-   </LINKPOINT>
-   <LINKPOINT x="2455" y="2805">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="9" srcpinname="Transform Out" dstnodeid="4" dstpinname="Transform In" linkstyle="VHV">
-   <LINKPOINT x="3630" y="3405">
-   </LINKPOINT>
-   <LINKPOINT x="1695" y="3405">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="Blend (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Blend (DX11.RenderState)" componentmode="Hidden" id="19">
    <BOUNDS type="Node" left="4950" top="2850" width="100" height="100">
    </BOUNDS>
@@ -248,16 +186,6 @@
    <BOUNDS type="Box" left="4950" top="2850">
    </BOUNDS>
    </NODE>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="22" systemname="IOBox (Node)">
-   <BOUNDS type="Box" left="3240" top="5445" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="3240" top="5445" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Descriptive Name" slicecount="1" values="Query">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="7" srcpinname="Query" dstnodeid="22" dstpinname="Input Node">
-   </LINK>
    <NODE nodename="IOBox (Color)" componentmode="InABox" id="26" systemname="IOBox (Color)">
    <BOUNDS type="Box" left="300" top="1935" width="3960" height="240">
    </BOUNDS>
@@ -345,5 +273,35 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="27" srcpinname="Layer" dstnodeid="12" dstpinname="Input Node">
+   </LINK>
+   <NODE systemname="CS_FilterPcb (DX11.Effect)" filename="%VVVV%\packs\KinectToolkitDX11\nodes\modules\Filters\dx11\CS_FilterPcb.fx" nodename="CS_FilterPcb (DX11.Effect)" componentmode="Hidden" id="28">
+   <BOUNDS type="Node" left="390" top="3720" width="2970" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="390" top="3720">
+   </BOUNDS>
+   <PIN pinname="pcBuffer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="28" srcpinname="Layer" dstnodeid="7" dstpinname="Layer" linkstyle="VHV">
+   <LINKPOINT x="450" y="4463">
+   </LINKPOINT>
+   <LINKPOINT x="2250" y="4463">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Geometry Out" dstnodeid="28" dstpinname="Geometry" linkstyle="VHV">
+   <LINKPOINT x="810" y="3420">
+   </LINKPOINT>
+   <LINKPOINT x="1125" y="3420">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Buffer Out" dstnodeid="28" dstpinname="InputCountBuffer">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Transform Out" dstnodeid="28" dstpinname="Transform In" linkstyle="VHV">
+   <LINKPOINT x="3630" y="3405">
+   </LINKPOINT>
+   <LINKPOINT x="1695" y="3405">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Output Node" dstnodeid="28" dstpinname="pcBuffer" hiddenwhenlocked="1">
    </LINK>
    </PATCH>
