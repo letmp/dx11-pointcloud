@@ -4,6 +4,14 @@
 //@credits: vvvv
 
 //float4x4 tW <string uiname="Transform In";>;
+
+struct pointData
+{
+	float4 pos;
+	float4 col;
+};
+StructuredBuffer<pointData> pcBuffer;
+
 Texture2D texDepth <string uiname="Depth";>;
 
 SamplerState sPoint : IMMUTABLE
@@ -41,6 +49,7 @@ VS_OUTPUT VS(VS_IN input)
 {
 	VS_OUTPUT o;
 
+	
 	float depth =  texDepth.SampleLevel(sPoint,input.uv.xy,0).r * 65.535 ;
 	float XtoZ = tan(FOV.x/2) * 2;
     float YtoZ = tan(FOV.y/2) * 2;
@@ -51,14 +60,16 @@ VS_OUTPUT VS(VS_IN input)
 	pos.z = depth;
 	pos = mul(pos, tW);
 	
-	float4 test = mul(pos, tFilter);
-
-	if(	test.x < -0.5 || test.x > 0.5 ||
-		test.y < -0.5 || test.y > 0.5 ||
-		test.z < -0.5 || test.z > 0.5
+	
+	//check if point position is inside the given filter(s)
+	float4 pointCoord = mul(pos, tFilter);
+	if(	pointCoord.x < -0.5 || pointCoord.x > 0.5 ||
+		pointCoord.y < -0.5 || pointCoord.y > 0.5 ||
+		pointCoord.z < -0.5 || pointCoord.z > 0.5
 		){
 			pos.w = 0.0f; // this marks the vertex point as discard and will not be rendered
 		}
+	else pos.w = 1.0f;
 	
 	o.pos = pos;
 	o.norm = input.normal;
@@ -80,7 +91,7 @@ void GS(triangle VS_OUTPUT input[3], inout TriangleStream<VS_OUTPUT> gsout)
 		input[0].pos.w != 0 && input[1].pos.w != 0 && input[2].pos.w != 0
 		){
 			for(int i = 0; i < 3;i++){
-				if(input[i].pos.x != 0) gsout.Append(input[i]);
+				if(input[i].pos.z != 0) gsout.Append(input[i]);
 			}
 	}
 	gsout.RestartStrip();

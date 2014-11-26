@@ -117,6 +117,8 @@
    </PIN>
    <PIN pinname="Default" slicecount="1" values="3">
    </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="3">
+   </PIN>
    </NODE>
    <NODE systemname="Mod (Value)" nodename="Mod (Value)" componentmode="Hidden" id="24">
    <BOUNDS type="Node" left="3075" top="2370" width="1350" height="270">
@@ -269,6 +271,8 @@
    </PIN>
    <PIN pinname="Enabled" slicecount="1" visible="1" values="1">
    </PIN>
+   <PIN pinname="distanceThreshold" slicecount="1" visible="1" values="0.00100000004749745">
+   </PIN>
    </NODE>
    <LINK srcnodeid="27" srcpinname="Buffers" dstnodeid="29" dstpinname="Texture3d In" linkstyle="VHV">
    <LINKPOINT x="1850" y="5950">
@@ -296,6 +300,26 @@
    <LINKPOINT x="6315" y="5850">
    </LINKPOINT>
    <LINKPOINT x="1905" y="5850">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="30" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="2820" top="735" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2820" top="735" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.00100000004749745">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="distanceThreshold">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="30" srcpinname="Y Output Value" dstnodeid="29" dstpinname="distanceThreshold" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="2835" y="3480">
+   </LINKPOINT>
+   <LINKPOINT x="1515" y="3480">
    </LINKPOINT>
    </LINK>
    </PATCH>

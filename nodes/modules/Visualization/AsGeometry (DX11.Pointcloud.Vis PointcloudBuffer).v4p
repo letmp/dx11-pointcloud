@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
    <PATCH nodename="C:\apps\code\vvvv_45beta33.3_x64\packs\dx11-pointcloud\nodes\modules\Visualization\AsGeometry (DX11.Pointcloud.Vis PointcloudBuffer).v4p" systemname="Constant (DX11.Buffer Pointcloud)" filename="D:\workspace\dev\packs\KinectToolkitDX11\nodes\modules\Visualization\Constant (DX11.Buffer Pointcloud).v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="29940" top="8580" width="8340" height="4935">
+   <BOUNDS type="Window" left="13080" top="7320" width="8340" height="4935">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.3.0">
    </PACK>
@@ -95,7 +95,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="5535" top="2220" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input Enum" slicecount="1" visible="1" values="Rgb">
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="RGB">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Technique">
    </PIN>

@@ -1,5 +1,5 @@
 RWStructuredBuffer<float3> rwbuffer : BACKBUFFER;
-Texture2D posTex <string uiname="Texture Positions";>;
+Texture2D posTex <string uiname="Position Texture";>;
 StructuredBuffer<float2> uv <string uiname="UV Buffer";>;
 int count;
 

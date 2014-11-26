@@ -7,6 +7,7 @@ Texture2D texture2d : PREVIOUS;
 Texture3D texture3d <string uiname="Texture3d In";>;
 float sliceCount <string uiname="slice Count";>;  // the slice
 float sliceIndex <string uiname="slice Index";>;  // the slice
+float distanceThreshold <float uimin=0.000; float uimax=0.005;> = 0.001; 
 
 SamplerState volumeSampler  : IMMUTABLE
 {
@@ -42,9 +43,9 @@ float4 PS(psInput input) : SV_Target
 		// now we pick the next image and check if the depth-difference is
 		// above a threshold - we need this to skip the edge rendering of fast
 		// moving objects (and depth shadows)
-		float depthtest = ((sliceIndex + i + 1) % sliceCount) / sliceCount;
+		float depthtest = ((sliceIndex + i - 1) % sliceCount) / sliceCount;
 		float4 coltest = texture3d.Sample(volumeSampler, float3(input.uv, depthtest));
-		if ( (col.r - coltest.r) > 0.01) skip = true;
+		if ( distance(col.r ,coltest.r) > distanceThreshold) skip = true;
 	}
 	
 	if(skip) colFinal = float4(0,0,0,0);

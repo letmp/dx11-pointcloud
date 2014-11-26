@@ -18,6 +18,7 @@ struct pointData
 {
 	float4 pos;
 	float4 col;
+	int groupId;
 };
 AppendStructuredBuffer<pointData> pcBuffer : BACKBUFFER;
 
@@ -45,9 +46,8 @@ void CSBuildPointcloudBuffer( uint3 DTid : SV_DispatchThreadID )
 		
 	float2 coords = texRGBDepth.SampleLevel(sPoint, uvc ,0).rg;
 	float4 col = texRGB.SampleLevel(sPoint,coords,0);
-	
-	//float4 col = float4(uvc,1,1);
-	pointData pd = {pos, col};
+
+	pointData pd = {pos, col, 0};
 	pcBuffer.Append(pd);
 }
 

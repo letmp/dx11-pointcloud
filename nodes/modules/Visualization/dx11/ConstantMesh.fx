@@ -51,7 +51,7 @@ float4 PS(vs2ps In): SV_Target
     return texRGB.SampleLevel(sPoint,coords,0)* cAmb;
 }
 
-technique10 MeshRGB
+technique10 RGB
 {
 	pass P0
 	{

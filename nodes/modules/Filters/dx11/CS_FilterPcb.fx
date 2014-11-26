@@ -1,14 +1,16 @@
 float4x4 tFilter : WORLD;
+int slice;
+
 struct pointData
 {
 	float4 pos;
 	float4 col;
+	int groupId;
 };
 StructuredBuffer<pointData> pcBuffer;
 ByteAddressBuffer InputCountBuffer;
 
 AppendStructuredBuffer<pointData> filteredPdBuffer : BACKBUFFER;
-
 
 [numthreads(64, 1, 1)]
 void CS( uint3 i : SV_DispatchThreadID)
@@ -16,12 +18,15 @@ void CS( uint3 i : SV_DispatchThreadID)
 	uint cnt = InputCountBuffer.Load(0);
 	if (i.x >=  cnt ) { return;}
 	
-	float4 test = mul(pcBuffer[i.x].pos, tFilter);
-	if(	!(test.x < -0.5 || test.x > 0.5 ||
-		test.y < -0.5 || test.y > 0.5 ||
-		test.z < -0.5 || test.z > 0.5
+	//check if point position is inside the given filter(s)
+	float4 pointCoord = mul(pcBuffer[i.x].pos, tFilter);
+	if(	!(pointCoord.x < -0.5 || pointCoord.x > 0.5 ||
+		pointCoord.y < -0.5 || pointCoord.y > 0.5 ||
+		pointCoord.z < -0.5 || pointCoord.z > 0.5
 		)){
-			filteredPdBuffer.Append(pcBuffer[i.x]);
+			pointData pd = pcBuffer[i.x];
+			pd.groupId = slice;
+			filteredPdBuffer.Append(pd);
 		}
 	
 }
