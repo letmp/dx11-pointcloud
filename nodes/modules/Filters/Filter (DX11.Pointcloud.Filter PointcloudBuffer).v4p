@@ -331,6 +331,8 @@
    </BOUNDS>
    <BOUNDS type="Box" left="825" top="4320">
    </BOUNDS>
+   <PIN pinname="Technique" slicecount="1" visible="1" values="Restrict">
+   </PIN>
    </NODE>
    <LINK srcnodeid="2" srcpinname="Geometry Out" dstnodeid="36" dstpinname="Geometry" linkstyle="VHV">
    <LINKPOINT x="1180" y="3720">
@@ -414,6 +416,22 @@
    <LINKPOINT x="4830" y="5108">
    </LINKPOINT>
    <LINKPOINT x="6135" y="5108">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="41" systemname="IOBox (Enumerations)">
+   <BOUNDS type="Box" left="6285" top="510" width="885" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6285" top="510" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="Restrict">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Technique">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="41" srcpinname="Output Enum" dstnodeid="36" dstpinname="Technique" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="6270" y="2520">
+   </LINKPOINT>
+   <LINKPOINT x="3435" y="2520">
    </LINKPOINT>
    </LINK>
    </PATCH>
