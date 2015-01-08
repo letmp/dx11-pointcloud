@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
    <PATCH nodename="C:\apps\code\vvvv_45beta33.3_x64\packs\dx11-pointcloud\nodes\modules\Helper\GetTextureCoordinates (DX11.Pointcloud.Helper).v4p" systemname="SetTexturePosition (DX11.Pointcloud.Setup)" filename="D:\workspace\dev\packs\dx11-pointcloud\nodes\modules\Setup\SetTexturePosition (DX11.Pointcloud.Setup).v4p" scrollx="0" scrolly="-240">
-   <BOUNDS type="Window" left="11280" top="1185" width="6945" height="10050">
+   <BOUNDS type="Window" left="9180" top="1380" width="6945" height="10050">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.3.0">
    </PACK>
@@ -9,7 +9,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="885" top="2940" width="3450" height="2730">
    </BOUNDS>
-   <BOUNDS type="Window" left="13815" top="2085" width="8985" height="6795">
+   <BOUNDS type="Window" left="0" top="2790" width="9525" height="8040">
    </BOUNDS>
    <PIN pinname="Mouse State" visible="1">
    </PIN>
@@ -426,4 +426,20 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
+   <NODE nodename="IOBox (Color)" componentmode="InABox" id="37" systemname="IOBox (Color)">
+   <BOUNDS type="Box" left="4350" top="915" width="285" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4350" top="915" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Color Input" slicecount="1" visible="1" values="|1.00000,0.00000,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Helper Color|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="37" srcpinname="Color Output" dstnodeid="33" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="4350" y="1275">
+   </LINKPOINT>
+   <LINKPOINT x="3675" y="1275">
+   </LINKPOINT>
+   </LINK>
    </PATCH>

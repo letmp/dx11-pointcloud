@@ -67,6 +67,13 @@ float4 PS_POS(vs2ps input): SV_Target
     return input.col_pos;
 }
 
+float4 PS_COLOR(vs2ps input): SV_Target
+{
+	float4 col = cAmb;
+	col.a *= Alpha;
+    return col;
+}
+
 /* ===================== TECHNIQUE ===================== */
 
 technique10 Rgb
@@ -84,5 +91,14 @@ technique10 Position
 	{
 		SetVertexShader( CompileShader( vs_4_0, VS() ) );
 		SetPixelShader( CompileShader( ps_4_0, PS_POS() ) );
+	}
+}
+
+technique10 Color
+{
+	pass P0
+	{
+		SetVertexShader( CompileShader( vs_4_0, VS() ) );
+		SetPixelShader( CompileShader( ps_4_0, PS_COLOR() ) );
 	}
 }

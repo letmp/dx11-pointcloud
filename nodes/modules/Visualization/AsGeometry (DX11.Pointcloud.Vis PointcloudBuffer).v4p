@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
    <PATCH nodename="C:\apps\code\vvvv_45beta33.3_x64\packs\dx11-pointcloud\nodes\modules\Visualization\AsGeometry (DX11.Pointcloud.Vis PointcloudBuffer).v4p" systemname="Constant (DX11.Buffer Pointcloud)" filename="D:\workspace\dev\packs\KinectToolkitDX11\nodes\modules\Visualization\Constant (DX11.Buffer Pointcloud).v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="13080" top="7320" width="8340" height="4935">
+   <BOUNDS type="Window" left="4395" top="5745" width="8340" height="4935">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.3.0">
    </PACK>
@@ -28,24 +28,6 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="PointcloudBuffer">
    </PIN>
    </NODE>
-   <NODE systemname="IndexIndirect (DX11.Drawer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="IndexIndirect (DX11.Drawer)" componentmode="Hidden" id="3">
-   <BOUNDS type="Node" left="2055" top="1395" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Geometry In" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Instance Arg Buffer" visible="1" pintype="Input" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Geometry Out" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="1" srcpinname="Output Node" dstnodeid="3" dstpinname="Geometry In">
-   </LINK>
-   <LINK srcnodeid="2" srcpinname="Output Node" dstnodeid="3" dstpinname="Instance Arg Buffer" linkstyle="VHV">
-   <LINKPOINT x="4440" y="1018">
-   </LINKPOINT>
-   <LINKPOINT x="3390" y="1083">
-   </LINKPOINT>
-   </LINK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="4" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="690" top="3330" width="795" height="240">
    </BOUNDS>
@@ -109,6 +91,8 @@
    </PIN>
    <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
    </PIN>
+   <PIN pinname="Geometry" slicecount="1" values="||">
+   </PIN>
    </NODE>
    <LINK srcnodeid="2" srcpinname="Output Node" dstnodeid="18" dstpinname="PointcloudBuffer" linkstyle="VHV">
    <LINKPOINT x="4125" y="1730">
@@ -116,15 +100,21 @@
    <LINKPOINT x="2550" y="1795">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="3" srcpinname="Geometry Out" dstnodeid="18" dstpinname="Geometry">
-   </LINK>
    <LINK srcnodeid="18" srcpinname="Layer" dstnodeid="4" dstpinname="Input Node">
    </LINK>
    <LINK srcnodeid="9" srcpinname="Output Node" dstnodeid="18" dstpinname="Render State">
    </LINK>
-   <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="18" dstpinname="Alpha">
+   <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="18" dstpinname="Alpha" linkstyle="Bezier">
+   <LINKPOINT x="3525" y="1845">
+   </LINKPOINT>
+   <LINKPOINT x="4185" y="1845">
+   </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="13" srcpinname="Color Output" dstnodeid="18" dstpinname="Color">
+   <LINK srcnodeid="13" srcpinname="Color Output" dstnodeid="18" dstpinname="Color" linkstyle="Bezier">
+   <LINKPOINT x="4155" y="1845">
+   </LINKPOINT>
+   <LINKPOINT x="3495" y="1845">
+   </LINKPOINT>
    </LINK>
    <LINK srcnodeid="14" srcpinname="Output Enum" dstnodeid="18" dstpinname="Technique">
    </LINK>
@@ -153,5 +143,19 @@
    </LINKPOINT>
    <LINKPOINT x="6285" y="1853">
    </LINKPOINT>
+   </LINK>
+   <NODE systemname="IndexIndirect (DX11.Drawer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="IndexIndirect (DX11.Drawer)" componentmode="Hidden" id="21">
+   <BOUNDS type="Node" left="2055" top="1395" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Output Node" dstnodeid="21" dstpinname="Geometry In">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Output Node" dstnodeid="21" dstpinname="Instance Arg Buffer" linkstyle="VHV">
+   <LINKPOINT x="4440" y="1018">
+   </LINKPOINT>
+   <LINKPOINT x="3390" y="1083">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="21" srcpinname="Geometry Out" dstnodeid="18" dstpinname="Geometry">
    </LINK>
    </PATCH>

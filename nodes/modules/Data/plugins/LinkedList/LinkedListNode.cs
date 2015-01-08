@@ -20,21 +20,25 @@ using VVVV.DX11;
 using VVVV.Core.Logging;
 #endregion usings
 
-namespace LinkedList3d
+namespace LinkedList
 {
 	#region PluginInfo
-	[PluginInfo(Name = "LinkedList3d", Category = "DX11.Pointcloud.Analysis", Version = "PointcloudBuffer", Help = "Basic template with one value in/out", Tags = "")]
+	[PluginInfo(Name = "LinkedList", Category = "DX11.Pointcloud.Data", Version = "PointcloudBuffer", Help = "Creates a linked list that can be used in further shaders (for example to do a neighbour lookup).", Tags = "")]
 	#endregion PluginInfo
-    public class LinkedList3dNode : IPluginEvaluate, IDX11ResourceProvider
+    public class LinkedListNode : IPluginEvaluate, IDX11ResourceProvider
 	{
 		#region fields & pins
+
 		[Input("PointcloudBuffer")]
         protected Pin<DX11Resource<IDX11ReadableStructureBuffer>> FInPcBuffer;
 
 		[Input("Element Count", DefaultValue = -1.0, IsSingle = true)]
         public ISpread<int> FInEleCount;
-		
-		[Input("Gridcell Count", DefaultValue = 10.0)]
+
+        [Input("Transform In", IsSingle = true)]
+        public ISpread<Matrix4x4> FInTransform;
+
+		[Input("Gridcell Count", DefaultValue = 10.0, IsSingle = true)]
         public ISpread<int> FInGridcellCount;
 		
 		[Output("LinkBuffer Out",IsSingle=true)]
@@ -45,11 +49,9 @@ namespace LinkedList3d
 		#endregion fields & pins
 
         private DX11ShaderInstance shader;
-
+        
 		[Import()]
         protected IPluginHost FHost;
-		
-		
 		
 		public void Evaluate(int SpreadMax)
 		{
@@ -64,8 +66,8 @@ namespace LinkedList3d
         {
             Device device = context.Device;
             DeviceContext ctx = context.CurrentDeviceContext;
-			
-        	if (!this.FOutLinkBuffer[0].Contains(context) || !this.FOutOffsetBuffer[0].Contains(context) )
+
+            if (!this.FOutLinkBuffer[0].Contains(context) || !this.FOutOffsetBuffer[0].Contains(context) || FInGridcellCount.IsChanged)
            	{
             	DX11RWStructuredBuffer lb = new DX11RWStructuredBuffer(device, FInEleCount[0], 8, eDX11BufferMode.Counter);
             	DX11RWStructuredBuffer ob = new DX11RWStructuredBuffer(device, FInGridcellCount[0] * FInGridcellCount[0] * FInGridcellCount[0], 4, eDX11BufferMode.Counter);
@@ -80,19 +82,19 @@ namespace LinkedList3d
         	if (this.FInPcBuffer.PluginIO.IsConnected)
             {
                 // load shader
-                string basepath = "LinkedList3d.effects.LinkedListHash3d.fx";
+                string basepath = "LinkedList.effects.LinkedList.fx";
                 DX11Effect effect = DX11Effect.FromResource(Assembly.GetExecutingAssembly(), basepath);
             	this.shader = new DX11ShaderInstance(context, effect);
-            	
+
             	shader.SelectTechnique("BuildHash");            	
             	shader.SetBySemantic("POINTCLOUDBUFFER", FInPcBuffer[0][context].SRV);
-            	shader.SetBySemantic("RWLINKBUFFER", FOutLinkBuffer[0][context].UAV, 0);
+                shader.SetBySemantic("POINTTRANSFORM", FInTransform[0].ToSlimDXMatrix());
+                shader.SetBySemantic("RWLINKBUFFER", FOutLinkBuffer[0][context].UAV, 0);
             	shader.SetBySemantic("RWOFFSETBUFFER", FOutOffsetBuffer[0][context].UAV);
             	shader.SetBySemantic("GRIDCELLSIZE", FInGridcellCount[0]);
-            	
+                            	
             	shader.ApplyPass(0);
             	ctx.Dispatch((FInEleCount[0] + 63) / 64, 1, 1);
-            	
             	context.CleanUpCS();
             }        	
         	

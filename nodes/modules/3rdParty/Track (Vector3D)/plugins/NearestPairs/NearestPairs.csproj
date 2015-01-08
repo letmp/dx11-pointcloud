@@ -5,12 +5,12 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <OutputType>Library</OutputType>
-    <RootNamespace>LinkedList3d</RootNamespace>
-    <AssemblyName>LinkedList3d</AssemblyName>
+    <RootNamespace>VVVV.Nodes</RootNamespace>
+    <AssemblyName>NearestPairs</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <ReferencePath>..\..\..\..\..\..\..\lib\core\;..\..\..\..\..\..\..\lib\nodes\plugins\</ReferencePath>
+    <ReferencePath>..\..\..\..\..\..\apps\code\vvvv_45beta32.1_x64\lib\core\;..\..\..\..\..\..\apps\code\vvvv_45beta32.1_x64\lib\nodes\plugins\</ReferencePath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DefineConstants>DEBUG;TRACE</DefineConstants>
@@ -36,32 +36,19 @@
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FeralTic">
-      <HintPath>..\..\..\..\..\..\dx11\core\FeralTic.dll</HintPath>
-    </Reference>
     <Reference Include="SlimDX" />
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Composition.CodePlex" />
+    <Reference Include="System.ComponentModel.Composition.Codeplex" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="VVVV.Core" />
-    <Reference Include="VVVV.DX11.Core">
-      <HintPath>..\..\..\..\..\..\dx11\core\VVVV.DX11.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="VVVV.DX11.Lib">
-      <HintPath>..\..\..\..\..\..\dx11\core\VVVV.DX11.Lib.dll</HintPath>
-    </Reference>
     <Reference Include="VVVV.PluginInterfaces" />
     <Reference Include="VVVV.Utils" />
     <Reference Include="VVVV.Utils3rdParty" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LinkedList3dNode.cs" />
+    <Compile Include="NearestPairsNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="effects\LinkedListHash3d.fx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
 </Project>

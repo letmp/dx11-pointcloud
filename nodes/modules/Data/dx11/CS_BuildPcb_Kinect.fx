@@ -35,20 +35,22 @@ void CSBuildPointcloudBuffer( uint3 DTid : SV_DispatchThreadID )
 	float2 uvc = uv[DTid.x];
 	
 	float depth =  texDepth.SampleLevel(sPoint,uvc,0).r * 65.535 ;
-	float XtoZ = tan(FOV.x/2) * 2;
-    float YtoZ = tan(FOV.y/2) * 2;
-	
-	float4 pos = float4(0,0,0,1);
-	pos.x = ((uvc.x - 0.5) * depth * XtoZ * -1);
-	pos.y = ((0.5 - uvc.y) * depth * YtoZ);
-	pos.z = depth;
-	pos = mul(pos, tW);
+	if (depth > 0){
+		float XtoZ = tan(FOV.x/2) * 2;
+	    float YtoZ = tan(FOV.y/2) * 2;
 		
-	float2 coords = texRGBDepth.SampleLevel(sPoint, uvc ,0).rg;
-	float4 col = texRGB.SampleLevel(sPoint,coords,0);
-
-	pointData pd = {pos, col, 0};
-	pcBuffer.Append(pd);
+		float4 pos = float4(0,0,0,1);
+		pos.x = ((uvc.x - 0.5) * depth * XtoZ * -1);
+		pos.y = ((0.5 - uvc.y) * depth * YtoZ);
+		pos.z = depth;
+		pos = mul(pos, tW);
+			
+		float2 coords = texRGBDepth.SampleLevel(sPoint, uvc ,0).rg;
+		float4 col = texRGB.SampleLevel(sPoint,coords,0);
+	
+		pointData pd = {pos, col, 0};
+		pcBuffer.Append(pd);
+	}
 }
 
 //==============================================================================

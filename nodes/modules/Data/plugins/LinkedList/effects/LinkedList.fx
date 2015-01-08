@@ -1,3 +1,4 @@
+
 struct LinkedListElement 
 {
     uint id;
@@ -12,11 +13,11 @@ struct pointData
 };
 
 StructuredBuffer<pointData> PositionBuffer : POINTCLOUDBUFFER;
-
+float4x4 PointTransform : POINTTRANSFORM;
 RWStructuredBuffer<LinkedListElement> RWLinkBuffer : RWLINKBUFFER;
 RWStructuredBuffer<uint> RWOffsetBuffer : RWOFFSETBUFFER;
-
 int GridCellSize : GRIDCELLSIZE;
+AppendStructuredBuffer<pointData> filteredPdBuffer;
 
 [numthreads(64,1,1)] 
 void CS_Build(uint3 i : SV_DispatchThreadID)
@@ -26,7 +27,7 @@ void CS_Build(uint3 i : SV_DispatchThreadID)
 	if (i.x >= cnt) { return; }
 
 	float3 pos = PositionBuffer[i.x].pos.xyz;
-	float4 tp = float4(pos,1);
+	float4 tp = mul(float4(pos, 1), PointTransform);
 
 	tp = tp * 0.5f + 0.5f;
 	tp.y = 1.0f -tp.y;
@@ -34,7 +35,7 @@ void CS_Build(uint3 i : SV_DispatchThreadID)
 
 	LinkedListElement element;
 	element.id = i.x;
-
+	
 	uint counter = RWLinkBuffer.IncrementCounter();
     uint cellindex = cl.z * GridCellSize * GridCellSize + cl.y * GridCellSize + cl.x;
 	
