@@ -1,10 +1,10 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
    <PATCH nodename="C:\apps\code\vvvv_45beta33.3_x64\packs\dx11-pointcloud\nodes\modules\Setup\Calibration (DX11.Pointcloud.Setup).v4p" systemname="zxing-help" filename="C:\vvvv\vvvv_45beta31_x86\kiilopack\plugins\zxing-help.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="30270" top="1770" width="21135" height="11130">
+   <BOUNDS type="Window" left="6900" top="2610" width="21135" height="11130">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.3.0">
    </PACK>
-   <INFO author="tmp" description="Automatically places the Kinect in your virtual scene by locating a QR code in the real world and setting the origin of the coordinate system to it." tags="DX11, KinectBundle">
+   <INFO author="tmp" description="Calculates a transform from given coordinates to other given coordinates. This uses the Kabsch algorithm that is restricted to calculate the translation, rotation and scaling (no shearing)." tags="Transform, 3d">
    </INFO>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="219" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="9075" top="4365" width="600" height="240">
@@ -43,9 +43,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="309" systemname="IOBox (Node)">
-   <BOUNDS type="Box" left="1200" top="9855" width="1035" height="240">
+   <BOUNDS type="Box" left="945" top="9855" width="1035" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="1200" top="9855" width="0" height="0">
+   <BOUNDS type="Node" left="945" top="9855" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Transform Out|">
    </PIN>
@@ -790,8 +790,6 @@
    <PIN pinname="Size" slicecount="1" values="13">
    </PIN>
    </NODE>
-   <LINK srcnodeid="300" srcpinname="Transform Out" dstnodeid="309" dstpinname="Input Node">
-   </LINK>
    <NODE systemname="AvoidNIL (Spreads)" filename="%VVVV%\lib\nodes\modules\Spreads\AvoidNIL (Spreads).v4p" nodename="AvoidNIL (Spreads)" componentmode="Hidden" id="559">
    <BOUNDS type="Node" left="1200" top="6105" width="100" height="100">
    </BOUNDS>
@@ -828,4 +826,68 @@
    <LINKPOINT x="18870" y="4238">
    </LINKPOINT>
    </LINK>
+   <NODE systemname="Switch (Node Input)" nodename="Switch (Node Input)" componentmode="Hidden" id="563">
+   <BOUNDS type="Node" left="960" top="9000" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Switch" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="300" srcpinname="Transform Out" dstnodeid="563" dstpinname="Input 1">
+   </LINK>
+   <NODE systemname="Transform (Transform 3d Vector)" nodename="Transform (Transform 3d Vector)" componentmode="Hidden" id="564">
+   <BOUNDS type="Node" left="1470" top="8445" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="564" srcpinname="Transform Out" dstnodeid="563" dstpinname="Input 2">
+   </LINK>
+   <NODE systemname="MultiFlipFlop (Animation)" nodename="MultiFlipFlop (Animation)" componentmode="Hidden" id="565">
+   <BOUNDS type="Node" left="975" top="8100" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Set 1" visible="1">
+   </PIN>
+   <PIN pinname="Set 0" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="OnOpen (VVVV)" nodename="OnOpen (VVVV)" componentmode="Hidden" id="566">
+   <BOUNDS type="Node" left="1875" top="7650" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Bang" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="566" srcpinname="Bang" dstnodeid="565" dstpinname="Set 1">
+   </LINK>
+   <LINK srcnodeid="484" srcpinname="Y Output Value" dstnodeid="565" dstpinname="Set 0" linkstyle="Bezier">
+   <LINKPOINT x="10125" y="4553">
+   </LINKPOINT>
+   <LINKPOINT x="1035" y="4553">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="565" srcpinname="Output" dstnodeid="563" dstpinname="Switch">
+   </LINK>
+   <LINK srcnodeid="563" srcpinname="Output" dstnodeid="309" dstpinname="Input Node">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="567" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="1590" top="9000" width="3030" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1590" top="9000" width="1710" height="510">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; avoids to output an empty transform|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
    </PATCH>

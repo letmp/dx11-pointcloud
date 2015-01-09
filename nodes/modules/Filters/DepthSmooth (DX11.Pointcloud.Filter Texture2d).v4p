@@ -99,7 +99,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="4365" top="735" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="3">
+   <PIN pinname="Y Input Value" slicecount="1" values="2">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -307,7 +307,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="2820" top="735" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.00100000004749745">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.001">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -322,4 +322,6 @@
    <LINKPOINT x="1515" y="3480">
    </LINKPOINT>
    </LINK>
+   <INFO author="tmp" description="Reduces jittering in the depth texture by calculating a weighted average of consecutive frames." tags="Kinect">
+   </INFO>
    </PATCH>

@@ -226,14 +226,14 @@
    <LINKPOINT x="8345" y="808">
    </LINKPOINT>
    </LINK>
-   <INFO author="tmp" description="Creates a colored mesh layer and a mesh buffer with a TriangleList" tags="DX11, Kinect">
+   <INFO author="tmp" description="Creates a mesh for the kinect input data." tags="">
    </INFO>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="35" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="9945" top="645" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="9945" top="645" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.05">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.08">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>

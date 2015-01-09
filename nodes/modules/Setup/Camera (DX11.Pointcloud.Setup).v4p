@@ -432,4 +432,6 @@
    <LINKPOINT x="4890" y="5228">
    </LINKPOINT>
    </LINK>
+   <INFO author="tmp" description="A simple camera node to maintain your setup easily. Outputs a viewprojection for further usage." tags="Kinect, Kinect2">
+   </INFO>
    </PATCH>

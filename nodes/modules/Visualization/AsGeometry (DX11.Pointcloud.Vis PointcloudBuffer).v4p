@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
    <PATCH nodename="C:\apps\code\vvvv_45beta33.3_x64\packs\dx11-pointcloud\nodes\modules\Visualization\AsGeometry (DX11.Pointcloud.Vis PointcloudBuffer).v4p" systemname="Constant (DX11.Buffer Pointcloud)" filename="D:\workspace\dev\packs\KinectToolkitDX11\nodes\modules\Visualization\Constant (DX11.Buffer Pointcloud).v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="4395" top="5745" width="8340" height="4935">
+   <BOUNDS type="Window" left="13080" top="7320" width="8340" height="4935">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.3.0">
    </PACK>
@@ -158,4 +158,6 @@
    </LINK>
    <LINK srcnodeid="21" srcpinname="Geometry Out" dstnodeid="18" dstpinname="Geometry">
    </LINK>
+   <INFO author="tmp" description="Draws an arbitrary geometry at each point of the pointcloud." tags="">
+   </INFO>
    </PATCH>

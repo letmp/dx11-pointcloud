@@ -346,4 +346,6 @@
    <LINKPOINT x="4230" y="3908">
    </LINKPOINT>
    </LINK>
+   <INFO author="tmp" description="Creates a pointcloud buffer by dynamic 3d and dynamic color buffers." tags="">
+   </INFO>
    </PATCH>

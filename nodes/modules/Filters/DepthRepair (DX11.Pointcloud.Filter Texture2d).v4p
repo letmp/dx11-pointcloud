@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
    <PATCH nodename="C:\apps\code\vvvv_45beta33.3_x64\packs\dx11-pointcloud\nodes\modules\Filters\DepthRepair (DX11.Pointcloud.Filter Texture2d).v4p" systemname="DepthRepair (DX11.Pointcloud.Filter Texture2d)" filename="D:\workspace\dev\packs\dx11-pointcloud\nodes\modules\Filters\DepthRepair (DX11.Pointcloud.Filter Texture2d).v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="15525" top="5790" width="6105" height="4770">
+   <BOUNDS type="Window" left="3630" top="3495" width="6105" height="4770">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.3.0">
    </PACK>
@@ -178,4 +178,6 @@
    <LINKPOINT x="1800" y="1800">
    </LINKPOINT>
    </LINK>
+   <INFO author="tmp" description="Finds gaps in the depth texture and tries to fill it with a gap closing algorithm and a median filter" tags="Kinect">
+   </INFO>
    </PATCH>

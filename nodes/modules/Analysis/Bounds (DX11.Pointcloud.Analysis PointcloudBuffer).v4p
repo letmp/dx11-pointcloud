@@ -549,9 +549,9 @@
    </PIN>
    <BOUNDS type="Box" left="2940" top="4065">
    </BOUNDS>
-   <PIN pinname="Operation" slicecount="1" values="Minimum" visible="1">
+   <PIN pinname="Operation" slicecount="1" visible="1" values="Minimum">
    </PIN>
-   <PIN pinname="Alpha Operation" slicecount="1" values="Minimum" visible="1">
+   <PIN pinname="Alpha Operation" slicecount="1" visible="1" values="Minimum">
    </PIN>
    <PIN pinname="Enabled" slicecount="1" values="1">
    </PIN>
@@ -575,9 +575,9 @@
    </PIN>
    <BOUNDS type="Box" left="5745" top="4065">
    </BOUNDS>
-   <PIN pinname="Operation" slicecount="1" values="Maximum" visible="1">
+   <PIN pinname="Operation" slicecount="1" visible="1" values="Maximum">
    </PIN>
-   <PIN pinname="Alpha Operation" slicecount="1" values="Maximum" visible="1">
+   <PIN pinname="Alpha Operation" slicecount="1" visible="1" values="Maximum">
    </PIN>
    <PIN pinname="Enabled" slicecount="1" values="1">
    </PIN>
@@ -966,4 +966,6 @@
    <LINKPOINT x="6400" y="3938">
    </LINKPOINT>
    </LINK>
+   <INFO author="tmp" description="Calculates the bounds for each group of points in a pointcloud." tags="">
+   </INFO>
    </PATCH>

@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
    <PATCH nodename="C:\apps\code\vvvv_45beta33.3_x64\packs\dx11-pointcloud\nodes\modules\Visualization\AsTexture (DX11.Pointcloud.Vis PointcloudBuffer).v4p" systemname="AsTexture (DX11.Pointcloud.Vis PointcloudBuffer)" filename="D:\workspace\dev\packs\dx11-pointcloud\nodes\modules\Visualization\AsTexture (DX11.Pointcloud.Vis PointcloudBuffer).v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="18585" top="3345" width="7530" height="8085">
+   <BOUNDS type="Window" left="18585" top="3345" width="5730" height="6510">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.3.0">
    </PACK>
@@ -131,7 +131,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="2490" top="2280" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input Enum" slicecount="1" visible="1" values="Position">
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="Rgb">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Technique">
    </PIN>
@@ -205,7 +205,7 @@
    </PIN>
    <PIN pinname="Alpha" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Color" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|" visible="1">
+   <PIN pinname="Color" slicecount="1" visible="1" values="|1.00000,1.00000,1.00000,1.00000|">
    </PIN>
    <PIN pinname="Query" visible="1">
    </PIN>
@@ -258,4 +258,6 @@
    </NODE>
    <LINK srcnodeid="60" srcpinname="Color Output" dstnodeid="9" dstpinname="Color">
    </LINK>
+   <INFO author="tmp" description="Renders the pointcloud to a texture." tags="DX11.Texture, 2d">
+   </INFO>
    </PATCH>
