@@ -1,5 +1,7 @@
 float4x4 tW : WORLD;
 
+int drawIndex : DRAWINDEX;
+int IdOffset;
 int elementcount;
 StructuredBuffer<float3> posBuffer <string uiname="Position Buffer";>;
 StructuredBuffer<float4> colBuffer <string uiname="Color Buffer";>;
@@ -26,7 +28,7 @@ void CSBuildPointcloudBuffer( uint3 DTid : SV_DispatchThreadID )
 	pos = mul(pos, tW);
 	float4 col = colBuffer[DTid.x];
 
-	pointData pd = {pos, col, 0};
+	pointData pd = {pos, col, drawIndex + IdOffset};
 	pcBuffer.Append(pd);
 }
 

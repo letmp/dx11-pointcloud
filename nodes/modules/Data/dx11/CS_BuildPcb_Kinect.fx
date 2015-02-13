@@ -3,6 +3,8 @@ float4x4 tW : WORLD;
 Texture2D texRGB <string uiname="RGB";>;
 Texture2D texDepth <string uiname="Depth";>;
 Texture2D texRGBDepth <string uiname="RGBDepth";>;
+int drawIndex : DRAWINDEX;
+int IdOffset;
 float2 FOV;
 int elementcount;
 StructuredBuffer<float2> uv <string uiname="UV Buffer";>;
@@ -48,7 +50,7 @@ void CSBuildPointcloudBuffer( uint3 DTid : SV_DispatchThreadID )
 		float2 coords = texRGBDepth.SampleLevel(sPoint, uvc ,0).rg;
 		float4 col = texRGB.SampleLevel(sPoint,coords,0);
 	
-		pointData pd = {pos, col, 0};
+		pointData pd = {pos, col, drawIndex + IdOffset};
 		pcBuffer.Append(pd);
 	}
 }

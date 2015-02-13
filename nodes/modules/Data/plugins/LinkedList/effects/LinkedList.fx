@@ -13,11 +13,13 @@ struct pointData
 };
 
 StructuredBuffer<pointData> PositionBuffer : POINTCLOUDBUFFER;
+
 float4x4 PointTransform : POINTTRANSFORM;
+
 RWStructuredBuffer<LinkedListElement> RWLinkBuffer : RWLINKBUFFER;
 RWStructuredBuffer<uint> RWOffsetBuffer : RWOFFSETBUFFER;
+
 int GridCellSize : GRIDCELLSIZE;
-AppendStructuredBuffer<pointData> filteredPdBuffer;
 
 [numthreads(64,1,1)] 
 void CS_Build(uint3 i : SV_DispatchThreadID)

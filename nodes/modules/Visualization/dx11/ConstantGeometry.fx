@@ -20,7 +20,7 @@ cbuffer cbPerObj : register( b1 )
 {
 	float4x4 tW : WORLD;
 	float Alpha <float uimin=0.0; float uimax=1.0;> = 1; 
-	
+	int groupFilter;
 };
 
 float4 cAmb <bool color=true;String uiname="Color";> = { 1.0f,1.0f,1.0f,1.0f };
@@ -55,6 +55,8 @@ vs2ps VS(vsInput input)
 	uint idx = input.ii;
 	
 	float4 p = input.pos;
+	// apply groupfilter
+	if (groupFilter != pcBuffer[idx].groupId && groupFilter != -1) p.w = 0.0f;
 	p.xyz += pcBuffer[idx].pos.xyz;
 	output.pos = mul(p,mul(tW,tVP));
 	

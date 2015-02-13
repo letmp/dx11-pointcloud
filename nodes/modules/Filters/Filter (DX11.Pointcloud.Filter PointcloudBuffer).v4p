@@ -143,7 +143,7 @@
    </BOUNDS>
    <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.00000,0.99815,0.47330,1.00000|">
    </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="HelperColor">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Helper Color|">
    </PIN>
    <PIN pinname="Color Output" visible="1">
    </PIN>
@@ -317,7 +317,7 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="I (Spreads)" nodename="I (Spreads)" componentmode="Hidden" id="35">
-   <BOUNDS type="Node" left="4605" top="3630" width="100" height="100">
+   <BOUNDS type="Node" left="4590" top="3630" width="100" height="100">
    </BOUNDS>
    <PIN pinname=".. To [" visible="1">
    </PIN>
@@ -327,39 +327,35 @@
    <LINK srcnodeid="33" srcpinname="Count" dstnodeid="35" dstpinname=".. To [">
    </LINK>
    <NODE systemname="CS_FilterPcb (DX11.Effect)" filename="%VVVV%\packs\KinectToolkitDX11\nodes\modules\Filters\dx11\CS_FilterPcb.fx" nodename="CS_FilterPcb (DX11.Effect)" componentmode="Hidden" id="36">
-   <BOUNDS type="Node" left="825" top="4320" width="2970" height="270">
+   <BOUNDS type="Node" left="825" top="4620" width="2970" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="825" top="4320">
+   <BOUNDS type="Box" left="825" top="4620">
    </BOUNDS>
    <PIN pinname="Technique" slicecount="1" visible="1" values="Restrict">
    </PIN>
+   <PIN pinname="slice" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="2" srcpinname="Geometry Out" dstnodeid="36" dstpinname="Geometry" linkstyle="VHV">
-   <LINKPOINT x="1180" y="3720">
+   <LINKPOINT x="1180" y="3820">
    </LINKPOINT>
-   <LINKPOINT x="1475" y="3720">
+   <LINKPOINT x="1475" y="3920">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="0" srcpinname="Buffer Out" dstnodeid="36" dstpinname="InputCountBuffer">
    </LINK>
    <LINK srcnodeid="9" srcpinname="Transform Out" dstnodeid="36" dstpinname="Transform In" linkstyle="VHV">
-   <LINKPOINT x="4230" y="3705">
+   <LINKPOINT x="4230" y="3805">
    </LINKPOINT>
-   <LINKPOINT x="1980" y="3705">
+   <LINKPOINT x="1980" y="3905">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="5" srcpinname="Output Node" dstnodeid="36" dstpinname="pcBuffer" hiddenwhenlocked="1">
    </LINK>
    <LINK srcnodeid="36" srcpinname="Layer" dstnodeid="7" dstpinname="Layer" linkstyle="VHV">
-   <LINKPOINT x="940" y="5438">
+   <LINKPOINT x="940" y="5638">
    </LINKPOINT>
-   <LINKPOINT x="2780" y="5438">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="35" srcpinname="Output" dstnodeid="36" dstpinname="slice" linkstyle="VHV">
-   <LINKPOINT x="4605" y="4095">
-   </LINKPOINT>
-   <LINKPOINT x="2340" y="4095">
+   <LINKPOINT x="2780" y="5538">
    </LINKPOINT>
    </LINK>
    <NODE id="37" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)">
@@ -419,9 +415,9 @@
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="41" systemname="IOBox (Enumerations)">
-   <BOUNDS type="Box" left="6285" top="510" width="885" height="240">
+   <BOUNDS type="Box" left="6735" top="510" width="885" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="6285" top="510" width="0" height="0">
+   <BOUNDS type="Node" left="6735" top="510" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input Enum" slicecount="1" visible="1" values="Restrict">
    </PIN>
@@ -429,11 +425,53 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="41" srcpinname="Output Enum" dstnodeid="36" dstpinname="Technique" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="6270" y="2520">
+   <LINKPOINT x="6570" y="2620">
    </LINKPOINT>
-   <LINKPOINT x="3435" y="2520">
+   <LINKPOINT x="3585" y="2720">
    </LINKPOINT>
    </LINK>
    <INFO author="tmp" description="Filters all elements that are inside a given transform (Restrict) or removes them (Subtract). Elements get a unique groupId for each transform slice they lie in. If a point lies within more than one transform it is duplicated." tags="">
    </INFO>
+   <NODE systemname="Add (Value)" nodename="Add (Value)" componentmode="Hidden" id="42">
+   <BOUNDS type="Node" left="4590" top="3990" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="35" srcpinname="Output" dstnodeid="42" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="42" srcpinname="Output" dstnodeid="36" dstpinname="slice" linkstyle="VHV">
+   <LINKPOINT x="4590" y="4425">
+   </LINKPOINT>
+   <LINKPOINT x="2340" y="4425">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="43" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="5970" top="510" width="300" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5970" top="510" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|ID Offset|">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="43" srcpinname="Y Output Value" dstnodeid="42" dstpinname="Input 2" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="5970" y="2370">
+   </LINKPOINT>
+   <LINKPOINT x="4890" y="2370">
+   </LINKPOINT>
+   </LINK>
    </PATCH>

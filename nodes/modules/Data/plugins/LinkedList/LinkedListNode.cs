@@ -36,10 +36,10 @@ namespace LinkedList
         public ISpread<int> FInEleCount;
 
         [Input("Transform In", IsSingle = true)]
-        public ISpread<Matrix4x4> FInTransform;
+        public ISpread<Matrix> FInTransform;
 
 		[Input("Gridcell Count", DefaultValue = 10.0, IsSingle = true)]
-        public ISpread<int> FInGridcellCount;
+        public IDiffSpread<int> FInGridcellCount;
 		
 		[Output("LinkBuffer Out",IsSingle=true)]
         protected ISpread<DX11Resource<IDX11RWStructureBuffer>> FOutLinkBuffer;
@@ -52,6 +52,9 @@ namespace LinkedList
         
 		[Import()]
         protected IPluginHost FHost;
+
+        [Import()]
+        public ILogger FLogger;
 		
 		public void Evaluate(int SpreadMax)
 		{
@@ -69,32 +72,40 @@ namespace LinkedList
 
             if (!this.FOutLinkBuffer[0].Contains(context) || !this.FOutOffsetBuffer[0].Contains(context) || FInGridcellCount.IsChanged)
            	{
+                this.FOutLinkBuffer[0].Dispose(context);
+                this.FOutOffsetBuffer[0].Dispose(context);
             	DX11RWStructuredBuffer lb = new DX11RWStructuredBuffer(device, FInEleCount[0], 8, eDX11BufferMode.Counter);
             	DX11RWStructuredBuffer ob = new DX11RWStructuredBuffer(device, FInGridcellCount[0] * FInGridcellCount[0] * FInGridcellCount[0], 4, eDX11BufferMode.Counter);
                 this.FOutLinkBuffer[0][context] = lb;
-            	this.FOutOffsetBuffer[0][context] = ob;            	
+            	this.FOutOffsetBuffer[0][context] = ob;
+
             }
 
             // clear offsetbuffer
-            int[] mask = new int[] { -1, -1, -1, -1 };
+            int[] mask = new int[4] { -1, -1, -1, -1 };
         	ctx.ClearUnorderedAccessView(FOutOffsetBuffer[0][context].UAV,mask);
         	
-        	if (this.FInPcBuffer.PluginIO.IsConnected)
+            // load shader
+            if (this.shader == null)
             {
-                // load shader
                 string basepath = "LinkedList.effects.LinkedList.fx";
                 DX11Effect effect = DX11Effect.FromResource(Assembly.GetExecutingAssembly(), basepath);
-            	this.shader = new DX11ShaderInstance(context, effect);
-
+                this.shader = new DX11ShaderInstance(context, effect);
+            }
+            
+        	if (this.FInPcBuffer.PluginIO.IsConnected)
+            {
+                
             	shader.SelectTechnique("BuildHash");            	
             	shader.SetBySemantic("POINTCLOUDBUFFER", FInPcBuffer[0][context].SRV);
-                shader.SetBySemantic("POINTTRANSFORM", FInTransform[0].ToSlimDXMatrix());
+                shader.SetBySemantic("POINTTRANSFORM", FInTransform[0]);
                 shader.SetBySemantic("RWLINKBUFFER", FOutLinkBuffer[0][context].UAV, 0);
             	shader.SetBySemantic("RWOFFSETBUFFER", FOutOffsetBuffer[0][context].UAV);
             	shader.SetBySemantic("GRIDCELLSIZE", FInGridcellCount[0]);
                             	
             	shader.ApplyPass(0);
             	ctx.Dispatch((FInEleCount[0] + 63) / 64, 1, 1);
+                context.CleanUp();
             	context.CleanUpCS();
             }        	
         	
