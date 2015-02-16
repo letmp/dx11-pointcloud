@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta33.3_x64\packs\dx11-pointcloud\nodes\modules\Analysis\Bounds (DX11.Pointcloud.Analysis PointcloudBuffer).v4p" systemname="Centroid (DX11.Pointcloud.Analysis PointcloudBuffer)" filename="D:\workspace\dev\packs\dx11-pointcloud\nodes\modules\Analysis\Centroid (DX11.Pointcloud.Analysis PointcloudBuffer).v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="8820" top="1575" width="15945" height="12015">
+   <PATCH nodename="C:\apps\code\vvvv_45beta33.3_x64\packs\dx11-pointcloud\nodes\modules\Analysis\Bounds (DX11.Pointcloud.Analysis PointcloudBuffer).v4p" systemname="Centroid (DX11.Pointcloud.Analysis PointcloudBuffer)" filename="D:\workspace\dev\packs\dx11-pointcloud\nodes\modules\Analysis\Centroid (DX11.Pointcloud.Analysis PointcloudBuffer).v4p" scrollx="0" scrolly="-360">
+   <BOUNDS type="Window" left="6945" top="1995" width="15945" height="12015">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.3.0">
    </PACK>
@@ -31,7 +31,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="11865" top="495" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Color Input" slicecount="1" visible="1" values="|0.27711,0.27711,0.27711,1.00000|">
+   <PIN pinname="Color Input" slicecount="1" visible="1" values="|1.00000,0.50697,0.50697,1.00000|">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Helper Color|">
    </PIN>
@@ -360,48 +360,6 @@
    <LINKPOINT x="5280" y="2633">
    </LINKPOINT>
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="156" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="6075" top="495" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="6075" top="495" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Integer">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="|Group Count|">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   <PIN pinname="Minimum" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Default" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="156" srcpinname="Y Output Value" dstnodeid="123" dstpinname=".. To [" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="6135" y="2625">
-   </LINKPOINT>
-   <LINKPOINT x="8850" y="2625">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="156" srcpinname="Y Output Value" dstnodeid="124" dstpinname="X" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="6090" y="3173">
-   </LINKPOINT>
-   <LINKPOINT x="4770" y="3173">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="156" srcpinname="Y Output Value" dstnodeid="132" dstpinname="Spread Count" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="6120" y="3788">
-   </LINKPOINT>
-   <LINKPOINT x="8220" y="3788">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="LinearSpread (Spreads)" nodename="LinearSpread (Spreads)" componentmode="Hidden" id="159">
    <BOUNDS type="Node" left="7305" top="4545" width="100" height="100">
    </BOUNDS>
@@ -416,12 +374,6 @@
    <PIN pinname="Alignment" slicecount="1" values="Block">
    </PIN>
    </NODE>
-   <LINK srcnodeid="156" srcpinname="Y Output Value" dstnodeid="159" dstpinname="Spread Count" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="6135" y="2640">
-   </LINKPOINT>
-   <LINKPOINT x="8205" y="2640">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="PixelPerGroup (DX11.Effect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Analysis\dx11\PixelPerGroup.fx" nodename="PixelPerGroup (DX11.Effect)" componentmode="Hidden" id="161">
    <BOUNDS type="Node" left="2775" top="4995" width="100" height="100">
    </BOUNDS>
@@ -429,6 +381,8 @@
    </PIN>
    <BOUNDS type="Box" left="2775" top="4995">
    </BOUNDS>
+   <PIN pinname="groupId" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="161" srcpinname="Layer" dstnodeid="107" dstpinname="Layer">
    </LINK>
@@ -517,10 +471,12 @@
    </PIN>
    <PIN pinname="Layer" visible="1">
    </PIN>
-   <PIN pinname="pcBuffer" visible="1">
+   <PIN pinname="pcBuffer" visible="1" slicecount="1" values="||">
    </PIN>
    <BOUNDS type="Box" left="5580" top="4995">
    </BOUNDS>
+   <PIN pinname="groupId" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="159" srcpinname="Output" dstnodeid="162" dstpinname="pixPos" linkstyle="VHV">
    <LINKPOINT x="7305" y="4890">
@@ -674,12 +630,6 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="156" srcpinname="Y Output Value" dstnodeid="167" dstpinname="Input 1" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="6090" y="4410">
-   </LINKPOINT>
-   <LINKPOINT x="4815" y="4410">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="167" srcpinname="Output" dstnodeid="113" dstpinname="Element Count">
    </LINK>
    <LINK srcnodeid="107" srcpinname="Buffers" dstnodeid="151" dstpinname="texMin" linkstyle="Bezier">
@@ -968,4 +918,74 @@
    </LINK>
    <INFO author="tmp" description="Calculates the bounds for each group of points in a pointcloud." tags="">
    </INFO>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="194" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="6570" top="510" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6570" top="510" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Group IDs|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="194" srcpinname="Y Output Value" dstnodeid="161" dstpinname="groupId" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="6570" y="2873">
+   </LINKPOINT>
+   <LINKPOINT x="3795" y="2873">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="194" srcpinname="Y Output Value" dstnodeid="162" dstpinname="groupId" hiddenwhenlocked="1">
+   </LINK>
+   <NODE systemname="Count (Value)" nodename="Count (Value)" componentmode="Hidden" id="195">
+   <BOUNDS type="Node" left="8865" top="1140" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Count" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="194" srcpinname="Y Output Value" dstnodeid="195" dstpinname="Input" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="6630" y="930">
+   </LINKPOINT>
+   <LINKPOINT x="8865" y="930">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="195" srcpinname="Count" dstnodeid="123" dstpinname=".. To [" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="8880" y="2970">
+   </LINKPOINT>
+   <LINKPOINT x="8880" y="2970">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="195" srcpinname="Count" dstnodeid="159" dstpinname="Spread Count" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="8880" y="2963">
+   </LINKPOINT>
+   <LINKPOINT x="8235" y="2963">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="195" srcpinname="Count" dstnodeid="132" dstpinname="Spread Count" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="8880" y="4140">
+   </LINKPOINT>
+   <LINKPOINT x="8235" y="4140">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="195" srcpinname="Count" dstnodeid="167" dstpinname="Input 1" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="8865" y="4763">
+   </LINKPOINT>
+   <LINKPOINT x="4830" y="4763">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="195" srcpinname="Count" dstnodeid="124" dstpinname="X" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="8850" y="3495">
+   </LINKPOINT>
+   <LINKPOINT x="4800" y="3495">
+   </LINKPOINT>
+   </LINK>
    </PATCH>

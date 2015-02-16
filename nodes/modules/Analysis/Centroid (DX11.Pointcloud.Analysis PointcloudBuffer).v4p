@@ -496,54 +496,6 @@
    </LINK>
    <LINK srcnodeid="88" srcpinname="Layer" dstnodeid="15" dstpinname="Input Node">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="156" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="6075" top="495" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="6075" top="495" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Integer">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="|Group Count|">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   <PIN pinname="Minimum" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Default" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="156" srcpinname="Y Output Value" dstnodeid="123" dstpinname=".. To [" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="6105" y="2340">
-   </LINKPOINT>
-   <LINKPOINT x="6105" y="2340">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="156" srcpinname="Y Output Value" dstnodeid="124" dstpinname="X" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="6075" y="2925">
-   </LINKPOINT>
-   <LINKPOINT x="4485" y="2925">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="156" srcpinname="Y Output Value" dstnodeid="132" dstpinname="Spread Count" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="6105" y="3345">
-   </LINKPOINT>
-   <LINKPOINT x="6630" y="3345">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="156" srcpinname="Y Output Value" dstnodeid="113" dstpinname="Element Count" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="6090" y="4455">
-   </LINKPOINT>
-   <LINKPOINT x="5265" y="4455">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="LinearSpread (Spreads)" nodename="LinearSpread (Spreads)" componentmode="Hidden" id="159">
    <BOUNDS type="Node" left="3855" top="3945" width="100" height="100">
    </BOUNDS>
@@ -558,15 +510,11 @@
    <PIN pinname="Alignment" slicecount="1" values="Centered">
    </PIN>
    </NODE>
-   <LINK srcnodeid="156" srcpinname="Y Output Value" dstnodeid="159" dstpinname="Spread Count" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="6075" y="2333">
-   </LINKPOINT>
-   <LINKPOINT x="4785" y="2333">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="PixelPerGroup (DX11.Effect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Analysis\dx11\PixelPerGroup.fx" nodename="PixelPerGroup (DX11.Effect)" componentmode="Hidden" id="161">
    <BOUNDS type="Node" left="3225" top="4545" width="100" height="100">
    </BOUNDS>
+   <PIN pinname="groupId" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="161" srcpinname="Layer" dstnodeid="107" dstpinname="Layer">
    </LINK>
@@ -628,4 +576,72 @@
    </LINK>
    <INFO author="tmp" description="Calculates the centroid for each group of points in a pointcloud." tags="">
    </INFO>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="162" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="5475" top="495" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5475" top="495" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Group IDs|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="162" srcpinname="Y Output Value" dstnodeid="161" dstpinname="groupId" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="5475" y="2633">
+   </LINKPOINT>
+   <LINKPOINT x="4065" y="2633">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Count (Value)" nodename="Count (Value)" componentmode="Hidden" id="163">
+   <BOUNDS type="Node" left="6615" top="1080" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Count" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="162" srcpinname="Y Output Value" dstnodeid="163" dstpinname="Input" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="5535" y="893">
+   </LINKPOINT>
+   <LINKPOINT x="6615" y="893">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="163" srcpinname="Count" dstnodeid="159" dstpinname="Spread Count" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="6600" y="2640">
+   </LINKPOINT>
+   <LINKPOINT x="4815" y="2640">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="163" srcpinname="Count" dstnodeid="123" dstpinname=".. To [" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="6630" y="2648">
+   </LINKPOINT>
+   <LINKPOINT x="6105" y="2648">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="163" srcpinname="Count" dstnodeid="124" dstpinname="X" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="6615" y="3233">
+   </LINKPOINT>
+   <LINKPOINT x="4500" y="3233">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="163" srcpinname="Count" dstnodeid="113" dstpinname="Element Count" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="6630" y="4763">
+   </LINKPOINT>
+   <LINKPOINT x="5265" y="4763">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="163" srcpinname="Count" dstnodeid="132" dstpinname="Spread Count" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="6645" y="3660">
+   </LINKPOINT>
+   <LINKPOINT x="6645" y="3660">
+   </LINKPOINT>
+   </LINK>
    </PATCH>

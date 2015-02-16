@@ -8,13 +8,14 @@ StructuredBuffer<pointData> pcBuffer;
 ByteAddressBuffer InputCountBuffer;
 
 RWStructuredBuffer<uint> countGroupIdBuffer : BACKBUFFER;
-int slice;
+int drawIndex : DRAWINDEX;
+int groupId;
 bool countmode;
 
 [numthreads(1,1,1)]
 void CS_Clear(uint3 i : SV_DispatchThreadID)
 {
-	countGroupIdBuffer[slice] = 0;
+	countGroupIdBuffer[drawIndex] = 0;
 }
 
 [numthreads(64, 1, 1)]
@@ -22,15 +23,15 @@ void CS_HitTest( uint3 i : SV_DispatchThreadID)
 { 
 	uint cnt = InputCountBuffer.Load(0);
 	if (i.x >=  cnt ) { return;}
-	if ( !countmode && countGroupIdBuffer[slice] == 1) {return;}
+	if ( !countmode && countGroupIdBuffer[drawIndex] > 0) {return;}
 	
-	if (pcBuffer[i.x].groupId == slice){
+	if (pcBuffer[i.x].groupId == groupId){
 		
 		if(countmode){
 				uint oldval;
-				InterlockedAdd(countGroupIdBuffer[slice],1,oldval);
+				InterlockedAdd(countGroupIdBuffer[drawIndex],1,oldval);
 		}
-		else countGroupIdBuffer[slice] = 1;
+		else countGroupIdBuffer[drawIndex] = 1;
 	}
 	
 }

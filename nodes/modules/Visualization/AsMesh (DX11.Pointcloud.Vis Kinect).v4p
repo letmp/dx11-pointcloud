@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
    <PATCH nodename="C:\apps\code\vvvv_45beta33.3_x64\packs\dx11-pointcloud\nodes\modules\Visualization\AsMesh (DX11.Pointcloud.Vis Kinect).v4p" systemname="Mesh (DX11.Buffer)" filename="D:\workspace\dev\packs\KinectToolkitDX11\nodes\modules\Pointcloud\Mesh (DX11.Buffer).v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="15225" top="5640" width="12975" height="8160">
+   <BOUNDS type="Window" left="11895" top="5415" width="12975" height="8160">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.3.0">
    </PACK>
@@ -337,7 +337,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="11955" top="645" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -373,6 +373,8 @@
    </PIN>
    <PIN pinname="Auto Layout" slicecount="1" values="0">
    </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
    </NODE>
    <LINK srcnodeid="19" srcpinname="Radians" dstnodeid="49" dstpinname="FOVXY" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="5505" y="2325">
@@ -406,12 +408,6 @@
    <LINKPOINT x="7365" y="1988">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="21" srcpinname="Output Node" dstnodeid="49" dstpinname="Transform In" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="6840" y="1988">
-   </LINKPOINT>
-   <LINKPOINT x="1470" y="1988">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="7" srcpinname="Geometry Out" dstnodeid="30" dstpinname="Geometry In" linkstyle="VHV">
    <LINKPOINT x="570" y="2375">
    </LINKPOINT>
@@ -430,12 +426,6 @@
    <LINKPOINT x="3720" y="4703">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="36" srcpinname="Output" dstnodeid="49" dstpinname="Max Elements" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="1785" y="2840">
-   </LINKPOINT>
-   <LINKPOINT x="10665" y="2290">
-   </LINKPOINT>
-   </LINK>
    <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="50" systemname="IOBox (Enumerations)">
    <BOUNDS type="Box" left="1530" top="2145" width="1065" height="240">
    </BOUNDS>
@@ -448,6 +438,18 @@
    <LINKPOINT x="1530" y="2445">
    </LINKPOINT>
    <LINKPOINT x="975" y="2445">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="21" srcpinname="Output Node" dstnodeid="37" dstpinname="Transform In" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="6840" y="3525">
+   </LINKPOINT>
+   <LINKPOINT x="3930" y="3525">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="36" srcpinname="Output" dstnodeid="49" dstpinname="Max Elements" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="1785" y="2565">
+   </LINKPOINT>
+   <LINKPOINT x="10665" y="2565">
    </LINKPOINT>
    </LINK>
    </PATCH>

@@ -10,7 +10,7 @@ struct pointData
 StructuredBuffer<pointData> pcBuffer;
 ByteAddressBuffer InputCountBuffer;
 
-AppendStructuredBuffer<pointData> filteredPdBuffer : BACKBUFFER;
+AppendStructuredBuffer<pointData> filteredPcBuffer : BACKBUFFER;
 
 [numthreads(64, 1, 1)]
 void CS_Restrict( uint3 i : SV_DispatchThreadID)
@@ -26,7 +26,7 @@ void CS_Restrict( uint3 i : SV_DispatchThreadID)
 		)){
 			pointData pd = pcBuffer[i.x];
 			pd.groupId = slice;
-			filteredPdBuffer.Append(pd);
+			filteredPcBuffer.Append(pd);
 		}
 }
 
@@ -42,7 +42,7 @@ void CS_Subtract( uint3 i : SV_DispatchThreadID)
 		pointCoord.y < -0.5 || pointCoord.y > 0.5 ||
 		pointCoord.z < -0.5 || pointCoord.z > 0.5
 		)){
-			filteredPdBuffer.Append(pcBuffer[i.x]);
+			filteredPcBuffer.Append(pcBuffer[i.x]);
 		}
 }
 

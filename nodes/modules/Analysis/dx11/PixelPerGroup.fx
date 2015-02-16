@@ -12,8 +12,7 @@ struct pointData
 StructuredBuffer<pointData> pcBuffer;
 
 float pixPos;
-float slice;
-
+int groupId;
 
 struct vsInput
 {
@@ -37,7 +36,7 @@ vs2ps VS(vsInput input)
 	
 	// now check if the particles filterId equals the current filterId
 
-	if (pcBuffer[input.ii].groupId == slice){
+	if (pcBuffer[input.ii].groupId == groupId){
 		output.col = float4(pcBuffer[input.ii].pos.xyz,1.0f);
 	}
 	else output.col = float4(0,0,0,0.0f);

@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
    <PATCH nodename="C:\apps\code\vvvv_45beta33.3_x64\packs\dx11-pointcloud\nodes\modules\Analysis\HitTest (DX11.Pointcloud.Analysis PointcloudBuffer).v4p" systemname="Contains (DX11.Pointcloud.Analysis PointcloudBuffer)" filename="C:\apps\code\vvvv_45beta33.3_x64\packs\KinectToolkitDX11\nodes\modules\Analysis\Contains (DX11.Pointcloud.Analysis PointcloudBuffer).v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="16560" top="4425" width="9090" height="7920">
+   <BOUNDS type="Window" left="11865" top="7035" width="8760" height="8070">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.3.0">
    </PACK>
@@ -9,7 +9,7 @@
    </BOUNDS>
    <PIN pinname="Reset Counter" slicecount="1" visible="1" values="0">
    </PIN>
-   <PIN pinname="Element Count" visible="1">
+   <PIN pinname="Element Count" visible="1" slicecount="1" values="3">
    </PIN>
    <PIN pinname="Appendable" slicecount="1" values="0">
    </PIN>
@@ -97,14 +97,6 @@
    </PIN>
    <BOUNDS type="Box" left="285" top="2730">
    </BOUNDS>
-   </NODE>
-   <NODE systemname="I (Spreads)" nodename="I (Spreads)" componentmode="Hidden" id="20">
-   <BOUNDS type="Node" left="6645" top="3420" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname=".. To [" visible="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="21" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="6705" top="540" width="480" height="480">
@@ -211,9 +203,9 @@
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="59" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="5640" top="540" width="795" height="240">
+   <BOUNDS type="Box" left="5685" top="555" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="5640" top="540" width="0" height="0">
+   <BOUNDS type="Node" left="5685" top="555" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="3">
    </PIN>
@@ -223,7 +215,7 @@
    </PIN>
    <PIN pinname="Value Type" slicecount="1" values="Integer">
    </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="|Group Count|">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Group IDs|">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
@@ -232,18 +224,6 @@
    <PIN pinname="Minimum" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <LINK srcnodeid="59" srcpinname="Y Output Value" dstnodeid="20" dstpinname=".. To [" hiddenwhenlocked="1" linkstyle="Bezier">
-   <LINKPOINT x="5685" y="2085">
-   </LINKPOINT>
-   <LINKPOINT x="6855" y="2085">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="59" srcpinname="Y Output Value" dstnodeid="13" dstpinname="Element Count" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5640" y="3263">
-   </LINKPOINT>
-   <LINKPOINT x="3450" y="3263">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="ReadBack (DX11.Buffer UInt)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="ReadBack (DX11.Buffer UInt)" componentmode="Hidden" id="58">
    <BOUNDS type="Node" left="2940" top="6180" width="100" height="100">
    </BOUNDS>
@@ -293,6 +273,10 @@
    </PIN>
    <PIN pinname="Query" visible="1">
    </PIN>
+   <PIN pinname="pcBuffer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="groupId" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="16" srcpinname="Geometry Out" dstnodeid="15" dstpinname="Geometry" linkstyle="VHV">
    <LINKPOINT x="345" y="3435">
@@ -306,66 +290,10 @@
    <LINKPOINT x="3435" y="4528">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="20" srcpinname="Output" dstnodeid="15" dstpinname="slice" linkstyle="VHV" hiddenwhenlocked="0">
-   <LINKPOINT x="6645" y="3905">
-   </LINKPOINT>
-   <LINKPOINT x="1755" y="3805">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="51" srcpinname="Y Output Value" dstnodeid="15" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="7740" y="2393">
    </LINKPOINT>
    <LINKPOINT x="3375" y="2393">
-   </LINKPOINT>
-   </LINK>
-   <NODE systemname="CS_CountGroupIds (DX11.Effect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Analysis\dx11\CS_CountGroupIds.fx" nodename="CS_CountGroupIds (DX11.Effect)" componentmode="Hidden" id="54">
-   <BOUNDS type="Node" left="3615" top="4050" width="2970" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="3615" top="4050">
-   </BOUNDS>
-   <PIN pinname="Technique" slicecount="1" values="HitTest">
-   </PIN>
-   <PIN pinname="pcBuffer" visible="1">
-   </PIN>
-   <PIN pinname="Transform In" slicecount="1" values="||">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="9" srcpinname="Geometry Out" dstnodeid="54" dstpinname="Geometry" linkstyle="VHV">
-   <LINKPOINT x="3210" y="3510">
-   </LINKPOINT>
-   <LINKPOINT x="4245" y="3510">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="7" srcpinname="Buffer Out" dstnodeid="54" dstpinname="InputCountBuffer">
-   </LINK>
-   <LINK srcnodeid="54" srcpinname="Layer" dstnodeid="14" dstpinname="Layer 2" linkstyle="VHV">
-   <LINKPOINT x="3620" y="4593">
-   </LINKPOINT>
-   <LINKPOINT x="3655" y="4543">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="20" srcpinname="Output" dstnodeid="54" dstpinname="slice" linkstyle="VHV" hiddenwhenlocked="0">
-   <LINKPOINT x="6645" y="3905">
-   </LINKPOINT>
-   <LINKPOINT x="4965" y="3805">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="21" srcpinname="Y Output Value" dstnodeid="54" dstpinname="countmode" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="6705" y="2528">
-   </LINKPOINT>
-   <LINKPOINT x="5265" y="2528">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="51" srcpinname="Y Output Value" dstnodeid="54" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="7740" y="2400">
-   </LINKPOINT>
-   <LINKPOINT x="6555" y="2400">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="11" srcpinname="Output Node" dstnodeid="54" dstpinname="pcBuffer" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="4290" y="2408">
-   </LINKPOINT>
-   <LINKPOINT x="5565" y="2408">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="51" srcpinname="Y Output Value" dstnodeid="58" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
@@ -376,4 +304,74 @@
    </LINK>
    <INFO author="tmp" description="Tests if points lie within a given transform." tags="">
    </INFO>
+   <NODE systemname="Count (Value)" nodename="Count (Value)" componentmode="Hidden" id="60">
+   <BOUNDS type="Node" left="3405" top="5325" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Count" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="59" srcpinname="Y Output Value" dstnodeid="60" dstpinname="Input" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="5685" y="3060">
+   </LINKPOINT>
+   <LINKPOINT x="3435" y="3060">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="CS_CountGroupIds (DX11.Effect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Analysis\dx11\CS_CountGroupIds.fx" nodename="CS_CountGroupIds (DX11.Effect)" componentmode="Hidden" id="61">
+   <BOUNDS type="Node" left="3615" top="4050" width="2970" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3615" top="4050">
+   </BOUNDS>
+   <PIN pinname="groupId" visible="1">
+   </PIN>
+   <PIN pinname="Technique" slicecount="1" values="HitTest">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Geometry Out" dstnodeid="61" dstpinname="Geometry" linkstyle="VHV">
+   <LINKPOINT x="3210" y="3510">
+   </LINKPOINT>
+   <LINKPOINT x="4245" y="3510">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Buffer Out" dstnodeid="61" dstpinname="InputCountBuffer">
+   </LINK>
+   <LINK srcnodeid="61" srcpinname="Layer" dstnodeid="14" dstpinname="Layer 2" linkstyle="VHV">
+   <LINKPOINT x="3620" y="4593">
+   </LINKPOINT>
+   <LINKPOINT x="3655" y="4543">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="21" srcpinname="Y Output Value" dstnodeid="61" dstpinname="countmode" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="6705" y="2528">
+   </LINKPOINT>
+   <LINKPOINT x="5265" y="2528">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="51" srcpinname="Y Output Value" dstnodeid="61" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="7740" y="2400">
+   </LINKPOINT>
+   <LINKPOINT x="6555" y="2400">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Output Node" dstnodeid="61" dstpinname="pcBuffer" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="4290" y="2408">
+   </LINKPOINT>
+   <LINKPOINT x="5565" y="2408">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="59" srcpinname="Y Output Value" dstnodeid="61" dstpinname="groupId" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="5700" y="2423">
+   </LINKPOINT>
+   <LINKPOINT x="4935" y="2423">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="59" srcpinname="Y Output Value" dstnodeid="15" dstpinname="groupId" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="5685" y="2408">
+   </LINKPOINT>
+   <LINKPOINT x="1755" y="2408">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="60" srcpinname="Count" dstnodeid="13" dstpinname="Element Count">
+   </LINK>
    </PATCH>
