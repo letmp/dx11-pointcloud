@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta33.3_x64\packs\dx11-pointcloud\nodes\modules\Visualization\AsGeometry (DX11.Pointcloud.Vis PointcloudBuffer) help.v4p" scrollx="30" scrolly="0">
+   <PATCH nodename="C:\apps\code\vvvv_45beta33.3_x64\packs\dx11-pointcloud\nodes\modules\Visualization\AsGeometry (DX11.Pointcloud.Vis PointcloudBuffer) help.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="3300" top="3930" width="10755" height="9810">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
@@ -265,7 +265,7 @@
    </BOUNDS>
    <PIN pinname="Output Node" visible="1">
    </PIN>
-   <PIN pinname="Input Node" visible="1">
+   <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="28" systemname="IOBox (Value Advanced)">
@@ -307,7 +307,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="1575" top="7650" width="4800" height="3600">
    </BOUNDS>
-   <PIN pinname="PointcloudBuffer" visible="1" pintype="Input">
+   <PIN pinname="PointcloudBuffer" visible="1" pintype="Input" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Render State" visible="1" pintype="Input">
    </PIN>
@@ -419,7 +419,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="4860" top="5055" width="3360" height="270">
    </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; sets the alpha value|">
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; sets the alpha value (RGB Mode only)|">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>
@@ -431,9 +431,9 @@
    <NODE nodename="IOBox (String)" componentmode="InABox" id="36" systemname="IOBox (String)">
    <BOUNDS type="Node" left="4860" top="5535" width="3360" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="4860" top="5535" width="3555" height="255">
+   <BOUNDS type="Box" left="4860" top="5535" width="4725" height="255">
    </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; color that is multiplied with each pointcolor|">
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; color that is multiplied with each pointcolor (RGB Mode only)|">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>
@@ -470,20 +470,6 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
-   <NODE systemname="Filter (DX11.Pointcloud.Filter PointcloudBuffer)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Filters\Filter (DX11.Pointcloud.Filter PointcloudBuffer).v4p" nodename="Filter (DX11.Pointcloud.Filter PointcloudBuffer)" componentmode="Hidden" id="39" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="2295" top="4215" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="PointcloudBuffer" visible="1">
-   </PIN>
-   <PIN pinname="Transform In" visible="1">
-   </PIN>
-   <PIN pinname="Help Layer" visible="1">
-   </PIN>
-   <PIN pinname="Max Element Count" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="22" srcpinname="PointcloudBuffer" dstnodeid="39" dstpinname="PointcloudBuffer">
-   </LINK>
    <NODE systemname="Transform (Transform 3d Vector)" nodename="Transform (Transform 3d Vector)" componentmode="Hidden" id="40" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="4455" top="3780" width="100" height="100">
    </BOUNDS>
@@ -494,24 +480,6 @@
    <PIN pinname="Scale XYZ" slicecount="3" values="4,4,4">
    </PIN>
    </NODE>
-   <LINK srcnodeid="40" srcpinname="Transform Out" dstnodeid="39" dstpinname="Transform In" linkstyle="VHV">
-   <LINKPOINT x="4455" y="4118">
-   </LINKPOINT>
-   <LINKPOINT x="2700" y="4118">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="39" srcpinname="Help Layer" dstnodeid="15" dstpinname="Layer 3" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="2985" y="6268">
-   </LINKPOINT>
-   <LINKPOINT x="1770" y="6468">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="39" srcpinname="PointcloudBuffer" dstnodeid="27" dstpinname="Input Node" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="2355" y="5285">
-   </LINKPOINT>
-   <LINKPOINT x="3630" y="5335">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="Vector (3d Join)" nodename="Vector (3d Join)" componentmode="Hidden" id="42" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="4665" top="3420" width="100" height="100">
    </BOUNDS>
@@ -544,12 +512,6 @@
    </NODE>
    <LINK srcnodeid="43" srcpinname="Y Output Value" dstnodeid="42" dstpinname="X">
    </LINK>
-   <LINK srcnodeid="22" srcpinname="Max Element Count" dstnodeid="39" dstpinname="Max Element Count" linkstyle="VHV">
-   <LINKPOINT x="3660" y="3915">
-   </LINKPOINT>
-   <LINKPOINT x="2520" y="3915">
-   </LINKPOINT>
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="45" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="3630" top="6585" width="795" height="240">
    </BOUNDS>
@@ -577,7 +539,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="4860" top="6540" width="3450" height="495">
    </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; only draws elements with the given groupIds. set -1 to disable.|">
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; only draws elements with the given groupId(s). Set -1 to disable groupId filtering.|">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>
@@ -586,4 +548,42 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
+   <NODE systemname="Filter (DX11.Pointcloud.Filter Transform)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Filters\Filter (DX11.Pointcloud.Filter Transform).v4p" nodename="Filter (DX11.Pointcloud.Filter Transform)" componentmode="Hidden" id="39" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="2295" top="4215" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="PointcloudBuffer" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   <PIN pinname="Help Layer" visible="1">
+   </PIN>
+   <PIN pinname="Max Element Count" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="22" srcpinname="PointcloudBuffer" dstnodeid="39" dstpinname="PointcloudBuffer">
+   </LINK>
+   <LINK srcnodeid="40" srcpinname="Transform Out" dstnodeid="39" dstpinname="Transform In" linkstyle="VHV">
+   <LINKPOINT x="4455" y="4118">
+   </LINKPOINT>
+   <LINKPOINT x="2700" y="4118">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="39" srcpinname="Help Layer" dstnodeid="15" dstpinname="Layer 3" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="2985" y="6268">
+   </LINKPOINT>
+   <LINKPOINT x="1770" y="6468">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="39" srcpinname="PointcloudBuffer" dstnodeid="27" dstpinname="Input Node" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="2355" y="5285">
+   </LINKPOINT>
+   <LINKPOINT x="3630" y="5335">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="22" srcpinname="Max Element Count" dstnodeid="39" dstpinname="Max Element Count" linkstyle="VHV">
+   <LINKPOINT x="3660" y="3915">
+   </LINKPOINT>
+   <LINKPOINT x="2520" y="3915">
+   </LINKPOINT>
+   </LINK>
    </PATCH>
