@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta33.3_x64\packs\dx11-pointcloud\nodes\modules\Filters\Filter (DX11.Pointcloud.Filter PointcloudBuffer) help.v4p" scrollx="0" scrolly="-360">
+   <PATCH nodename="C:\apps\code\vvvv_45beta33.3_x64\packs\dx11-pointcloud\nodes\modules\Filters\Filter (DX11.Pointcloud.Filter Transform) help.v4p" scrollx="0" scrolly="-360">
    <BOUNDS type="Window" left="3195" top="3405" width="11490" height="11625">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
@@ -22,26 +22,6 @@
    <PIN pinname="Input String" slicecount="1" visible="0" values="|Filters all elements that are inside a given transform (Restrict) or removes them (Subtract).&cr;&lf;&cr;&lf;Elements get a unique groupId for each transform slice they lie in. If a point lies within more than one transform it is duplicated.|">
    </PIN>
    <PIN pinname="Output String" visible="0">
-   </PIN>
-   </NODE>
-   <NODE nodename="Filter (DX11.Pointcloud.Filter PointcloudBuffer)" componentmode="Hidden" id="0" systemname="Filter (DX11.Pointcloud.Filter PointcloudBuffer)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Filters\Filter (DX11.Pointcloud.Filter PointcloudBuffer).v4p">
-   <BOUNDS type="Node" left="2550" top="7440" width="0" height="0">
-   </BOUNDS>
-   <BOUNDS type="Box" left="2550" top="7440" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="PointcloudBuffer" visible="1">
-   </PIN>
-   <PIN pinname="Help Layer" visible="1">
-   </PIN>
-   <PIN pinname="Max Element Count" visible="1">
-   </PIN>
-   <PIN pinname="Transform In" visible="1">
-   </PIN>
-   <PIN pinname="Technique" visible="1">
-   </PIN>
-   <PIN pinname="Group Count" visible="1">
-   </PIN>
-   <PIN pinname="ID Offset" visible="1">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="4" systemname="IOBox (String)">
@@ -165,7 +145,7 @@
    <NODE systemname="AsGeometry (DX11.Pointcloud.Vis PointcloudBuffer)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Visualization\AsGeometry (DX11.Pointcloud.Vis PointcloudBuffer).v4p" nodename="AsGeometry (DX11.Pointcloud.Vis PointcloudBuffer)" componentmode="Hidden" id="19" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="1890" top="9600" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="PointcloudBuffer" visible="1">
+   <PIN pinname="PointcloudBuffer" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Render State" visible="1">
    </PIN>
@@ -261,7 +241,7 @@
    </BOUNDS>
    <PIN pinname="Input Count" slicecount="1" values="3">
    </PIN>
-   <PIN pinname="Layer 3" visible="1">
+   <PIN pinname="Layer 3" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <LINK srcnodeid="19" srcpinname="Layer" dstnodeid="14" dstpinname="Layer 2">
@@ -328,16 +308,6 @@
    <LINKPOINT x="3255" y="3315">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="21" srcpinname="PointcloudBuffer" dstnodeid="0" dstpinname="PointcloudBuffer">
-   </LINK>
-   <LINK srcnodeid="0" srcpinname="PointcloudBuffer" dstnodeid="19" dstpinname="PointcloudBuffer">
-   </LINK>
-   <LINK srcnodeid="0" srcpinname="Help Layer" dstnodeid="14" dstpinname="Layer 3" linkstyle="Bezier">
-   <LINKPOINT x="3260" y="8905">
-   </LINKPOINT>
-   <LINKPOINT x="2080" y="9005">
-   </LINKPOINT>
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="26" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="4830" top="4125" width="795" height="240">
    </BOUNDS>
@@ -352,12 +322,6 @@
    <PIN pinname="Value Type" slicecount="1" values="Integer">
    </PIN>
    </NODE>
-   <LINK srcnodeid="26" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Max Element Count" linkstyle="Bezier">
-   <LINKPOINT x="4530" y="5828">
-   </LINKPOINT>
-   <LINKPOINT x="3045" y="5978">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="21" srcpinname="Max Element Count" dstnodeid="26" dstpinname="Y Input Value" linkstyle="VHV">
    <LINKPOINT x="3975" y="4028">
    </LINKPOINT>
@@ -374,12 +338,6 @@
    <PIN pinname="Scale XYZ" visible="1" slicecount="3" values="3,1,3">
    </PIN>
    </NODE>
-   <LINK srcnodeid="27" srcpinname="Transform Out" dstnodeid="0" dstpinname="Transform In" linkstyle="Bezier">
-   <LINKPOINT x="4830" y="6713">
-   </LINKPOINT>
-   <LINKPOINT x="2940" y="6713">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="Vector (3d Join)" nodename="Vector (3d Join)" componentmode="Hidden" id="30" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="5040" top="5340" width="100" height="100">
    </BOUNDS>
@@ -422,12 +380,6 @@
    <PIN pinname="Input Enum" slicecount="1" visible="1" values="Restrict">
    </PIN>
    </NODE>
-   <LINK srcnodeid="34" srcpinname="Output Enum" dstnodeid="0" dstpinname="Technique" linkstyle="Bezier">
-   <LINKPOINT x="4530" y="7070">
-   </LINKPOINT>
-   <LINKPOINT x="3435" y="7120">
-   </LINKPOINT>
-   </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="35" systemname="IOBox (String)">
    <BOUNDS type="Node" left="6450" top="5685" width="3750" height="270">
    </BOUNDS>
@@ -468,12 +420,6 @@
    <PIN pinname="Value Type" slicecount="1" values="Integer">
    </PIN>
    </NODE>
-   <LINK srcnodeid="0" srcpinname="Group Count" dstnodeid="37" dstpinname="Y Input Value" linkstyle="Bezier">
-   <LINKPOINT x="3075" y="8040">
-   </LINKPOINT>
-   <LINKPOINT x="4830" y="8190">
-   </LINKPOINT>
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="38" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="4830" top="9135" width="795" height="240">
    </BOUNDS>
@@ -486,12 +432,6 @@
    <PIN pinname="Value Type" slicecount="1" values="Integer">
    </PIN>
    </NODE>
-   <LINK srcnodeid="0" srcpinname="Max Element Count" dstnodeid="38" dstpinname="Y Input Value" linkstyle="Bezier">
-   <LINKPOINT x="2835" y="8333">
-   </LINKPOINT>
-   <LINKPOINT x="4830" y="8483">
-   </LINKPOINT>
-   </LINK>
    <PACK Name="addonpack" Version="33.3.0">
    </PACK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="39" systemname="IOBox (String)">
@@ -552,12 +492,6 @@
    <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <LINK srcnodeid="42" srcpinname="Y Output Value" dstnodeid="0" dstpinname="ID Offset" linkstyle="Bezier">
-   <LINKPOINT x="4830" y="6900">
-   </LINKPOINT>
-   <LINKPOINT x="3120" y="6900">
-   </LINKPOINT>
-   </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="43" systemname="IOBox (String)">
    <BOUNDS type="Node" left="6450" top="6120" width="3750" height="270">
    </BOUNDS>
@@ -572,4 +506,64 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
+   <NODE nodename="Filter (DX11.Pointcloud.Filter Transform)" componentmode="Hidden" id="0" systemname="Filter (DX11.Pointcloud.Filter Transform)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Filters\Filter (DX11.Pointcloud.Filter Transform).v4p">
+   <BOUNDS type="Node" left="2550" top="7440" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2550" top="7440" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="PointcloudBuffer" visible="1">
+   </PIN>
+   <PIN pinname="Help Layer" visible="1">
+   </PIN>
+   <PIN pinname="Max Element Count" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   <PIN pinname="Technique" visible="1">
+   </PIN>
+   <PIN pinname="Group Count" visible="1">
+   </PIN>
+   <PIN pinname="ID Offset" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="21" srcpinname="PointcloudBuffer" dstnodeid="0" dstpinname="PointcloudBuffer">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="PointcloudBuffer" dstnodeid="19" dstpinname="PointcloudBuffer">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Help Layer" dstnodeid="14" dstpinname="Layer 3" linkstyle="Bezier">
+   <LINKPOINT x="3260" y="8905">
+   </LINKPOINT>
+   <LINKPOINT x="2080" y="9005">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="26" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Max Element Count" linkstyle="Bezier">
+   <LINKPOINT x="4530" y="5828">
+   </LINKPOINT>
+   <LINKPOINT x="3045" y="5978">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="27" srcpinname="Transform Out" dstnodeid="0" dstpinname="Transform In" linkstyle="Bezier">
+   <LINKPOINT x="4830" y="6713">
+   </LINKPOINT>
+   <LINKPOINT x="2940" y="6713">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="34" srcpinname="Output Enum" dstnodeid="0" dstpinname="Technique" linkstyle="Bezier">
+   <LINKPOINT x="4530" y="7070">
+   </LINKPOINT>
+   <LINKPOINT x="3435" y="7120">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Max Element Count" dstnodeid="38" dstpinname="Y Input Value" linkstyle="Bezier">
+   <LINKPOINT x="2835" y="8333">
+   </LINKPOINT>
+   <LINKPOINT x="4830" y="8483">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="42" srcpinname="Y Output Value" dstnodeid="0" dstpinname="ID Offset" linkstyle="Bezier">
+   <LINKPOINT x="4830" y="6900">
+   </LINKPOINT>
+   <LINKPOINT x="3120" y="6900">
+   </LINKPOINT>
+   </LINK>
    </PATCH>

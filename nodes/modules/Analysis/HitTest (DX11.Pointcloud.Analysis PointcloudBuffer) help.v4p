@@ -354,30 +354,6 @@
    </NODE>
    <LINK srcnodeid="13" srcpinname="Render State" dstnodeid="26" dstpinname="Render State">
    </LINK>
-   <NODE systemname="Filter (DX11.Pointcloud.Filter PointcloudBuffer)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Filters\Filter (DX11.Pointcloud.Filter PointcloudBuffer).v4p" nodename="Filter (DX11.Pointcloud.Filter PointcloudBuffer)" componentmode="Hidden" id="8" hiddenwhenlocked="0">
-   <BOUNDS type="Node" left="3585" top="4365" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="PointcloudBuffer" visible="1">
-   </PIN>
-   <PIN pinname="Transform In" visible="1">
-   </PIN>
-   <PIN pinname="Help Layer" visible="1">
-   </PIN>
-   <PIN pinname="Max Element Count" visible="1">
-   </PIN>
-   <PIN pinname="Group Count" visible="1">
-   </PIN>
-   <PIN pinname="Group IDs" visible="1">
-   </PIN>
-   <PIN pinname="ID Offset" slicecount="1" values="0">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="28" srcpinname="PointcloudBuffer" dstnodeid="8" dstpinname="PointcloudBuffer" linkstyle="Bezier">
-   <LINKPOINT x="2445" y="3915">
-   </LINKPOINT>
-   <LINKPOINT x="3570" y="3915">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="Transform (Transform 3d Vector)" nodename="Transform (Transform 3d Vector)" componentmode="Hidden" id="7" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="4545" top="3630" width="100" height="100">
    </BOUNDS>
@@ -388,12 +364,6 @@
    <PIN pinname="Scale XYZ" slicecount="3" values="1,1,1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="7" srcpinname="Transform Out" dstnodeid="8" dstpinname="Transform In" linkstyle="VHV">
-   <LINKPOINT x="4945" y="4068">
-   </LINKPOINT>
-   <LINKPOINT x="3590" y="4168">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="Vector (3d Join)" nodename="Vector (3d Join)" componentmode="Hidden" id="6" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="4755" top="3270" width="100" height="100">
    </BOUNDS>
@@ -405,12 +375,6 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="6" srcpinname="XYZ" dstnodeid="7" dstpinname="Translate XYZ">
-   </LINK>
-   <LINK srcnodeid="28" srcpinname="Max Element Count" dstnodeid="8" dstpinname="Max Element Count" linkstyle="Bezier">
-   <LINKPOINT x="3120" y="3923">
-   </LINKPOINT>
-   <LINKPOINT x="3750" y="3923">
-   </LINKPOINT>
    </LINK>
    <LINK srcnodeid="28" srcpinname="PointcloudBuffer" dstnodeid="16" dstpinname="PointcloudBuffer" linkstyle="VHV">
    <LINKPOINT x="2425" y="5940">
@@ -486,12 +450,6 @@
    <PIN pinname="Position Out" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="8" srcpinname="Help Layer" dstnodeid="23" dstpinname="Layer 3" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="3910" y="6618">
-   </LINKPOINT>
-   <LINKPOINT x="2330" y="7018">
-   </LINKPOINT>
-   </LINK>
    <NODE id="38" systemname="Box (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Box (DX11.Geometry)" componentmode="Hidden" hiddenwhenlocked="1" managers="">
    <BOUNDS type="Node" left="4380" top="7860" width="100" height="100">
    </BOUNDS>
@@ -594,8 +552,6 @@
    <PIN pinname="Group IDs" visible="1" slicecount="1" values="4">
    </PIN>
    </NODE>
-   <LINK srcnodeid="8" srcpinname="PointcloudBuffer" dstnodeid="45" dstpinname="PointcloudBuffer">
-   </LINK>
    <LINK srcnodeid="45" srcpinname="Hit" dstnodeid="40" dstpinname="Y Input Value" linkstyle="Bezier">
    <LINKPOINT x="3645" y="6503">
    </LINKPOINT>
@@ -607,6 +563,50 @@
    </LINKPOINT>
    <LINKPOINT x="4530" y="5873">
    </LINKPOINT>
+   </LINK>
+   <NODE systemname="Filter (DX11.Pointcloud.Filter Transform)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Filters\Filter (DX11.Pointcloud.Filter Transform).v4p" nodename="Filter (DX11.Pointcloud.Filter Transform)" componentmode="Hidden" id="8" hiddenwhenlocked="0">
+   <BOUNDS type="Node" left="3585" top="4365" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="PointcloudBuffer" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   <PIN pinname="Help Layer" visible="1">
+   </PIN>
+   <PIN pinname="Max Element Count" visible="1">
+   </PIN>
+   <PIN pinname="Group Count" visible="1">
+   </PIN>
+   <PIN pinname="Group IDs" visible="1">
+   </PIN>
+   <PIN pinname="ID Offset" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="28" srcpinname="PointcloudBuffer" dstnodeid="8" dstpinname="PointcloudBuffer" linkstyle="Bezier">
+   <LINKPOINT x="2445" y="3915">
+   </LINKPOINT>
+   <LINKPOINT x="3570" y="3915">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Transform Out" dstnodeid="8" dstpinname="Transform In" linkstyle="VHV">
+   <LINKPOINT x="4945" y="4068">
+   </LINKPOINT>
+   <LINKPOINT x="3590" y="4168">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="28" srcpinname="Max Element Count" dstnodeid="8" dstpinname="Max Element Count" linkstyle="Bezier">
+   <LINKPOINT x="3120" y="3923">
+   </LINKPOINT>
+   <LINKPOINT x="3750" y="3923">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Help Layer" dstnodeid="23" dstpinname="Layer 3" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="3910" y="6618">
+   </LINKPOINT>
+   <LINKPOINT x="2330" y="7018">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="PointcloudBuffer" dstnodeid="45" dstpinname="PointcloudBuffer">
    </LINK>
    <LINK srcnodeid="8" srcpinname="Group IDs" dstnodeid="45" dstpinname="Group IDs">
    </LINK>

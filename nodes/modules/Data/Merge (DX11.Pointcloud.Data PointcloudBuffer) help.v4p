@@ -329,7 +329,7 @@
    </PIN>
    <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="IdOffset" visible="1" slicecount="1" values="0">
+   <PIN pinname="IdOffset" visible="1" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Group IDs" visible="1">
    </PIN>
@@ -489,13 +489,15 @@
    </BOUNDS>
    <PIN pinname="Max Element Count" visible="1" slicecount="1" values="100">
    </PIN>
-   <BOUNDS type="Window" left="15540" top="3090" width="10605" height="8850">
+   <BOUNDS type="Window" left="9390" top="5010" width="11775" height="8850">
    </BOUNDS>
    <PIN pinname="PointcloudBuffer" visible="1">
    </PIN>
    <PIN pinname="Group IDs 2" visible="1" slicecount="1" values="-1">
    </PIN>
    <PIN pinname="Group IDs 1" visible="1" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Group IDs" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="0" srcpinname="PointcloudBuffer" dstnodeid="49" dstpinname="PointcloudBuffer 1">
@@ -610,4 +612,54 @@
    <LINKPOINT x="8490" y="2138">
    </LINKPOINT>
    </LINK>
+   <LINK srcnodeid="0" srcpinname="Group IDs" dstnodeid="50" dstpinname="Y Input Value" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="3945" y="5040">
+   </LINKPOINT>
+   <LINKPOINT x="2805" y="5040">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="39" srcpinname="Group IDs" dstnodeid="53" dstpinname="Y Input Value" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="7515" y="5040">
+   </LINKPOINT>
+   <LINKPOINT x="3180" y="5040">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="56" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="3915" top="7425" width="840" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3915" top="7425" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Columns" slicecount="1" values="2">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="49" srcpinname="Group IDs" dstnodeid="56" dstpinname="Y Input Value" linkstyle="Bezier">
+   <LINKPOINT x="3330" y="7245">
+   </LINKPOINT>
+   <LINKPOINT x="3915" y="7245">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="57" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="5025" top="7425" width="1950" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5025" top="7425" width="1950" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; the merged group ids|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
    </PATCH>

@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta33.3_x64\packs\dx11-pointcloud\nodes\modules\Filters\Filter (DX11.Pointcloud.Filter PointcloudBuffer).v4p" systemname="PointcloudFilter (KinectToolkit.Filter)" filename="C:\apps\code\vvvv_45beta33.3_x64\packs\KinectToolkitDX11\nodes\modules\Filters\PointcloudFilter (KinectToolkit.Filter).v4p" scrollx="0" scrolly="-360">
+   <PATCH nodename="C:\apps\code\vvvv_45beta33.3_x64\packs\dx11-pointcloud\nodes\modules\Filters\Filter (DX11.Pointcloud.Filter Transform).v4p" systemname="PointcloudFilter (KinectToolkit.Filter)" filename="C:\apps\code\vvvv_45beta33.3_x64\packs\KinectToolkitDX11\nodes\modules\Filters\PointcloudFilter (KinectToolkit.Filter).v4p" scrollx="0" scrolly="-360">
    <BOUNDS type="Window" left="9675" top="2520" width="11040" height="8130">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.3.0">
@@ -326,38 +326,6 @@
    </NODE>
    <LINK srcnodeid="33" srcpinname="Count" dstnodeid="35" dstpinname=".. To [">
    </LINK>
-   <NODE systemname="CS_FilterPcb (DX11.Effect)" filename="%VVVV%\packs\KinectToolkitDX11\nodes\modules\Filters\dx11\CS_FilterPcb.fx" nodename="CS_FilterPcb (DX11.Effect)" componentmode="Hidden" id="36">
-   <BOUNDS type="Node" left="825" top="4620" width="2970" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="825" top="4620">
-   </BOUNDS>
-   <PIN pinname="Technique" slicecount="1" visible="1" values="Restrict">
-   </PIN>
-   <PIN pinname="slice" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="2" srcpinname="Geometry Out" dstnodeid="36" dstpinname="Geometry" linkstyle="VHV">
-   <LINKPOINT x="1180" y="3820">
-   </LINKPOINT>
-   <LINKPOINT x="1475" y="3920">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="0" srcpinname="Buffer Out" dstnodeid="36" dstpinname="InputCountBuffer">
-   </LINK>
-   <LINK srcnodeid="9" srcpinname="Transform Out" dstnodeid="36" dstpinname="Transform In" linkstyle="VHV">
-   <LINKPOINT x="4230" y="3805">
-   </LINKPOINT>
-   <LINKPOINT x="1980" y="3905">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="5" srcpinname="Output Node" dstnodeid="36" dstpinname="pcBuffer" hiddenwhenlocked="1">
-   </LINK>
-   <LINK srcnodeid="36" srcpinname="Layer" dstnodeid="7" dstpinname="Layer" linkstyle="VHV">
-   <LINKPOINT x="940" y="5638">
-   </LINKPOINT>
-   <LINKPOINT x="2780" y="5538">
-   </LINKPOINT>
-   </LINK>
    <NODE id="37" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="4530" top="6795" width="600" height="240">
    </BOUNDS>
@@ -404,12 +372,6 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="Technique">
    </PIN>
    </NODE>
-   <LINK srcnodeid="41" srcpinname="Output Enum" dstnodeid="36" dstpinname="Technique" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="6570" y="2620">
-   </LINKPOINT>
-   <LINKPOINT x="3585" y="2720">
-   </LINKPOINT>
-   </LINK>
    <INFO author="tmp" description="Filters all elements that are inside a given transform (Restrict) or removes them (Subtract). Elements get a unique groupId for each transform slice they lie in. If a point lies within more than one transform it is duplicated." tags="">
    </INFO>
    <NODE systemname="Add (Value)" nodename="Add (Value)" componentmode="Hidden" id="42">
@@ -423,12 +385,6 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="35" srcpinname="Output" dstnodeid="42" dstpinname="Input 1">
-   </LINK>
-   <LINK srcnodeid="42" srcpinname="Output" dstnodeid="36" dstpinname="slice" linkstyle="VHV">
-   <LINKPOINT x="4590" y="4425">
-   </LINKPOINT>
-   <LINKPOINT x="2340" y="4425">
-   </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="43" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="5970" top="510" width="300" height="240">
@@ -472,6 +428,50 @@
    <LINKPOINT x="4650" y="5528">
    </LINKPOINT>
    <LINKPOINT x="6030" y="5528">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="CS_FilterPcb_Transform (DX11.Effect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Filters\dx11\CS_FilterPcb_Transform.fx" nodename="CS_FilterPcb_Transform (DX11.Effect)" componentmode="Hidden" id="36">
+   <BOUNDS type="Node" left="825" top="4620" width="2970" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="825" top="4620">
+   </BOUNDS>
+   <PIN pinname="Technique" visible="1">
+   </PIN>
+   <PIN pinname="slice" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Geometry Out" dstnodeid="36" dstpinname="Geometry" linkstyle="VHV">
+   <LINKPOINT x="1180" y="3820">
+   </LINKPOINT>
+   <LINKPOINT x="1475" y="3920">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Buffer Out" dstnodeid="36" dstpinname="InputCountBuffer">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Transform Out" dstnodeid="36" dstpinname="Transform In" linkstyle="VHV">
+   <LINKPOINT x="4230" y="3805">
+   </LINKPOINT>
+   <LINKPOINT x="1980" y="3905">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Output Node" dstnodeid="36" dstpinname="pcBuffer" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="36" srcpinname="Layer" dstnodeid="7" dstpinname="Layer" linkstyle="VHV">
+   <LINKPOINT x="940" y="5638">
+   </LINKPOINT>
+   <LINKPOINT x="2780" y="5538">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="41" srcpinname="Output Enum" dstnodeid="36" dstpinname="Technique" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="6570" y="2620">
+   </LINKPOINT>
+   <LINKPOINT x="3585" y="2720">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="42" srcpinname="Output" dstnodeid="36" dstpinname="slice" linkstyle="VHV">
+   <LINKPOINT x="4590" y="4425">
+   </LINKPOINT>
+   <LINKPOINT x="2340" y="4425">
    </LINKPOINT>
    </LINK>
    </PATCH>

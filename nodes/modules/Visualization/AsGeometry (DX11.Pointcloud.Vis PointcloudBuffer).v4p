@@ -165,6 +165,8 @@
    </PIN>
    <PIN pinname="Default" slicecount="1" values="-1">
    </PIN>
+   <PIN pinname="Minimum" slicecount="1" values="-1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="24" srcpinname="Y Output Value" dstnodeid="22" dstpinname="groupFilter" linkstyle="Bezier">
    <LINKPOINT x="5810" y="1838">
