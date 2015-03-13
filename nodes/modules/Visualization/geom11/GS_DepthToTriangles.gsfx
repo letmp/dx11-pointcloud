@@ -5,11 +5,7 @@
 
 //float4x4 tW <string uiname="Transform In";>;
 
-struct pointData
-{
-	float4 pos;
-	float4 col;
-};
+#include "../../Data/PointData.fxh"
 StructuredBuffer<pointData> pcBuffer;
 
 Texture2D texDepth <string uiname="Depth";>;
