@@ -11,5 +11,5 @@ struct pointData
 // * pos,col & groupId are mandatory
 // * update the stride value in the first line of this file
 // * change the initialization of the pointData elements in:
-//		- Data/dx11/Data_CS_BuildPcb_DynamicBuffer.fx
-// 		- Data/dx11/Data_CS_BuildPcb_Kinect.fx
+//		- dx11/Data_CS_BuildPcb_DynamicBuffer.fx
+// 		- dx11/Data_CS_BuildPcb_Kinect.fx

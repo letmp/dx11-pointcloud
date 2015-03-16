@@ -6,7 +6,7 @@ int elementcount;
 StructuredBuffer<float3> posBuffer <string uiname="Position Buffer";>;
 StructuredBuffer<float4> colBuffer <string uiname="Color Buffer";>;
 
-#include "..\PointData.fxh"
+#include "_PointData.fxh"
 AppendStructuredBuffer<pointData> pcBuffer : BACKBUFFER;
 
 //==============================================================================

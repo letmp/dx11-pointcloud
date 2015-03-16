@@ -1,9 +1,9 @@
 //@author: tmp 
-//@help: Draws a PointCloud
-//@tags: DX11.Pointcloud
+//@help: Generates a colored PointCloud
+//@tags: DX11, Kinect, Pointcloud
 //@credits: vvvv
 
-#include "..\..\Data\PointData.fxh"
+#include "_PointData.fxh"
 StructuredBuffer<pointData> pcBuffer;
 
 cbuffer cbPerDraw : register( b0 )
@@ -15,15 +15,13 @@ cbuffer cbPerObj : register( b1 )
 {
 	float4x4 tW : WORLD;
 	float Alpha <float uimin=0.0; float uimax=1.0;> = 1; 
+	float4 cAmb <bool color=true;String uiname="Color";> = { 1.0f,1.0f,1.0f,1.0f };
 	int groupFilter;
 };
 
-float4 cAmb <bool color=true;String uiname="Color";> = { 1.0f,1.0f,1.0f,1.0f };
-
 struct vsInput
 {
-	float4 pos : POSITION;
-	uint ii : SV_InstanceID;
+	uint ii : SV_VertexID;
 };
 
 struct vs2ps
@@ -49,11 +47,13 @@ vs2ps VS(vsInput input)
     
 	uint idx = input.ii;
 	
-	float4 p = input.pos;
+	float4 p = float4(0,0,0,1);
 	// apply groupfilter
 	if (groupFilter != pcBuffer[idx].groupId && groupFilter != -1) p.w = 0.0f;
+	
 	p.xyz += pcBuffer[idx].pos.xyz;
 	output.pos = mul(p,mul(tW,tVP));
+	
 	
 	output.col = pcBuffer[idx].col;
 	output.col_pos = pcBuffer[idx].pos;
@@ -61,8 +61,6 @@ vs2ps VS(vsInput input)
 	
 	return output;
 }
-
-
 
 /* ===================== PIXEL SHADER ===================== */
 
@@ -78,6 +76,13 @@ float4 PS_POS(vs2ps input): SV_Target
     return input.col_pos;
 }
 
+float4 PS_COLOR(vs2ps input): SV_Target
+{
+	float4 col = cAmb;
+	col.a *= Alpha;
+    return col;
+}
+
 float4 PS_GROUP(vs2ps input): SV_Target
 {
     return input.col_group;
@@ -85,7 +90,7 @@ float4 PS_GROUP(vs2ps input): SV_Target
 
 /* ===================== TECHNIQUE ===================== */
 
-technique10 RGB
+technique10 Rgb
 {
 	pass P0
 	{
@@ -100,6 +105,15 @@ technique10 Position
 	{
 		SetVertexShader( CompileShader( vs_4_0, VS() ) );
 		SetPixelShader( CompileShader( ps_4_0, PS_POS() ) );
+	}
+}
+
+technique10 Color
+{
+	pass P0
+	{
+		SetVertexShader( CompileShader( vs_4_0, VS() ) );
+		SetPixelShader( CompileShader( ps_4_0, PS_COLOR() ) );
 	}
 }
 

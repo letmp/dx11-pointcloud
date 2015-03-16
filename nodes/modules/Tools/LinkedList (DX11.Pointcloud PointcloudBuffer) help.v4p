@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\dev\packs\dx11-pointcloud\nodes\modules\Tools\LinkedList (DX11.Pointcloud PointcloudBuffer) help.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Tools\LinkedList (DX11.Pointcloud PointcloudBuffer) help.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="510" top="255" width="13050" height="12465">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
@@ -520,8 +520,16 @@
    <LINKPOINT x="3840" y="6893">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="10" srcpinname="LinkBuffer" dstnodeid="11" dstpinname="Input">
+   <LINK srcnodeid="10" srcpinname="LinkBuffer Out" dstnodeid="11" dstpinname="Input" linkstyle="VHV">
+   <LINKPOINT x="3630" y="7905">
+   </LINKPOINT>
+   <LINKPOINT x="5610" y="7905">
+   </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="10" srcpinname="OffsetBuffer" dstnodeid="27" dstpinname="Input">
+   <LINK srcnodeid="10" srcpinname="OffsetBuffer Out" dstnodeid="27" dstpinname="Input" linkstyle="VHV">
+   <LINKPOINT x="4290" y="7905">
+   </LINKPOINT>
+   <LINKPOINT x="2970" y="7905">
+   </LINKPOINT>
    </LINK>
    </PATCH>

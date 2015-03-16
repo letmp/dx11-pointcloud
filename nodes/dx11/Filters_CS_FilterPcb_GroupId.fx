@@ -1,7 +1,7 @@
 float4x4 tFilter : WORLD;
 int groupIds;
 
-#include "..\..\Data\PointData.fxh"
+#include "_PointData.fxh"
 StructuredBuffer<pointData> pcBuffer;
 ByteAddressBuffer InputCountBuffer;
 

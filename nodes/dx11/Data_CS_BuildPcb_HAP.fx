@@ -1,14 +1,6 @@
-float4x4 tW : WORLD;
-
-Texture2D texRGB <string uiname="RGB";>;
-Texture2D texDepth <string uiname="Depth";>;
-Texture2D texRGBDepth <string uiname="RGBDepth";>;
-int drawIndex : DRAWINDEX;
-int IdOffset;
-float2 FOV;
-int elementcount;
+Texture2D tex <string uiname="Texture";>;
 StructuredBuffer<float2> uv <string uiname="UV Buffer";>;
-
+int elementcount;
 SamplerState sPoint : IMMUTABLE
 {
     Filter = MIN_MAG_MIP_POINT;
@@ -16,7 +8,7 @@ SamplerState sPoint : IMMUTABLE
     AddressV = Border;
 };
 
-#include "..\PointData.fxh"
+#include "_PointData.fxh"
 AppendStructuredBuffer<pointData> pcBuffer : BACKBUFFER;
 
 //==============================================================================
@@ -28,26 +20,20 @@ void CSBuildPointcloudBuffer( uint3 DTid : SV_DispatchThreadID )
 {
 	
 	if(DTid.x >= asuint(elementcount)){return;}
+	float sX = uv[DTid.x].x;
+	float sY = uv[DTid.x].y / 3 + 1;
+	float4 pos =  tex.SampleLevel(sPoint,float2(sX,sY),0);
 	
-	float2 uvc = uv[DTid.x];
+	sY = uv[DTid.x].y / 3 + 0.5;
+	float4 col =  tex.SampleLevel(sPoint,float2(sX,sY),0);
 	
-	float depth =  texDepth.SampleLevel(sPoint,uvc,0).r * 65.535 ;
-	if (depth > 0){
-		float XtoZ = tan(FOV.x/2) * 2;
-	    float YtoZ = tan(FOV.y/2) * 2;
-		
-		float4 pos = float4(0,0,0,1);
-		pos.x = ((uvc.x - 0.5) * depth * XtoZ * -1);
-		pos.y = ((0.5 - uvc.y) * depth * YtoZ);
-		pos.z = depth;
-		pos = mul(pos, tW);
-			
-		float2 coords = texRGBDepth.SampleLevel(sPoint, uvc ,0).rg;
-		float4 col = texRGB.SampleLevel(sPoint,coords,0);
+	sY = uv[DTid.x].y / 3;
+	int groupId =  tex.SampleLevel(sPoint,uv[DTid.x * 3],0).r;
 	
-		pointData pd = {pos, col, drawIndex + IdOffset};
-		pcBuffer.Append(pd);
-	}
+	//float4 col = float4(1,1,1,1);
+	//int groupId = 0;
+	pointData pd = {pos, col, groupId};
+	pcBuffer.Append(pd);
 }
 
 //==============================================================================

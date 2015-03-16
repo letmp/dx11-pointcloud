@@ -1,4 +1,4 @@
-#include "..\..\Data\PointData.fxh"
+#include "_PointData.fxh"
 StructuredBuffer<pointData> pcBuffer;
 
 float pixPos;
