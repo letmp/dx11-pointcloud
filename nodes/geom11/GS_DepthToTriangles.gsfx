@@ -5,9 +5,6 @@
 
 //float4x4 tW <string uiname="Transform In";>;
 
-#include "../dx11/_PointData.fxh"
-StructuredBuffer<pointData> pcBuffer;
-
 Texture2D texDepth <string uiname="Depth";>;
 
 SamplerState sPoint : IMMUTABLE

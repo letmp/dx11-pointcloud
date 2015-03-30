@@ -1,8 +1,8 @@
-//stride: 36
+//stride: 32
 
 struct pointData
 {
-    float4 pos;
+    float3 pos;
     float4 col;
     int groupId;
 };

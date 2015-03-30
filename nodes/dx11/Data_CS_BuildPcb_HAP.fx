@@ -20,18 +20,18 @@ void CSBuildPointcloudBuffer( uint3 DTid : SV_DispatchThreadID )
 {
 	
 	if(DTid.x >= asuint(elementcount)){return;}
-	float sX = uv[DTid.x].x;
-	float sY = uv[DTid.x].y / 3 + 1;
-	float4 pos =  tex.SampleLevel(sPoint,float2(sX,sY),0);
+	float sX = uv[DTid.x + 2 * elementcount].x;
+	float sY = uv[DTid.x + 2 * elementcount].y;
+	float3 pos =  tex.SampleLevel(sPoint,float2(sX,sY),0).xyz;
 	
-	sY = uv[DTid.x].y / 3 + 0.5;
-	float4 col =  tex.SampleLevel(sPoint,float2(sX,sY),0);
+	sX = uv[DTid.x + elementcount].x;
+	sY = uv[DTid.x + elementcount].y;
+	float4 col =  tex.SampleLevel(sPoint,float2(sX , sY),0);
 	
-	sY = uv[DTid.x].y / 3;
+	sX = uv[DTid.x].x;
+	sY = uv[DTid.x].y;
 	int groupId =  tex.SampleLevel(sPoint,uv[DTid.x * 3],0).r;
 	
-	//float4 col = float4(1,1,1,1);
-	//int groupId = 0;
 	pointData pd = {pos, col, groupId};
 	pcBuffer.Append(pd);
 }

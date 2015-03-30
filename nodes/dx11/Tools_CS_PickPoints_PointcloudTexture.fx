@@ -16,7 +16,7 @@ void CS( uint3 i : SV_DispatchThreadID)
 { 
 	if (i.x >=  asuint(count)) { return;}
 	float3 pos = posTex.SampleLevel(sPoint,uv[i.x],0).xyz;
-	rwbuffer[i.x] = pos.xyz;
+	rwbuffer[i.x] = pos;
 }
 
 technique11 Process

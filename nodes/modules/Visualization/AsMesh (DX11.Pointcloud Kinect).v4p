@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
    <PATCH nodename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Visualization\AsMesh (DX11.Pointcloud Kinect).v4p" systemname="Mesh (DX11.Buffer)" filename="D:\workspace\dev\packs\KinectToolkitDX11\nodes\modules\Pointcloud\Mesh (DX11.Buffer).v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="11895" top="5415" width="12975" height="8160">
+   <BOUNDS type="Window" left="11895" top="5415" width="14025" height="8160">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.7.0">
    </PACK>
@@ -357,15 +357,15 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="17" srcpinname="Output Node" dstnodeid="37" dstpinname="RGB" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="2160" y="3800">
+   <LINKPOINT x="2175" y="3525">
    </LINKPOINT>
-   <LINKPOINT x="4230" y="3250">
+   <LINKPOINT x="4725" y="3525">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="16" srcpinname="Output Node" dstnodeid="37" dstpinname="RGBDepth" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="4410" y="3533">
+   <LINKPOINT x="4410" y="3525">
    </LINKPOINT>
-   <LINKPOINT x="4410" y="3533">
+   <LINKPOINT x="4980" y="3525">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="37" srcpinname="Layer" dstnodeid="15" dstpinname="Input Node">
@@ -375,17 +375,17 @@
    <LINK srcnodeid="42" srcpinname="Y Output Value" dstnodeid="37" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="11955" y="3518">
    </LINKPOINT>
-   <LINKPOINT x="4755" y="3518">
+   <LINKPOINT x="5550" y="3518">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="21" srcpinname="Output Node" dstnodeid="37" dstpinname="Transform In" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="6840" y="3525">
+   <LINKPOINT x="6840" y="3533">
    </LINKPOINT>
-   <LINKPOINT x="3930" y="3525">
+   <LINKPOINT x="4215" y="3533">
    </LINKPOINT>
    </LINK>
    <NODE systemname="GS_DepthToTriangles (DX11.GeomFX)" filename="geom11\GS_DepthToTriangles.gsfx" nodename="GS_DepthToTriangles (DX11.GeomFX)" componentmode="Hidden" id="51">
-   <BOUNDS type="Node" left="570" top="3120" width="11835" height="270">
+   <BOUNDS type="Node" left="570" top="3120" width="12105" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="570" top="3120">
    </BOUNDS>
@@ -393,25 +393,25 @@
    <LINK srcnodeid="19" srcpinname="Radians" dstnodeid="51" dstpinname="FOVXY" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="5505" y="2325">
    </LINKPOINT>
-   <LINKPOINT x="3150" y="2325">
+   <LINKPOINT x="3405" y="2325">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="18" srcpinname="Output Node" dstnodeid="51" dstpinname="Depth" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="3300" y="1988">
    </LINKPOINT>
-   <LINKPOINT x="5595" y="1988">
+   <LINKPOINT x="5205" y="1988">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="35" srcpinname="Y Output Value" dstnodeid="51" dstpinname="maxDistance" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="9945" y="1988">
    </LINKPOINT>
-   <LINKPOINT x="3990" y="1988">
+   <LINKPOINT x="4335" y="1988">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="34" srcpinname="Transform Out" dstnodeid="51" dstpinname="Transform Filter" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="7785" y="2325">
    </LINKPOINT>
-   <LINKPOINT x="2310" y="2325">
+   <LINKPOINT x="2490" y="2325">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="41" srcpinname="Y Output Value" dstnodeid="51" dstpinname="As Auto">
@@ -419,7 +419,7 @@
    <LINK srcnodeid="42" srcpinname="Y Output Value" dstnodeid="51" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="11955" y="1988">
    </LINKPOINT>
-   <LINKPOINT x="7365" y="1988">
+   <LINKPOINT x="7110" y="1988">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="30" srcpinname="Geometry Out" dstnodeid="51" dstpinname="Geometry In" linkstyle="VHV">

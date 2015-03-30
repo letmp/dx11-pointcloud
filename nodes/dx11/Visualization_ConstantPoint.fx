@@ -56,7 +56,7 @@ vs2ps VS(vsInput input)
 	
 	
 	output.col = pcBuffer[idx].col;
-	output.col_pos = pcBuffer[idx].pos;
+	output.col_pos = float4(pcBuffer[idx].pos,1);
 	output.col_group = randColor(pcBuffer[idx].groupId);
 	
 	return output;

@@ -5,7 +5,6 @@
 
 #include "_PointData.fxh"
 StructuredBuffer<pointData> pcBuffer;
-StructuredBuffer<float2> uv <string uiname="UV Buffer";>;
 float maxElementCount;
 
 cbuffer cbPerDraw : register( b0 )
@@ -47,7 +46,7 @@ vs2ps VS(vsInput input)
 	
 	float4 col;
 	if (index <= maxElementCount){
-		col = pcBuffer[index].pos;
+		col = float4(pcBuffer[index].pos,1);
 	}
 	
 	else if( maxElementCount < index && index < maxElementCount * 2){
