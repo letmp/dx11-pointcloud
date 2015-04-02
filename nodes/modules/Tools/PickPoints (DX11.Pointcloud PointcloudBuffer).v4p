@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
    <PATCH nodename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Tools\PickPoints (DX11.Pointcloud PointcloudBuffer).v4p" systemname="GetCoordinates (Kinect Pointcloud)" filename="C:\apps\code\vvvv_45beta32.1_x64\packs\KinectDX11Bundle\nodes\modules\Pointcloud\GetCoordinates (Kinect Pointcloud).v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="975" top="3780" width="14220" height="9240">
+   <BOUNDS type="Window" left="930" top="6300" width="14220" height="9240">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.7.0">
    </PACK>
@@ -47,19 +47,19 @@
    </PIN>
    </NODE>
    <NODE systemname="AvoidNIL (Spreads)" filename="%VVVV%\lib\nodes\modules\Spreads\AvoidNIL (Spreads).v4p" nodename="AvoidNIL (Spreads)" componentmode="Hidden" id="102">
-   <BOUNDS type="Node" left="4935" top="900" width="100" height="100">
+   <BOUNDS type="Node" left="4845" top="1200" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="4935" top="900">
+   <BOUNDS type="Box" left="4845" top="1200">
    </BOUNDS>
    </NODE>
    <NODE systemname="DynamicBuffer (DX11.Buffer 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer 2d)" componentmode="Hidden" id="101">
-   <BOUNDS type="Node" left="4935" top="3630" width="1110" height="270">
+   <BOUNDS type="Node" left="4845" top="3630" width="1110" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="4935" top="3630">
+   <BOUNDS type="Box" left="4845" top="3630">
    </BOUNDS>
    <PIN pinname="Apply" visible="1" slicecount="1" values="0">
    </PIN>
@@ -111,15 +111,15 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="98" srcpinname="Y Output Value" dstnodeid="102" dstpinname="Input" linkstyle="VHV">
-   <LINKPOINT x="6540" y="958">
+   <LINKPOINT x="6540" y="1058">
    </LINKPOINT>
-   <LINKPOINT x="4995" y="858">
+   <LINKPOINT x="4905" y="1058">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="102" srcpinname="Output" dstnodeid="101" dstpinname="DataXY" linkstyle="VHV">
-   <LINKPOINT x="5300" y="2493">
+   <LINKPOINT x="5210" y="2693">
    </LINKPOINT>
-   <LINKPOINT x="4615" y="2293">
+   <LINKPOINT x="4525" y="2393">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Count (Value)" nodename="Count (Value)" componentmode="Hidden" id="97">
@@ -211,7 +211,7 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="Change (Animation)" nodename="Change (Animation)" componentmode="Hidden" id="117">
-   <BOUNDS type="Node" left="5820" top="1410" width="100" height="100">
+   <BOUNDS type="Node" left="5820" top="1710" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -219,7 +219,7 @@
    </PIN>
    </NODE>
    <NODE systemname="OR (Boolean Spectral)" nodename="OR (Boolean Spectral)" componentmode="Hidden" id="118">
-   <BOUNDS type="Node" left="5820" top="1725" width="100" height="100">
+   <BOUNDS type="Node" left="5820" top="2025" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -229,9 +229,9 @@
    <LINK srcnodeid="117" srcpinname="OnChange" dstnodeid="118" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="102" srcpinname="Output" dstnodeid="117" dstpinname="Input" linkstyle="VHV">
-   <LINKPOINT x="5250" y="1365">
+   <LINKPOINT x="5190" y="1665">
    </LINKPOINT>
-   <LINKPOINT x="5550" y="1215">
+   <LINKPOINT x="5520" y="1515">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Color)" componentmode="InABox" id="123" systemname="IOBox (Color)">
@@ -405,7 +405,7 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="135">
-   <BOUNDS type="Node" left="5835" top="2130" width="100" height="100">
+   <BOUNDS type="Node" left="5835" top="2430" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input 1" visible="1">
    </PIN>
@@ -435,27 +435,27 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="136" srcpinname="Y Output Value" dstnodeid="135" dstpinname="Input 2" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="12865" y="1565">
+   <LINKPOINT x="12865" y="1665">
    </LINKPOINT>
-   <LINKPOINT x="6185" y="1480">
+   <LINKPOINT x="6185" y="1680">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="135" srcpinname="Output" dstnodeid="107" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5830" y="4245">
+   <LINKPOINT x="5830" y="4445">
    </LINKPOINT>
-   <LINKPOINT x="3320" y="4245">
+   <LINKPOINT x="3320" y="4345">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="135" srcpinname="Output" dstnodeid="100" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5845" y="4478">
+   <LINKPOINT x="5845" y="4678">
    </LINKPOINT>
-   <LINKPOINT x="3095" y="4478">
+   <LINKPOINT x="3095" y="4578">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="135" srcpinname="Output" dstnodeid="133" dstpinname="Set" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5830" y="4635">
+   <LINKPOINT x="5830" y="4835">
    </LINKPOINT>
-   <LINKPOINT x="2690" y="4635">
+   <LINKPOINT x="2690" y="4735">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="138" systemname="IOBox (Enumerations)">
@@ -551,9 +551,9 @@
    <LINK srcnodeid="138" srcpinname="Output Enum" dstnodeid="128" dstpinname="Technique">
    </LINK>
    <LINK srcnodeid="135" srcpinname="Output" dstnodeid="128" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5835" y="3000">
+   <LINKPOINT x="5835" y="3200">
    </LINKPOINT>
-   <LINKPOINT x="4080" y="3000">
+   <LINKPOINT x="4080" y="3100">
    </LINKPOINT>
    </LINK>
    <NODE systemname="AsTexture (DX11.Pointcloud PointcloudBuffer)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Visualization\AsTexture (DX11.Pointcloud PointcloudBuffer).v4p" nodename="AsTexture (DX11.Pointcloud PointcloudBuffer)" componentmode="Hidden" id="139">
@@ -607,9 +607,9 @@
    <LINK srcnodeid="139" srcpinname="Texture Out" dstnodeid="144" dstpinname="Input Node">
    </LINK>
    <LINK srcnodeid="135" srcpinname="Output" dstnodeid="101" dstpinname="Apply" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5865" y="3008">
+   <LINKPOINT x="5835" y="3208">
    </LINKPOINT>
-   <LINKPOINT x="6000" y="3008">
+   <LINKPOINT x="5940" y="3108">
    </LINKPOINT>
    </LINK>
    <NODE id="137" systemname="Tools_CS_PickPoints_PointcloudTexture (DX11.Effect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Tools\dx11\Tools_CS_PickPoints_PointcloudTexture.fx" nodename="Tools_CS_PickPoints_PointcloudTexture (DX11.Effect)" componentmode="Hidden">
@@ -635,9 +635,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="135" srcpinname="Output" dstnodeid="137" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5860" y="3885">
+   <LINKPOINT x="5860" y="4085">
    </LINKPOINT>
-   <LINKPOINT x="5735" y="3885">
+   <LINKPOINT x="5735" y="3985">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="128" srcpinname="Texture Out" dstnodeid="137" dstpinname="Position Texture" linkstyle="Bezier" hiddenwhenlocked="1">

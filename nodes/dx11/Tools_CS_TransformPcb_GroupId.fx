@@ -14,7 +14,7 @@ void CS_Transform( uint3 i : SV_DispatchThreadID)
 	
 	pointData pd = pcBuffer[i.x];
 	if(	pcBuffer[i.x].groupId == groupIds || groupIds == -1){
-		pd.pos = mul(pd.pos, tW);
+		pd.pos = mul(float4(pd.pos,1), tW).xyz;
 		newPcBuffer.Append(pd);
 	}
 }

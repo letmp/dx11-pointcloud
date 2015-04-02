@@ -14,7 +14,7 @@ void CS_Restrict( uint3 i : SV_DispatchThreadID)
 	if (i.x >=  cnt ) { return;}
 	
 	//check if point position is inside the given filter(s)
-	float4 pointCoord = mul(pcBuffer[i.x].pos, tFilter);
+	float3 pointCoord = mul(float4(pcBuffer[i.x].pos,1), tFilter).xyz;
 	if(	!(pointCoord.x < -0.5 || pointCoord.x > 0.5 ||
 		pointCoord.y < -0.5 || pointCoord.y > 0.5 ||
 		pointCoord.z < -0.5 || pointCoord.z > 0.5
@@ -32,7 +32,7 @@ void CS_Subtract( uint3 i : SV_DispatchThreadID)
 	if (i.x >=  cnt ) { return;}
 	
 	//check if point position is inside the given filter(s)
-	float4 pointCoord = mul(pcBuffer[i.x].pos, tFilter);
+	float3 pointCoord = mul(float4(pcBuffer[i.x].pos,1), tFilter).xyz;
 	if(	(pointCoord.x < -0.5 || pointCoord.x > 0.5 ||
 		pointCoord.y < -0.5 || pointCoord.y > 0.5 ||
 		pointCoord.z < -0.5 || pointCoord.z > 0.5

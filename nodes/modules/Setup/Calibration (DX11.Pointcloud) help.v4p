@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Setup\Calibration (DX11.Pointcloud) help.v4p" scrollx="0" scrolly="7200">
+   <PATCH nodename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Setup\Calibration (DX11.Pointcloud) help.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="1260" top="1365" width="13455" height="11970">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
@@ -523,7 +523,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="6780" top="5955" width="5190" height="645">
    </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; open this patch and the renderer inside to mark the 4 control points that your kinect can &quot;see&quot; in the real world|">
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; open this patch and the renderer inside to mark the 4 control points that your kinect can &quot;see&quot; in the real world. (left click = pick, right click = next point)|">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>
@@ -879,6 +879,8 @@
    </PIN>
    <PIN pinname="PointsXY" visible="1">
    </PIN>
+   <BOUNDS type="Window" left="930" top="6300" width="14220" height="9240">
+   </BOUNDS>
    </NODE>
    <LINK srcnodeid="29" srcpinname="Y Output Value" dstnodeid="34" dstpinname="Resolution" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="1760" y="3973">

@@ -53,19 +53,19 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="CopyCounter (DX11.Buffer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="CopyCounter (DX11.Buffer)" componentmode="Hidden" id="3">
-   <BOUNDS type="Node" left="3495" top="2745" width="100" height="100">
+   <BOUNDS type="Node" left="3510" top="2745" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Buffer In" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Buffer Out" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="3495" top="2745">
+   <BOUNDS type="Box" left="3510" top="2745">
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="6" srcpinname="Output Node" dstnodeid="3" dstpinname="Buffer In" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="1635" y="1688">
    </LINKPOINT>
-   <LINKPOINT x="3495" y="1688">
+   <LINKPOINT x="3510" y="1688">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Color)" componentmode="InABox" id="2" systemname="IOBox (Color)">
@@ -145,13 +145,13 @@
    <LINK srcnodeid="11" srcpinname="Y Output Value" dstnodeid="12" dstpinname="Warp Size">
    </LINK>
    <NODE systemname="CopyCounter (DX11.Buffer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="CopyCounter (DX11.Buffer)" componentmode="Hidden" id="10">
-   <BOUNDS type="Node" left="6180" top="2745" width="100" height="100">
+   <BOUNDS type="Node" left="6195" top="2745" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Buffer In" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Buffer Out" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="6180" top="2745">
+   <BOUNDS type="Box" left="6195" top="2745">
    </BOUNDS>
    </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="14" systemname="IOBox (Node)">
@@ -195,9 +195,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="14" srcpinname="Output Node" dstnodeid="10" dstpinname="Buffer In" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5340" y="1688">
+   <LINKPOINT x="5340" y="1680">
    </LINKPOINT>
-   <LINKPOINT x="6195" y="1688">
+   <LINKPOINT x="6210" y="1680">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Group (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Group (DX11.Layer)" componentmode="Hidden" id="15">
@@ -349,15 +349,15 @@
    <LINK srcnodeid="27" srcpinname="Output" dstnodeid="26" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="8" srcpinname="Y Output Value" dstnodeid="27" dstpinname="Input 1" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="3070" y="3563">
+   <LINKPOINT x="3180" y="3570">
    </LINKPOINT>
-   <LINKPOINT x="4190" y="3563">
+   <LINKPOINT x="4080" y="3570">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="13" srcpinname="Y Output Value" dstnodeid="27" dstpinname="Input 2" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="6760" y="3563">
+   <LINKPOINT x="6870" y="3563">
    </LINKPOINT>
-   <LINKPOINT x="4565" y="3563">
+   <LINKPOINT x="4455" y="3563">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="31" systemname="IOBox (Value Advanced)">
@@ -405,15 +405,15 @@
    <LINK srcnodeid="3" srcpinname="Buffer Out" dstnodeid="32" dstpinname="InputCountBuffer">
    </LINK>
    <LINK srcnodeid="6" srcpinname="Output Node" dstnodeid="32" dstpinname="pcBuffer" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="1525" y="2288">
+   <LINKPOINT x="1620" y="2280">
    </LINKPOINT>
-   <LINKPOINT x="3080" y="2288">
+   <LINKPOINT x="3255" y="2280">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="8" srcpinname="Y Output Value" dstnodeid="32" dstpinname="groupIds" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="3055" y="2273">
+   <LINKPOINT x="3165" y="2273">
    </LINKPOINT>
-   <LINKPOINT x="2900" y="2273">
+   <LINKPOINT x="3015" y="2273">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="5" srcpinname="Geometry Out" dstnodeid="32" dstpinname="Geometry" linkstyle="VHV">
@@ -445,15 +445,15 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="13" srcpinname="Y Output Value" dstnodeid="33" dstpinname="groupIds" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="6775" y="2280">
+   <LINKPOINT x="6870" y="2280">
    </LINKPOINT>
-   <LINKPOINT x="5585" y="2280">
+   <LINKPOINT x="5700" y="2280">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="14" srcpinname="Output Node" dstnodeid="33" dstpinname="pcBuffer" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5215" y="2280">
+   <LINKPOINT x="5325" y="2280">
    </LINKPOINT>
-   <LINKPOINT x="5780" y="2280">
+   <LINKPOINT x="5955" y="2280">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="10" srcpinname="Buffer Out" dstnodeid="33" dstpinname="InputCountBuffer">

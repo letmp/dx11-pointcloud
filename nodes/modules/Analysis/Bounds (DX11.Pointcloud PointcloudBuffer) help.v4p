@@ -583,6 +583,8 @@
    </BOUNDS>
    <PIN pinname="PointcloudBuffer" visible="1">
    </PIN>
+   <PIN pinname="Technique" slicecount="1" values="Restrict">
+   </PIN>
    </NODE>
    <LINK srcnodeid="52" srcpinname="Help Layer" dstnodeid="22" dstpinname="Layer 3" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="4235" y="7048">

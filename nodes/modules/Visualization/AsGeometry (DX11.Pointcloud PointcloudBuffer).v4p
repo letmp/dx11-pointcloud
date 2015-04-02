@@ -141,9 +141,9 @@
    </BOUNDS>
    <PIN pinname="groupFilter" slicecount="1" visible="1" values="0">
    </PIN>
-   <PIN pinname="Alpha" visible="1">
+   <PIN pinname="Alpha" visible="1" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Color" visible="1">
+   <PIN pinname="Color" visible="1" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
    </PIN>
    <PIN pinname="pcBuffer" visible="1">
    </PIN>
@@ -162,12 +162,28 @@
    </LINK>
    <LINK srcnodeid="21" srcpinname="Geometry Out" dstnodeid="22" dstpinname="Geometry">
    </LINK>
-   <LINK srcnodeid="24" srcpinname="Y Output Value" dstnodeid="22" dstpinname="groupFilter">
+   <LINK srcnodeid="24" srcpinname="Y Output Value" dstnodeid="22" dstpinname="groupFilter" linkstyle="Bezier">
+   <LINKPOINT x="5910" y="1860">
+   </LINKPOINT>
+   <LINKPOINT x="4785" y="1860">
+   </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="22" dstpinname="Alpha">
+   <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="22" dstpinname="Alpha" linkstyle="Bezier">
+   <LINKPOINT x="3360" y="1853">
+   </LINKPOINT>
+   <LINKPOINT x="4050" y="1853">
+   </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="13" srcpinname="Color Output" dstnodeid="22" dstpinname="Color">
+   <LINK srcnodeid="13" srcpinname="Color Output" dstnodeid="22" dstpinname="Color" linkstyle="Bezier">
+   <LINKPOINT x="3990" y="1853">
+   </LINKPOINT>
+   <LINKPOINT x="3360" y="1853">
+   </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="2" srcpinname="Output Node" dstnodeid="22" dstpinname="pcBuffer">
+   <LINK srcnodeid="2" srcpinname="Output Node" dstnodeid="22" dstpinname="pcBuffer" linkstyle="Bezier">
+   <LINKPOINT x="4635" y="1853">
+   </LINKPOINT>
+   <LINKPOINT x="5445" y="1853">
+   </LINKPOINT>
    </LINK>
    </PATCH>

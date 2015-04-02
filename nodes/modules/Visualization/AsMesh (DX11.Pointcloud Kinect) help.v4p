@@ -307,6 +307,8 @@
    </PIN>
    <PIN pinname="Enabled" slicecount="1" values="1">
    </PIN>
+   <BOUNDS type="Window" left="11895" top="5415" width="14025" height="8160">
+   </BOUNDS>
    </NODE>
    <LINK srcnodeid="26" srcpinname="Transform Out" dstnodeid="0" dstpinname="Transform In" linkstyle="Bezier">
    <LINKPOINT x="4860" y="4830">
