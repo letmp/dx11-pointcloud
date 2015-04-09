@@ -63,7 +63,8 @@ vs2ps VS_SPRITE(vsInput input)
 	
 	uint idx = input.ii;
 	
-	float4 p = pcBuffer[idx].pos;
+	float4 p;
+	p.xyz = pcBuffer[idx].pos;
 	float4 pv = mul(tV,input.pos);
 	
 	// apply groupfilter
@@ -73,7 +74,7 @@ vs2ps VS_SPRITE(vsInput input)
 	output.pos =  mul(float4(PosV,1.0), tWVP);
 
 	output.col = pcBuffer[idx].col;
-	output.col_pos = pcBuffer[idx].pos;
+	output.col_pos.xyz = pcBuffer[idx].pos;
 	output.col_group = randColor(pcBuffer[idx].groupId);
 	output.TexCd = input.TexCd;
 	return output;
@@ -81,12 +82,6 @@ vs2ps VS_SPRITE(vsInput input)
 
 /* ===================== PIXEL SHADER ===================== */
 
-float4 PS_RGB(vs2ps input): SV_Target
-{
-	float4 col = input.col * cAmb;
-	col.a *= Alpha;
-	return col;
-}
 
 float4 PS_TEXTURE(vs2ps input): SV_Target
 {
