@@ -324,7 +324,9 @@
    </LINK>
    <LINK srcnodeid="2" srcpinname="Transform Out" dstnodeid="0" dstpinname="View">
    </LINK>
-   <NODE systemname="Filters_ModifyKinectDepth (DX11.TextureFX)" filename="%VVVV%\packs\dx11-pointcloud\nodes\texture11\Filters_ModifyKinectDepth.tfx" nodename="Filters_ModifyKinectDepth (DX11.TextureFX)" componentmode="Hidden" id="52">
+   <INFO author="sebl" description="Paints a scene layer into the kinect depth image." tags="Filters">
+   </INFO>
+   <NODE systemname="Filters_DepthModifier (DX11.TextureFX)" filename="%VVVV%\packs\dx11-pointcloud\nodes\texture11\Filters_DepthModifier.tfx" nodename="Filters_DepthModifier (DX11.TextureFX)" componentmode="Hidden" id="52">
    <BOUNDS type="Node" left="765" top="5805" width="7590" height="270">
    </BOUNDS>
    <PIN pinname="Projection" visible="1" slicecount="1" values="||">
@@ -354,6 +356,4 @@
    </LINK>
    <LINK srcnodeid="0" srcpinname="Depth Buffer" dstnodeid="52" dstpinname="DepthBuffer In">
    </LINK>
-   <INFO author="sebl" description="Paints a scene layer into the kinect depth image." tags="Filters">
-   </INFO>
    </PATCH>
