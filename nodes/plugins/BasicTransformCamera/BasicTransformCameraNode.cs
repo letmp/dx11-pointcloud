@@ -77,9 +77,9 @@ namespace VVVV.Nodes
 				double fn = far / (far - near);
 			
 				var proj = new Matrix4x4(scaleX,      	0,      	0, 			0,
-			                          0, 			scaleY, 	0, 			0,
-			                          -2*shift.x, 	-2*shift.y, fn, 		1,
-			                          0,      		0, 			-near*fn, 	0);
+			                          		0, 			scaleY, 	0, 			0,
+			                          	-2*shift.x, 	-2*shift.y, fn, 		1,
+			                          		0,     		0, 			-near*fn, 	0);
 
 				FView[i] = view;
 				FProjection[i] = proj;
