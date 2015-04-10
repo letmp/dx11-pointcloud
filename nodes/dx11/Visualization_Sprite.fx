@@ -1,5 +1,5 @@
 //@author: tmp
-//@help: Draws a PointCloud
+//@help: Draws a Sprite per Point
 //@tags: DX11.Pointcloud
 //@credits: vvvv
 
@@ -26,7 +26,6 @@ cbuffer cbPerDraw : register( b0 )
 cbuffer cbPerObj : register( b1 )
 {
 	float4x4 tW : WORLD;
-	float Alpha <float uimin=0.0; float uimax=1.0;> = 1;
 	int groupFilter;
 };
 
@@ -100,21 +99,20 @@ float4 PS_COLORTEXTURE(vs2ps input): SV_Target
 
 /* ===================== TECHNIQUE ===================== */
 
-
-technique10 Sprite
-{
-	pass P0
-	{
-		SetVertexShader( CompileShader( vs_4_0, VS_SPRITE() ) );
-		SetPixelShader( CompileShader( ps_4_0, PS_TEXTURE() ) );
-	}
-}
-
-technique10 SpriteColor
+technique10 Rgb
 {
 	pass P0
 	{
 		SetVertexShader( CompileShader( vs_4_0, VS_SPRITE() ) );
 		SetPixelShader( CompileShader( ps_4_0, PS_COLORTEXTURE() ) );
+	}
+}
+
+technique10 Color
+{
+	pass P0
+	{
+		SetVertexShader( CompileShader( vs_4_0, VS_SPRITE() ) );
+		SetPixelShader( CompileShader( ps_4_0, PS_TEXTURE() ) );
 	}
 }

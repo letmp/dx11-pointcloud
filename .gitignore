@@ -2,7 +2,7 @@
 [Bb]in/
 [Oo]bj/
 [Bb]uild/
-[Rr]esearch/
+# [Rr]esearch/
 
 # mstest test results
 TestResults

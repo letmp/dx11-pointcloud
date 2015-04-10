@@ -14,7 +14,6 @@ cbuffer cbPerDraw : register( b0 )
 cbuffer cbPerObj : register( b1 )
 {
 	float4x4 tW : WORLD;
-	float Alpha <float uimin=0.0; float uimax=1.0;> = 1; 
 	int groupFilter;
 };
 
@@ -69,7 +68,6 @@ vs2ps VS(vsInput input)
 float4 PS_RGB(vs2ps input): SV_Target
 {
 	float4 col = input.col * cAmb;
-	col.a *= Alpha;
     return col;
 }
 
