@@ -1,0 +1,159 @@
+Texture2D texCOL : PREVIOUS;
+Texture2D texPOSW <string uiname="WorldPos Buffer";>;
+Texture2D texNORW <string uiname="WorldNorm Buffer";>;
+Texture2D texNORV <string uiname="ViewNorm Buffer";>;
+Texture2D texD <string uiname="Depth";>;
+
+
+//TextureCube texENVI <string uiname="Cubemap";>;
+SamplerState s0 <bool visible=false;string uiname="Sampler";> {Filter=MIN_MAG_MIP_LINEAR;AddressU=CLAMP;AddressV=CLAMP;};
+SamplerState s1:IMMUTABLE {Filter=MIN_MAG_MIP_POINT;AddressU=MIRROR;AddressV=MIRROR;};
+
+float2 R:TARGETSIZE;
+
+SamplerState g_samLinear : IMMUTABLE
+{
+	Filter = MIN_MAG_MIP_LINEAR;
+	AddressU = Clamp;
+	AddressV = Clamp;
+};
+SamplerState g_samPoint : IMMUTABLE
+{
+	Filter = MIN_MAG_MIP_POINT;
+	AddressU = Clamp;
+	AddressV = Clamp;
+};
+
+cbuffer controls:register(b0){
+	float Seed=0;
+	
+	float Radius=3.5;
+	float approxLayerWidth;
+	//float Amount=.5;
+	float Limit=2;
+	float Range=1;
+	int Iterations <float uimin=0;float uimax=128;> =16;
+};
+float rand(float2 co)
+{
+  return (frac(sin(dot(co.xy ,float2(12.9898,78.233))+Seed) * 43758.5453))-.5;
+}
+
+#define bld(op,c0,c1) float4(lerp((c0*c0.a+c1*c1.a*(1-c0.a))/saturate(c0.a+c1.a*(1-c0.a)),(op),c0.a*c1.a).rgb,saturate(c0.a+c1.a*(1-c0.a)))
+
+float4 pMIPS(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_Target{
+	return texCOL.SampleLevel(s0,x,0);
+}
+float4 pUNC(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
+	float4 p=texPOSW.SampleLevel(g_samPoint,x,0);
+	float3 n=texNORW.SampleLevel(g_samPoint,x,0).xyz;
+	int itr=Iterations;
+	float z=texD.SampleLevel(g_samLinear,x,0).x;
+	float sum=.2;
+	float4 c=texCOL.SampleLevel(g_samLinear,x,0)*sum;
+	for(int i=0;i<itr&&i<128;i++){
+		//float2 off=sin((float(i)/itr*3+float2(.25,0))*acos(-1)*2);
+		float2 off=sin((float(i)/itr+dot(p,22222)+float2(.25,0))*acos(-1)*2);
+		//off+=nv.xy*((float)i/itr-.5);
+		off=sin((float(i)/itr+Seed+float2(.25,0))*acos(-1)*2);
+		off/=R/min(R.x,R.y);
+		off=off*Radius*.02/z+float2(rand(off),rand(off+0.0425))*Range*Radius;
+		off*=pow(2,(float(i)/itr-.5)*Range);
+		float4 np=texPOSW.SampleLevel(g_samPoint,x+off,0);
+		float4 nn=texNORW.SampleLevel(g_samPoint,x+off,0);
+		float4 nc=texCOL.SampleLevel(g_samLinear,x+off,3);
+		float3 V=np.xyz-p.xyz;
+		float d=length(V)+length(n-nn.xyz);
+		float k=sqrt(smoothstep(Limit,0,d));
+		c+=nc*k;
+		sum+=k;
+
+	}
+	c/=sum+.000001;
+	
+	//c.rgb=normalize(c.rgb);
+	return c;
+}
+
+float2 uvoff[9] : IMMUTABLE = 
+{
+	{0,0}, {1,1}, {1,-1}, {-1,-1}, {-1,1},
+	{0,1}, {0,-1}, {-1,0}, {1,0}
+};
+float offmul : IMMUTABLE = 1.86;
+
+float4 pFB_P1(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
+	float4 p=texPOSW.SampleLevel(g_samPoint,x,0);
+	float3 n=texNORW.SampleLevel(g_samPoint,x,0).xyz;
+	int itr=Iterations;
+	float z=texD.SampleLevel(g_samLinear,x,0).x;
+	float sum=.2;
+	float lod=log2(max(R.x,R.y));
+	lod=Radius*log2(max(R.x,R.y));
+	float4 c=0;
+	float2 off=.5/R*pow(2,lod)*saturate(lod);
+	lod-=2;
+	for(int i=0;i<9;i++){
+		if(i==4) off *= offmul;
+		float4 np=texPOSW.SampleLevel(g_samPoint,x+uvoff[i]*off,0);
+		float4 nn=texNORW.SampleLevel(g_samPoint,x+uvoff[i]*off,0);
+		float4 nc=texCOL.SampleLevel(g_samLinear,x+uvoff[i]*off,lod);
+		float3 V=np.xyz-p.xyz;
+		float d=length(V)+length(n-nn.xyz);
+		float k=sqrt(smoothstep(Limit,0,d));
+		c+=nc*k;
+		sum+=k;
+
+	}
+	c/=sum+.000001;
+	
+	//c.rgb=normalize(c.rgb);
+	return c;
+}
+
+float4 pFB_P2(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
+	float4 p=texPOSW.SampleLevel(g_samPoint,x,0);
+	float3 n=texNORW.SampleLevel(g_samPoint,x,0).xyz;
+	int itr=Iterations;
+	//float z=texD.SampleLevel(g_samLinear,x,0).x;
+	float sum=.2;
+	//float lod=log2(max(R.x,R.y));
+	float lod = Radius * log2(max(R.x,R.y));
+	float4 c=0;
+	float2 off=.5/R*pow(2,lod)*saturate(lod);
+	for(int i=0;i<9;i++){
+		if(i==4) off *= offmul;
+		float4 np=texPOSW.SampleLevel(g_samPoint,x+uvoff[i]*off,0);
+		float4 nn=texNORW.SampleLevel(g_samPoint,x+uvoff[i]*off,0);
+		float4 nc=texCOL.SampleLevel(g_samLinear,x+uvoff[i]*off,lod);
+		float3 V=np.xyz-p.xyz;
+		float d=length(V)+length(n-nn.xyz);
+		float k=sqrt(smoothstep(Limit,0,d));
+		c+=nc*k;
+		sum+=k;
+
+	}
+	c/=sum+.000001;
+	
+	
+	float layerID = c.b - fmod(c.b, approxLayerWidth);
+	//layerID /= approxLayerWidth;
+	float4 col = float4(layerID, 0,0,1);
+	//c.rgb=normalize(c.rgb);
+	return col;
+}
+
+
+technique10 UNC{
+	pass P0 <bool mips=true;>{SetPixelShader(CompileShader(ps_4_0,pMIPS()));}
+	pass P1 {SetPixelShader(CompileShader(ps_4_0,pUNC()));}
+}
+technique10 FastBlur{
+	pass P0 <bool mips=true;>{SetPixelShader(CompileShader(ps_4_0,pMIPS()));}
+	pass P1 {SetPixelShader(CompileShader(ps_4_0,pFB_P2()));}
+}
+technique10 FastBlur_2P{
+	pass P0 <bool mips=true;>{SetPixelShader(CompileShader(ps_4_0,pMIPS()));}
+	pass P1 <bool mips=true;>{SetPixelShader(CompileShader(ps_4_0,pFB_P1()));}
+	pass P2 {SetPixelShader(CompileShader(ps_4_0,pFB_P2()));}
+}
