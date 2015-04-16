@@ -1,4 +1,4 @@
-float4x4 tW: WORLD;
+float4x4 tVP: VIEWPROJECTION;
 float2 textureSize;
 
 #include "_PointData.fxh"
@@ -14,16 +14,18 @@ void CS( uint3 i : SV_DispatchThreadID)
 	if (i.x >=  cnt ) { return;}
 	
 	pointData pd = pcBuffer[i.x];
-	float4 pos = mul(float4(pd.pos,1), tW);
+	float4 pos = mul(float4(pd.pos,1), tVP);
 	float2 uv = pos.xy/pos.w;
 	
 	float x = uv.x * 0.5 + 0.5;
 	float y = uv.y * -0.5 + 0.5;
+
 	int count = y * textureSize.y;
 	int id = (x * textureSize.x) + (count * textureSize.x);
-	if (id < 0 || id > textureSize.x * textureSize.y) id = 0;
+	if (id > 0 && id < textureSize.x * textureSize.y){
+		pd.groupId = groupIdBuffer[id]; 
+	}
 	
-	pd.groupId = groupIdBuffer[id];
 	newPcBuffer.Append(pd);
 }
 
