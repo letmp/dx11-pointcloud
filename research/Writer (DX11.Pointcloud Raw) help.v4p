@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\Writer (DX11.Pointcloud Raw) help.v4p" scrollx="0" scrolly="0" systemname="Client (DX11.Pointcloud Network)" filename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\Client (DX11.Pointcloud Network).v4p">
-   <BOUNDS type="Window" left="2250" top="1350" width="11850" height="14550">
+   <PATCH nodename="D:\workspace\dev\packs\dx11-pointcloud\research\Writer (DX11.Pointcloud Raw) help.v4p" scrollx="0" scrolly="0" systemname="Client (DX11.Pointcloud Network)" filename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\Client (DX11.Pointcloud Network).v4p">
+   <BOUNDS type="Window" left="330" top="225" width="10605" height="8475">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
    <BOUNDS type="Node" left="165" top="225" width="5100" height="450">
@@ -247,7 +247,7 @@
    <NODE systemname="Writer (DX11.Pointcloud Raw)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Data\Writer (DX11.Pointcloud Raw).v4p" nodename="Writer (DX11.Pointcloud Raw)" componentmode="InAWindow" id="56">
    <BOUNDS type="Node" left="3135" top="7110" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Window" left="14910" top="2310" width="10680" height="13350">
+   <BOUNDS type="Window" left="9375" top="465" width="12945" height="13980">
    </BOUNDS>
    <PIN pinname="PointcloudBuffer" visible="1">
    </PIN>
