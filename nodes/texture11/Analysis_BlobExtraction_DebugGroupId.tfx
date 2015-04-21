@@ -5,6 +5,7 @@
 
 Texture2D texture2d : PREVIOUS;
 float2 textureSize:TARGETSIZE;
+StructuredBuffer<int> labelBuffer;
 StructuredBuffer<int> groupIdBuffer;
 
 struct psInput
@@ -28,8 +29,8 @@ float4 PS(psInput input) : SV_Target
 	int count = y * textureSize.y;
 	int id = (x * textureSize.x) + (count * textureSize.x);
 	float4 c = float4(0,0,0,0);
-	int groupId = groupIdBuffer[id];
-	if( groupId > 0 ) c = randColor(groupId);
+	int label = labelBuffer[id];
+	if( label > 0 && groupIdBuffer[label - 1] != -1) c = randColor(groupIdBuffer[label - 1]);
 	
 	return c;
 }

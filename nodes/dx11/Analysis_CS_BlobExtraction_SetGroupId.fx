@@ -3,7 +3,10 @@ float2 textureSize;
 
 #include "_PointData.fxh"
 StructuredBuffer<pointData> pcBuffer;
+
+StructuredBuffer<int> labelBuffer;
 StructuredBuffer<int> groupIdBuffer;
+
 ByteAddressBuffer InputCountBuffer;
 AppendStructuredBuffer<pointData> newPcBuffer : BACKBUFFER;
 
@@ -23,7 +26,9 @@ void CS( uint3 i : SV_DispatchThreadID)
 	int count = y * textureSize.y;
 	int id = (x * textureSize.x) + (count * textureSize.x);
 	if (id > 0 && id < textureSize.x * textureSize.y){
-		pd.groupId = groupIdBuffer[id]; 
+		int label = labelBuffer[id];
+		//pd.groupId = label; 
+		if( label > 0 && groupIdBuffer[label - 1] != -1) pd.groupId = groupIdBuffer[label - 1]; 
 	}
 	
 	newPcBuffer.Append(pd);

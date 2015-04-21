@@ -42,6 +42,9 @@ namespace VVVV.Nodes
 		[Output("Bin Sizes")]
         public ISpread<int> FComponentsBins;
 		
+		[Output("Centroids")]
+        public ISpread<int> FCentroids;
+		
 		[Import()]
 		public ILogger FLogger;
 		[Import()]
@@ -56,7 +59,12 @@ namespace VVVV.Nodes
 		private static int[,] SearchDirection = {{0,1},{1,1},{1,0},{1,-1},{0,-1},{-1,-1},{-1,0},{-1,1}};
 
         private Dictionary<int, int> objectCounts = new Dictionary<int,int>();
-
+		
+		private Dictionary<int, int> xMin = new Dictionary<int,int>();
+		private Dictionary<int, int> xMax = new Dictionary<int,int>();
+		private Dictionary<int, int> yMin = new Dictionary<int,int>();
+		private Dictionary<int, int> yMax = new Dictionary<int,int>();
+		
 		public DX11RenderContext AssignedContext
         {
             get;
@@ -146,8 +154,15 @@ namespace VVVV.Nodes
                 		
                 		// SET BIN SIZES 
                 		this.FComponentsBins.SliceCount = this.objectCounts.Count;
+                		this.FCentroids.SliceCount = this.objectCounts.Count * 2;
+                		
+                		// fill binsize and centroid spreads
                 		for (int i = 0; i < this.objectCounts.Count; i++) {                			
-                			FComponentsBins[i] = this.objectCounts[i+1];                			
+                			// binsize
+                			FComponentsBins[i] = this.objectCounts[i+1];
+                			// centroid XY
+                			FCentroids[i*2] = (this.xMin[i+1] + this.xMax[i+1]) / 2;
+                			FCentroids[i*2 + 1] = (this.yMin[i+1] + this.yMax[i+1]) / 2;
                 		}
                 		
                     }
@@ -206,8 +221,8 @@ namespace VVVV.Nodes
             int fx, fy;        	
         	int start_x = cx;
         	int start_y = cy;			
-        	int count = 0;
-
+        	//int count = 0;
+        	
         	// determine next contour point
         	Tracer(ref cy, ref cx, ref tracingdirection);        				
         	
@@ -218,9 +233,14 @@ namespace VVVV.Nodes
 
                 while (SearchAgain)
                 {
-                	count++;                	
+                	//count++;                	
                 	tracingdirection = (tracingdirection + 6) % SearchDirection.GetLength(0);                   
                     FLabels[cols * cy + cx] = labelindex;
+                	
+                	if (cx < xMin[labelindex]) xMin[labelindex] = cx;
+                	if (cx > xMax[labelindex]) xMax[labelindex] = cx;
+                	if (cy < yMin[labelindex]) yMin[labelindex] = cy;
+                	if (cy > yMax[labelindex]) yMax[labelindex] = cy;
                 	
                 	if (!tracingstopflag)
                 		this.objectCounts[labelindex]++;
@@ -279,7 +299,13 @@ namespace VVVV.Nodes
 						        
 				        		labelindex = ++ConnectedComponentsCount;
 				        		this.objectCounts[labelindex] = 0;						        
-				        					        		
+				        		
+				        		// init x & y min/max dictionaries
+				        		xMin[labelindex] = cx;
+					        	xMax[labelindex] = cx;
+					        	yMin[labelindex] = cy;
+					        	yMax[labelindex] = cy;
+				        		
 						        ContourTracing(cy, cx, labelindex, 0); // external contour
 	                            	                            
 	                            FLabels[cols * cy + cx] = labelindex;
