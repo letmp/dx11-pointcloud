@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\PointcloudBuffer (DX11.Pointcloud Kinect) help.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="D:\workspace\dev\packs\dx11-pointcloud\nodes\modules\Data\PointcloudBuffer (DX11.Pointcloud Kinect) help.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="3015" top="3420" width="11730" height="8595">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
@@ -115,17 +115,17 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="Rasterizer (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Rasterizer (DX11.RenderState)" componentmode="Hidden" id="24" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="1140" top="5955" width="100" height="100">
+   <BOUNDS type="Node" left="1290" top="5955" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Render State" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Mode" slicecount="1" values="NoCullSimple">
    </PIN>
-   <BOUNDS type="Box" left="1140" top="5955">
+   <BOUNDS type="Box" left="1290" top="5955">
    </BOUNDS>
    </NODE>
    <NODE systemname="Box (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Box (DX11.Geometry)" componentmode="Hidden" id="23" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="2070" top="5955" width="100" height="100">
+   <BOUNDS type="Node" left="2220" top="5955" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Geometry Out" visible="1">
    </PIN>
@@ -133,13 +133,13 @@
    </PIN>
    <PIN pinname="SizeXY">
    </PIN>
-   <BOUNDS type="Box" left="2070" top="5955">
+   <BOUNDS type="Box" left="2220" top="5955">
    </BOUNDS>
    </NODE>
    <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="22" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="1365" top="7545" width="100" height="100">
+   <BOUNDS type="Node" left="1515" top="7545" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="1365" top="7545" width="6000" height="4500">
+   <BOUNDS type="Box" left="1515" top="7545" width="6000" height="4500">
    </BOUNDS>
    <BOUNDS type="Window" left="14820" top="3420" width="9150" height="7800">
    </BOUNDS>
@@ -153,11 +153,11 @@
    </PIN>
    </NODE>
    <NODE systemname="Camera (Transform Softimage)" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden" id="21" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="2640" top="7095" width="100" height="100">
+   <BOUNDS type="Node" left="2790" top="7095" width="100" height="100">
    </BOUNDS>
    <PIN pinname="View Projection" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="2640" top="7095">
+   <BOUNDS type="Box" left="2790" top="7095">
    </BOUNDS>
    <PIN pinname="Inital Distance" slicecount="1" values="1.67">
    </PIN>
@@ -171,7 +171,7 @@
    <LINK srcnodeid="21" srcpinname="View Projection" dstnodeid="22" dstpinname="View">
    </LINK>
    <NODE systemname="Group (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Group (DX11.Layer)" componentmode="Hidden" id="20" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="1530" top="7095" width="780" height="270">
+   <BOUNDS type="Node" left="1680" top="7095" width="780" height="270">
    </BOUNDS>
    <PIN pinname="Layer 2" visible="1" slicecount="1" values="||">
    </PIN>
@@ -179,7 +179,7 @@
    </PIN>
    <PIN pinname="Layer Out" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="1530" top="7095">
+   <BOUNDS type="Box" left="1680" top="7095">
    </BOUNDS>
    <PIN pinname="Input Count" slicecount="1" values="3">
    </PIN>
@@ -187,17 +187,17 @@
    </PIN>
    </NODE>
    <NODE systemname="AxisAndGrid (DX11)" filename="%VVVV%\packs\dx11\nodes\modules\AxisAndGrid\AxisAndGrid (DX11).v4p" nodename="AxisAndGrid (DX11)" componentmode="Hidden" id="19" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="585" top="6495" width="100" height="100">
+   <BOUNDS type="Node" left="735" top="6495" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="585" top="6495">
+   <BOUNDS type="Box" left="735" top="6495">
    </BOUNDS>
    <PIN pinname="Layer" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="19" srcpinname="Layer" dstnodeid="20" dstpinname="Layer 1" linkstyle="VHV">
-   <LINKPOINT x="645" y="6930">
+   <LINKPOINT x="795" y="6930">
    </LINKPOINT>
-   <LINKPOINT x="1710" y="6930">
+   <LINKPOINT x="1860" y="6930">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="20" srcpinname="Layer Out" dstnodeid="22" dstpinname="Layers">
@@ -405,7 +405,7 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="AsGeometry (DX11.Pointcloud PointcloudBuffer)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Visualization\AsGeometry (DX11.Pointcloud PointcloudBuffer).v4p" nodename="AsGeometry (DX11.Pointcloud PointcloudBuffer)" componentmode="Hidden" id="25" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="1905" top="6495" width="100" height="100">
+   <BOUNDS type="Node" left="2055" top="6495" width="100" height="100">
    </BOUNDS>
    <PIN pinname="PointcloudBuffer" visible="1">
    </PIN>
@@ -415,7 +415,7 @@
    </PIN>
    <PIN pinname="Layer" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="1905" top="6495">
+   <BOUNDS type="Box" left="2055" top="6495">
    </BOUNDS>
    <PIN pinname="Technique" slicecount="1" values="RGB">
    </PIN>
@@ -423,9 +423,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="24" srcpinname="Render State" dstnodeid="25" dstpinname="Render State" linkstyle="VHV">
-   <LINKPOINT x="1200" y="6345">
+   <LINKPOINT x="1350" y="6345">
    </LINKPOINT>
-   <LINKPOINT x="1905" y="6345">
+   <LINKPOINT x="2055" y="6345">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="23" srcpinname="Geometry Out" dstnodeid="25" dstpinname="Geometry">

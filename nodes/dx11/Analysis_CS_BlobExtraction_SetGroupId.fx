@@ -27,7 +27,6 @@ void CS( uint3 i : SV_DispatchThreadID)
 	int id = (x * textureSize.x) + (count * textureSize.x);
 	if (id > 0 && id < textureSize.x * textureSize.y){
 		int label = labelBuffer[id];
-		//pd.groupId = label; 
 		if( label > 0 && groupIdBuffer[label - 1] != -1) pd.groupId = groupIdBuffer[label - 1]; 
 	}
 	

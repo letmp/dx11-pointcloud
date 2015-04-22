@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Analysis\Bounds (DX11.Pointcloud PointcloudBuffer).v4p" systemname="Centroid (DX11.Pointcloud.Analysis PointcloudBuffer)" filename="D:\workspace\dev\packs\dx11-pointcloud\nodes\modules\Analysis\Centroid (DX11.Pointcloud.Analysis PointcloudBuffer).v4p" scrollx="15" scrolly="0">
-   <BOUNDS type="Window" left="3690" top="2985" width="15945" height="12015">
+   <PATCH nodename="D:\workspace\dev\packs\dx11-pointcloud\nodes\modules\Analysis\Bounds (DX11.Pointcloud PointcloudBuffer).v4p" systemname="Centroid (DX11.Pointcloud.Analysis PointcloudBuffer)" filename="D:\workspace\dev\packs\dx11-pointcloud\nodes\modules\Analysis\Centroid (DX11.Pointcloud.Analysis PointcloudBuffer).v4p" scrollx="15" scrolly="0">
+   <BOUNDS type="Window" left="6945" top="1995" width="15945" height="12015">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.7.0">
    </PACK>
@@ -983,5 +983,19 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="175" srcpinname="Output" dstnodeid="107" dstpinname="Background Color">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="196" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="7965" top="10065" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7965" top="10065" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Transform Out|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="92" srcpinname="Transform Out" dstnodeid="196" dstpinname="Input Node" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="11565" y="6938">
+   </LINKPOINT>
+   <LINKPOINT x="8010" y="6938">
+   </LINKPOINT>
    </LINK>
    </PATCH>

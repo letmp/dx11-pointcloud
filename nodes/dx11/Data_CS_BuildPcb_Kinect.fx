@@ -44,7 +44,7 @@ void CSBuildPointcloudBuffer( uint3 DTid : SV_DispatchThreadID )
 			
 		float2 coords = texRGBDepth.SampleLevel(sPoint, uvc ,0).rg;
 		float4 col = texRGB.SampleLevel(sPoint,coords,0);
-	
+		
 		pointData pd = {pos.xyz, col, drawIndex + IdOffset};
 		pcBuffer.Append(pd);
 	}
