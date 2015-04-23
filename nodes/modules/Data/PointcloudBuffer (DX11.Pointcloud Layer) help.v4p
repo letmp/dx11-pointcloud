@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\dev\packs\dx11-pointcloud\nodes\modules\Data\PointcloudBuffer (DX11.Pointcloud Layer) help.v4p" scrollx="0" scrolly="0" systemname="KinectDepth2 (DX11.Pointcloud) help" filename="C:\vvvv\vvvv_45beta33.7_x64_dev\packs\dx11-pointcloud\nodes\modules\Setup\KinectDepth2 (DX11.Pointcloud) help.v4p" locked="0">
+   <PATCH nodename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\PointcloudBuffer (DX11.Pointcloud Layer) help.v4p" scrollx="0" scrolly="0" systemname="KinectDepth2 (DX11.Pointcloud) help" filename="C:\vvvv\vvvv_45beta33.7_x64_dev\packs\dx11-pointcloud\nodes\modules\Setup\KinectDepth2 (DX11.Pointcloud) help.v4p" locked="0">
    <BOUNDS type="Window" left="3525" top="2625" width="11445" height="12915">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
@@ -263,6 +263,8 @@
    </PIN>
    <BOUNDS type="Box" left="3000" top="10455">
    </BOUNDS>
+   <PIN pinname="Enabled" slicecount="1" visible="1" values="1">
+   </PIN>
    </NODE>
    <NODE systemname="Box (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Box (DX11.Geometry)" componentmode="Hidden" id="411" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="3180" top="9930" width="100" height="100">
@@ -645,7 +647,39 @@
    </PIN>
    <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="453" srcpinname="Y Output Value" dstnodeid="452" dstpinname="Enabled">
    </LINK>
+   <NODE systemname="NOT (Boolean)" nodename="NOT (Boolean)" componentmode="Hidden" id="454">
+   <BOUNDS type="Node" left="4080" top="9990" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="453" srcpinname="Y Output Value" dstnodeid="454" dstpinname="Input" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="2535" y="7673">
+   </LINKPOINT>
+   <LINKPOINT x="4095" y="7673">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="454" srcpinname="Output" dstnodeid="410" dstpinname="Enabled">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="455" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="2865" top="5100" width="3315" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2865" top="5100" width="1470" height="735">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; switch between layer and pointcloud view|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
    </PATCH>

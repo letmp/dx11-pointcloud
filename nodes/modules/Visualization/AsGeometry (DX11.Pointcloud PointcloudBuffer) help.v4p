@@ -141,7 +141,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="3630" top="7095" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input Enum" slicecount="1" visible="1" values="RGB">
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="GroupId">
    </PIN>
    </NODE>
    <NODE id="18" systemname="Box (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Box (DX11.Geometry)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
@@ -532,6 +532,8 @@
    <PIN pinname="Help Layer" visible="1">
    </PIN>
    <PIN pinname="Max Element Count" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Group IDs" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="40" srcpinname="Transform Out" dstnodeid="39" dstpinname="Transform In" linkstyle="VHV">

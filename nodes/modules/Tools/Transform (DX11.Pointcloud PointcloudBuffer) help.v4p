@@ -369,7 +369,7 @@
    <LINK srcnodeid="74" srcpinname="Output" dstnodeid="69" dstpinname="TranslateY">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="75" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="3975" top="4155" width="795" height="240">
+   <BOUNDS type="Box" left="3975" top="4155" width="285" height="600">
    </BOUNDS>
    <BOUNDS type="Node" left="3975" top="4155" width="0" height="0">
    </BOUNDS>
@@ -384,6 +384,10 @@
    <PIN pinname="Y Input Value" visible="1" slicecount="1" values="0">
    </PIN>
    <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="76" systemname="IOBox (String)">
@@ -460,12 +464,6 @@
    <LINKPOINT x="3575" y="6898">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="75" srcpinname="Y Output Value" dstnodeid="67" dstpinname="Group IDs" linkstyle="Bezier">
-   <LINKPOINT x="3990" y="5703">
-   </LINKPOINT>
-   <LINKPOINT x="3555" y="5803">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="0" srcpinname="PointcloudBuffer" dstnodeid="67" dstpinname="PointcloudBuffer">
    </LINK>
    <LINK srcnodeid="0" srcpinname="Max Element Count" dstnodeid="67" dstpinname="Max Element Count" linkstyle="Bezier">
@@ -507,6 +505,12 @@
    <LINK srcnodeid="71" srcpinname="Output" dstnodeid="74" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="0" srcpinname="Group IDs" dstnodeid="75" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="75" srcpinname="Y Output Value" dstnodeid="67" dstpinname="Group IDs" linkstyle="Bezier">
+   <LINKPOINT x="3990" y="5940">
+   </LINKPOINT>
+   <LINKPOINT x="3555" y="5940">
+   </LINKPOINT>
    </LINK>
    <LINK srcnodeid="73" srcpinname="Y Output Value" dstnodeid="71" dstpinname="Phase">
    </LINK>
