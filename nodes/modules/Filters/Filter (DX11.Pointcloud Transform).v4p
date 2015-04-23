@@ -336,7 +336,7 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="Technique">
    </PIN>
    </NODE>
-   <INFO author="tmp" description="Filters all elements that are inside a given transform (Restrict) or removes them (Subtract). Elements get a unique groupId for each transform slice they lie in. If a point lies within more than one transform it is duplicated." tags="Tools">
+   <INFO author="tmp" description="Filters all elements that are inside a given transform (Restrict) or removes them (Subtract). Elements get a unique groupId for each transform slice they lie in. If a point lies within more than one transform it is duplicated." tags="Filters">
    </INFO>
    <NODE systemname="Add (Value)" nodename="Add (Value)" componentmode="Hidden" id="42">
    <BOUNDS type="Node" left="4590" top="3990" width="330" height="270">
