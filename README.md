@@ -35,7 +35,7 @@ Getting Started
 ===============
 
 You need:
-* [vvvv](http://vvvv.org/) (vvvv_45beta_33 - 32bit/64bit)
+* [vvvv](http://vvvv.org/)
 * [dx11-vvvv](http://vvvv.org/contribution/directx11-nodes-alpha)
 
 If you want to create pointclouds with real world data:
