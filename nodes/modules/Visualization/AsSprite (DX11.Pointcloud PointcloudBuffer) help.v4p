@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Visualization\AsSprite (DX11.Pointcloud PointcloudBuffer) help.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="1920" top="2910" width="12660" height="13215">
+   <PATCH nodename="D:\workspace\dev\packs\dx11-pointcloud\nodes\modules\Visualization\AsSprite (DX11.Pointcloud PointcloudBuffer) help.v4p" scrollx="0" scrolly="0">
+   <BOUNDS type="Window" left="3255" top="2745" width="12660" height="13215">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
    <BOUNDS type="Node" left="225" top="225" width="5100" height="450">
@@ -567,7 +567,7 @@
    </LINKPOINT>
    </LINK>
    <NODE id="39" systemname="Quad (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Quad (DX11.Geometry)" componentmode="Hidden">
-   <PIN pinname="SizeXY" slicecount="1" values="1">
+   <PIN pinname="SizeXY" slicecount="1" values="0.05">
    </PIN>
    <BOUNDS type="Node" left="4395" top="7005" width="100" height="100">
    </BOUNDS>
