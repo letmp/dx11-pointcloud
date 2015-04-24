@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
    <PATCH nodename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Tools\PickPoints (DX11.Pointcloud PointcloudBuffer).v4p" systemname="GetCoordinates (Kinect Pointcloud)" filename="C:\apps\code\vvvv_45beta32.1_x64\packs\KinectDX11Bundle\nodes\modules\Pointcloud\GetCoordinates (Kinect Pointcloud).v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="930" top="6300" width="14220" height="9240">
+   <BOUNDS type="Window" left="930" top="6360" width="16095" height="9240">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.7.0">
    </PACK>
@@ -185,15 +185,15 @@
    <LINK srcnodeid="111" srcpinname="Transform Out" dstnodeid="109" dstpinname="Transform In">
    </LINK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="112" systemname="IOBox (Node)">
-   <BOUNDS type="Box" left="10920" top="7500" width="795" height="240">
+   <BOUNDS type="Box" left="12225" top="7500" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="10920" top="7500" width="0" height="0">
+   <BOUNDS type="Node" left="12225" top="7500" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Help Layer|">
    </PIN>
+   <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="109" srcpinname="Layer" dstnodeid="112" dstpinname="Input Node">
-   </LINK>
    <NODE systemname="DepthStencil (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="DepthStencil (DX11.RenderState)" componentmode="Hidden" id="114">
    <BOUNDS type="Node" left="10140" top="5415" width="100" height="100">
    </BOUNDS>
@@ -243,6 +243,8 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Helper Color|">
    </PIN>
+   <PIN pinname="Color Output" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="123" srcpinname="Color Output" dstnodeid="109" dstpinname="Color">
    </LINK>
@@ -263,7 +265,7 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Color)" componentmode="InABox" id="126" systemname="IOBox (Color)">
-   <BOUNDS type="Box" left="10470" top="2775" width="3210" height="240">
+   <BOUNDS type="Box" left="10470" top="2775" width="5010" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="10470" top="2775" width="0" height="0">
    </BOUNDS>
@@ -644,6 +646,116 @@
    <LINKPOINT x="2880" y="4643">
    </LINKPOINT>
    <LINKPOINT x="4245" y="4643">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Translate (Transform)" nodename="Translate (Transform)" componentmode="Hidden" id="151">
+   <BOUNDS type="Node" left="13815" top="5655" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="0.15">
+   </PIN>
+   </NODE>
+   <NODE systemname="Count (Node)" nodename="Count (Node)" componentmode="Hidden" id="149">
+   <BOUNDS type="Node" left="12990" top="4905" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Count" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="I (Spreads)" nodename="I (Spreads)" componentmode="Hidden" id="147">
+   <BOUNDS type="Node" left="12795" top="5265" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname=".. To [" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="149" srcpinname="Count" dstnodeid="147" dstpinname=".. To [" linkstyle="VHV">
+   <LINKPOINT x="13020" y="5268">
+   </LINKPOINT>
+   <LINKPOINT x="13020" y="5173">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="FormatValue (String)" filename="" nodename="FormatValue (String)" componentmode="Hidden" id="146">
+   <BOUNDS type="Node" left="12795" top="5655" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="147" srcpinname="Output" dstnodeid="146" dstpinname="Input">
+   </LINK>
+   <NODE id="145" systemname="Text (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.Text.dll" nodename="Text (DX11.Layer)" componentmode="Hidden">
+   <BOUNDS type="Node" left="13500" top="6060" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Color" visible="1" slicecount="1" values="|0.00000,1.00000,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Vertical Align" slicecount="1" values="Center">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="72">
+   </PIN>
+   <BOUNDS type="Box" left="13500" top="6060">
+   </BOUNDS>
+   <PIN pinname="String" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="146" srcpinname="Output" dstnodeid="145" dstpinname="String" linkstyle="VHV">
+   <LINKPOINT x="12855" y="5978">
+   </LINKPOINT>
+   <LINKPOINT x="13665" y="5978">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="151" srcpinname="Transform Out" dstnodeid="145" dstpinname="Transform In">
+   </LINK>
+   <LINK srcnodeid="111" srcpinname="Transform Out" dstnodeid="149" dstpinname="Input" linkstyle="VHV">
+   <LINKPOINT x="11445" y="4833">
+   </LINKPOINT>
+   <LINKPOINT x="12990" y="4828">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Group (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Group (DX11.Layer)" componentmode="Hidden" id="153">
+   <BOUNDS type="Node" left="12210" top="6795" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="109" srcpinname="Layer" dstnodeid="153" dstpinname="Layer 1" linkstyle="Bezier">
+   <LINKPOINT x="10980" y="6570">
+   </LINKPOINT>
+   <LINKPOINT x="12390" y="6570">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="145" srcpinname="Layer" dstnodeid="153" dstpinname="Layer 2" linkstyle="Bezier">
+   <LINKPOINT x="13500" y="6548">
+   </LINKPOINT>
+   <LINKPOINT x="12630" y="6548">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="153" srcpinname="Layer Out" dstnodeid="112" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="111" srcpinname="Transform Out" dstnodeid="151" dstpinname="Transform In" linkstyle="VHV">
+   <LINKPOINT x="11445" y="5205">
+   </LINKPOINT>
+   <LINKPOINT x="13815" y="5205">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="123" srcpinname="Color Output" dstnodeid="145" dstpinname="Color" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="11775" y="3375">
+   </LINKPOINT>
+   <LINKPOINT x="14610" y="3375">
    </LINKPOINT>
    </LINK>
    </PATCH>
