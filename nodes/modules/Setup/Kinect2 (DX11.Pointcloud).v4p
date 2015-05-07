@@ -28,7 +28,11 @@
    <BOUNDS type="Node" left="1635" top="2640" width="750" height="240">
    </BOUNDS>
    </NODE>
-   <LINK srcnodeid="4" srcpinname="Y Output Value" dstnodeid="5" dstpinname="Y Input Value">
+   <LINK srcnodeid="4" srcpinname="Y Output Value" dstnodeid="5" dstpinname="Y Input Value" linkstyle="VHV">
+   <LINKPOINT x="1665" y="2160">
+   </LINKPOINT>
+   <LINKPOINT x="1665" y="2160">
+   </LINKPOINT>
    </LINK>
    <NODE id="6" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="RGB">
@@ -43,9 +47,9 @@
    <NODE id="7" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
    <PIN pinname="Descriptive Name" slicecount="1" values="|Depth FOVXY|">
    </PIN>
-   <BOUNDS type="Box" left="5025" top="2640" width="750" height="240">
+   <BOUNDS type="Box" left="6075" top="2100" width="750" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="5025" top="2640" width="750" height="240">
+   <BOUNDS type="Node" left="6075" top="2100" width="750" height="240">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="2" values="0,0">
    </PIN>
@@ -63,9 +67,9 @@
    <NODE id="9" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="RGBDepth">
    </PIN>
-   <BOUNDS type="Box" left="4095" top="2640" width="750" height="240">
+   <BOUNDS type="Box" left="5145" top="2640" width="750" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="4095" top="2640" width="750" height="240">
+   <BOUNDS type="Node" left="5145" top="2640" width="750" height="240">
    </BOUNDS>
    <PIN pinname="Input Node" slicecount="1" values="||">
    </PIN>
@@ -104,7 +108,11 @@
    <PIN pinname="Is Started" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="0" srcpinname="Depth FOVXY" dstnodeid="7" dstpinname="Y Input Value">
+   <LINK srcnodeid="0" srcpinname="Depth FOVXY" dstnodeid="7" dstpinname="Y Input Value" linkstyle="VHV">
+   <LINKPOINT x="5085" y="1890">
+   </LINKPOINT>
+   <LINKPOINT x="6075" y="1890">
+   </LINKPOINT>
    </LINK>
    <NODE systemname="RGB (Kinect2 Microsoft)" filename="%VVVV%\packs\dx11\nodes\plugins\kinect2\VVVV.DX11.Nodes.Kinect2.dll" nodename="RGB (Kinect2 Microsoft)" componentmode="Hidden" id="3" hiddenwhenlocked="0">
    <BOUNDS type="Node" left="2595" top="2100" width="100" height="100">
@@ -131,11 +139,11 @@
    <LINK srcnodeid="1" srcpinname="Texture" dstnodeid="8" dstpinname="Input Node">
    </LINK>
    <NODE systemname="RGBDepth (Kinect2 Microsoft)" filename="%VVVV%\packs\dx11\nodes\plugins\kinect2\VVVV.DX11.Nodes.Kinect2.dll" nodename="RGBDepth (Kinect2 Microsoft)" componentmode="Hidden" id="2" hiddenwhenlocked="0">
-   <BOUNDS type="Node" left="4110" top="2100" width="100" height="100">
+   <BOUNDS type="Node" left="5160" top="2100" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Kinect Runtime" visible="1" slicecount="1" values="||">
    </PIN>
-   <BOUNDS type="Box" left="4110" top="2100">
+   <BOUNDS type="Box" left="5160" top="2100">
    </BOUNDS>
    <PIN pinname="Texture" visible="1">
    </PIN>
@@ -163,13 +171,13 @@
    <LINK srcnodeid="0" srcpinname="Kinect Runtime" dstnodeid="2" dstpinname="Kinect Runtime" linkstyle="VHV" hiddenwhenlocked="0">
    <LINKPOINT x="3420" y="1890">
    </LINKPOINT>
-   <LINKPOINT x="4110" y="1890">
+   <LINKPOINT x="5160" y="1890">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="11" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="6750" top="2640" width="480" height="480">
+   <BOUNDS type="Box" left="7200" top="2640" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="6750" top="2640" width="0" height="0">
+   <BOUNDS type="Node" left="7200" top="2640" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -183,9 +191,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="0" srcpinname="Is Started" dstnodeid="11" dstpinname="Y Input Value" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5865" y="2160">
+   <LINKPOINT x="5505" y="2160">
    </LINKPOINT>
-   <LINKPOINT x="6750" y="2160">
+   <LINKPOINT x="7200" y="2160">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="12" systemname="IOBox (Value Advanced)">
@@ -204,6 +212,8 @@
    <PIN pinname="Behavior" slicecount="1" values="Bang">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Reset">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Reset" linkstyle="Bezier" hiddenwhenlocked="1">
@@ -229,6 +239,8 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Enabled">
    </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="13" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Enabled" hiddenwhenlocked="1">
    </LINK>
@@ -246,6 +258,40 @@
    <LINKPOINT x="3360" y="1890">
    </LINKPOINT>
    <LINKPOINT x="360" y="1890">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="RayTable (Kinect2 Microsoft)" filename="%VVVV%\packs\dx11\nodes\plugins\kinect2\VVVV.DX11.Nodes.Kinect2.dll" nodename="RayTable (Kinect2 Microsoft)" componentmode="Hidden" id="15">
+   <BOUNDS type="Node" left="4245" top="2100" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Kinect Runtime" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="4245" top="2100">
+   </BOUNDS>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Update" slicecount="1" visible="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Kinect Runtime" dstnodeid="15" dstpinname="Kinect Runtime" linkstyle="VHV">
+   <LINKPOINT x="3420" y="1883">
+   </LINKPOINT>
+   <LINKPOINT x="4245" y="1883">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="16" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="4245" top="2640" width="810" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4245" top="2640" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="RayTable">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="Texture" dstnodeid="16" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="13" srcpinname="Y Output Value" dstnodeid="15" dstpinname="Update" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="5775" y="1560">
+   </LINKPOINT>
+   <LINKPOINT x="4980" y="1560">
    </LINKPOINT>
    </LINK>
    </PATCH>
