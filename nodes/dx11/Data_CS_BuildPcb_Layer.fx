@@ -2,12 +2,10 @@ float4x4 tW : WORLD;
 
 Texture2D texRGB <string uiname="RGB";>;
 Texture2D texDepth <string uiname="Depth";>;
-Texture2D texRGBDepth <string uiname="RGBDepth";>;
 int drawIndex : DRAWINDEX;
 int IdOffset;
 float2 FOV;
-int elementcount;
-StructuredBuffer<float2> uv <string uiname="UV Buffer";>;
+float2 Resolution;
 
 float4x4 tP <string uiname="Projection";>;
 
@@ -26,15 +24,14 @@ AppendStructuredBuffer<pointData> pcBuffer : BACKBUFFER;
 //==============================================================================
 #define linstep(a,b,x) saturate((x-a)/(b-a))
 
-[numthreads(64, 1, 1)]
-void CSBuildPointcloudBuffer( uint3 DTid : SV_DispatchThreadID )
+[numthreads(8, 8, 1)]
+void CSBuildPointcloudBuffer( uint3 i : SV_DispatchThreadID )
 {
+	if (i.x >= asuint(Resolution.x) || i.y >= asuint(Resolution.y)) { return; }
 	
-	if(DTid.x >= asuint(elementcount)){return;}
-	
-	float2 uvc = uv[DTid.x];
-	float4 col = texRGB.SampleLevel(sPoint,uvc,0);
-	float depth =  texDepth.SampleLevel(sPoint,uvc,0).r;
+	float2 coord = i.xy / Resolution;
+	float4 col = texRGB.SampleLevel(sPoint,coord,0);
+	float depth =  texDepth.SampleLevel(sPoint,coord,0).r;
 	float ld = tP._43 / (depth - tP._33);
 	depth = ld;
 	
@@ -43,8 +40,8 @@ void CSBuildPointcloudBuffer( uint3 DTid : SV_DispatchThreadID )
 	    float YtoZ = tan(FOV.y/2) * 2;
 		
 		float4 pos = float4(0,0,0,1);
-		pos.x = ((uvc.x - 0.5) * depth * XtoZ );
-		pos.y = ((0.5 - uvc.y) * depth * YtoZ);
+		pos.x = ((coord.x - 0.5) * depth * XtoZ );
+		pos.y = ((0.5 - coord.y) * depth * YtoZ);
 		pos.z = depth;
 		pos = mul(pos, tW);
 		

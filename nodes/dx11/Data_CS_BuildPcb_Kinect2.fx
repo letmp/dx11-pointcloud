@@ -6,8 +6,7 @@ Texture2D texRayTable <string uiname="RayTable";>;
 Texture2D texRGBDepth <string uiname="RGBDepth";>;
 int drawIndex : DRAWINDEX;
 int IdOffset;
-int elementcount;
-StructuredBuffer<float2> uv <string uiname="UV Buffer";>;
+float2 Resolution;
 
 SamplerState sPoint : IMMUTABLE
 {
@@ -23,27 +22,31 @@ AppendStructuredBuffer<pointData> pcBuffer : BACKBUFFER;
 //COMPUTE SHADER ===============================================================
 //==============================================================================
 
-[numthreads(64, 1, 1)]
-void CSBuildPointcloudBuffer( uint3 DTid : SV_DispatchThreadID )
+[numthreads(8, 8, 1)]
+void CSBuildPointcloudBuffer( uint3 i : SV_DispatchThreadID )
 {
 	
-	if(DTid.x >= asuint(elementcount)){return;}
+	uint w,h, dummy;
+	texDepth.GetDimensions(0,w,h,dummy);
+	if (i.x >= w || i.y >= h) { return; }
 	
-	float2 uvc = uv[DTid.x];
+	float2 coord = i.xy * float2(w / Resolution.x, h / Resolution.y) / Resolution;
 	
-	float depth =  texDepth.SampleLevel(sPoint,uvc,0).r * 65.535 ;
+	float depth =  texDepth.SampleLevel(sPoint,coord,0).r * 65.535 ;
 	if (depth > 0){
 		
 		float4 pos = float4(0,0,0,1);
-		float2 raytable =  texRayTable.SampleLevel(sPoint,uvc,0).xy;
+		float2 raytable =  texRayTable.SampleLevel(sPoint,coord,0).xy;
 		pos.x = depth * raytable.x * -1;
 		pos.y = depth * raytable.y;
 		pos.z = depth;
 		pos = mul(pos, tW);
 			
-		float2 coords = texRGBDepth.SampleLevel(sPoint, uvc ,0).rg;
-		float4 col = texRGB.SampleLevel(sPoint,coords,0);
-		
+		float2 map = texRGBDepth.SampleLevel(sPoint, coord ,0).rg;
+		map.x /= 1920.0f;
+		map.y /= 1080.0f;
+		float4 col = texRGB.SampleLevel(sPoint,map,0);
+		//col = float4(1,1,1,1);
 		pointData pd = {pos.xyz, col, drawIndex + IdOffset};
 		pcBuffer.Append(pd);
 	}

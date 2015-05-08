@@ -67,7 +67,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="1515" top="7545" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="14790" top="3375" width="9150" height="7800">
+   <BOUNDS type="Window" left="14790" top="3375" width="9150" height="7815">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
@@ -295,7 +295,7 @@
    </PIN>
    <BOUNDS type="Box" left="0" top="0" width="4800" height="3600">
    </BOUNDS>
-   <BOUNDS type="Window" left="18030" top="7680" width="9150" height="4440">
+   <BOUNDS type="Window" left="13410" top="6795" width="9150" height="4440">
    </BOUNDS>
    <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
    </PIN>
@@ -347,7 +347,7 @@
    </PIN>
    <PIN pinname="Enabled" slicecount="1" values="1">
    </PIN>
-   <BOUNDS type="Window" left="6165" top="1755" width="10755" height="12825">
+   <BOUNDS type="Window" left="6165" top="1755" width="10335" height="9765">
    </BOUNDS>
    <PIN pinname="ID Offset" visible="1">
    </PIN>
@@ -384,12 +384,12 @@
    </LINK>
    <LINK srcnodeid="40" srcpinname="RGBDepth" dstnodeid="27" dstpinname="RGBDepth">
    </LINK>
-   <LINK srcnodeid="40" srcpinname="Depth" dstnodeid="27" dstpinname="Depth">
-   </LINK>
    <LINK srcnodeid="40" srcpinname="RayTable" dstnodeid="27" dstpinname="RayTable">
    </LINK>
-   <LINK srcnodeid="40" srcpinname="RGB" dstnodeid="27" dstpinname="RGB">
-   </LINK>
    <LINK srcnodeid="27" srcpinname="PointcloudBuffer" dstnodeid="25" dstpinname="PointcloudBuffer">
+   </LINK>
+   <LINK srcnodeid="40" srcpinname="Depth" dstnodeid="27" dstpinname="Depth">
+   </LINK>
+   <LINK srcnodeid="40" srcpinname="RGB" dstnodeid="27" dstpinname="RGB">
    </LINK>
    </PATCH>

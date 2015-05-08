@@ -74,7 +74,7 @@
    <PIN pinname="Input Node" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="18030" top="7680" width="9150" height="4440">
+   <BOUNDS type="Window" left="13410" top="6795" width="9150" height="4440">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.7.0">
    </PACK>
@@ -151,7 +151,7 @@
    </PIN>
    <PIN pinname="Inverse" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Raw Data" slicecount="1" values="0">
+   <PIN pinname="Raw Data" slicecount="1" values="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="2" srcpinname="Texture" dstnodeid="9" dstpinname="Input Node">
