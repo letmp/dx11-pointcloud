@@ -227,7 +227,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="2910" top="12405" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Descriptive Name" slicecount="1" values="Buffers">
+   <PIN pinname="Descriptive Name" slicecount="1" values="PointcloudBuffer">
    </PIN>
    <PIN pinname="Input Node" slicecount="1" values="||">
    </PIN>
