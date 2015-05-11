@@ -4,8 +4,9 @@ DX11.Pointcloud
 =================
 
 This pack is a collection of pointcloud tools and techniques for [vvvv](http://vvvv.org/) on top of the nodes provided by [dx11-vvvv](https://github.com/mrvux/dx11-vvvv).
-It emerged from a previous pack called [KinectToolkitDX11](https://github.com/letmp/KinectToolkitDX11) and offers much more tools for dealing with pointclouds independent of
-devices like Kinect(2) or other depth cameras. Its purpose is to create a central repository for modules and plugins related to pointclouds.
+It emerged from a previous pack called KinectToolkitDX11 and offers much more tools for dealing with pointclouds independent of devices like Kinect(2) or other depth cameras. Its purpose is to create a central repository for modules and plugins related to pointclouds.
+
+If you have questions or want to share an idea just head over to the vvvv contribution page of [DX11.Pointcloud](http://vvvv.org/contribution/dx11.pointcloud).
 
 Background
 ==========
