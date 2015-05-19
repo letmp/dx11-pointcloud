@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Setup\Camera (DX11.Pointcloud).v4p" systemname="Camera (DX11.Pointcloud.Setup)" filename="C:\apps\code\vvvv_45beta33.3_x64\packs\dx11-pointcloud\nodes\modules\Setup\Camera (DX11.Pointcloud.Setup).v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Setup\Camera (DX11.Pointcloud).v4p" systemname="Camera (DX11.Pointcloud.Setup)" filename="C:\apps\code\vvvv_45beta33.3_x64\packs\dx11-pointcloud\nodes\modules\Setup\Camera (DX11.Pointcloud.Setup).v4p" scrollx="0" scrolly="0">
    <NODE systemname="RenderState (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="RenderState (DX11.Layer)" componentmode="Hidden" id="1">
    <BOUNDS type="Node" left="4785" top="7980" width="100" height="100">
    </BOUNDS>
@@ -89,7 +89,7 @@
    <NODE systemname="Box (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Box (DX11.Geometry)" componentmode="Hidden" id="8">
    <BOUNDS type="Node" left="1380" top="5070" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="SizeXYZ" slicecount="3" values="2,2,2" visible="1">
+   <PIN pinname="SizeXYZ" slicecount="3" visible="1" values="2,2,2">
    </PIN>
    <PIN pinname="Geometry Out" visible="1">
    </PIN>
@@ -147,7 +147,7 @@
    </PIN>
    </NODE>
    <NODE systemname="Decompose (Transform Vector)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Decompose (Transform Vector)" componentmode="Hidden" id="15">
-   <BOUNDS type="Node" left="4170" top="2010" width="100" height="100">
+   <BOUNDS type="Node" left="4050" top="2010" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
    </PIN>
@@ -155,7 +155,7 @@
    </PIN>
    <PIN pinname="RotateXYZ" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="4170" top="2010">
+   <BOUNDS type="Box" left="4050" top="2010">
    </BOUNDS>
    </NODE>
    <NODE systemname="Rasterizer (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Rasterizer (DX11.RenderState)" componentmode="Hidden" id="17">
@@ -203,9 +203,9 @@
    <LINK srcnodeid="20" srcpinname="Output Node" dstnodeid="14" dstpinname="Transform In" hiddenwhenlocked="1">
    </LINK>
    <LINK srcnodeid="20" srcpinname="Output Node" dstnodeid="15" dstpinname="Transform In" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="1625" y="1388">
+   <LINKPOINT x="1585" y="1388">
    </LINKPOINT>
-   <LINKPOINT x="4150" y="1388">
+   <LINKPOINT x="4070" y="1388">
    </LINKPOINT>
    </LINK>
    <NODE id="21" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
@@ -215,6 +215,14 @@
    </BOUNDS>
    <BOUNDS type="Node" left="4020" top="560" width="750" height="240">
    </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="|0.2,0.2|">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="0.2">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0.2">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
    </NODE>
    <NODE id="22" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
    <PIN pinname="Descriptive Name" slicecount="1" values="|Near Plane|">
@@ -223,6 +231,12 @@
    </BOUNDS>
    <BOUNDS type="Node" left="4920" top="560" width="750" height="240">
    </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
    </NODE>
    <NODE id="23" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
    <PIN pinname="Descriptive Name" slicecount="1" values="|Far Plane|">
@@ -231,6 +245,12 @@
    </BOUNDS>
    <BOUNDS type="Node" left="5820" top="560" width="750" height="240">
    </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="8">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="8">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="8">
+   </PIN>
    </NODE>
    <LINK srcnodeid="7" srcpinname="Render State" dstnodeid="1" dstpinname="Render State">
    </LINK>
@@ -275,7 +295,7 @@
    <PACK Name="addonpack" Version="33.7.0">
    </PACK>
    <NODE systemname="Camera (Transform Basic)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Setup\plugins\BasicTransformCamera\BasicTransformCamera.csproj" nodename="Camera (Transform Basic)" componentmode="Hidden" id="16">
-   <BOUNDS type="Node" left="4320" top="2625" width="100" height="100">
+   <BOUNDS type="Node" left="4275" top="2625" width="100" height="100">
    </BOUNDS>
    <PIN pinname="TranslateXYZ" visible="1">
    </PIN>
@@ -283,7 +303,7 @@
    </PIN>
    <PIN pinname="ViewProjection" visible="1">
    </PIN>
-   <PIN pinname="FoVXY" visible="1">
+   <PIN pinname="FoVXY" visible="1" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Near Plane" visible="1" pintype="Input">
    </PIN>
@@ -293,39 +313,33 @@
    </PIN>
    <PIN pinname="Projection" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="4320" top="2625">
+   <BOUNDS type="Box" left="4275" top="2625">
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="16" srcpinname="ViewProjection" dstnodeid="18" dstpinname="Input Node" linkstyle="VHV">
-   <LINKPOINT x="5200" y="3000">
+   <LINKPOINT x="5170" y="3000">
    </LINKPOINT>
-   <LINKPOINT x="10325" y="3000">
+   <LINKPOINT x="10310" y="3000">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="15" srcpinname="TranslateXYZ" dstnodeid="16" dstpinname="TranslateXYZ" linkstyle="VHV">
-   <LINKPOINT x="4200" y="2520">
+   <LINKPOINT x="4110" y="2453">
    </LINKPOINT>
-   <LINKPOINT x="4335" y="2370">
+   <LINKPOINT x="4275" y="2453">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="15" srcpinname="RotateXYZ" dstnodeid="16" dstpinname="RotateXYZ" linkstyle="VHV">
-   <LINKPOINT x="4755" y="2445">
+   <LINKPOINT x="4635" y="2453">
    </LINKPOINT>
-   <LINKPOINT x="4635" y="2445">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="21" srcpinname="Y Output Value" dstnodeid="16" dstpinname="FoVXY" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="4085" y="1695">
-   </LINKPOINT>
-   <LINKPOINT x="4825" y="1695">
+   <LINKPOINT x="4470" y="2453">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="22" srcpinname="Y Output Value" dstnodeid="16" dstpinname="Near Plane" hiddenwhenlocked="1">
    </LINK>
    <LINK srcnodeid="23" srcpinname="Y Output Value" dstnodeid="16" dstpinname="Far Plane" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5840" y="1695">
+   <LINKPOINT x="5825" y="1695">
    </LINKPOINT>
-   <LINKPOINT x="5170" y="1695">
+   <LINKPOINT x="5140" y="1695">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="16" srcpinname="ViewProjection" dstnodeid="9" dstpinname="Source">
@@ -389,9 +403,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="16" srcpinname="Projection" dstnodeid="26" dstpinname="Input Node" linkstyle="VHV">
-   <LINKPOINT x="4780" y="3000">
+   <LINKPOINT x="4750" y="3000">
    </LINKPOINT>
-   <LINKPOINT x="9380" y="3000">
+   <LINKPOINT x="9365" y="3000">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="27" systemname="IOBox (Node)">
@@ -403,9 +417,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="16" srcpinname="View" dstnodeid="27" dstpinname="Input Node" linkstyle="VHV">
-   <LINKPOINT x="4360" y="3000">
+   <LINKPOINT x="4330" y="3000">
    </LINKPOINT>
-   <LINKPOINT x="8315" y="3000">
+   <LINKPOINT x="8300" y="3000">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="29" systemname="IOBox (Value Advanced)">
@@ -507,5 +521,11 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="10" srcpinname="Transform Out" dstnodeid="3" dstpinname="Transform In">
+   </LINK>
+   <LINK srcnodeid="21" srcpinname="Y Output Value" dstnodeid="16" dstpinname="FoVXY" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="4050" y="1695">
+   </LINKPOINT>
+   <LINKPOINT x="4815" y="1695">
+   </LINKPOINT>
    </LINK>
    </PATCH>
