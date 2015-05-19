@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Tools\PickPoints (DX11.Pointcloud PointcloudBuffer) help.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Tools\PickPoints (DX11.Pointcloud PointcloudBuffer) help.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="2220" top="1350" width="12615" height="10695">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
@@ -25,9 +25,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="27" systemname="IOBox (Value Advanced)" hiddenwhenlocked="0">
-   <BOUNDS type="Box" left="2160" top="2775" width="795" height="480">
+   <BOUNDS type="Box" left="2325" top="4710" width="795" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="2160" top="2775" width="0" height="0">
+   <BOUNDS type="Node" left="2325" top="4710" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="2" visible="1" values="320,240">
    </PIN>
@@ -372,30 +372,6 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
-   <NODE systemname="PointcloudBuffer (DX11.Pointcloud Kinect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Data\PointcloudBuffer (DX11.Pointcloud Kinect).v4p" nodename="PointcloudBuffer (DX11.Pointcloud Kinect)" componentmode="Hidden" id="26" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="3555" top="3930" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Resolution" visible="1">
-   </PIN>
-   <PIN pinname="RGB" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Depth" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="RGBDepth" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="PointcloudBuffer" visible="1">
-   </PIN>
-   <PIN pinname="Depth FOVXY" visible="1">
-   </PIN>
-   <BOUNDS type="Box" left="3555" top="3930">
-   </BOUNDS>
-   </NODE>
-   <LINK srcnodeid="27" srcpinname="Y Output Value" dstnodeid="26" dstpinname="Resolution" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="2220" y="3578">
-   </LINKPOINT>
-   <LINKPOINT x="3780" y="3578">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="Camera (DX11.Pointcloud)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Setup\Camera (DX11.Pointcloud).v4p" nodename="Camera (DX11.Pointcloud)" componentmode="Hidden" id="33" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="5250" top="3930" width="100" height="100">
    </BOUNDS>
@@ -425,9 +401,9 @@
    </BOUNDS>
    <BOUNDS type="Box" left="3345" top="6225" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Resolution" visible="1">
+   <PIN pinname="Resolution" visible="1" slicecount="2" values="512,424">
    </PIN>
-   <PIN pinname="PointcloudBuffer" visible="1">
+   <PIN pinname="PointcloudBuffer" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="View" visible="1">
    </PIN>
@@ -444,12 +420,6 @@
    <PIN pinname="PointsXY" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="27" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Resolution" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="2205" y="4733">
-   </LINKPOINT>
-   <LINKPOINT x="3360" y="4733">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="0" srcpinname="Lookup Texture" dstnodeid="11" dstpinname="Input Node" linkstyle="Bezier">
    <LINKPOINT x="3900" y="6953">
    </LINKPOINT>
@@ -486,8 +456,6 @@
    <LINKPOINT x="4005" y="5693">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="26" srcpinname="PointcloudBuffer" dstnodeid="0" dstpinname="PointcloudBuffer">
-   </LINK>
    <LINK srcnodeid="33" srcpinname="ViewProjection" dstnodeid="0" dstpinname="View" linkstyle="Bezier">
    <LINKPOINT x="6090" y="5198">
    </LINKPOINT>
@@ -505,7 +473,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="1860" top="8115" width="4800" height="3600">
    </BOUNDS>
-   <PIN pinname="PointcloudBuffer" visible="1" pintype="Input">
+   <PIN pinname="PointcloudBuffer" visible="1" pintype="Input" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Render State" visible="1" pintype="Input">
    </PIN>
@@ -538,14 +506,8 @@
    </LINK>
    <LINK srcnodeid="15" srcpinname="Geometry Out" dstnodeid="17" dstpinname="Geometry">
    </LINK>
-   <LINK srcnodeid="26" srcpinname="PointcloudBuffer" dstnodeid="17" dstpinname="PointcloudBuffer" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="3570" y="6158">
-   </LINKPOINT>
-   <LINKPOINT x="2610" y="6158">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="Kinect2 (DX11.Pointcloud)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Setup\Kinect2 (DX11.Pointcloud).v4p" nodename="Kinect2 (DX11.Pointcloud)" componentmode="Hidden" id="35" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="3585" top="2175" width="1200" height="270">
+   <BOUNDS type="Node" left="3570" top="2175" width="1380" height="270">
    </BOUNDS>
    <PIN pinname="Resolution" visible="1">
    </PIN>
@@ -557,11 +519,49 @@
    </PIN>
    <PIN pinname="Depth FOVXY" visible="1">
    </PIN>
+   <PIN pinname="Reset" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="RayTable" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="35" srcpinname="Resolution" dstnodeid="27" dstpinname="Y Input Value" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="3780" y="2595">
+   <LINKPOINT x="3765" y="3578">
    </LINKPOINT>
-   <LINKPOINT x="2220" y="2595">
+   <LINKPOINT x="2370" y="3578">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="35" srcpinname="Depth FOVXY" dstnodeid="33" dstpinname="FoVXY" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="4580" y="3180">
+   </LINKPOINT>
+   <LINKPOINT x="5575" y="3180">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="PointcloudBuffer (DX11.Pointcloud Kinect2)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Data\PointcloudBuffer (DX11.Pointcloud Kinect2).v4p" nodename="PointcloudBuffer (DX11.Pointcloud Kinect2)" componentmode="Hidden" id="26" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="3555" top="3930" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Resolution" visible="1" slicecount="2" values="512,424">
+   </PIN>
+   <PIN pinname="RGB" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Depth" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="RGBDepth" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="PointcloudBuffer" visible="1">
+   </PIN>
+   <PIN pinname="Depth FOVXY" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="3555" top="3930">
+   </BOUNDS>
+   <PIN pinname="RayTable" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="26" srcpinname="PointcloudBuffer" dstnodeid="0" dstpinname="PointcloudBuffer">
+   </LINK>
+   <LINK srcnodeid="26" srcpinname="PointcloudBuffer" dstnodeid="17" dstpinname="PointcloudBuffer" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="3570" y="6158">
+   </LINKPOINT>
+   <LINKPOINT x="2610" y="6158">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="35" srcpinname="RGB" dstnodeid="26" dstpinname="RGB" hiddenwhenlocked="1">
@@ -570,12 +570,14 @@
    </LINK>
    <LINK srcnodeid="35" srcpinname="RGBDepth" dstnodeid="26" dstpinname="RGBDepth" hiddenwhenlocked="1">
    </LINK>
-   <LINK srcnodeid="35" srcpinname="Depth FOVXY" dstnodeid="26" dstpinname="Depth FOVXY" hiddenwhenlocked="1">
+   <LINK srcnodeid="35" srcpinname="RayTable" dstnodeid="26" dstpinname="RayTable" hiddenwhenlocked="1">
    </LINK>
-   <LINK srcnodeid="35" srcpinname="Depth FOVXY" dstnodeid="33" dstpinname="FoVXY" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="4590" y="3180">
+   <LINK srcnodeid="35" srcpinname="Resolution" dstnodeid="26" dstpinname="Resolution" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="27" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Resolution" linkstyle="Bezier">
+   <LINKPOINT x="2385" y="5700">
    </LINKPOINT>
-   <LINKPOINT x="5580" y="3180">
+   <LINKPOINT x="3345" y="5700">
    </LINKPOINT>
    </LINK>
    </PATCH>
