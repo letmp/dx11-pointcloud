@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\dev\packs\dx11-pointcloud\nodes\modules\Analysis\HitTest (DX11.Pointcloud PointcloudBuffer).v4p" systemname="Contains (DX11.Pointcloud.Analysis PointcloudBuffer)" filename="C:\apps\code\vvvv_45beta33.3_x64\packs\KinectToolkitDX11\nodes\modules\Analysis\Contains (DX11.Pointcloud.Analysis PointcloudBuffer).v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="11865" top="7035" width="8760" height="8070">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Analysis\HitTest (DX11.Pointcloud PointcloudBuffer).v4p" systemname="Contains (DX11.Pointcloud.Analysis PointcloudBuffer)" filename="C:\apps\code\vvvv_45beta33.3_x64\packs\KinectToolkitDX11\nodes\modules\Analysis\Contains (DX11.Pointcloud.Analysis PointcloudBuffer).v4p" scrollx="0" scrolly="0">
+   <BOUNDS type="Window" left="10455" top="4695" width="8760" height="8385">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.7.0">
    </PACK>
@@ -25,6 +25,8 @@
    </PIN>
    <PIN pinname="Query" visible="1">
    </PIN>
+   <BOUNDS type="Box" left="2940" top="5760">
+   </BOUNDS>
    </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="11" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="4245" top="540" width="795" height="240">
@@ -123,9 +125,9 @@
    <LINK srcnodeid="14" srcpinname="Layer Out" dstnodeid="13" dstpinname="Layer">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="24" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="2940" top="6600" width="795" height="240">
+   <BOUNDS type="Box" left="2670" top="7170" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="2940" top="6600" width="0" height="0">
+   <BOUNDS type="Node" left="2670" top="7170" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -135,7 +137,7 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Hit">
    </PIN>
-   <PIN pinname="Y Input Value" visible="1" slicecount="3" values="1,1,1">
+   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="0">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Color)" componentmode="InABox" id="47" systemname="IOBox (Color)">
@@ -233,10 +235,10 @@
    </PIN>
    <PIN pinname="Enabled" visible="1">
    </PIN>
+   <BOUNDS type="Box" left="2940" top="6180">
+   </BOUNDS>
    </NODE>
    <LINK srcnodeid="13" srcpinname="Buffers" dstnodeid="58" dstpinname="Input">
-   </LINK>
-   <LINK srcnodeid="58" srcpinname="Output" dstnodeid="24" dstpinname="Y Input Value">
    </LINK>
    <LINK srcnodeid="51" srcpinname="Y Output Value" dstnodeid="58" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="7725" y="3465">
@@ -249,17 +251,11 @@
    <NODE systemname="Count (Value)" nodename="Count (Value)" componentmode="Hidden" id="60">
    <BOUNDS type="Node" left="3405" top="5325" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Input" visible="1">
+   <PIN pinname="Input" visible="1" slicecount="1" values="3">
    </PIN>
    <PIN pinname="Count" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="59" srcpinname="Y Output Value" dstnodeid="60" dstpinname="Input" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5685" y="3060">
-   </LINKPOINT>
-   <LINKPOINT x="3435" y="3060">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="60" srcpinname="Count" dstnodeid="13" dstpinname="Element Count">
    </LINK>
    <NODE systemname="Analysis_CS_CountGroupIds (DX11.Effect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\dx11\Analysis_CS_CountGroupIds.fx" nodename="Analysis_CS_CountGroupIds (DX11.Effect)" componentmode="Hidden" id="15">
@@ -299,7 +295,7 @@
    </PIN>
    <PIN pinname="pcBuffer" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="groupId" visible="1">
+   <PIN pinname="groupId" visible="1" slicecount="1" values="3">
    </PIN>
    </NODE>
    <LINK srcnodeid="16" srcpinname="Geometry Out" dstnodeid="15" dstpinname="Geometry" linkstyle="VHV">
@@ -320,18 +316,12 @@
    <LINKPOINT x="3375" y="2393">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="59" srcpinname="Y Output Value" dstnodeid="15" dstpinname="groupId" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5685" y="2408">
-   </LINKPOINT>
-   <LINKPOINT x="1755" y="2408">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="Analysis_CS_CountGroupIds (DX11.Effect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\dx11\Analysis_CS_CountGroupIds.fx" nodename="Analysis_CS_CountGroupIds (DX11.Effect)" componentmode="Hidden" id="61">
    <BOUNDS type="Node" left="3615" top="4050" width="2970" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="3615" top="4050">
    </BOUNDS>
-   <PIN pinname="groupId" visible="1">
+   <PIN pinname="groupId" visible="1" slicecount="1" values="3">
    </PIN>
    <PIN pinname="Technique" slicecount="1" values="HitTest">
    </PIN>
@@ -368,10 +358,94 @@
    <LINKPOINT x="5565" y="2408">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="59" srcpinname="Y Output Value" dstnodeid="61" dstpinname="groupId" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5700" y="2423">
+   <NODE systemname="AvoidNIL (Spreads)" filename="%VVVV%\lib\nodes\modules\Spreads\AvoidNIL (Spreads).v4p" nodename="AvoidNIL (Spreads)" componentmode="Hidden" id="62">
+   <BOUNDS type="Node" left="5670" top="1140" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="59" srcpinname="Y Output Value" dstnodeid="62" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="62" srcpinname="Output" dstnodeid="15" dstpinname="groupId" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="5670" y="2715">
    </LINKPOINT>
-   <LINKPOINT x="4935" y="2423">
+   <LINKPOINT x="1755" y="2715">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="62" srcpinname="Output" dstnodeid="61" dstpinname="groupId" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="5685" y="2723">
+   </LINKPOINT>
+   <LINKPOINT x="4935" y="2723">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="62" srcpinname="Output" dstnodeid="60" dstpinname="Input" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="5670" y="3368">
+   </LINKPOINT>
+   <LINKPOINT x="3450" y="3368">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Switch (Value Input)" nodename="Switch (Value Input)" componentmode="Hidden" id="63">
+   <BOUNDS type="Node" left="2670" top="6675" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Switch" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="58" srcpinname="Output" dstnodeid="63" dstpinname="Input 1">
+   </LINK>
+   <NODE systemname="Count (Value)" nodename="Count (Value)" componentmode="Hidden" id="64">
+   <BOUNDS type="Node" left="2100" top="5760" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Count" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="59" srcpinname="Y Output Value" dstnodeid="64" dstpinname="Input" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="5670" y="3263">
+   </LINKPOINT>
+   <LINKPOINT x="2160" y="3263">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="EQ (Value)" nodename="EQ (Value)" componentmode="Hidden" id="65">
+   <BOUNDS type="Node" left="2100" top="6180" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="64" srcpinname="Count" dstnodeid="65" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="65" srcpinname="Output" dstnodeid="63" dstpinname="Switch" linkstyle="VHV">
+   <LINKPOINT x="2160" y="6548">
+   </LINKPOINT>
+   <LINKPOINT x="2670" y="6548">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="63" srcpinname="Output" dstnodeid="24" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="NIL (Spreads)" filename="%VVVV%\lib\nodes\modules\Spreads\NIL (Spreads).v4p" nodename="NIL (Spreads)" componentmode="Hidden" id="66">
+   <BOUNDS type="Node" left="4245" top="6180" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="4245" top="6180">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="66" srcpinname="Output" dstnodeid="63" dstpinname="Input 2" linkstyle="VHV">
+   <LINKPOINT x="4245" y="6548">
+   </LINKPOINT>
+   <LINKPOINT x="3225" y="6548">
    </LINKPOINT>
    </LINK>
    </PATCH>

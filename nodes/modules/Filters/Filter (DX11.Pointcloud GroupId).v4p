@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Filters\Filter (DX11.Pointcloud GroupId).v4p" systemname="Merge (DX11.Pointcloud.Data PointcloudBuffer)" filename="D:\workspace\dev\packs\dx11-pointcloud\nodes\modules\Data\Merge (DX11.Pointcloud.Data PointcloudBuffer).v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Filters\Filter (DX11.Pointcloud GroupId).v4p" systemname="Merge (DX11.Pointcloud.Data PointcloudBuffer)" filename="D:\workspace\dev\packs\dx11-pointcloud\nodes\modules\Data\Merge (DX11.Pointcloud.Data PointcloudBuffer).v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="20610" top="6210" width="6735" height="7230">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.7.0">
@@ -255,7 +255,7 @@
    </PIN>
    <PIN pinname="InputCountBuffer" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="groupIds" visible="1">
+   <PIN pinname="groupIds" visible="1" slicecount="1" values="-1">
    </PIN>
    <PIN pinname="pcBuffer" visible="1" slicecount="1" values="||">
    </PIN>
@@ -280,12 +280,6 @@
    <LINKPOINT x="2295" y="2070">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="8" srcpinname="Y Output Value" dstnodeid="38" dstpinname="groupIds" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="3450" y="2063">
-   </LINKPOINT>
-   <LINKPOINT x="1860" y="2063">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="6" srcpinname="Output Node" dstnodeid="38" dstpinname="pcBuffer" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="435" y="2063">
    </LINKPOINT>
@@ -293,5 +287,23 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="40" srcpinname="Buffer Out" dstnodeid="38" dstpinname="InputCountBuffer">
+   </LINK>
+   <NODE systemname="AvoidNIL (Spreads)" filename="%VVVV%\lib\nodes\modules\Spreads\AvoidNIL (Spreads).v4p" nodename="AvoidNIL (Spreads)" componentmode="Hidden" id="43">
+   <BOUNDS type="Node" left="3465" top="795" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="-2">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Y Output Value" dstnodeid="43" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="43" srcpinname="Output" dstnodeid="38" dstpinname="groupIds" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="3465" y="2265">
+   </LINKPOINT>
+   <LINKPOINT x="1875" y="2265">
+   </LINKPOINT>
    </LINK>
    </PATCH>

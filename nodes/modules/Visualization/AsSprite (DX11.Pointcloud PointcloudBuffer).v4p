@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Visualization\AsSprite (DX11.Pointcloud PointcloudBuffer).v4p" systemname="AsSprite (DX11.Pointcloud PointcloudBuffer)" filename="C:\vvvv\vvvv_45beta33.7_x64_dev\packs\dx11-pointcloud\nodes\modules\Visualization\AsSprite (DX11.Pointcloud PointcloudBuffer).v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Visualization\AsSprite (DX11.Pointcloud PointcloudBuffer).v4p" systemname="AsSprite (DX11.Pointcloud PointcloudBuffer)" filename="C:\vvvv\vvvv_45beta33.7_x64_dev\packs\dx11-pointcloud\nodes\modules\Visualization\AsSprite (DX11.Pointcloud PointcloudBuffer).v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="10965" top="9225" width="8010" height="4545">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.7.0">
@@ -135,7 +135,7 @@
    <NODE systemname="Visualization_Sprite (DX11.Effect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\dx11\Visualization_Sprite.fx" nodename="Visualization_Sprite (DX11.Effect)" componentmode="Hidden" id="22">
    <BOUNDS type="Node" left="525" top="2790" width="6375" height="270">
    </BOUNDS>
-   <PIN pinname="groupFilter" slicecount="1" visible="1" values="0">
+   <PIN pinname="groupFilter" slicecount="1" visible="1" values="-1">
    </PIN>
    <PIN pinname="Alpha" visible="1" slicecount="1" values="1">
    </PIN>
@@ -160,16 +160,28 @@
    </LINK>
    <LINK srcnodeid="21" srcpinname="Geometry Out" dstnodeid="22" dstpinname="Geometry">
    </LINK>
-   <LINK srcnodeid="24" srcpinname="Y Output Value" dstnodeid="22" dstpinname="groupFilter" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5910" y="1845">
-   </LINKPOINT>
-   <LINKPOINT x="3750" y="1845">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="13" srcpinname="Color Output" dstnodeid="22" dstpinname="Color">
    </LINK>
    <LINK srcnodeid="2" srcpinname="Output Node" dstnodeid="22" dstpinname="pcBuffer">
    </LINK>
    <LINK srcnodeid="25" srcpinname="Output Node" dstnodeid="22" dstpinname="Texture">
+   </LINK>
+   <NODE systemname="AvoidNIL (Spreads)" filename="%VVVV%\lib\nodes\modules\Spreads\AvoidNIL (Spreads).v4p" nodename="AvoidNIL (Spreads)" componentmode="Hidden" id="26">
+   <BOUNDS type="Node" left="5910" top="1155" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="-2">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="24" srcpinname="Y Output Value" dstnodeid="26" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="26" srcpinname="Output" dstnodeid="22" dstpinname="groupFilter" linkstyle="Bezier">
+   <LINKPOINT x="5910" y="2093">
+   </LINKPOINT>
+   <LINKPOINT x="3750" y="2093">
+   </LINKPOINT>
    </LINK>
    </PATCH>

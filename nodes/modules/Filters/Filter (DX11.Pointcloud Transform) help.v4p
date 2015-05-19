@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Filters\Filter (DX11.Pointcloud Transform) help.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Filters\Filter (DX11.Pointcloud Transform) help.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="3330" top="1950" width="11490" height="12450">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
@@ -129,9 +129,9 @@
    <NODE nodename="IOBox (String)" componentmode="InABox" id="8" systemname="IOBox (String)">
    <BOUNDS type="Node" left="6450" top="4665" width="3750" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="6450" top="4665" width="4140" height="285">
+   <BOUNDS type="Box" left="6450" top="4665" width="4185" height="1020">
    </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; the number of expected elements in the pointcloud|">
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; the number of expected elements in the pointcloud.&cr;&lf;remember: if you have an elementcount of 5 and 10 transforms where each transform contains all elements, we can have 5 x 10 = 50 elements as maximum!|">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>
@@ -169,7 +169,7 @@
    </BOUNDS>
    <PIN pinname="XYZ" visible="1">
    </PIN>
-   <PIN pinname="Z" slicecount="1" values="0">
+   <PIN pinname="Z" slicecount="1" values="0" visible="1">
    </PIN>
    <PIN pinname="Y" visible="1">
    </PIN>
@@ -248,40 +248,14 @@
    <PIN pinname="Y Input Value" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="38" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="4830" top="9735" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="4830" top="9735" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Integer">
-   </PIN>
-   </NODE>
    <PACK Name="addonpack" Version="33.7.0">
    </PACK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="39" systemname="IOBox (String)">
    <BOUNDS type="Node" left="6450" top="9000" width="5235" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="6450" top="9000" width="4215" height="720">
+   <BOUNDS type="Box" left="6450" top="9000" width="4260" height="1080">
    </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; the number of generated groups - this depends on the number of filtertransforms. this is needed for subsequent nodes like hittest,centroid or bounds|">
-   </PIN>
-   <PIN pinname="Output String" visible="0">
-   </PIN>
-   <PIN pinname="Show Grid" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="String Type" slicecount="1" values="MultiLine">
-   </PIN>
-   </NODE>
-   <NODE nodename="IOBox (String)" componentmode="InABox" id="40" systemname="IOBox (String)">
-   <BOUNDS type="Node" left="6450" top="9780" width="3750" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="6450" top="9780" width="4440" height="240">
-   </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; the new number of expected elements in the pointcloud|">
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; the groupsIds that have been assigned - this depends on the number of filtertransforms and the given offset id. these ids are needed for subsequent nodes like hittest,centroid or bounds.|">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>
@@ -522,12 +496,6 @@
    <LINKPOINT x="4530" y="7670">
    </LINKPOINT>
    <LINKPOINT x="3435" y="7720">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="0" srcpinname="Max Element Count" dstnodeid="38" dstpinname="Y Input Value" linkstyle="Bezier">
-   <LINKPOINT x="2835" y="8933">
-   </LINKPOINT>
-   <LINKPOINT x="4830" y="9083">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="42" srcpinname="Y Output Value" dstnodeid="0" dstpinname="ID Offset" linkstyle="Bezier">
