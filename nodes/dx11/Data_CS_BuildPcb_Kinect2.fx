@@ -7,6 +7,7 @@ Texture2D texRGBDepth <string uiname="RGBDepth";>;
 int drawIndex : DRAWINDEX;
 int IdOffset;
 float2 Resolution;
+bool useRawData;
 
 SamplerState sPoint : IMMUTABLE
 {
@@ -43,8 +44,10 @@ void CSBuildPointcloudBuffer( uint3 i : SV_DispatchThreadID )
 		pos = mul(pos, tW);
 			
 		float2 map = texRGBDepth.SampleLevel(sPoint, coord ,0).rg;
-		map.x /= 1920.0f;
-		map.y /= 1080.0f;
+		if(useRawData){
+			map.x /= 1920.0f;
+			map.y /= 1080.0f;
+		}
 		float4 col = texRGB.SampleLevel(sPoint,map,0);
 		//col = float4(1,1,1,1);
 		pointData pd = {pos.xyz, col, drawIndex + IdOffset};

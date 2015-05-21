@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Setup\Kinect2 (DX11.Pointcloud).v4p" systemname="Kinect2 (DX11.Pointcloud.Setup)" filename="C:\vvvv\vvvv_45beta33.7_x64_dev\packs\dx11-pointcloud\nodes\modules\Setup\Kinect2 (DX11.Pointcloud.Setup).v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Setup\Kinect2 (DX11.Pointcloud).v4p" systemname="Kinect2 (DX11.Pointcloud.Setup)" filename="C:\vvvv\vvvv_45beta33.7_x64_dev\packs\dx11-pointcloud\nodes\modules\Setup\Kinect2 (DX11.Pointcloud.Setup).v4p" scrollx="0" scrolly="0">
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="4" systemname="IOBox (Value Advanced)" hiddenwhenlocked="0">
    <BOUNDS type="Box" left="1635" top="1200" width="795" height="480">
    </BOUNDS>
@@ -151,7 +151,7 @@
    </PIN>
    <PIN pinname="Inverse" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Raw Data" slicecount="1" values="1">
+   <PIN pinname="Raw Data" slicecount="1" values="0" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="2" srcpinname="Texture" dstnodeid="9" dstpinname="Input Node">
@@ -292,6 +292,30 @@
    <LINKPOINT x="5775" y="1560">
    </LINKPOINT>
    <LINKPOINT x="4980" y="1560">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="17" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="4725" top="570" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4725" top="570" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Raw Data|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="17" srcpinname="Y Output Value" dstnodeid="2" dstpinname="Raw Data" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="4785" y="1568">
+   </LINKPOINT>
+   <LINKPOINT x="5550" y="1568">
    </LINKPOINT>
    </LINK>
    </PATCH>
