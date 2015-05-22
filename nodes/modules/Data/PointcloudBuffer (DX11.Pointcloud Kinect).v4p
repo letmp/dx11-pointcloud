@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\PointcloudBuffer (DX11.Pointcloud Kinect).v4p" systemname="Pointcloud (DX11.Buffer)" filename="D:\workspace\dev\packs\KinectToolkitDX11\nodes\modules\IO\Pointcloud (DX11.Buffer).v4p" scrollx="0" scrolly="-360">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\PointcloudBuffer (DX11.Pointcloud Kinect).v4p" systemname="Pointcloud (DX11.Buffer)" filename="D:\workspace\dev\packs\KinectToolkitDX11\nodes\modules\IO\Pointcloud (DX11.Buffer).v4p" scrollx="0" scrolly="-360">
    <BOUNDS type="Window" left="11445" top="2670" width="10515" height="9525">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.7.0">
@@ -358,7 +358,7 @@
    <LINKPOINT x="2135" y="3398">
    </LINKPOINT>
    </LINK>
-   <INFO author="tmp" description="Creates a pointcloud buffer that contains all elements sensed by your kinect." tags="Data">
+   <INFO author="tmp" description="Creates a pointcloud buffer that contains all elements sensed by your kinect." tags="Kinect2, Data">
    </INFO>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="123" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="8025" top="465" width="390" height="240">
