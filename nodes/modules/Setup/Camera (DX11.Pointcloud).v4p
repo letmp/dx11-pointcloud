@@ -89,7 +89,7 @@
    <NODE systemname="Box (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Box (DX11.Geometry)" componentmode="Hidden" id="8">
    <BOUNDS type="Node" left="1380" top="5070" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="SizeXYZ" slicecount="3" visible="1" values="2,2,2">
+   <PIN pinname="SizeXYZ" slicecount="3" visible="1" values="1,1,1">
    </PIN>
    <PIN pinname="Geometry Out" visible="1">
    </PIN>
@@ -290,7 +290,7 @@
    <LINKPOINT x="7075" y="3165">
    </LINKPOINT>
    </LINK>
-   <BOUNDS type="Window" left="9660" top="4305" width="12150" height="9945">
+   <BOUNDS type="Window" left="10335" top="2760" width="12150" height="9945">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.7.0">
    </PACK>
@@ -421,24 +421,6 @@
    </LINKPOINT>
    <LINKPOINT x="8300" y="3000">
    </LINKPOINT>
-   </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="29" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="1395" top="3660" width="795" height="720">
-   </BOUNDS>
-   <BOUNDS type="Node" left="1395" top="3660" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="2,2,2">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Vector Size" slicecount="1" values="3">
-   </PIN>
-   <PIN pinname="Rows" slicecount="1" values="3">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="29" srcpinname="Y Output Value" dstnodeid="8" dstpinname="SizeXYZ">
    </LINK>
    <NODE systemname="Box (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Box (DX11.Geometry)" componentmode="Hidden" id="30">
    <BOUNDS type="Node" left="4305" top="5070" width="100" height="100">
