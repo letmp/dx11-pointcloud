@@ -19,60 +19,54 @@ SamplerState sPoint : IMMUTABLE
 };
 
 float aging = 0.1;
-bool reset;
 float movementThreshold = 0.001;
-
+float speed = 0.0025;
 int bufferslot;
 
 [numthreads(64, 1, 1)]
 void CS_Apply( uint3 i : SV_DispatchThreadID)
 {
 	uint pcBufferSize = InputCountBuffer.Load(0);
-	if (i.x >=  asuint(elementcount)) { return;}
+	if (i.x >=  asuint(elementcount)) { return;} // safeguard
 		
-	// RESET BUFFER
-	if(	reset && 
-		i.x > (bufferslot * pcBufferSize) &&
+	// update bufferslot (number of slots is set by BufferSizeMultiplicator in your patch)
+	if(	i.x > (bufferslot * pcBufferSize) &&
 		i.x < ((bufferslot + 1) * pcBufferSize)
 	){
 		
-		pointData pd = pcBuffer[i.x % pcBufferSize];
+		pointData pd = pcBuffer[i.x % pcBufferSize]; // get element of your pointcloud
+		// set pos, col and group
 		float3 pos = pd.pos;
 		float4 col = pd.col;
 		int groupId = pd.groupId;
 
+		// now set the movement-direction with the help of the optical flow texture
 		float4 ppos = mul(float4(pd.pos,1), tVP);
-		float2 uv = ppos.xy/ppos.w;
+		float2 uv = ppos.xy/ppos.w; // these are the uv coords where we sample
 		uv.x = uv.x * 0.5 + 0.5;
 		uv.y = uv.y * -0.5 + 0.5;
+		float3 direction = -(texOptFlow.SampleLevel(sPoint,uv,0).rgb );
+
+		float age = 0; // set age to 0
 		
-		float3 direction = -(texOptFlow.SampleLevel(sPoint,uv,0).rgb )/ 400.0f;
-		//float3 direction = float3 (0,0,0);
-		
-		
-		
-		//float3 direction = rndDir[i.x % rndDirCnt];
-		float age = 0;
-		
-		customPointData cpd = {pos,col,groupId,direction,age};
-		
-		
+		// add the new element to our buffer (if the movement is above a certain threshold)
 		if(	direction.x >= movementThreshold || direction.y >= movementThreshold ||
 			direction.x <= movementThreshold * -1 || direction.y <= movementThreshold * -1){
+			
+			customPointData cpd = {pos,col,groupId,direction,age}; // create the new element	
 			cpcBuffer[i.x] = cpd;
 		}
 		
 	}
-	
-	// UPDATE BUFFER
+	// update all elements that are not it the current bufferslot
 	else{
-		customPointData cpd	= cpcBuffer[i.x];
-		
+		customPointData cpd	= cpcBuffer[i.x]; // get current element
+		// update age, pos and color
 		cpd.age += aging;
-		//cpd.pos += cpd.direction - float3(0, cpd.age/2000, 0);
-		cpd.pos += cpd.direction;
+		cpd.pos += cpd.direction * speed;
 		cpd.col *= 1- (cpd.age/1000);
 		
+		if (cpd.col.a <= 0.3f) cpd.pos = float3(0,0,0); // set particle position to 0 oif alpha is below 0.5 
 		cpcBuffer[i.x] = cpd;
 	}
 }
