@@ -7,9 +7,9 @@ struct LinkedListElement
 
 struct pointData
 {
-	float4 pos;
-	float4 col;
-	int groupId;
+    float3 pos;
+    float4 col;
+    int groupId;
 };
 
 StructuredBuffer<pointData> PositionBuffer : POINTCLOUDBUFFER;
@@ -28,7 +28,7 @@ void CS_Build(uint3 i : SV_DispatchThreadID)
 	PositionBuffer.GetDimensions(cnt,stride);
 	if (i.x >= cnt) { return; }
 
-	float3 pos = PositionBuffer[i.x].pos.xyz;
+	float3 pos = PositionBuffer[i.x].pos;
 	float4 tp = mul(float4(pos, 1), PointTransform);
 
 	tp = tp * 0.5f + 0.5f;
