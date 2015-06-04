@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Setup\Camera (DX11.Pointcloud) help.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="D:\workspace\dev\git\dx11-pointcloud\nodes\modules\Setup\Camera (DX11.Pointcloud) help.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="5520" top="3390" width="9210" height="10785">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
@@ -38,7 +38,7 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
-   <PACK Name="addonpack" Version="33.7.0">
+   <PACK Name="addonpack" Version="33.8.0">
    </PACK>
    <NODE systemname="Rasterizer (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Rasterizer (DX11.RenderState)" componentmode="Hidden" id="16" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="885" top="6870" width="100" height="100">
@@ -371,7 +371,7 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="PointcloudBuffer (DX11.Pointcloud Kinect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Data\PointcloudBuffer (DX11.Pointcloud Kinect).v4p" nodename="PointcloudBuffer (DX11.Pointcloud Kinect)" componentmode="Hidden" id="19" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="2205" top="4050" width="100" height="100">
+   <BOUNDS type="Node" left="2160" top="4050" width="100" height="100">
    </BOUNDS>
    <PIN pinname="RGB" visible="1" slicecount="1" values="||">
    </PIN>
@@ -393,42 +393,16 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="19" dstpinname="Resolution" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="1155" y="3640">
+   <LINKPOINT x="1140" y="3640">
    </LINKPOINT>
-   <LINKPOINT x="2430" y="3740">
+   <LINKPOINT x="2400" y="3740">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="23" srcpinname="Transform Out" dstnodeid="19" dstpinname="Transform In" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5120" y="3908">
+   <LINKPOINT x="5105" y="3908">
    </LINKPOINT>
-   <LINKPOINT x="2290" y="3908">
+   <LINKPOINT x="2260" y="3908">
    </LINKPOINT>
-   </LINK>
-   <NODE systemname="AsGeometry (DX11.Pointcloud PointcloudBuffer)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Visualization\AsGeometry (DX11.Pointcloud PointcloudBuffer).v4p" nodename="AsGeometry (DX11.Pointcloud PointcloudBuffer)" componentmode="Hidden" id="17" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="1650" top="7410" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="PointcloudBuffer" visible="1">
-   </PIN>
-   <PIN pinname="Render State" visible="1">
-   </PIN>
-   <PIN pinname="Geometry" visible="1">
-   </PIN>
-   <PIN pinname="Layer" visible="1">
-   </PIN>
-   <BOUNDS type="Box" left="1650" top="7410">
-   </BOUNDS>
-   </NODE>
-   <LINK srcnodeid="16" srcpinname="Render State" dstnodeid="17" dstpinname="Render State" linkstyle="VHV">
-   <LINKPOINT x="945" y="7260">
-   </LINKPOINT>
-   <LINKPOINT x="1650" y="7260">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="15" srcpinname="Geometry Out" dstnodeid="17" dstpinname="Geometry">
-   </LINK>
-   <LINK srcnodeid="17" srcpinname="Layer" dstnodeid="12" dstpinname="Layer 2">
-   </LINK>
-   <LINK srcnodeid="19" srcpinname="PointcloudBuffer" dstnodeid="17" dstpinname="PointcloudBuffer" hiddenwhenlocked="1">
    </LINK>
    <NODE nodename="Camera (DX11.Pointcloud)" componentmode="Hidden" id="0" systemname="Camera (DX11.Pointcloud)" filename="Camera (DX11.Pointcloud).v4p">
    <BOUNDS type="Node" left="3120" top="7410" width="100" height="100">
@@ -533,5 +507,31 @@
    </LINKPOINT>
    <LINKPOINT x="5145" y="3495">
    </LINKPOINT>
+   </LINK>
+   <NODE systemname="Constant (DX11.Pointcloud PointcloudBuffer)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Visualization\Constant (DX11.Pointcloud PointcloudBuffer).v4p" nodename="Constant (DX11.Pointcloud PointcloudBuffer)" componentmode="Hidden" id="17" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="1650" top="7410" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="PointcloudBuffer" visible="1">
+   </PIN>
+   <PIN pinname="Render State" visible="1">
+   </PIN>
+   <PIN pinname="Geometry" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="1650" top="7410">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="16" srcpinname="Render State" dstnodeid="17" dstpinname="Render State" linkstyle="VHV">
+   <LINKPOINT x="945" y="7260">
+   </LINKPOINT>
+   <LINKPOINT x="1650" y="7260">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="15" srcpinname="Geometry Out" dstnodeid="17" dstpinname="Geometry">
+   </LINK>
+   <LINK srcnodeid="17" srcpinname="Layer" dstnodeid="12" dstpinname="Layer 2">
+   </LINK>
+   <LINK srcnodeid="19" srcpinname="PointcloudBuffer" dstnodeid="17" dstpinname="PointcloudBuffer" hiddenwhenlocked="1">
    </LINK>
    </PATCH>
