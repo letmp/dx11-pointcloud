@@ -64,7 +64,7 @@ vs2ps VS_SPRITE(vsInput input)
 	
 	float4 p;
 	p.xyz = pcBuffer[idx].pos;
-	float4 pv = mul(tV,input.pos);
+	float4 pv = mul(tV,float4(input.pos.xyz,0));
 	float3 PosV = float3(pv.xyz)  + float3(p.xyz);
 	float4 finalPos = float4(PosV,1.0);
 	// apply groupfilter
