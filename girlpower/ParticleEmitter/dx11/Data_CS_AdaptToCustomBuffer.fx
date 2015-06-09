@@ -64,6 +64,7 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 		// update age, pos and color
 		cpd.age += aging;
 		cpd.pos += cpd.direction * speed;
+		cpd.pos += float3(0,speed,0);
 		cpd.col *= 1- (cpd.age/1000);
 		
 		if (cpd.col.a <= 0.3f) cpd.pos = float3(0,0,0); // set particle position to 0 oif alpha is below 0.5 
