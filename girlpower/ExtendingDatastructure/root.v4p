@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\girlpower\ExtendingDatastructure\root.v4p" systemname="root" filename="C:\Users\Anwender\Dropbox\PointcloudWorkshop\CustomizeStructure\root.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\girlpower\ExtendingDatastructure\root.v4p" systemname="root" filename="C:\Users\Anwender\Dropbox\PointcloudWorkshop\CustomizeStructure\root.v4p" scrollx="0" scrolly="2880">
    <BOUNDS type="Window" left="540" top="1050" width="18825" height="12960">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.8.0">
@@ -615,9 +615,9 @@
    <NODE nodename="IOBox (String)" componentmode="InABox" id="208" systemname="IOBox (String)">
    <BOUNDS type="Node" left="13275" top="9645" width="4485" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="13275" top="9645" width="4590" height="2070">
+   <BOUNDS type="Box" left="13275" top="9645" width="4575" height="2190">
    </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; this is our forces buffer that gets updated frame by frame.&cr;&lf;&cr;&lf;note: it is an RWStructuredBuffer! (instead of an appendbuffer like everything in the pointcloud package). the buffer updates its values frame by frame as long as the update button is not pressed.&cr;&lf;&cr;&lf;the intial values are dependent of the pointcloud at the time &quot;update&quot; gets pressed.|">
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; this is our forces buffer that gets updated frame by frame.&cr;&lf;&cr;&lf;note: it is an RWStructuredBuffer! (instead of an appendbuffer like everything in the pointcloud package). the buffer updates its values frame by frame as long as the update button is not pressed.&cr;&lf;&cr;&lf;the intial values are dependent of the pointcloud at the time &quot;update&quot; gets pressed. (the force direction equals the current position of each point)|">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>
