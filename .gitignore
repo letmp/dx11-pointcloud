@@ -1,7 +1,3 @@
-# Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
-# [Bb]in/
-[Oo]bj/
-[Bb]uild/
 # [Rr]esearch/
 
 # mstest test results
@@ -17,8 +13,12 @@ TestResults
 *~.xml
 
 # Build results
+[Dd]ynamic/
 [Dd]ebug/
-[Rr]elease/
+# [Bb]in/
+# [Bb]uild/
+#[Rr]elease/
+[Oo]bj/
 *_i.c
 *_p.c
 *.ilk
@@ -91,7 +91,7 @@ csx
 AppPackages/
 
 # Others
-[Bb]in
+# [Bb]in
 [Oo]bj
 sql
 TestResults
