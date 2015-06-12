@@ -19,7 +19,6 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 		if ( groupId == -1 || pd.groupId == groupId){
 			forceData fd = rwForceBufferIn[i.x];			
 			pd.pos += fd.velocity;
-			//pd.pos += float3(0,0.1,0);
 			rwPcBufferOut[i.x] = pd;
 		}
 	}

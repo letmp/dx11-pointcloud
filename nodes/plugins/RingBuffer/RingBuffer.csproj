@@ -5,8 +5,8 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <OutputType>Library</OutputType>
-    <RootNamespace>CollectEmitterBuffer</RootNamespace>
-    <AssemblyName>CollectEmitterBuffer</AssemblyName>
+    <RootNamespace>RingBuffer</RootNamespace>
+    <AssemblyName>RingBuffer</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
@@ -72,11 +72,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CollectEmitterBufferNode.cs" />
+    <Compile Include="RingBufferNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="effects\CollectEmitterBuffer.fx" />
+    <EmbeddedResource Include="effects\RingBuffer.fx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
 </Project>

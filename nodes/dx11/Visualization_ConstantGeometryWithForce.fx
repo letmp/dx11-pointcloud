@@ -6,10 +6,9 @@
 #include "_PointData.fxh"
 StructuredBuffer<pointData> pcBuffer;
 
-// THIS IS OUR EXTENSION OF THE STANDARD POINTCLOUD STRUCT
-#include "_PointDataExtension.fxh"
-StructuredBuffer<uint> indexBuffer;
-StructuredBuffer<pointDataExtension> pceBuffer;
+#include "_ForceData.fxh"
+StructuredBuffer<forceData> forceBuffer<String uiname="ForceBuffer";>;
+StructuredBuffer<uint> indexBuffer<String uiname="ForceIndexBuffer";>;
 
 cbuffer cbPerDraw : register( b0 )
 {
@@ -65,8 +64,8 @@ vs2ps VS(vsInput input)
 	output.col_group = randColor(pcBuffer[idx].groupId);
 	
 	// LOAD ADDITIONAL DATA from the extension of the pointcloud buffer
-	uint idxe = indexBuffer[idx]; // the index to the RWStructuredBuffer
-	output.col_force = float4(pceBuffer[idxe].force,1) * 10; // the data of the RWStructuredBuffer
+	uint idf = indexBuffer[idx];
+	output.col_force = float4(forceBuffer[idf].velocity , 1) * 100; // the data of the RWStructuredBuffer
 	
 	return output;
 }

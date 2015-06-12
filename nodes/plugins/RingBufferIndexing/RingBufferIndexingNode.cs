@@ -20,12 +20,12 @@ using VVVV.DX11;
 using VVVV.Core.Logging;
 #endregion usings
 
-namespace RwToAppendBuffer
+namespace RingBufferIndexing
 {
 	#region PluginInfo
-	[PluginInfo(Name = "RwToAppendBuffer", Category = "DX11.Pointcloud", Version = "PointcloudBuffer", Help = "Copies a RWStructuredBuffer to an AppendStructuredBuffer and additionally outputs a second buffer with indices.", Author = "tmp", Tags = "")]
+	[PluginInfo(Name = "RingBufferIndexing", Category = "DX11.Pointcloud", Version = "PointcloudRingBuffer", Help = "Copies a RWStructuredBuffer to an AppendStructuredBuffer and additionally outputs a second buffer with indices.", Author = "tmp", Tags = "")]
 	#endregion PluginInfo
-    public class RwToAppendBufferNode : IPluginEvaluate, IDX11ResourceProvider
+    public class RingBufferIndexingNode : IPluginEvaluate, IDX11ResourceProvider
 	{
 		#region fields & pins
 
@@ -46,9 +46,13 @@ namespace RwToAppendBuffer
 		#endregion fields & pins
 
         private DX11ShaderInstance shader;
-        
-		[Import()]
+        private static double currentFrame;
+
+        [Import()]
         protected IPluginHost FHost;
+
+        [Import()]
+        IHDEHost FHDEHost;
 
         [Import()]
         public ILogger FLogger;
@@ -85,14 +89,16 @@ namespace RwToAppendBuffer
             // load shader
             if (this.shader == null)
             {
-                string basepath = "RwToAppendBuffer.effects.RwToAppendBuffer.fx";
+                string basepath = "RingBufferIndexing.effects.RingBufferIndexing.fx";
                 DX11Effect effect = DX11Effect.FromResource(Assembly.GetExecutingAssembly(), basepath);
                 this.shader = new DX11ShaderInstance(context, effect);
             }
-            if (this.shader == null) FLogger.Log(LogType.Debug, "Shader could not be loaded.");
-        	if (this.FInPointcloudBuffer.PluginIO.IsConnected)
+            
+        	if (this.FInPointcloudBuffer.PluginIO.IsConnected /* && currentFrame != FHDEHost.FrameTime*/)
             {
                 
+                currentFrame = FHDEHost.FrameTime; // prevents to execute this a second time
+
             	shader.SelectTechnique("BuildHash");            	
             	shader.SetBySemantic("POINTCLOUDBUFFERIN", FInPointcloudBuffer[0][context].SRV);
                 shader.SetBySemantic("POINTCLOUDBUFFEROUT", FOutPointcloudBuffer[0][context].UAV, 0);

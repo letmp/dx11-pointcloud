@@ -20,12 +20,12 @@ using VVVV.DX11;
 using VVVV.Core.Logging;
 #endregion usings
 
-namespace CollectEmitterBuffer
+namespace RingBuffer
 {
     #region PluginInfo
     [PluginInfo(Name = "RingBuffer", Category = "DX11.Pointcloud", Version = "PointcloudBuffer", Help = "", Author = "tmp", Tags = "")]
     #endregion PluginInfo
-    public class CollectEmitterBuffer : IPluginEvaluate, IDX11ResourceProvider
+    public class RingBufferNode : IPluginEvaluate, IDX11ResourceProvider
     {
         #region fields & pins
 
@@ -104,7 +104,7 @@ namespace CollectEmitterBuffer
             // load shader
             if (this.shader == null)
             {
-                string basepath = "CollectEmitterBuffer.effects.CollectEmitterBuffer.fx";
+                string basepath = "RingBuffer.effects.RingBuffer.fx";
                 DX11Effect effect = DX11Effect.FromResource(Assembly.GetExecutingAssembly(), basepath);
                 this.shader = new DX11ShaderInstance(context, effect);
             }
@@ -112,7 +112,7 @@ namespace CollectEmitterBuffer
             if (this.FInPointcloudBuffer.PluginIO.IsConnected && FInSet[0] && currentFrame != FHDEHost.FrameTime)
             {
 
-                currentFrame = FHDEHost.FrameTime; // prevents to execute this
+                currentFrame = FHDEHost.FrameTime; // prevents to execute this a second time
 
                 int[] mask = new int[4] { 0, 0, 0, 0 };
                 ctx.ClearUnorderedAccessView(FOutUpdatedBuffer[0][context].UAV, mask);

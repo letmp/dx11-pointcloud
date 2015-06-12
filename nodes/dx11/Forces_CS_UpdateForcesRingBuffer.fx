@@ -15,7 +15,11 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 	// updates the RWBuffer with current pointcloud data
 	// =================================================
 	if(	Update && updatedBufferIn[i.x] == 1){
-		forceData fd = {float3(0,0,0),float3(0,0,0)};
+		float3 velocity = float3(0,0,0);
+		float3 acceleration = float3(0,0,0);
+		float mass = float(0);
+		int age = 0;
+		forceData fd = {velocity, acceleration, mass, age};
 		rwForceBuffer[i.x]  = fd;
 	}
 	

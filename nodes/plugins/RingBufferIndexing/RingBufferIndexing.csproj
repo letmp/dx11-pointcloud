@@ -5,8 +5,8 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <OutputType>Library</OutputType>
-    <RootNamespace>RwToAppendBuffer</RootNamespace>
-    <AssemblyName>RwToAppendBuffer</AssemblyName>
+    <RootNamespace>RingBufferIndexing</RootNamespace>
+    <AssemblyName>RingBufferIndexing</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
@@ -72,11 +72,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RwToAppendBufferNode.cs" />
+    <Compile Include="RingBufferIndexingNode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="effects\RwToAppendBuffer.fx" />
+    <EmbeddedResource Include="effects\RingBufferIndexing.fx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
 </Project>
