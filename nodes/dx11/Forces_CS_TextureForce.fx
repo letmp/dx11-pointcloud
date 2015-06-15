@@ -15,6 +15,7 @@ SamplerState sPoint : IMMUTABLE
     AddressV = Border;
 };
 
+float threshold = 0.00;
 int groupId = -1;
 bool Apply;
 
@@ -35,13 +36,13 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 			uv.y = uv.y * -0.5 + 0.5;
 			
 			float3 vel = texVelocity.SampleLevel(sPoint,uv,0).xyz;
-			if (vel.r > 0.0f || vel.g > 0.0f || vel.b > 0.0f) rwForceBuffer[i.x].velocity = vel;
+			if (vel.r > threshold || vel.g > threshold || vel.b > threshold) rwForceBuffer[i.x].velocity = vel;
 			
 			float3 acc = texAcceleration.SampleLevel(sPoint,uv,0).xyz;
-			if (acc.r > 0.0f || acc.g > 0.0f || acc.b > 0.0f) rwForceBuffer[i.x].acceleration = acc;
+			if (acc.r > threshold || acc.g > threshold || acc.b > threshold) rwForceBuffer[i.x].acceleration = acc;
 			
 			float m = texMass.SampleLevel(sPoint,uv,0).x;
-			if (m > 0.0f) rwForceBuffer[i.x].mass = m;
+			if (m > threshold) rwForceBuffer[i.x].mass = m;
 		}
 	}
 	

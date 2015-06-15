@@ -15,6 +15,8 @@ SamplerState sPoint : IMMUTABLE
     AddressV = Border;
 };
 
+float threshold = 0.00;
+
 [numthreads(64, 1, 1)]
 void CS_Restrict( uint3 i : SV_DispatchThreadID)
 { 
@@ -31,7 +33,7 @@ void CS_Restrict( uint3 i : SV_DispatchThreadID)
 		uv.y = uv.y * -0.5 + 0.5;
 		float4 col = texFilter.SampleLevel(sPoint,uv,0);
 		
-		if (col.r > 0.0f || col.g > 0.0f || col.b > 0.0f) newPcBuffer.Append(pd);
+		if (col.r > threshold || col.g > threshold || col.b > threshold) newPcBuffer.Append(pd);
 	}
 }
 
