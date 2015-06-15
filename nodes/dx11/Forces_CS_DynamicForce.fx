@@ -20,9 +20,13 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 	if(Apply){
 		pointData pd = pcBuffer[i.x];
 		if ( groupId == -1 || pd.groupId == groupId){
-			rwForceBuffer[i.x].velocity += velocity[i.x];
-			rwForceBuffer[i.x].acceleration += acceleration[i.x];
-			rwForceBuffer[i.x].mass += mass[i.x];
+			
+			velocity.GetDimensions(cnt,stride);
+			rwForceBuffer[i.x].velocity += velocity[i.x % cnt/3];
+			acceleration.GetDimensions(cnt,stride);
+			rwForceBuffer[i.x].acceleration += acceleration[i.x % cnt/3];
+			mass.GetDimensions(cnt,stride);
+			rwForceBuffer[i.x].mass += mass[i.x % cnt];
 		}
 	}
 	
