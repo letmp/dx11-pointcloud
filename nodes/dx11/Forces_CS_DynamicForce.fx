@@ -20,9 +20,9 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 	if(Apply){
 		pointData pd = pcBuffer[i.x];
 		if ( groupId == -1 || pd.groupId == groupId){
-			rwForceBuffer[i.x].velocity = velocity[i.x];
-			rwForceBuffer[i.x].acceleration = acceleration[i.x];
-			rwForceBuffer[i.x].mass = mass[i.x];
+			rwForceBuffer[i.x].velocity += velocity[i.x];
+			rwForceBuffer[i.x].acceleration += acceleration[i.x];
+			rwForceBuffer[i.x].mass += mass[i.x];
 		}
 	}
 	

@@ -33,7 +33,7 @@ namespace RingBufferIndexing
         protected Pin<DX11Resource<IDX11ReadableStructureBuffer>> FInPointcloudBuffer;
 
 		[Input("Element Count", DefaultValue = -1.0, IsSingle = true)]
-        public ISpread<int> FInEleCount;
+        public IDiffSpread<int> FInEleCount;
 
         [Input("Stride", DefaultValue = 0, IsSingle = true)]
         public ISpread<int> FInStride;
@@ -71,7 +71,7 @@ namespace RingBufferIndexing
             Device device = context.Device;
             DeviceContext ctx = context.CurrentDeviceContext;
 
-            if (!this.FOutPointcloudBuffer[0].Contains(context) || !this.FOutIndexBuffer[0].Contains(context))
+            if (!this.FOutPointcloudBuffer[0].Contains(context) || !this.FOutIndexBuffer[0].Contains(context) || this.FInEleCount.IsChanged )
            	{
                 this.FOutPointcloudBuffer[0].Dispose(context);
                 this.FOutIndexBuffer[0].Dispose(context);

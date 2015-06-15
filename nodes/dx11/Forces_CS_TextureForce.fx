@@ -36,13 +36,13 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 			uv.y = uv.y * -0.5 + 0.5;
 			
 			float3 vel = texVelocity.SampleLevel(sPoint,uv,0).xyz;
-			if (vel.r > threshold || vel.g > threshold || vel.b > threshold) rwForceBuffer[i.x].velocity = vel;
+			if (vel.r > threshold || vel.g > threshold || vel.b > threshold) rwForceBuffer[i.x].velocity += vel;
 			
 			float3 acc = texAcceleration.SampleLevel(sPoint,uv,0).xyz;
-			if (acc.r > threshold || acc.g > threshold || acc.b > threshold) rwForceBuffer[i.x].acceleration = acc;
+			if (acc.r > threshold || acc.g > threshold || acc.b > threshold) rwForceBuffer[i.x].acceleration += acc;
 			
 			float m = texMass.SampleLevel(sPoint,uv,0).x;
-			if (m > threshold) rwForceBuffer[i.x].mass = m;
+			if (m > threshold) rwForceBuffer[i.x].mass += m;
 		}
 	}
 	
