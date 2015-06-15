@@ -32,6 +32,9 @@ namespace RingBuffer
         [Input("PointcloudBuffer")]
         protected Pin<DX11Resource<IDX11ReadableStructureBuffer>> FInPointcloudBuffer;
 
+        [Input("CountBuffer")]
+        protected Pin<DX11Resource<DX11RawBuffer>> FInCountBuffer;
+
         [Input("Element Count", DefaultValue = 1.0, IsSingle = true)]
         public IDiffSpread<int> FInEleCount;
 
@@ -118,7 +121,8 @@ namespace RingBuffer
                 ctx.ClearUnorderedAccessView(FOutUpdatedBuffer[0][context].UAV, mask);
 
                 shader.SelectTechnique("AddPoints");
-                shader.SetBySemantic("POINTCLOUDBUFFER", FInPointcloudBuffer[0][context].SRV);                
+                shader.SetBySemantic("POINTCLOUDBUFFER", FInPointcloudBuffer[0][context].SRV);
+                shader.SetBySemantic("POINTCLOUDCOUNTBUFFER", FInCountBuffer[0][context].SRV);
                 shader.SetBySemantic("POINTCLOUDRINGBUFFER", FOutPointcloudRingBuffer[0][context].UAV, FInPointcloudRingBufferSize[0]);
                 shader.SetBySemantic("UPDATEDRINGBUFFER", FOutUpdatedBuffer[0][context].UAV, FInPointcloudRingBufferSize[0]);
                 shader.SetBySemantic("POINTCLOUDRINGBUFFERSIZE", FInPointcloudRingBufferSize[0]);

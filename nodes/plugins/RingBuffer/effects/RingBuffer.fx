@@ -6,6 +6,7 @@ struct pointData
 };
 
 StructuredBuffer<pointData> bPointcloud : POINTCLOUDBUFFER;
+ByteAddressBuffer InputCountBuffer : POINTCLOUDCOUNTBUFFER;
 
 RWStructuredBuffer<pointData> rbPointcloud : POINTCLOUDRINGBUFFER;
 RWStructuredBuffer<uint> rbUpdated : UPDATEDRINGBUFFER;
@@ -17,8 +18,7 @@ RWStructuredBuffer<uint> bCounter : COUNTERBUFFER;
 [numthreads(64, 1, 1)]
 void CS_AddPoints(uint3 i : SV_DispatchThreadID)
 {
-	uint cnt, stride;
-	bPointcloud.GetDimensions(cnt, stride);
+	uint cnt = InputCountBuffer.Load(0);
 	if (i.x >= cnt) { return; }
 
 	pointData pd = bPointcloud[i.x];
