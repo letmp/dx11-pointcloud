@@ -33,7 +33,7 @@ void CS_Restrict( uint3 i : SV_DispatchThreadID)
 		uv.y = uv.y * -0.5 + 0.5;
 		float4 col = texFilter.SampleLevel(sPoint,uv,0);
 		
-		if (col.r > threshold || col.g > threshold || col.b > threshold) newPcBuffer.Append(pd);
+		if (col.a > threshold && (col.r > threshold || col.g > threshold || col.b > threshold ) ) newPcBuffer.Append(pd);
 	}
 }
 
