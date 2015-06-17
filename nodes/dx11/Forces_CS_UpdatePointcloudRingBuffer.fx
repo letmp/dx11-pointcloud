@@ -6,6 +6,7 @@ ByteAddressBuffer InputCountBuffer;
 RWStructuredBuffer<pointData> rwPcBufferOut : BACKBUFFER;
 
 bool Update;
+bool Reset;
 
 [numthreads(64, 1, 1)]
 void CS_Apply( uint3 i : SV_DispatchThreadID)
@@ -18,6 +19,11 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 		rwPcBufferOut[i.x]  = pd;
 	}
 	
+	if (Reset){
+		pointData pd = pcBufferIn[i.x];
+		pd.pos = float3(0,0,0);
+		rwPcBufferOut[i.x]  = pd;
+	}
 }
 
 technique11 Emit

@@ -8,6 +8,7 @@ StructuredBuffer<pointData> pcBufferIn;
 RWStructuredBuffer<forceData> rwForceBuffer : BACKBUFFER;
 
 bool Update;
+bool Reset;
 
 [numthreads(64, 1, 1)]
 void CS_Apply( uint3 i : SV_DispatchThreadID)
@@ -20,9 +21,17 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 	if(	Update && updatedBufferIn[i.x] == 1){
 		float3 velocity = float3(0,0,0);
 		float3 acceleration = float3(0,0,0);
-		float mass = float(1);
+		float mass = 1.0;
 		int age = 0;
-		//forceData fd = {float3(0,0,0),velocity, acceleration, mass, age};
+		forceData fd = {velocity, acceleration, mass, age};
+		rwForceBuffer[i.x]  = fd;
+	}
+	
+	if (Reset){
+		float3 velocity = float3(0,0,0);
+		float3 acceleration = float3(0,0,0);
+		float mass = 1.0;
+		int age = 0;
 		forceData fd = {velocity, acceleration, mass, age};
 		rwForceBuffer[i.x]  = fd;
 	}
