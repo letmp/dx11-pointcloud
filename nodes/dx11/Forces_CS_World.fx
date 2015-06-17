@@ -7,7 +7,8 @@ RWStructuredBuffer<forceData> rwForceBuffer : BACKBUFFER;
 int groupId = -1;
 float dragC = 0.01f;
 float3 gravity;
-bool reset;
+bool Apply;
+bool Reset;
 
 void AF (float3 force, uint index)
 {
@@ -24,8 +25,9 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 	if (i.x >= cnt) { return; }
 	
 	// reset particle properties
-	if (reset)
+	if (Reset)
 	{
+		rwForceBuffer[i.x].acceleration = 0;
 		rwForceBuffer[i.x].velocity = 0;
 		rwForceBuffer[i.x].age = 0;
 		rwForceBuffer[i.x].mass = 0;
@@ -45,6 +47,7 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 		rwForceBuffer[i.x].age ++;
 		
 	}
+	
 	
 }
 

@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Forces\World (DX11.Pointcloud Force).v4p" systemname="DynamicForce (DX11.Pointcloud DynamicBuffer)" filename="C:\Users\le-tmp\Desktop\workspace\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Forces\DynamicForce (DX11.Pointcloud DynamicBuffer).v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="14310" top="5775" width="8490" height="6105">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Forces\World (DX11.Pointcloud Force).v4p" systemname="DynamicForce (DX11.Pointcloud DynamicBuffer)" filename="C:\Users\le-tmp\Desktop\workspace\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Forces\DynamicForce (DX11.Pointcloud DynamicBuffer).v4p" scrollx="1620" scrolly="0">
+   <BOUNDS type="Window" left="15375" top="975" width="8490" height="6105">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.8.0">
    </PACK>
@@ -118,44 +118,6 @@
    <PIN pinname="Output Node" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="Forces_CS_World (DX11.Effect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\dx11\Forces_CS_World.fx" nodename="Forces_CS_World (DX11.Effect)" componentmode="Hidden" id="25">
-   <BOUNDS type="Node" left="2730" top="3705" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="reset" visible="1">
-   </PIN>
-   <PIN pinname="gravityXYZ" visible="1">
-   </PIN>
-   <PIN pinname="dragC" slicecount="1" visible="1" values="0.48">
-   </PIN>
-   <PIN pinname="Enabled" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Layer" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="1" srcpinname="Geometry Out" dstnodeid="25" dstpinname="Geometry" linkstyle="VHV">
-   <LINKPOINT x="1110" y="3495">
-   </LINKPOINT>
-   <LINKPOINT x="2640" y="3495">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="25" dstpinname="groupId" linkstyle="VHV" hiddenwhenlocked="1">
-   <LINKPOINT x="4435" y="2733">
-   </LINKPOINT>
-   <LINKPOINT x="3905" y="2083">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="22" srcpinname="Output Node" dstnodeid="25" dstpinname="Layer In" linkstyle="VHV" hiddenwhenlocked="1">
-   <LINKPOINT x="2325" y="2415">
-   </LINKPOINT>
-   <LINKPOINT x="2745" y="2415">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="24" srcpinname="Output Node" dstnodeid="25" dstpinname="pcBuffer" hiddenwhenlocked="1" linkstyle="VHV">
-   <LINKPOINT x="3770" y="2415">
-   </LINKPOINT>
-   <LINKPOINT x="4120" y="2415">
-   </LINKPOINT>
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="27" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="7200" top="900" width="795" height="720">
    </BOUNDS>
@@ -176,14 +138,6 @@
    <PIN pinname="X Input Value" slicecount="3" values="0,0,0">
    </PIN>
    </NODE>
-   <LINK srcnodeid="27" srcpinname="Y Output Value" dstnodeid="25" dstpinname="gravityXYZ" linkstyle="Bezier" hiddenwhenlocked="0">
-   <LINKPOINT x="7200" y="2648">
-   </LINKPOINT>
-   <LINKPOINT x="3750" y="2648">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="25" srcpinname="Layer" dstnodeid="14" dstpinname="Input Node">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="29" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="6180" top="900" width="795" height="240">
    </BOUNDS>
@@ -198,12 +152,6 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="dragC">
    </PIN>
    </NODE>
-   <LINK srcnodeid="29" srcpinname="Y Output Value" dstnodeid="25" dstpinname="dragC" linkstyle="Bezier" hiddenwhenlocked="0">
-   <LINKPOINT x="6180" y="2408">
-   </LINKPOINT>
-   <LINKPOINT x="3585" y="2408">
-   </LINKPOINT>
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="30" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="8700" top="900" width="480" height="480">
    </BOUNDS>
@@ -221,11 +169,59 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="reset">
    </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="30" srcpinname="Y Output Value" dstnodeid="25" dstpinname="reset" linkstyle="Bezier" hiddenwhenlocked="0">
+   <NODE systemname="Forces_CS_World (DX11.Effect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\dx11\Forces_CS_World.fx" nodename="Forces_CS_World (DX11.Effect)" componentmode="Hidden" id="31">
+   <BOUNDS type="Node" left="2730" top="3705" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Apply" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Reset" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Geometry Out" dstnodeid="31" dstpinname="Geometry" linkstyle="VHV">
+   <LINKPOINT x="1110" y="3495">
+   </LINKPOINT>
+   <LINKPOINT x="2640" y="3495">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="31" dstpinname="groupId" linkstyle="VHV" hiddenwhenlocked="1">
+   <LINKPOINT x="4435" y="2733">
+   </LINKPOINT>
+   <LINKPOINT x="3905" y="2083">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="22" srcpinname="Output Node" dstnodeid="31" dstpinname="Layer In" linkstyle="VHV" hiddenwhenlocked="1">
+   <LINKPOINT x="2325" y="2415">
+   </LINKPOINT>
+   <LINKPOINT x="2745" y="2415">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="24" srcpinname="Output Node" dstnodeid="31" dstpinname="pcBuffer" hiddenwhenlocked="1" linkstyle="VHV">
+   <LINKPOINT x="3770" y="2415">
+   </LINKPOINT>
+   <LINKPOINT x="4120" y="2415">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="27" srcpinname="Y Output Value" dstnodeid="31" dstpinname="gravityXYZ" linkstyle="Bezier" hiddenwhenlocked="0">
+   <LINKPOINT x="7200" y="2648">
+   </LINKPOINT>
+   <LINKPOINT x="3750" y="2648">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="31" srcpinname="Layer" dstnodeid="14" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="29" srcpinname="Y Output Value" dstnodeid="31" dstpinname="dragC" linkstyle="Bezier" hiddenwhenlocked="0">
+   <LINKPOINT x="6180" y="2408">
+   </LINKPOINT>
+   <LINKPOINT x="3585" y="2408">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="30" srcpinname="Y Output Value" dstnodeid="31" dstpinname="Reset" linkstyle="Bezier">
    <LINKPOINT x="8700" y="2528">
    </LINKPOINT>
-   <LINKPOINT x="4065" y="2528">
+   <LINKPOINT x="4050" y="2528">
    </LINKPOINT>
    </LINK>
    </PATCH>
