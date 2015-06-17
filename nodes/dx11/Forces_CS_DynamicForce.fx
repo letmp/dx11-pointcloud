@@ -22,9 +22,11 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 		if ( groupId == -1 || pd.groupId == groupId){
 			
 			velocity.GetDimensions(cnt,stride);
-			rwForceBuffer[i.x].velocity += velocity[i.x % cnt/3];
+			rwForceBuffer[i.x].velocity += velocity[i.x % cnt];
+			
 			acceleration.GetDimensions(cnt,stride);
-			rwForceBuffer[i.x].acceleration += acceleration[i.x % cnt/3];
+			rwForceBuffer[i.x].acceleration += acceleration[i.x % cnt];
+			
 			mass.GetDimensions(cnt,stride);
 			rwForceBuffer[i.x].mass += mass[i.x % cnt];
 		}

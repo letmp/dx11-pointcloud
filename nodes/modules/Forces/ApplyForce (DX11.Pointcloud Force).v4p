@@ -1,8 +1,8 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\Users\le-tmp\Desktop\workspace\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Forces\ApplyForce (DX11.Pointcloud Force).v4p" systemname="ApplyForce (DX11.Pointcloud Force)" filename="C:\Users\le-tmp\Desktop\workspace\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Forces\ApplyForce (DX11.Pointcloud Force).v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="21465" top="7290" width="12480" height="10725">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Forces\ApplyForce (DX11.Pointcloud Force).v4p" systemname="ApplyForce (DX11.Pointcloud Force)" filename="C:\Users\le-tmp\Desktop\workspace\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Forces\ApplyForce (DX11.Pointcloud Force).v4p" scrollx="0" scrolly="0">
+   <BOUNDS type="Window" left="11745" top="1755" width="12480" height="10725">
    </BOUNDS>
-   <PACK Name="addonpack" Version="33.7.0">
+   <PACK Name="addonpack" Version="33.8.0">
    </PACK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="2" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="3090" top="9105" width="795" height="240">
@@ -103,6 +103,8 @@
    </BOUNDS>
    <PIN pinname="Element Count" visible="1" slicecount="1" values="20">
    </PIN>
+   <PIN pinname="Stride" visible="1" slicecount="1" values="44">
+   </PIN>
    </NODE>
    <NODE systemname="GetStride (DX11.Pointcloud)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Data\GetStride (DX11.Pointcloud).v4p" nodename="GetStride (DX11.Pointcloud)" componentmode="Hidden" id="14">
    <BOUNDS type="Node" left="9690" top="2385" width="100" height="100">
@@ -138,18 +140,6 @@
    <PIN pinname="Layer Out" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="Forces_CS_ApplyForce_GroupId (DX11.Effect)" filename="%VVVV%\packs\dx11-pointcloud\girlpower\forces\dx11\Forces_CS_ApplyForce_GroupId.fx" nodename="Forces_CS_ApplyForce_GroupId (DX11.Effect)" componentmode="Hidden" id="17">
-   <BOUNDS type="Node" left="2025" top="4875" width="7185" height="270">
-   </BOUNDS>
-   <PIN pinname="Layer" visible="1">
-   </PIN>
-   <PIN pinname="rwForceBufferIn" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="groupId" slicecount="1" visible="1" values="-1">
-   </PIN>
-   <PIN pinname="Apply" slicecount="1" visible="1" values="1">
-   </PIN>
-   </NODE>
    <NODE id="18" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="PointcloudBuffer">
    </PIN>
@@ -170,12 +160,6 @@
    </NODE>
    <LINK srcnodeid="16" srcpinname="Layer Out" dstnodeid="13" dstpinname="Layer">
    </LINK>
-   <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="13" dstpinname="Stride" linkstyle="VHV" hiddenwhenlocked="0">
-   <LINKPOINT x="9720" y="6495">
-   </LINKPOINT>
-   <LINKPOINT x="2010" y="6495">
-   </LINKPOINT>
-   </LINK>
    <NODE id="20" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="|Layer PointcloudRingBuffer|">
    </PIN>
@@ -186,13 +170,9 @@
    </NODE>
    <LINK srcnodeid="20" srcpinname="Output Node" dstnodeid="16" dstpinname="Layer 1">
    </LINK>
-   <LINK srcnodeid="17" srcpinname="Layer" dstnodeid="16" dstpinname="Layer 2">
-   </LINK>
    <LINK srcnodeid="14" srcpinname="Stride" dstnodeid="12" dstpinname="Y Input Value">
    </LINK>
    <LINK srcnodeid="15" srcpinname="Output String" dstnodeid="14" dstpinname="Filename">
-   </LINK>
-   <LINK srcnodeid="6" srcpinname="Geometry Out" dstnodeid="17" dstpinname="Geometry">
    </LINK>
    <NODE id="21" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
    <PIN pinname="Descriptive Name" slicecount="1" values="|Max Element Count|">
@@ -239,9 +219,9 @@
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="25" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="2625" top="8085" width="345" height="240">
+   <BOUNDS type="Box" left="3855" top="6255" width="345" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="2625" top="8085" width="0" height="0">
+   <BOUNDS type="Node" left="3855" top="6255" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="40">
    </PIN>
@@ -255,17 +235,17 @@
    </PIN>
    </NODE>
    <NODE systemname="GetStride (DX11.Pointcloud)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Data\GetStride (DX11.Pointcloud).v4p" nodename="GetStride (DX11.Pointcloud)" componentmode="Hidden" id="24">
-   <BOUNDS type="Node" left="2625" top="7680" width="100" height="100">
+   <BOUNDS type="Node" left="3855" top="5850" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="2625" top="7680">
+   <BOUNDS type="Box" left="3855" top="5850">
    </BOUNDS>
    <PIN pinname="Filename" slicecount="1" values="..\..\..\..\..\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\dx11\_PointData.fxh">
    </PIN>
    </NODE>
    <NODE id="23" nodename="IOBox (String)" componentmode="InABox" systemname="IOBox (String)">
-   <BOUNDS type="Box" left="2610" top="7350" width="2220" height="240">
+   <BOUNDS type="Box" left="3840" top="5520" width="2220" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="2610" top="7350" width="0" height="0">
+   <BOUNDS type="Node" left="3840" top="5520" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input String" slicecount="1" visible="1" values="..\..\dx11\_PointData.fxh">
    </PIN>
@@ -302,12 +282,6 @@
    <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <LINK srcnodeid="26" srcpinname="Y Output Value" dstnodeid="17" dstpinname="Apply" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="9680" y="3008">
-   </LINKPOINT>
-   <LINKPOINT x="6640" y="3008">
-   </LINKPOINT>
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="27" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="8670" top="675" width="795" height="240">
    </BOUNDS>
@@ -324,12 +298,6 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="|Group IDs|">
    </PIN>
    </NODE>
-   <LINK srcnodeid="27" srcpinname="Y Output Value" dstnodeid="17" dstpinname="groupId" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="8655" y="2880">
-   </LINKPOINT>
-   <LINKPOINT x="5640" y="2880">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="21" srcpinname="Y Output Value" dstnodeid="3" dstpinname="Element Count" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="3885" y="2205">
    </LINKPOINT>
@@ -356,15 +324,17 @@
    <LINKPOINT x="4575" y="8925">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="25" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Stride">
+   <LINK srcnodeid="25" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Stride" linkstyle="Bezier">
+   <LINKPOINT x="3855" y="7500">
+   </LINKPOINT>
+   <LINKPOINT x="2655" y="7500">
+   </LINKPOINT>
    </LINK>
    <LINK srcnodeid="21" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Element Count" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="3840" y="4703">
    </LINKPOINT>
    <LINKPOINT x="2055" y="4703">
    </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="3" srcpinname="Buffers" dstnodeid="17" dstpinname="rwForceBufferIn">
    </LINK>
    <LINK srcnodeid="22" srcpinname="Output Node" dstnodeid="3" dstpinname="Layer">
    </LINK>
@@ -378,4 +348,48 @@
    </LINK>
    <LINK srcnodeid="0" srcpinname="PointcloudBuffer" dstnodeid="18" dstpinname="Input Node">
    </LINK>
+   <NODE systemname="Forces_CS_ApplyForce_GroupId (DX11.Effect)" filename="%VVVV%\packs\dx11-pointcloud\girlpower\forces\dx11\Forces_CS_ApplyForce_GroupId.fx" nodename="Forces_CS_ApplyForce_GroupId (DX11.Effect)" componentmode="Hidden" id="28">
+   <BOUNDS type="Node" left="2025" top="4875" width="7185" height="270">
+   </BOUNDS>
+   <PIN pinname="dragC" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="28" srcpinname="Layer" dstnodeid="16" dstpinname="Layer 2">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Geometry Out" dstnodeid="28" dstpinname="Geometry">
+   </LINK>
+   <LINK srcnodeid="26" srcpinname="Y Output Value" dstnodeid="28" dstpinname="Apply" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="9680" y="3008">
+   </LINKPOINT>
+   <LINKPOINT x="6640" y="3008">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="27" srcpinname="Y Output Value" dstnodeid="28" dstpinname="groupId" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="8655" y="2880">
+   </LINKPOINT>
+   <LINKPOINT x="5640" y="2880">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Buffers" dstnodeid="28" dstpinname="rwForceBufferIn">
+   </LINK>
+   <LINK srcnodeid="25" srcpinname="Y Output Value" dstnodeid="13" dstpinname="Stride" linkstyle="Bezier">
+   <LINKPOINT x="3855" y="6585">
+   </LINKPOINT>
+   <LINKPOINT x="2040" y="6585">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="29" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="6120" top="6120" width="285" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6120" top="6120" width="285" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="!!!">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
    </PATCH>

@@ -5,9 +5,15 @@ StructuredBuffer<pointData> pcBuffer;
 RWStructuredBuffer<forceData> rwForceBuffer : BACKBUFFER;
 
 float4x4 tW: WORLD;
+
 Texture2D texVelocity <string uiname="Texture Velocity";>;
+float3 multiplicator_vel = float3(0.0f,0.0f,0.0f);
+
 Texture2D texAcceleration <string uiname="Texture Acceleration";>;
+float3 multiplicator_acc = float3(0.0f,0.0f,0.0f);
+
 Texture2D texMass <string uiname="Texture Mass";>;
+float multiplicator_mass = 0.0f;
 SamplerState sPoint : IMMUTABLE
 {
     Filter = MIN_MAG_MIP_POINT;
@@ -16,6 +22,7 @@ SamplerState sPoint : IMMUTABLE
 };
 
 float threshold = 0.00;
+
 int groupId = -1;
 bool Apply;
 
@@ -36,13 +43,15 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 			uv.y = uv.y * -0.5 + 0.5;
 			
 			float3 vel = texVelocity.SampleLevel(sPoint,uv,0).xyz;
-			if (vel.r > threshold || vel.g > threshold || vel.b > threshold) rwForceBuffer[i.x].velocity += vel;
+			if (vel.r > threshold || vel.g > threshold || vel.b > threshold ||
+			 vel.r < -threshold || vel.g < -threshold || vel.b < -threshold) rwForceBuffer[i.x].velocity += vel * multiplicator_vel;
 			
 			float3 acc = texAcceleration.SampleLevel(sPoint,uv,0).xyz;
-			if (acc.r > threshold || acc.g > threshold || acc.b > threshold) rwForceBuffer[i.x].acceleration += acc;
+			if (acc.r > threshold || acc.g > threshold || acc.b > threshold ||
+			 acc.r < -threshold || acc.g < -threshold || acc.b < -threshold) rwForceBuffer[i.x].acceleration += acc * multiplicator_acc;
 			
 			float m = texMass.SampleLevel(sPoint,uv,0).x;
-			if (m > threshold) rwForceBuffer[i.x].mass += m;
+			if (m > threshold || m < - threshold) rwForceBuffer[i.x].mass += m * multiplicator_mass;
 		}
 	}
 	

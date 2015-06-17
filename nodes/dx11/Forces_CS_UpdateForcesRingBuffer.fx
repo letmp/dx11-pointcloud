@@ -1,6 +1,9 @@
 ByteAddressBuffer InputCountBuffer;
 StructuredBuffer<uint> updatedBufferIn;
 
+#include "_PointData.fxh"
+StructuredBuffer<pointData> pcBufferIn;
+
 #include "_ForceData.fxh"
 RWStructuredBuffer<forceData> rwForceBuffer : BACKBUFFER;
 
@@ -17,8 +20,9 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 	if(	Update && updatedBufferIn[i.x] == 1){
 		float3 velocity = float3(0,0,0);
 		float3 acceleration = float3(0,0,0);
-		float mass = float(0);
+		float mass = float(1);
 		int age = 0;
+		//forceData fd = {float3(0,0,0),velocity, acceleration, mass, age};
 		forceData fd = {velocity, acceleration, mass, age};
 		rwForceBuffer[i.x]  = fd;
 	}
