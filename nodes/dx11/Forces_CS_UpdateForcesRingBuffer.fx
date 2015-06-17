@@ -15,7 +15,10 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 {
 	uint cnt = InputCountBuffer.Load(0);
 	if (i.x >= cnt ) { return;} // safeguard
-		
+
+	float3 position = pcBufferIn[i.x].pos;
+	int groupId = pcBufferIn[i.x].groupId;
+	
 	// updates the RWBuffer with current pointcloud data
 	// =================================================
 	if(	Update && updatedBufferIn[i.x] == 1){
@@ -23,7 +26,7 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 		float3 acceleration = float3(0,0,0);
 		float mass = 1.0;
 		int age = 0;
-		forceData fd = {velocity, acceleration, mass, age};
+		forceData fd = {position, velocity, acceleration, mass, age, groupId};
 		rwForceBuffer[i.x]  = fd;
 	}
 	
@@ -32,7 +35,7 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 		float3 acceleration = float3(0,0,0);
 		float mass = 1.0;
 		int age = 0;
-		forceData fd = {velocity, acceleration, mass, age};
+		forceData fd = {position, velocity, acceleration, mass, age, groupId};
 		rwForceBuffer[i.x]  = fd;
 	}
 	

@@ -1,14 +1,13 @@
-#include "_PointData.fxh"
-StructuredBuffer<pointData> pcBuffer;
-
 #include "_ForceData.fxh"
 RWStructuredBuffer<forceData> rwForceBuffer : BACKBUFFER;
+StructuredBuffer<uint> updatedBufferIn;
 
 StructuredBuffer<float3> velocity;
 StructuredBuffer<float3> acceleration;
 StructuredBuffer<float> mass;
 int groupId = -1;
 bool Apply;
+bool updatedOnly;
 
 [numthreads(64, 1, 1)]
 void CS_Apply( uint3 i : SV_DispatchThreadID)
@@ -18,8 +17,10 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 	if (i.x >= cnt) { return; }
 	
 	if(Apply){
-		pointData pd = pcBuffer[i.x];
-		if ( groupId == -1 || pd.groupId == groupId){
+		
+		if (updatedOnly && updatedBufferIn[i.x] == 0){ return; }
+		
+		if ( groupId == -1 || rwForceBuffer[i.x].groupId == groupId){
 			
 			velocity.GetDimensions(cnt,stride);
 			rwForceBuffer[i.x].velocity += velocity[i.x % cnt];

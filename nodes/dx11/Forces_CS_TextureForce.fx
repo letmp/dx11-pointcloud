@@ -1,8 +1,6 @@
-#include "_PointData.fxh"
-StructuredBuffer<pointData> pcBuffer;
-
 #include "_ForceData.fxh"
 RWStructuredBuffer<forceData> rwForceBuffer : BACKBUFFER;
+StructuredBuffer<uint> updatedBufferIn;
 
 float4x4 tW: WORLD;
 
@@ -25,6 +23,7 @@ float threshold = 0.00;
 
 int groupId = -1;
 bool Apply;
+bool updatedOnly;
 
 [numthreads(64, 1, 1)]
 void CS_Apply( uint3 i : SV_DispatchThreadID)
@@ -34,10 +33,12 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 	if (i.x >= cnt) { return; }
 	
 	if(Apply){
-		pointData pd = pcBuffer[i.x];
-		if ( groupId == -1 || pd.groupId == groupId){
-			float3 pos = pd.pos;
-			float4 ppos = mul(float4(pd.pos,1), tW);
+		
+		if (updatedOnly && updatedBufferIn[i.x] == 0){ return; }
+		
+		if ( groupId == -1 || rwForceBuffer[i.x].groupId == groupId){
+			
+			float4 ppos = mul(float4(rwForceBuffer[i.x].position,1), tW);
 			float2 uv = ppos.xy/ppos.w; // these are the uv coords where we sample
 			uv.x = uv.x * 0.5 + 0.5;
 			uv.y = uv.y * -0.5 + 0.5;

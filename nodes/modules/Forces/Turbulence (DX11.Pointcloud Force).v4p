@@ -84,14 +84,6 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="|Group IDs|">
    </PIN>
    </NODE>
-   <NODE id="13" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
-   <PIN pinname="Descriptive Name" slicecount="1" values="PointcloudBuffer">
-   </PIN>
-   <BOUNDS type="Box" left="630" top="900" width="750" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="630" top="900" width="750" height="240">
-   </BOUNDS>
-   </NODE>
    <NODE id="14" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="|Layer Force|">
    </PIN>
@@ -127,7 +119,7 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="FileTexture (DX11 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d)" componentmode="Hidden" id="33">
-   <BOUNDS type="Node" left="9495" top="4200" width="100" height="100">
+   <BOUNDS type="Node" left="9375" top="4200" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Filename" slicecount="1" values="..\..\assets\NoiseTextures\perm1d.dds">
    </PIN>
@@ -135,7 +127,7 @@
    </PIN>
    </NODE>
    <NODE systemname="FileTexture (DX11 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d)" componentmode="Hidden" id="32">
-   <BOUNDS type="Node" left="10020" top="4500" width="100" height="100">
+   <BOUNDS type="Node" left="9900" top="4500" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Filename" slicecount="1" values="..\..\assets\NoiseTextures\perm2d.dds">
    </PIN>
@@ -143,7 +135,7 @@
    </PIN>
    </NODE>
    <NODE systemname="FileTexture (DX11 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d)" componentmode="Hidden" id="31">
-   <BOUNDS type="Node" left="10575" top="4800" width="100" height="100">
+   <BOUNDS type="Node" left="10455" top="4800" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Filename" slicecount="1" values="..\..\assets\NoiseTextures\permgrad.dds">
    </PIN>
@@ -151,9 +143,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="27" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="10320" top="1650" width="795" height="240">
+   <BOUNDS type="Box" left="10320" top="900" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="10320" top="1650" width="0" height="0">
+   <BOUNDS type="Node" left="10320" top="900" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.666000008583069">
    </PIN>
@@ -169,9 +161,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="26" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="8445" top="1650" width="795" height="240">
+   <BOUNDS type="Box" left="8445" top="900" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="8445" top="1650" width="0" height="0">
+   <BOUNDS type="Node" left="8445" top="900" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1.2">
    </PIN>
@@ -187,9 +179,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="36" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="6330" top="1650" width="795" height="240">
+   <BOUNDS type="Box" left="6330" top="900" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="6330" top="1650" width="0" height="0">
+   <BOUNDS type="Node" left="6330" top="900" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="295.735867722917">
    </PIN>
@@ -203,9 +195,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="37" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="7500" top="1650" width="795" height="240">
+   <BOUNDS type="Box" left="7500" top="900" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="7500" top="1650" width="0" height="0">
+   <BOUNDS type="Node" left="7500" top="900" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="3">
    </PIN>
@@ -221,9 +213,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="38" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="9390" top="1650" width="795" height="240">
+   <BOUNDS type="Box" left="9390" top="900" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="9390" top="1650" width="0" height="0">
+   <BOUNDS type="Node" left="9390" top="900" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1.66600000858307">
    </PIN>
@@ -239,11 +231,11 @@
    <NODE id="30" systemname="FileTexture (DX11 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
    <PIN pinname="Texture Out" visible="1" pintype="Output">
    </PIN>
-   <BOUNDS type="Node" left="11070" top="5100" width="100" height="100">
+   <BOUNDS type="Node" left="11010" top="5100" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Filename" slicecount="1" pintype="Input" visible="1" values="..\..\assets\NoiseTextures\permgrad4d.dds">
    </PIN>
-   <BOUNDS type="Box" left="1590" top="0" width="2400" height="1800">
+   <BOUNDS type="Box" left="1530" top="0" width="2400" height="1800">
    </BOUNDS>
    <BOUNDS type="Window" left="0" top="0" width="6000" height="4500">
    </BOUNDS>
@@ -273,7 +265,9 @@
    </BOUNDS>
    <PIN pinname="Transform In" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="noise_amountXYZ" visible="1" slicecount="1" values="0.003">
+   <PIN pinname="noise_amountXYZ" visible="1" slicecount="3" values="0,0,0">
+   </PIN>
+   <PIN pinname="Technique" slicecount="1" values="ApplyForce">
    </PIN>
    </NODE>
    <LINK srcnodeid="1" srcpinname="Geometry Out" dstnodeid="47" dstpinname="Geometry" linkstyle="VHV">
@@ -294,18 +288,12 @@
    <LINKPOINT x="9070" y="3518">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="13" srcpinname="Output Node" dstnodeid="47" dstpinname="pcBuffer" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="690" y="3383">
-   </LINKPOINT>
-   <LINKPOINT x="8985" y="3383">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="47" srcpinname="Layer" dstnodeid="14" dstpinname="Input Node">
    </LINK>
    <LINK srcnodeid="36" srcpinname="Y Output Value" dstnodeid="47" dstpinname="noise_time" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="6345" y="3765">
+   <LINKPOINT x="6345" y="3265">
    </LINKPOINT>
-   <LINKPOINT x="5370" y="3765">
+   <LINKPOINT x="5370" y="3515">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="33" srcpinname="Texture Out" dstnodeid="47" dstpinname="permTexture">
@@ -315,35 +303,35 @@
    <LINK srcnodeid="31" srcpinname="Texture Out" dstnodeid="47" dstpinname="permGradTexture">
    </LINK>
    <LINK srcnodeid="37" srcpinname="Y Output Value" dstnodeid="47" dstpinname="noise_oct" hiddenwhenlocked="1" linkstyle="Bezier">
-   <LINKPOINT x="7500" y="3765">
+   <LINKPOINT x="7500" y="3265">
    </LINKPOINT>
-   <LINKPOINT x="5895" y="3765">
+   <LINKPOINT x="5895" y="3515">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="27" srcpinname="Y Output Value" dstnodeid="47" dstpinname="noise_pers" hiddenwhenlocked="1" linkstyle="Bezier">
-   <LINKPOINT x="10305" y="3765">
+   <LINKPOINT x="10305" y="3265">
    </LINKPOINT>
-   <LINKPOINT x="7485" y="3765">
+   <LINKPOINT x="7485" y="3515">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="26" srcpinname="Y Output Value" dstnodeid="47" dstpinname="noise_freq" hiddenwhenlocked="1" linkstyle="Bezier">
-   <LINKPOINT x="8445" y="3773">
+   <LINKPOINT x="8445" y="3273">
    </LINKPOINT>
-   <LINKPOINT x="6420" y="3773">
+   <LINKPOINT x="6420" y="3523">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="38" srcpinname="Y Output Value" dstnodeid="47" dstpinname="noise_lacun" hiddenwhenlocked="1" linkstyle="Bezier">
-   <LINKPOINT x="9390" y="3765">
+   <LINKPOINT x="9390" y="3265">
    </LINKPOINT>
-   <LINKPOINT x="6945" y="3765">
+   <LINKPOINT x="6945" y="3515">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="30" srcpinname="Texture Out" dstnodeid="47" dstpinname="gradTexture4d">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="48" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="4815" top="1650" width="795" height="720">
+   <BOUNDS type="Box" left="4815" top="900" width="795" height="720">
    </BOUNDS>
-   <BOUNDS type="Node" left="4815" top="1650" width="0" height="0">
+   <BOUNDS type="Node" left="4815" top="900" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0,0,0">
    </PIN>
@@ -362,6 +350,10 @@
    <PIN pinname="X Input Value" slicecount="3" values="0,0,0">
    </PIN>
    </NODE>
-   <LINK srcnodeid="48" srcpinname="Y Output Value" dstnodeid="47" dstpinname="noise_amountXYZ">
+   <LINK srcnodeid="48" srcpinname="Y Output Value" dstnodeid="47" dstpinname="noise_amountXYZ" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="4845" y="3623">
+   </LINKPOINT>
+   <LINKPOINT x="4950" y="3623">
+   </LINKPOINT>
    </LINK>
    </PATCH>
