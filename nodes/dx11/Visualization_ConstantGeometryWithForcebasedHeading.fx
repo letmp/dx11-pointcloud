@@ -125,7 +125,8 @@ vs2ps VS(vsInput input)
 	
 	output.col = pcBuffer[idx].col;
 	output.col_pos = float4(pcBuffer[idx].pos,1);
-	output.col_group = randColor(pcBuffer[idx].groupId);
+//	output.col_group = randColor(pcBuffer[idx].groupId);
+	output.col_group = randColor(forceBuffer[idf].groupId);
 	
 	// LOAD ADDITIONAL DATA from the extension of the pointcloud buffer
 	//uint idf = indexBuffer[idx];
