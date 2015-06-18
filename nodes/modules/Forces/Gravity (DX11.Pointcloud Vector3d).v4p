@@ -47,9 +47,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="12" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="5910" top="900" width="795" height="240">
+   <BOUNDS type="Box" left="2760" top="900" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="5910" top="900" width="0" height="0">
+   <BOUNDS type="Node" left="2760" top="900" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="-1">
    </PIN>
@@ -133,9 +133,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="31" dstpinname="groupId" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5895" y="2415">
+   <LINKPOINT x="2790" y="2415">
    </LINKPOINT>
-   <LINKPOINT x="3555" y="2415">
+   <LINKPOINT x="3510" y="2415">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="27" srcpinname="Y Output Value" dstnodeid="31" dstpinname="gravityXYZ" linkstyle="Bezier" hiddenwhenlocked="1">
@@ -147,9 +147,9 @@
    <LINK srcnodeid="31" srcpinname="Layer" dstnodeid="14" dstpinname="Input Node">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="32" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="7110" top="900" width="480" height="480">
+   <BOUNDS type="Box" left="5610" top="900" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="7110" top="900" width="0" height="0">
+   <BOUNDS type="Node" left="5610" top="900" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
@@ -165,9 +165,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="32" srcpinname="Y Output Value" dstnodeid="31" dstpinname="Apply" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="7110" y="2528">
+   <LINKPOINT x="5595" y="2535">
    </LINKPOINT>
-   <LINKPOINT x="3930" y="2528">
+   <LINKPOINT x="3930" y="2535">
    </LINKPOINT>
    </LINK>
    <INFO author="tmp" description="Adds gravity to particles." tags="Forces">
