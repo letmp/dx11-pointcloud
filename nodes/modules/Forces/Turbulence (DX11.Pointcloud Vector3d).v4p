@@ -1,8 +1,8 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Forces\Turbulence (DX11.Pointcloud Force).v4p" systemname="DynamicForce (DX11.Pointcloud DynamicBuffer)" filename="C:\Users\le-tmp\Desktop\workspace\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Forces\DynamicForce (DX11.Pointcloud DynamicBuffer).v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Forces\Turbulence (DX11.Pointcloud Force).v4p" systemname="DynamicForce (DX11.Pointcloud DynamicBuffer)" filename="C:\Users\le-tmp\Desktop\workspace\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Forces\DynamicForce (DX11.Pointcloud DynamicBuffer).v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="2865" top="6165" width="14505" height="7755">
    </BOUNDS>
-   <PACK Name="addonpack" Version="33.7.0">
+   <PACK Name="addonpack" Version="33.8.0">
    </PACK>
    <NODE systemname="Dispatcher (DX11.Drawer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Dispatcher (DX11.Drawer)" componentmode="Hidden" id="1">
    <BOUNDS type="Node" left="1950" top="4995" width="100" height="100">
@@ -277,9 +277,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="47" dstpinname="groupId" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="3630" y="3390">
+   <LINKPOINT x="3600" y="3398">
    </LINKPOINT>
-   <LINKPOINT x="7950" y="3390">
+   <LINKPOINT x="4950" y="3398">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="6" srcpinname="Y Output Value" dstnodeid="47" dstpinname="Apply" linkstyle="Bezier" hiddenwhenlocked="1">
@@ -291,9 +291,9 @@
    <LINK srcnodeid="47" srcpinname="Layer" dstnodeid="14" dstpinname="Input Node">
    </LINK>
    <LINK srcnodeid="36" srcpinname="Y Output Value" dstnodeid="47" dstpinname="noise_time" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="6345" y="3265">
+   <LINKPOINT x="6345" y="3390">
    </LINKPOINT>
-   <LINKPOINT x="5370" y="3515">
+   <LINKPOINT x="6075" y="3390">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="33" srcpinname="Texture Out" dstnodeid="47" dstpinname="permTexture">
@@ -303,27 +303,27 @@
    <LINK srcnodeid="31" srcpinname="Texture Out" dstnodeid="47" dstpinname="permGradTexture">
    </LINK>
    <LINK srcnodeid="37" srcpinname="Y Output Value" dstnodeid="47" dstpinname="noise_oct" hiddenwhenlocked="1" linkstyle="Bezier">
-   <LINKPOINT x="7500" y="3265">
+   <LINKPOINT x="7515" y="3383">
    </LINKPOINT>
-   <LINKPOINT x="5895" y="3515">
+   <LINKPOINT x="6630" y="3383">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="27" srcpinname="Y Output Value" dstnodeid="47" dstpinname="noise_pers" hiddenwhenlocked="1" linkstyle="Bezier">
-   <LINKPOINT x="10305" y="3265">
+   <LINKPOINT x="10320" y="3390">
    </LINKPOINT>
-   <LINKPOINT x="7485" y="3515">
+   <LINKPOINT x="8280" y="3390">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="26" srcpinname="Y Output Value" dstnodeid="47" dstpinname="noise_freq" hiddenwhenlocked="1" linkstyle="Bezier">
-   <LINKPOINT x="8445" y="3273">
+   <LINKPOINT x="8460" y="3383">
    </LINKPOINT>
-   <LINKPOINT x="6420" y="3523">
+   <LINKPOINT x="7185" y="3383">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="38" srcpinname="Y Output Value" dstnodeid="47" dstpinname="noise_lacun" hiddenwhenlocked="1" linkstyle="Bezier">
-   <LINKPOINT x="9390" y="3265">
+   <LINKPOINT x="9390" y="3390">
    </LINKPOINT>
-   <LINKPOINT x="6945" y="3515">
+   <LINKPOINT x="7725" y="3390">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="30" srcpinname="Texture Out" dstnodeid="47" dstpinname="gradTexture4d">
@@ -351,11 +351,13 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="48" srcpinname="Y Output Value" dstnodeid="47" dstpinname="noise_amountXYZ" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="4845" y="3623">
+   <LINKPOINT x="4845" y="3630">
    </LINKPOINT>
-   <LINKPOINT x="4950" y="3623">
+   <LINKPOINT x="5505" y="3630">
    </LINKPOINT>
    </LINK>
    <PACK Name="dx11" Version="33.0">
    </PACK>
+   <INFO author="tmp" description="Simulates turbulences" tags="Forces">
+   </INFO>
    </PATCH>

@@ -230,4 +230,6 @@
    <LINKPOINT x="3795" y="3503">
    </LINKPOINT>
    </LINK>
+   <INFO author="tmp" description="Set acceleration, velocity and mass with DynamicBuffers" tags="Forces">
+   </INFO>
    </PATCH>
