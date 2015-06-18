@@ -224,7 +224,41 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="|Multiplicator Mass|">
    </PIN>
    </NODE>
-   <NODE systemname="Forces_CS_TextureForce (DX11.Effect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\dx11\Forces_CS_TextureForce.fx" nodename="Forces_CS_TextureForce (DX11.Effect)" componentmode="Hidden" id="34">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="36" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="16020" top="900" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="16020" top="900" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="UpdateBuffer">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="35" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="14910" top="900" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="14910" top="900" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="UpdatedOnly">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <INFO author="tmp" description="Sets acceleration, velocity and mass with textures." tags="Forces">
+   </INFO>
+   <NODE systemname="Forces_CS_Force_Texture (DX11.Effect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\dx11\Forces_CS_Force_Texture.fx" nodename="Forces_CS_Force_Texture (DX11.Effect)" componentmode="Hidden" id="34">
    <BOUNDS type="Node" left="2280" top="5655" width="100" height="100">
    </BOUNDS>
    <PIN pinname="updatedOnly" visible="1">
@@ -300,38 +334,6 @@
    <LINKPOINT x="3370" y="3383">
    </LINKPOINT>
    </LINK>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="36" systemname="IOBox (Node)">
-   <BOUNDS type="Box" left="16020" top="900" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="16020" top="900" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="UpdateBuffer">
-   </PIN>
-   <PIN pinname="Output Node" visible="1">
-   </PIN>
-   </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="35" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="14910" top="900" width="480" height="480">
-   </BOUNDS>
-   <BOUNDS type="Node" left="14910" top="900" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Boolean">
-   </PIN>
-   <PIN pinname="Behavior" slicecount="1" values="Toggle">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="UpdatedOnly">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   </NODE>
    <LINK srcnodeid="35" srcpinname="Y Output Value" dstnodeid="34" dstpinname="updatedOnly" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="14860" y="3503">
    </LINKPOINT>
@@ -344,6 +346,4 @@
    <LINKPOINT x="4100" y="3383">
    </LINKPOINT>
    </LINK>
-   <INFO author="tmp" description="Sets acceleration, velocity and mass with textures." tags="Forces">
-   </INFO>
    </PATCH>
