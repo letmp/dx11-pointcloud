@@ -3,6 +3,7 @@ RWStructuredBuffer<forceData> rwForceBuffer : BACKBUFFER;
 StructuredBuffer<uint> updatedBufferIn;
 
 float4x4 tW: WORLD;
+float4x4 tVP;
 
 Texture2D texVelocity <string uiname="Texture Velocity";>;
 float3 multiplicator_vel = float3(0.0f,0.0f,0.0f);
@@ -38,7 +39,7 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 		
 		if ( groupId == -1 || rwForceBuffer[i.x].groupId == groupId){
 			
-			float4 ppos = mul(float4(rwForceBuffer[i.x].position,1), tW);
+			float4 ppos = mul(float4(rwForceBuffer[i.x].position,1), tVP);
 			float2 uv = ppos.xy/ppos.w; // these are the uv coords where we sample
 			uv.x = uv.x * 0.5 + 0.5;
 			uv.y = uv.y * -0.5 + 0.5;

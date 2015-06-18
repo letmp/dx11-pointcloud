@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Forces\Gravity (DX11.Pointcloud Force).v4p" systemname="DynamicForce (DX11.Pointcloud DynamicBuffer)" filename="C:\Users\le-tmp\Desktop\workspace\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Forces\DynamicForce (DX11.Pointcloud DynamicBuffer).v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="15375" top="975" width="8490" height="6105">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Forces\Deceleration (DX11.Pointcloud Value).v4p" systemname="DynamicForce (DX11.Pointcloud DynamicBuffer)" filename="C:\Users\le-tmp\Desktop\workspace\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Forces\DynamicForce (DX11.Pointcloud DynamicBuffer).v4p" scrollx="0" scrolly="0">
+   <BOUNDS type="Window" left="15375" top="975" width="8925" height="5700">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.8.0">
    </PACK>
@@ -47,9 +47,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="12" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="5910" top="900" width="795" height="240">
+   <BOUNDS type="Box" left="2595" top="900" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="5910" top="900" width="0" height="0">
+   <BOUNDS type="Node" left="2595" top="900" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="-1">
    </PIN>
@@ -94,62 +94,10 @@
    </NODE>
    <LINK srcnodeid="15" srcpinname="Y Output Value" dstnodeid="3" dstpinname="Input 1" hiddenwhenlocked="0">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="27" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="4290" top="900" width="795" height="720">
-   </BOUNDS>
-   <BOUNDS type="Node" left="4290" top="900" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0,0,0">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Vector Size" slicecount="1" values="3">
-   </PIN>
-   <PIN pinname="Rows" slicecount="1" values="3">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="gravityXYZ">
-   </PIN>
-   <PIN pinname="X Input Value" slicecount="3" values="0,0,0">
-   </PIN>
-   </NODE>
-   <NODE systemname="Forces_CS_Gravity (DX11.Effect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\dx11\Forces_CS_Gravity.fx" nodename="Forces_CS_Gravity (DX11.Effect)" componentmode="Hidden" id="31">
-   <BOUNDS type="Node" left="2730" top="3705" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Apply" visible="1" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Reset" visible="1" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Technique" slicecount="1" values="ApplyForce">
-   </PIN>
-   <PIN pinname="Layer In" slicecount="1" values="||">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="1" srcpinname="Geometry Out" dstnodeid="31" dstpinname="Geometry" linkstyle="VHV">
-   <LINKPOINT x="1110" y="3495">
-   </LINKPOINT>
-   <LINKPOINT x="2640" y="3495">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="31" dstpinname="groupId" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5895" y="2415">
-   </LINKPOINT>
-   <LINKPOINT x="3555" y="2415">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="27" srcpinname="Y Output Value" dstnodeid="31" dstpinname="gravityXYZ" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="4305" y="2655">
-   </LINKPOINT>
-   <LINKPOINT x="3705" y="2655">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="31" srcpinname="Layer" dstnodeid="14" dstpinname="Input Node">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="32" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="7110" top="900" width="480" height="480">
+   <BOUNDS type="Box" left="7650" top="900" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="7110" top="900" width="0" height="0">
+   <BOUNDS type="Node" left="7650" top="900" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
@@ -164,10 +112,54 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="Apply">
    </PIN>
    </NODE>
-   <LINK srcnodeid="32" srcpinname="Y Output Value" dstnodeid="31" dstpinname="Apply" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="7110" y="2528">
+   <NODE systemname="Forces_CS_Deceleration (DX11.Effect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\dx11\Forces_CS_Deceleration.fx" nodename="Forces_CS_Deceleration (DX11.Effect)" componentmode="Hidden" id="33">
+   <BOUNDS type="Node" left="2730" top="3705" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="deceleration_multiplicator" visible="1">
+   </PIN>
+   <PIN pinname="Layer In" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Geometry Out" dstnodeid="33" dstpinname="Geometry" linkstyle="VHV">
+   <LINKPOINT x="1110" y="3495">
    </LINKPOINT>
-   <LINKPOINT x="3930" y="2528">
+   <LINKPOINT x="2640" y="3495">
    </LINKPOINT>
    </LINK>
+   <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="33" dstpinname="groupId" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="2640" y="2423">
+   </LINKPOINT>
+   <LINKPOINT x="3690" y="2423">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="33" srcpinname="Layer" dstnodeid="14" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="32" srcpinname="Y Output Value" dstnodeid="33" dstpinname="Apply" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="7550" y="2528">
+   </LINKPOINT>
+   <LINKPOINT x="4300" y="2528">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="34" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="4095" top="900" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4095" top="900" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.00999999977648258">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Deceleration Multiplicator|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="34" srcpinname="Y Output Value" dstnodeid="33" dstpinname="deceleration_multiplicator" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="4110" y="2408">
+   </LINKPOINT>
+   <LINKPOINT x="3930" y="2408">
+   </LINKPOINT>
+   </LINK>
+   <INFO author="tmp" description="Decelerates a particle by decreasing its acceleration" tags="Forces">
+   </INFO>
    </PATCH>
