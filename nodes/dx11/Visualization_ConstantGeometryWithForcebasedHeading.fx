@@ -35,7 +35,8 @@ struct vs2ps
 	float4 col: COLOR;
 	float4 col_pos : TEXCOORD0;
 	float4 col_group : TEXCOORD1;
-	float4 col_force : TEXCOORD2; // <<- our additional data
+	float4 col_group_force : TEXCOORD2;
+	float4 col_force : TEXCOORD3;
 };
 
 /* ===================== VERTEX SHADER ===================== */
@@ -125,8 +126,8 @@ vs2ps VS(vsInput input)
 	
 	output.col = pcBuffer[idx].col;
 	output.col_pos = float4(pcBuffer[idx].pos,1);
-//	output.col_group = randColor(pcBuffer[idx].groupId);
-	output.col_group = randColor(forceBuffer[idf].groupId);
+	output.col_group = randColor(pcBuffer[idx].groupId);
+	output.col_group_force = randColor(forceBuffer[idf].groupId);
 	
 	// LOAD ADDITIONAL DATA from the extension of the pointcloud buffer
 	//uint idf = indexBuffer[idx];
@@ -153,6 +154,11 @@ float4 PS_POS(vs2ps input): SV_Target
 float4 PS_GROUP(vs2ps input): SV_Target
 {
 	return input.col_group;
+}
+
+float4 PS_GROUP_FORCE(vs2ps input): SV_Target
+{
+	return input.col_group_force;
 }
 
 float4 PS_FORCE(vs2ps input): SV_Target
@@ -186,6 +192,15 @@ technique10 GroupId
 	{
 		SetVertexShader( CompileShader( vs_4_0, VS() ) );
 		SetPixelShader( CompileShader( ps_4_0, PS_GROUP() ) );
+	}
+}
+
+technique10 GroupIdForce
+{
+	pass P0
+	{
+		SetVertexShader( CompileShader( vs_4_0, VS() ) );
+		SetPixelShader( CompileShader( ps_4_0, PS_GROUP_FORCE() ) );
 	}
 }
 

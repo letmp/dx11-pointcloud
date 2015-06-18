@@ -6,6 +6,7 @@ StructuredBuffer<forceData> rwForceBufferIn;
 
 int groupId = -1;
 bool Apply;
+bool CopyGroupIds = 0;
 
 [numthreads(64, 1, 1)]
 void CS_Apply( uint3 i : SV_DispatchThreadID)
@@ -19,6 +20,7 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 		if ( groupId == -1 || pd.groupId == groupId){
 			forceData fd = rwForceBufferIn[i.x];			
 			pd.pos = fd.position;
+			if ( CopyGroupIds ) pd.groupId = fd.groupId;
 			rwPcBufferOut[i.x] = pd;
 		}
 	}
