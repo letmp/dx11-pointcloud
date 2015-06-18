@@ -71,7 +71,7 @@ namespace RingBuffer
 
         public void Evaluate(int SpreadMax)
         {
-            if (this.FOutPointcloudRingBuffer[0] == null || this.FOutUpdatedBuffer[0] == null || this.bCounter == null || this.bOffset == null)
+            if ( this.FOutPointcloudRingBuffer[0] == null || this.FOutUpdatedBuffer[0] == null || this.bCounter == null || this.bOffset == null)
             {
                 this.FOutPointcloudRingBuffer[0] = new DX11Resource<IDX11RWStructureBuffer>();
                 this.FOutUpdatedBuffer[0] = new DX11Resource<IDX11RWStructureBuffer>();
@@ -85,7 +85,7 @@ namespace RingBuffer
             Device device = context.Device;
             DeviceContext ctx = context.CurrentDeviceContext;
 
-            if (!this.FOutPointcloudRingBuffer[0].Contains(context) || !this.FOutUpdatedBuffer[0].Contains(context) || !this.bCounter.Contains(context) || !this.bOffset.Contains(context) || this.FInPointcloudRingBufferSize.IsChanged || this.FInEleCount.IsChanged)
+            if ( !this.FOutPointcloudRingBuffer[0].Contains(context) || !this.FOutUpdatedBuffer[0].Contains(context) || !this.bCounter.Contains(context) || !this.bOffset.Contains(context) || this.FInPointcloudRingBufferSize.IsChanged || this.FInEleCount.IsChanged)
             {
 
                 this.FOutPointcloudRingBuffer[0].Dispose(context);
