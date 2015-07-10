@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\girlpower\ForceExamples\root_kinect_example.v4p" systemname="root" filename="C:\Users\Anwender\Dropbox\PointcloudWorkshop\CustomizeStructure\root.v4p" scrollx="0" scrolly="3180">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\girlpower\ForceExamples\root_kinect_example.v4p" systemname="root" filename="C:\Users\Anwender\Dropbox\PointcloudWorkshop\CustomizeStructure\root.v4p" scrollx="1875" scrolly="2715">
    <BOUNDS type="Window" left="195" top="360" width="19665" height="14610">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.8.0">
@@ -369,9 +369,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="354" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="9540" top="15120" width="285" height="240">
+   <BOUNDS type="Box" left="10185" top="15120" width="285" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="9540" top="15120" width="0" height="0">
+   <BOUNDS type="Node" left="10185" top="15120" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
@@ -443,9 +443,9 @@
    </PIN>
    <PIN pinname="TranslateY" slicecount="1" values="2">
    </PIN>
-   <PIN pinname="Pitch" slicecount="1" values="0.12">
+   <PIN pinname="Pitch" slicecount="1" visible="1" values="0.02">
    </PIN>
-   <PIN pinname="Yaw" slicecount="1" values="0">
+   <PIN pinname="Yaw" slicecount="1" visible="1" values="-0.16">
    </PIN>
    <PIN pinname="Roll" slicecount="1" values="0">
    </PIN>
@@ -507,7 +507,7 @@
    </BOUNDS>
    <BOUNDS type="Window" left="10680" top="1200" width="11745" height="7755">
    </BOUNDS>
-   <PIN pinname="VelocityBuffer" visible="1">
+   <PIN pinname="VelocityBuffer" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Apply" visible="1" slicecount="1" values="0">
    </PIN>
@@ -525,9 +525,11 @@
    </PIN>
    <PIN pinname="UpdatedOnly" visible="1">
    </PIN>
+   <PIN pinname="AccelerationBuffer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Technique" slicecount="1" visible="1" values="Add">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="342" srcpinname="Buffer" dstnodeid="338" dstpinname="VelocityBuffer">
-   </LINK>
    <NODE systemname="ForceByTexture (DX11.Pointcloud Texture2d)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Forces\ForceByTexture (DX11.Pointcloud Texture2d).v4p" nodename="ForceByTexture (DX11.Pointcloud Texture2d)" componentmode="Hidden" id="370">
    <BOUNDS type="Node" left="16605" top="13335" width="100" height="100">
    </BOUNDS>
@@ -535,7 +537,7 @@
    </PIN>
    <PIN pinname="Max Element Count" visible="1" slicecount="1" values="5000">
    </PIN>
-   <BOUNDS type="Window" left="3555" top="2190" width="20160" height="7755">
+   <BOUNDS type="Window" left="5340" top="2850" width="20160" height="7755">
    </BOUNDS>
    <PIN pinname="Texture Velocity" visible="1" slicecount="1" values="||">
    </PIN>
@@ -851,7 +853,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="10560" top="2940" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -861,7 +863,7 @@
    </PIN>
    <PIN pinname="Behavior" slicecount="1" values="Toggle">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
+   <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    </NODE>
    <LINK srcnodeid="416" srcpinname="Y Output Value" dstnodeid="361" dstpinname="Enabled">
@@ -1159,7 +1161,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="1665" top="20595" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="19875" top="285" width="8715" height="7305">
+   <BOUNDS type="Window" left="19155" top="1230" width="8715" height="7305">
    </BOUNDS>
    <PIN pinname="Layers" visible="1" slicecount="1" values="||">
    </PIN>
@@ -1647,7 +1649,7 @@
    <LINK srcnodeid="509" srcpinname="Y Output Value" dstnodeid="497" dstpinname="Apply">
    </LINK>
    <NODE systemname="ApplyForce (DX11.Pointcloud ForceBuffer)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Forces\ApplyForce (DX11.Pointcloud ForceBuffer).v4p" nodename="ApplyForce (DX11.Pointcloud ForceBuffer)" componentmode="Hidden" id="437">
-   <BOUNDS type="Node" left="7020" top="15615" width="2580" height="270">
+   <BOUNDS type="Node" left="7020" top="15615" width="3240" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="7020" top="15615" width="11635" height="9340">
    </BOUNDS>
@@ -1687,5 +1689,33 @@
    <LINK srcnodeid="497" srcpinname="Layer Force" dstnodeid="437" dstpinname="Layer Force">
    </LINK>
    <LINK srcnodeid="485" srcpinname="Y Output Value" dstnodeid="370" dstpinname="Multiplicator Acceleration">
+   </LINK>
+   <LINK srcnodeid="361" srcpinname="Layer Out" dstnodeid="8" dstpinname="Layer 5" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="9570" y="11580">
+   </LINKPOINT>
+   <LINKPOINT x="3360" y="11580">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="361" srcpinname="View" dstnodeid="370" dstpinname="Transform In" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="9960" y="8468">
+   </LINKPOINT>
+   <LINKPOINT x="16920" y="8468">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="513" systemname="IOBox (Enumerations)">
+   <BOUNDS type="Box" left="14940" top="12870" width="660" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="14940" top="12870" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="Add">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="513" srcpinname="Output Enum" dstnodeid="338" dstpinname="Technique" linkstyle="VHV">
+   <LINKPOINT x="14940" y="13208">
+   </LINKPOINT>
+   <LINKPOINT x="13830" y="13208">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="342" srcpinname="Buffer" dstnodeid="338" dstpinname="VelocityBuffer">
    </LINK>
    </PATCH>
