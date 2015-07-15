@@ -59,7 +59,7 @@
    </PIN>
    <PIN pinname="Value Type" slicecount="1" values="Integer">
    </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="|Group IDs|">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|From GroupIDs|">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
@@ -133,7 +133,7 @@
    </PIN>
    <PIN pinname="Value Type" slicecount="1" values="Integer">
    </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="|New Group IDs|">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|To GroupIDs|">
    </PIN>
    </NODE>
    <NODE systemname="Forces_CS_ChangeGroupId (DX11.Effect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\dx11\Forces_CS_ChangeGroupId.fx" nodename="Forces_CS_ChangeGroupId (DX11.Effect)" componentmode="Hidden" id="48">

@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\girlpower\ExtendingDatastructure\root.v4p" systemname="root" filename="C:\Users\Anwender\Dropbox\PointcloudWorkshop\CustomizeStructure\root.v4p" scrollx="0" scrolly="2880">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\girlpower\ExtendingDatastructure\root.v4p" systemname="root" filename="C:\Users\Anwender\Dropbox\PointcloudWorkshop\CustomizeStructure\root.v4p" scrollx="0" scrolly="-360">
    <BOUNDS type="Window" left="540" top="1050" width="18825" height="12960">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.8.0">
@@ -9,7 +9,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="1665" top="21945" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="19470" top="1080" width="8895" height="7230">
+   <BOUNDS type="Window" left="35025" top="4245" width="8895" height="7230">
    </BOUNDS>
    <PIN pinname="Layers" visible="1" slicecount="1" values="||">
    </PIN>
@@ -595,9 +595,9 @@
    <LINK srcnodeid="89" srcpinname="Buffers" dstnodeid="50" dstpinname="Input Node">
    </LINK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="202" systemname="IOBox (Node)">
-   <BOUNDS type="Box" left="7020" top="17430" width="795" height="240">
+   <BOUNDS type="Box" left="7035" top="17430" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="7020" top="17430" width="0" height="0">
+   <BOUNDS type="Node" left="7035" top="17430" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Descriptive Name" slicecount="1" values="PointcloudBuffer">
    </PIN>
@@ -652,32 +652,6 @@
    </NODE>
    <LINK srcnodeid="211" srcpinname="Change" dstnodeid="187" dstpinname="Y Input Value">
    </LINK>
-   <NODE systemname="RwToAppendBuffer (DX11.Pointcloud PointcloudBuffer)" filename="%VVVV%\packs\dx11-pointcloud\girlpower\ExtendingDatastructure\plugins\RwToAppendBuffer\bin\AnyCPU\Release\RwToAppendBuffer.dll" nodename="RwToAppendBuffer (DX11.Pointcloud PointcloudBuffer)" componentmode="Hidden" id="215">
-   <BOUNDS type="Node" left="7035" top="16620" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="PointcloudBuffer" visible="1">
-   </PIN>
-   <PIN pinname="IndexBuffer" visible="1">
-   </PIN>
-   <BOUNDS type="Box" left="7035" top="16620">
-   </BOUNDS>
-   </NODE>
-   <LINK srcnodeid="59" srcpinname="Y Output Value" dstnodeid="215" dstpinname="Element Count" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="4200" y="11498">
-   </LINKPOINT>
-   <LINKPOINT x="7725" y="11498">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="43" srcpinname="Y Output Value" dstnodeid="215" dstpinname="Stride" linkstyle="Bezier">
-   <LINKPOINT x="7725" y="15375">
-   </LINKPOINT>
-   <LINKPOINT x="8385" y="15375">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="50" srcpinname="Output Node" dstnodeid="215" dstpinname="PointcloudBuffer">
-   </LINK>
-   <LINK srcnodeid="215" srcpinname="PointcloudBuffer" dstnodeid="202" dstpinname="Input Node">
-   </LINK>
    <NODE systemname="Visualization_ExtendedConstantGeometry (DX11.Effect)" filename="%VVVV%\packs\dx11-pointcloud\girlpower\ExtendingDatastructure\dx11\Visualization_ExtendedConstantGeometry.fx" nodename="Visualization_ExtendedConstantGeometry (DX11.Effect)" componentmode="Hidden" id="218">
    <BOUNDS type="Node" left="5295" top="20010" width="100" height="100">
    </BOUNDS>
@@ -687,7 +661,7 @@
    </PIN>
    <PIN pinname="Layer" visible="1">
    </PIN>
-   <PIN pinname="pcBuffer" visible="1">
+   <PIN pinname="pcBuffer" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="indexBuffer" visible="1" slicecount="1" values="||">
    </PIN>
@@ -741,9 +715,9 @@
    </PIN>
    <PIN pinname="Output Node" visible="1">
    </PIN>
+   <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="215" srcpinname="IndexBuffer" dstnodeid="221" dstpinname="Input Node">
-   </LINK>
    <LINK srcnodeid="221" srcpinname="Output Node" dstnodeid="218" dstpinname="indexBuffer" linkstyle="VHV">
    <LINKPOINT x="8385" y="18840">
    </LINKPOINT>
@@ -1009,5 +983,41 @@
    <LINK srcnodeid="239" srcpinname="Output" dstnodeid="243" dstpinname="X">
    </LINK>
    <LINK srcnodeid="226" srcpinname="Max Element Count" dstnodeid="59" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="RingBufferIndexing (DX11.Pointcloud PointcloudRingBuffer)" filename="%VVVV%\packs\dx11-pointcloud\nodes\plugins\RingBufferIndexing\bin\AnyCPU\Release\RingBufferIndexing.dll" nodename="RingBufferIndexing (DX11.Pointcloud PointcloudRingBuffer)" componentmode="Hidden" id="247">
+   <BOUNDS type="Node" left="7035" top="16515" width="1410" height="270">
+   </BOUNDS>
+   <PIN pinname="PointcloudBuffer" visible="1">
+   </PIN>
+   <PIN pinname="Element Count" visible="1">
+   </PIN>
+   <PIN pinname="Stride" visible="1">
+   </PIN>
+   <PIN pinname="IndexBuffer" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="7035" top="16515">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="50" srcpinname="Output Node" dstnodeid="247" dstpinname="PointcloudBuffer">
+   </LINK>
+   <LINK srcnodeid="59" srcpinname="Y Output Value" dstnodeid="247" dstpinname="Element Count" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="4200" y="11445">
+   </LINKPOINT>
+   <LINKPOINT x="7725" y="11445">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="43" srcpinname="Y Output Value" dstnodeid="247" dstpinname="Stride" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="7725" y="15323">
+   </LINKPOINT>
+   <LINKPOINT x="8400" y="15323">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="247" srcpinname="PointcloudBuffer" dstnodeid="202" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="247" srcpinname="IndexBuffer" dstnodeid="221" dstpinname="Input Node" linkstyle="VHV">
+   <LINKPOINT x="8325" y="17108">
+   </LINKPOINT>
+   <LINKPOINT x="8400" y="17108">
+   </LINKPOINT>
    </LINK>
    </PATCH>

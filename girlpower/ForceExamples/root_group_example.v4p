@@ -2527,6 +2527,10 @@
    </PIN>
    <BOUNDS type="Box" left="20460" top="27915">
    </BOUNDS>
+   <PIN pinname="From GroupIDs" visible="1">
+   </PIN>
+   <PIN pinname="To GroupIDs" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="562" srcpinname="Max Element Count" dstnodeid="610" dstpinname="Max Element Count" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="13720" y="25530">
@@ -2571,7 +2575,9 @@
    </PIN>
    <PIN pinname="Value Type" slicecount="1" values="Integer">
    </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="|Group IDs|">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|From GroupIDs|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="612" srcpinname="Y Output Value" dstnodeid="610" dstpinname="Group IDs">
@@ -2589,7 +2595,9 @@
    </PIN>
    <PIN pinname="Value Type" slicecount="1" values="Integer">
    </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="|New Group IDs|">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|To GroupIDs|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="613" srcpinname="Y Output Value" dstnodeid="610" dstpinname="New Group IDs">
@@ -2896,4 +2904,8 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
+   <LINK srcnodeid="612" srcpinname="Y Output Value" dstnodeid="610" dstpinname="From GroupIDs">
+   </LINK>
+   <LINK srcnodeid="613" srcpinname="Y Output Value" dstnodeid="610" dstpinname="To GroupIDs">
+   </LINK>
    </PATCH>

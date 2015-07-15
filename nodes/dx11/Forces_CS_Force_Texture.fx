@@ -44,11 +44,11 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 			uv.x = uv.x * 0.5 + 0.5;
 			uv.y = uv.y * -0.5 + 0.5;
 			
-			float3 vel = texVelocity.SampleLevel(sPoint,uv,0).xyz;
+			float3 vel = mul(tW, float4(texVelocity.SampleLevel(sPoint,uv,0).xyz,1)).xyz;
 			if (vel.r > threshold || vel.g > threshold || vel.b > threshold ||
 			 vel.r < -threshold || vel.g < -threshold || vel.b < -threshold) rwForceBuffer[i.x].velocity += vel * multiplicator_vel;
-			
-			float3 acc = texAcceleration.SampleLevel(sPoint,uv,0).xyz;
+						
+			float3 acc = mul(tW, float4(texAcceleration.SampleLevel(sPoint,uv,0).xyz,1)).xyz;
 			if (acc.r > threshold || acc.g > threshold || acc.b > threshold ||
 			 acc.r < -threshold || acc.g < -threshold || acc.b < -threshold) rwForceBuffer[i.x].acceleration += acc * multiplicator_acc;
 			
