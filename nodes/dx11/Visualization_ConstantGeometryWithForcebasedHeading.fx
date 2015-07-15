@@ -1,4 +1,5 @@
 //@author: tmp
+//@heading-logic: timpernagel
 //@help: Draws a PointCloud
 //@tags: DX11.Pointcloud
 //@credits: vvvv
