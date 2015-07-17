@@ -1,10 +1,9 @@
 #include "_ForceData.fxh"
 RWStructuredBuffer<forceData> rwForceBuffer : BACKBUFFER;
 
-int CountAttractor;
 StructuredBuffer<float3> AttractorPosition;
-StructuredBuffer<float2> ForceSize;
-
+StructuredBuffer<float> Force;
+StructuredBuffer<float> Size;
 int groupId = -1;
 bool Apply;
 
@@ -17,16 +16,20 @@ void CS_Attractor( uint3 i : SV_DispatchThreadID)
 	
 	if (Apply) {
 		
-		for (int j = 0; j < CountAttractor; j++)
+		AttractorPosition.GetDimensions(cnt,stride);
+		int attractorCount = cnt;
+		for (int j = 0; j <  attractorCount; j++)
 		{
 			if ( groupId == -1 || rwForceBuffer[i.x].groupId == groupId){
 				
 				float3 dist = AttractorPosition[j] - rwForceBuffer[i.x].position;
-				float f = (length(dist) / ForceSize[j].y);
+				Size.GetDimensions(cnt,stride);
+				float f = (length(dist) / Size[j % cnt]);
 				f = 1 - f;
 				f = saturate(f);
 				f = pow(f, 2.71);
-				rwForceBuffer[i.x].acceleration += dist * f * ForceSize[j].x;
+				Force.GetDimensions(cnt,stride);
+				rwForceBuffer[i.x].acceleration += dist * f * Force[j % cnt];
 			}
 		}
 	}

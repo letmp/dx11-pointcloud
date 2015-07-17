@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\girlpower\ForceExamples\root_group_example.v4p" systemname="root_without_kinect" filename="C:\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\girlpower\forces\root_without_kinect.v4p" scrollx="3990" scrolly="16065">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\girlpower\ForceExamples\root_group_example.v4p" systemname="root_without_kinect" filename="C:\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\girlpower\forces\root_without_kinect.v4p" scrollx="3570" scrolly="8265">
    <BOUNDS type="Window" left="0" top="255" width="19665" height="14610">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.8.0">
