@@ -21,7 +21,10 @@ void CSBuildPointcloudBuffer( uint3 DTid : SV_DispatchThreadID )
 	
 	float4 pos = float4(posBuffer[DTid.x],1);
 	pos = mul(pos, tW);
-	float4 col = colBuffer[DTid.x];
+	
+	uint cnt, stride;
+	colBuffer.GetDimensions(cnt,stride);
+	float4 col = colBuffer[DTid.x % cnt];
 
 	pointData pd = {pos.xyz, col, drawIndex + IdOffset};
 	pcBuffer.Append(pd);
