@@ -1,8 +1,8 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\PointcloudBuffer (DX11.Pointcloud DynamicBuffer).v4p" systemname="Pointcloud (DX11.Buffer)" filename="D:\workspace\dev\packs\KinectToolkitDX11\nodes\modules\IO\Pointcloud (DX11.Buffer).v4p" scrollx="0" scrolly="135">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\PointcloudBuffer (DX11.Pointcloud DynamicBuffer).v4p" systemname="Pointcloud (DX11.Buffer)" filename="D:\workspace\dev\packs\KinectToolkitDX11\nodes\modules\IO\Pointcloud (DX11.Buffer).v4p" scrollx="0" scrolly="-360">
    <BOUNDS type="Window" left="14310" top="1020" width="10875" height="10545">
    </BOUNDS>
-   <PACK Name="addonpack" Version="33.7.0">
+   <PACK Name="addonpack" Version="33.8.0">
    </PACK>
    <NODE systemname="Dispatcher (DX11.Drawer)" filename="%VVVV%\packs\DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Dispatcher (DX11.Drawer)" componentmode="Hidden" id="29">
    <BOUNDS type="Node" left="2625" top="5730" width="100" height="100">
@@ -231,6 +231,8 @@
    </PIN>
    <PIN pinname="Buffers" visible="1">
    </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="36" srcpinname="Y Output Value" dstnodeid="116" dstpinname="Stride">
    </LINK>
@@ -323,7 +325,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="7710" top="510" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -401,6 +403,8 @@
    </BOUNDS>
    <PIN pinname="IdOffset" visible="1">
    </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="29" srcpinname="Geometry Out" dstnodeid="125" dstpinname="Geometry">
    </LINK>
@@ -434,6 +438,38 @@
    <LINKPOINT x="7710" y="3908">
    </LINKPOINT>
    <LINKPOINT x="3945" y="3908">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="131" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="9750" top="510" width="315" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9750" top="510" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Enabled">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="131" srcpinname="Y Output Value" dstnodeid="116" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="9735" y="4800">
+   </LINKPOINT>
+   <LINKPOINT x="2070" y="4800">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="131" srcpinname="Y Output Value" dstnodeid="125" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="9750" y="3900">
+   </LINKPOINT>
+   <LINKPOINT x="7125" y="3900">
    </LINKPOINT>
    </LINK>
    </PATCH>
