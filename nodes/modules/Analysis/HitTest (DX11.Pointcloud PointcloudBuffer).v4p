@@ -1,8 +1,8 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Analysis\HitTest (DX11.Pointcloud PointcloudBuffer).v4p" systemname="Contains (DX11.Pointcloud.Analysis PointcloudBuffer)" filename="C:\apps\code\vvvv_45beta33.3_x64\packs\KinectToolkitDX11\nodes\modules\Analysis\Contains (DX11.Pointcloud.Analysis PointcloudBuffer).v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="10455" top="4695" width="8760" height="8385">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Analysis\HitTest (DX11.Pointcloud PointcloudBuffer).v4p" systemname="Contains (DX11.Pointcloud.Analysis PointcloudBuffer)" filename="C:\apps\code\vvvv_45beta33.3_x64\packs\KinectToolkitDX11\nodes\modules\Analysis\Contains (DX11.Pointcloud.Analysis PointcloudBuffer).v4p" scrollx="0" scrolly="1515">
+   <BOUNDS type="Window" left="11865" top="7035" width="8760" height="8070">
    </BOUNDS>
-   <PACK Name="addonpack" Version="33.7.0">
+   <PACK Name="addonpack" Version="33.8.0">
    </PACK>
    <NODE systemname="Renderer (DX11 Buffer)" filename="%VVVV%\packs\vvvv-DX11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11 Buffer)" componentmode="Hidden" id="13">
    <BOUNDS type="Node" left="2940" top="5760" width="100" height="100">
@@ -446,6 +446,20 @@
    <LINKPOINT x="4245" y="6548">
    </LINKPOINT>
    <LINKPOINT x="3225" y="6548">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="67" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="1200" top="7170" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1200" top="7170" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="HitBuffer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="13" srcpinname="Buffers" dstnodeid="67" dstpinname="Input Node" linkstyle="Bezier">
+   <LINKPOINT x="2940" y="6585">
+   </LINKPOINT>
+   <LINKPOINT x="1260" y="6585">
    </LINKPOINT>
    </LINK>
    </PATCH>

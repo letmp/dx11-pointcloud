@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\dev\git\dx11-pointcloud\nodes\modules\Analysis\Centroid (DX11.Pointcloud PointcloudBuffer) help.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="3690" top="3135" width="11640" height="10725">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Analysis\Centroid (DX11.Pointcloud PointcloudBuffer) help.v4p" scrollx="0" scrolly="0">
+   <BOUNDS type="Window" left="3525" top="1740" width="11640" height="12000">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
    <BOUNDS type="Node" left="225" top="225" width="5100" height="450">
@@ -113,9 +113,9 @@
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="33" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="5505" top="8385" width="1545" height="1065">
+   <BOUNDS type="Box" left="6105" top="8385" width="1545" height="1065">
    </BOUNDS>
-   <BOUNDS type="Node" left="5505" top="8385" width="0" height="0">
+   <BOUNDS type="Node" left="6105" top="8385" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -133,9 +133,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="34" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="5505" top="7170" width="825" height="1080">
+   <BOUNDS type="Box" left="6105" top="7170" width="825" height="1080">
    </BOUNDS>
-   <BOUNDS type="Node" left="5505" top="7170" width="0" height="0">
+   <BOUNDS type="Node" left="6105" top="7170" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -153,17 +153,17 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="35" systemname="IOBox (Node)">
-   <BOUNDS type="Box" left="5505" top="6690" width="795" height="240">
+   <BOUNDS type="Box" left="6105" top="6690" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="5505" top="6690" width="0" height="0">
+   <BOUNDS type="Node" left="6105" top="6690" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Output Node" visible="1">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="36" systemname="IOBox (String)">
-   <BOUNDS type="Node" left="7425" top="6690" width="1365" height="270">
+   <BOUNDS type="Node" left="8025" top="6690" width="1365" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="7425" top="6690" width="1365" height="270">
+   <BOUNDS type="Box" left="8025" top="6690" width="1365" height="270">
    </BOUNDS>
    <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; the help layer|">
    </PIN>
@@ -175,9 +175,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="37" systemname="IOBox (String)">
-   <BOUNDS type="Node" left="7425" top="7170" width="3675" height="270">
+   <BOUNDS type="Node" left="8025" top="7170" width="3675" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="7425" top="7170" width="3210" height="495">
+   <BOUNDS type="Box" left="8025" top="7170" width="3210" height="495">
    </BOUNDS>
    <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; the number of points for each filter transform|">
    </PIN>
@@ -189,9 +189,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="38" systemname="IOBox (String)">
-   <BOUNDS type="Node" left="7425" top="8385" width="3675" height="270">
+   <BOUNDS type="Node" left="8025" top="8385" width="3675" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="7425" top="8385" width="3210" height="495">
+   <BOUNDS type="Box" left="8025" top="8385" width="3210" height="495">
    </BOUNDS>
    <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; 3d coords for each centroid|">
    </PIN>
@@ -203,9 +203,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="40" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="4140" top="5640" width="285" height="240">
+   <BOUNDS type="Box" left="4245" top="5640" width="285" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="4140" top="5640" width="0" height="0">
+   <BOUNDS type="Node" left="4245" top="5640" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="5" visible="1" values="5,6,7,8,9">
    </PIN>
@@ -303,7 +303,7 @@
    </PIN>
    </NODE>
    <NODE id="26" systemname="Renderer (DX11)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" hiddenwhenlocked="1">
-   <BOUNDS type="Window" left="15315" top="3135" width="9150" height="7800">
+   <BOUNDS type="Window" left="15210" top="1725" width="9150" height="7800">
    </BOUNDS>
    <BOUNDS type="Node" left="1515" top="9345" width="100" height="100">
    </BOUNDS>
@@ -337,9 +337,9 @@
    <LINK srcnodeid="25" srcpinname="View Projection" dstnodeid="26" dstpinname="View">
    </LINK>
    <LINK srcnodeid="35" srcpinname="Output Node" dstnodeid="24" dstpinname="Layer 4" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5575" y="7898">
+   <LINKPOINT x="5975" y="7898">
    </LINKPOINT>
-   <LINKPOINT x="2345" y="7898">
+   <LINKPOINT x="2545" y="7898">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="23" srcpinname="Layer" dstnodeid="24" dstpinname="Layer 1" linkstyle="VHV">
@@ -559,29 +559,31 @@
    </PIN>
    <PIN pinname="Helper Color" slicecount="1" values="|0.00000,0.92586,0.42242,1.00000|">
    </PIN>
+   <PIN pinname="CentroidBuffer" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="0" srcpinname="Centroid XYZ" dstnodeid="33" dstpinname="Y Input Value" linkstyle="Bezier">
-   <LINKPOINT x="3810" y="7410">
+   <LINKPOINT x="4010" y="7410">
    </LINKPOINT>
-   <LINKPOINT x="5505" y="7410">
+   <LINKPOINT x="5905" y="7410">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="0" srcpinname="Element Count" dstnodeid="34" dstpinname="Y Input Value" linkstyle="Bezier">
-   <LINKPOINT x="4605" y="6795">
+   <LINKPOINT x="4805" y="6795">
    </LINKPOINT>
-   <LINKPOINT x="5490" y="6795">
+   <LINKPOINT x="5890" y="6795">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="0" srcpinname="Help Layer" dstnodeid="35" dstpinname="Input Node" linkstyle="Bezier">
-   <LINKPOINT x="5400" y="6570">
+   <LINKPOINT x="5600" y="6570">
    </LINKPOINT>
-   <LINKPOINT x="5505" y="6570">
+   <LINKPOINT x="5905" y="6570">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="40" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Group IDs" linkstyle="Bezier">
-   <LINKPOINT x="4155" y="6015">
+   <LINKPOINT x="4245" y="6030">
    </LINKPOINT>
-   <LINKPOINT x="4050" y="6015">
+   <LINKPOINT x="4065" y="6030">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="42" srcpinname="Max Element Count" dstnodeid="17" dstpinname="Max Element Count" linkstyle="Bezier">
@@ -656,4 +658,30 @@
    </LINK>
    <LINK srcnodeid="42" srcpinname="PointcloudBuffer" dstnodeid="21" dstpinname="PointcloudBuffer">
    </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="53" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="6105" top="9825" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6105" top="9825" width="0" height="0">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="CentroidBuffer" dstnodeid="53" dstpinname="Input Node" linkstyle="Bezier">
+   <LINKPOINT x="3810" y="8130">
+   </LINKPOINT>
+   <LINKPOINT x="6105" y="8130">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="54" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="7350" top="9840" width="3045" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7350" top="9840" width="3165" height="1335">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; the buffer that contains the centroid and the elementcount in a float4 structure (float3 = centroid, float elementcount). Use this buffer if you can. It avoids expensive Readbacks to bring these values back to CPU.|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
    </PATCH>
