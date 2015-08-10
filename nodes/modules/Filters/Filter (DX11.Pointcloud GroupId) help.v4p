@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\dev\git\dx11-pointcloud\nodes\modules\Filters\Filter (DX11.Pointcloud GroupId) help.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Filters\Filter (DX11.Pointcloud GroupId) help.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="4095" top="3390" width="10815" height="10395">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
@@ -449,21 +449,23 @@
    </BOUNDS>
    <PIN pinname="Technique" slicecount="1" visible="1" values="Restrict">
    </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="49" srcpinname="PointcloudBuffer 1" dstnodeid="61" dstpinname="Input Node">
    </LINK>
    <LINK srcnodeid="68" srcpinname="Output Enum" dstnodeid="49" dstpinname="Technique" linkstyle="Bezier">
-   <LINKPOINT x="4375" y="5415">
+   <LINKPOINT x="4470" y="5415">
    </LINKPOINT>
-   <LINKPOINT x="3365" y="5415">
+   <LINKPOINT x="3195" y="5415">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="0" srcpinname="PointcloudBuffer" dstnodeid="49" dstpinname="PointcloudBuffer">
    </LINK>
    <LINK srcnodeid="0" srcpinname="Max Element Count" dstnodeid="49" dstpinname="Max Element Count" linkstyle="Bezier">
-   <LINKPOINT x="3285" y="4755">
+   <LINKPOINT x="3285" y="4770">
    </LINKPOINT>
-   <LINKPOINT x="2835" y="4755">
+   <LINKPOINT x="2805" y="4770">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="71" systemname="IOBox (Value Advanced)">
@@ -495,7 +497,7 @@
    <LINK srcnodeid="50" srcpinname="Y Output Value" dstnodeid="49" dstpinname="Group IDs" linkstyle="Bezier">
    <LINKPOINT x="4470" y="5175">
    </LINKPOINT>
-   <LINKPOINT x="3075" y="5175">
+   <LINKPOINT x="3015" y="5175">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Constant (DX11.Pointcloud PointcloudBuffer)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Visualization\Constant (DX11.Pointcloud PointcloudBuffer).v4p" nodename="Constant (DX11.Pointcloud PointcloudBuffer)" componentmode="Hidden" id="11" hiddenwhenlocked="1">

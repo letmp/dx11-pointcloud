@@ -30,6 +30,9 @@ namespace VVVV.Nodes
 		[Input("Texture In")]
 		protected Pin<DX11Resource<DX11Texture2D>> FTextureIn;
 
+		[Input("Enabled", IsSingle = true)]
+		public ISpread<bool> FEnabled;
+		
 		[Output("Output")]
         public ISpread<int> FOutput;
 
@@ -77,7 +80,7 @@ namespace VVVV.Nodes
 		public void Evaluate(int SpreadMax)
 		{								
 			
-			if (this.FTextureIn.PluginIO.IsConnected)
+			if (this.FTextureIn.PluginIO.IsConnected && FEnabled[0] == true)
             {
              	
             	if (this.RenderRequest != null) { this.RenderRequest(this, this.FHost); }
