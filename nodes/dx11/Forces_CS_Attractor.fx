@@ -1,10 +1,13 @@
 #include "_ForceData.fxh"
 RWStructuredBuffer<forceData> rwForceBuffer : BACKBUFFER;
+StructuredBuffer<uint> updatedBufferIn;
 
 StructuredBuffer<float3> AttractorPosition;
 StructuredBuffer<float> Force;
 StructuredBuffer<float> Size;
 int groupId = -1;
+
+bool updatedOnly;
 bool Apply;
 
 
@@ -15,6 +18,7 @@ void CS_Attractor( uint3 i : SV_DispatchThreadID)
 	rwForceBuffer.GetDimensions(cnt,stride);
 	
 	if (Apply) {
+		if (updatedOnly && updatedBufferIn[i.x] == 0){ return; }
 		
 		AttractorPosition.GetDimensions(cnt,stride);
 		int attractorCount = cnt;

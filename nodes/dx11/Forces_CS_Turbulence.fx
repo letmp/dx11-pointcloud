@@ -1,5 +1,6 @@
 #include "_ForceData.fxh"
 RWStructuredBuffer<forceData> rwForceBuffer : BACKBUFFER;
+StructuredBuffer<uint> updatedBufferIn;
 
 int groupId = -1;
 
@@ -21,7 +22,7 @@ float noise_freq = 1;
 float noise_lacun = 1.666;
 float noise_pers = 0.666;
 
-
+bool updatedOnly;
 bool Apply;
 
 [numthreads(64, 1, 1)]
@@ -32,7 +33,8 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 	if (i.x >= cnt) { return; }
 	
 	if(Apply){
-			
+			if (updatedOnly && updatedBufferIn[i.x] == 0){ return; }
+		
 			float3 pos = rwForceBuffer[i.x].position;
 			
 			// Noise Force
