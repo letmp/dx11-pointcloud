@@ -270,8 +270,6 @@
    <LINKPOINT x="2150" y="3248">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="38" srcpinname="Layer" dstnodeid="25" dstpinname="Layer">
-   </LINK>
    <LINK srcnodeid="44" srcpinname="Output Node" dstnodeid="38" dstpinname="Transform In" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="4635" y="2063">
    </LINKPOINT>
@@ -334,16 +332,30 @@
    <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="47" srcpinname="Y Output Value" dstnodeid="38" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="7215" y="2183">
-   </LINKPOINT>
-   <LINKPOINT x="4650" y="2183">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="47" srcpinname="Y Output Value" dstnodeid="25" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="7215" y="3203">
    </LINKPOINT>
    <LINKPOINT x="2835" y="3203">
    </LINKPOINT>
+   </LINK>
+   <NODE systemname="Validator (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Validator (DX11.Layer)" componentmode="Hidden" id="48">
+   <BOUNDS type="Node" left="2100" top="3870" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer In" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="38" srcpinname="Layer" dstnodeid="48" dstpinname="Layer In">
+   </LINK>
+   <LINK srcnodeid="47" srcpinname="Y Output Value" dstnodeid="48" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="7230" y="2363">
+   </LINKPOINT>
+   <LINKPOINT x="2805" y="2363">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="48" srcpinname="Layer Out" dstnodeid="25" dstpinname="Layer">
    </LINK>
    </PATCH>
