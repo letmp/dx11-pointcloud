@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Setup\Kinect2 (DX11.Pointcloud).v4p" systemname="Kinect2 (DX11.Pointcloud.Setup)" filename="C:\vvvv\vvvv_45beta33.7_x64_dev\packs\dx11-pointcloud\nodes\modules\Setup\Kinect2 (DX11.Pointcloud.Setup).v4p" scrollx="915" scrolly="0">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Setup\Kinect2 (DX11.Pointcloud).v4p" systemname="Kinect2 (DX11.Pointcloud.Setup)" filename="C:\vvvv\vvvv_45beta33.7_x64_dev\packs\dx11-pointcloud\nodes\modules\Setup\Kinect2 (DX11.Pointcloud.Setup).v4p" scrollx="0" scrolly="0">
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="4" systemname="IOBox (Value Advanced)" hiddenwhenlocked="0">
    <BOUNDS type="Box" left="1635" top="1200" width="795" height="480">
    </BOUNDS>

@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\dev\git\dx11-pointcloud\nodes\modules\Filters\DepthFilter (DX11.Pointcloud Kinect) help.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Filters\DepthFilter (DX11.Pointcloud Kinect) help.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="3090" top="3405" width="12540" height="9825">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
@@ -38,80 +38,6 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
-   <NODE systemname="Kinect (Devices Microsoft)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.MSKinect.dll" nodename="Kinect (Devices Microsoft)" componentmode="Hidden" id="8" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="2970" top="2055" width="2100" height="270">
-   </BOUNDS>
-   <PIN pinname="Enabled" visible="1" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Enable Color" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Enable Depth" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Kinect Runtime" visible="1">
-   </PIN>
-   <PIN pinname="Depth FOVXY" visible="1">
-   </PIN>
-   <PIN pinname="High Res Depth" visible="1" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Color FOVXY" visible="1">
-   </PIN>
-   <PIN pinname="Index" slicecount="1" values="0">
-   </PIN>
-   <BOUNDS type="Box" left="2970" top="2055">
-   </BOUNDS>
-   <PIN pinname="Reset" slicecount="1" values="0">
-   </PIN>
-   </NODE>
-   <NODE systemname="Depth (Kinect Microsoft)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.MSKinect.dll" nodename="Depth (Kinect Microsoft)" componentmode="Hidden" id="7" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="2970" top="2655" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Kinect Runtime" visible="1">
-   </PIN>
-   <BOUNDS type="Box" left="2970" top="2655">
-   </BOUNDS>
-   <PIN pinname="Texture" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="8" srcpinname="Kinect Runtime" dstnodeid="7" dstpinname="Kinect Runtime" linkstyle="VHV">
-   <LINKPOINT x="2800" y="2475">
-   </LINKPOINT>
-   <LINKPOINT x="3200" y="2475">
-   </LINKPOINT>
-   </LINK>
-   <NODE systemname="RGBDepth (Kinect Microsoft)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.MSKinect.dll" nodename="RGBDepth (Kinect Microsoft)" componentmode="Hidden" id="11" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="3720" top="2655" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Kinect Runtime" visible="1" slicecount="1" values="||">
-   </PIN>
-   <BOUNDS type="Box" left="3720" top="2655">
-   </BOUNDS>
-   <PIN pinname="Texture" visible="1">
-   </PIN>
-   <PIN pinname="Relative Lookup" slicecount="1" values="0">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="8" srcpinname="Kinect Runtime" dstnodeid="11" dstpinname="Kinect Runtime" linkstyle="VHV">
-   <LINKPOINT x="2450" y="2475">
-   </LINKPOINT>
-   <LINKPOINT x="5080" y="2475">
-   </LINKPOINT>
-   </LINK>
-   <NODE systemname="RGB (Kinect Microsoft)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.MSKinect.dll" nodename="RGB (Kinect Microsoft)" componentmode="Hidden" id="10" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="2205" top="2655" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Kinect Runtime" visible="1">
-   </PIN>
-   <BOUNDS type="Box" left="2205" top="2655">
-   </BOUNDS>
-   <PIN pinname="Texture" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="8" srcpinname="Kinect Runtime" dstnodeid="10" dstpinname="Kinect Runtime" linkstyle="VHV">
-   <LINKPOINT x="2940" y="2475">
-   </LINKPOINT>
-   <LINKPOINT x="2295" y="2475">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="Rasterizer (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Rasterizer (DX11.RenderState)" componentmode="Hidden" id="16" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="1095" top="6795" width="100" height="100">
    </BOUNDS>
@@ -219,9 +145,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="25" systemname="IOBox (String)">
-   <BOUNDS type="Node" left="6900" top="3030" width="7080" height="270">
+   <BOUNDS type="Node" left="6765" top="3030" width="7080" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="6900" top="3030" width="3825" height="240">
+   <BOUNDS type="Box" left="6765" top="3030" width="3825" height="240">
    </BOUNDS>
    <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; Minimum Distance|">
    </PIN>
@@ -235,37 +161,19 @@
    <NODE systemname="PointcloudBuffer (DX11.Pointcloud Kinect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Data\PointcloudBuffer (DX11.Pointcloud Kinect).v4p" nodename="PointcloudBuffer (DX11.Pointcloud Kinect)" componentmode="Hidden" id="12" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="2370" top="6225" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="RGB" visible="1">
+   <PIN pinname="RGB" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Depth" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="RGBDepth" visible="1">
+   <PIN pinname="RGBDepth" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="PointcloudBuffer" visible="1">
    </PIN>
    <PIN pinname="Resolution" visible="1" slicecount="2" values="320,240">
    </PIN>
-   <PIN pinname="Depth FOVXY" visible="1">
+   <PIN pinname="Depth FOVXY" visible="1" slicecount="2" values="0.162500003934838,0.12666666549527">
    </PIN>
    </NODE>
-   <LINK srcnodeid="10" srcpinname="Texture" dstnodeid="12" dstpinname="RGB" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="2265" y="4400">
-   </LINKPOINT>
-   <LINKPOINT x="2805" y="4750">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="11" srcpinname="Texture" dstnodeid="12" dstpinname="RGBDepth" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="3765" y="4385">
-   </LINKPOINT>
-   <LINKPOINT x="3285" y="4735">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="8" srcpinname="Depth FOVXY" dstnodeid="12" dstpinname="Depth FOVXY" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="4695" y="4093">
-   </LINKPOINT>
-   <LINKPOINT x="3510" y="4443">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="23" srcpinname="Y Output Value" dstnodeid="12" dstpinname="Resolution" linkstyle="VHV">
    <LINKPOINT x="1725" y="5993">
    </LINKPOINT>
@@ -273,9 +181,9 @@
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="34" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="5250" top="3030" width="795" height="240">
+   <BOUNDS type="Box" left="5115" top="3030" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="5250" top="3030" width="0" height="0">
+   <BOUNDS type="Node" left="5115" top="3030" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.5">
    </PIN>
@@ -287,9 +195,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="35" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="5250" top="3375" width="795" height="240">
+   <BOUNDS type="Box" left="5115" top="3375" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="5250" top="3375" width="0" height="0">
+   <BOUNDS type="Node" left="5115" top="3375" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="4">
    </PIN>
@@ -299,9 +207,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="36" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="5250" top="3765" width="795" height="240">
+   <BOUNDS type="Box" left="5115" top="3765" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="5250" top="3765" width="0" height="0">
+   <BOUNDS type="Node" left="5115" top="3765" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
@@ -311,25 +219,25 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="37" systemname="IOBox (Node)">
-   <BOUNDS type="Box" left="5250" top="4140" width="795" height="240">
+   <BOUNDS type="Box" left="5115" top="4140" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="5250" top="4140" width="0" height="0">
+   <BOUNDS type="Node" left="5115" top="4140" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="38" systemname="IOBox (Enumerations)">
-   <BOUNDS type="Box" left="5250" top="4515" width="1425" height="240">
+   <BOUNDS type="Box" left="5115" top="4515" width="1425" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="5250" top="4515" width="0" height="0">
+   <BOUNDS type="Node" left="5115" top="4515" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input Enum" slicecount="1" visible="1" values="ThreshDistance">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="39" systemname="IOBox (String)">
-   <BOUNDS type="Node" left="6900" top="3375" width="7080" height="270">
+   <BOUNDS type="Node" left="6765" top="3375" width="7080" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="6900" top="3375" width="3825" height="240">
+   <BOUNDS type="Box" left="6765" top="3375" width="3825" height="240">
    </BOUNDS>
    <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; Maximum Distance|">
    </PIN>
@@ -341,9 +249,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="40" systemname="IOBox (String)">
-   <BOUNDS type="Node" left="6900" top="3765" width="7080" height="270">
+   <BOUNDS type="Node" left="6765" top="3765" width="7080" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="6900" top="3765" width="3825" height="240">
+   <BOUNDS type="Box" left="6765" top="3765" width="3825" height="240">
    </BOUNDS>
    <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; Replace filtered depth values with this distance|">
    </PIN>
@@ -355,9 +263,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="41" systemname="IOBox (String)">
-   <BOUNDS type="Node" left="6900" top="4110" width="7080" height="270">
+   <BOUNDS type="Node" left="6765" top="4110" width="7080" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="6900" top="4110" width="4215" height="240">
+   <BOUNDS type="Box" left="6765" top="4110" width="4215" height="240">
    </BOUNDS>
    <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; The player texture (used for ThreshPlayer technique)|">
    </PIN>
@@ -369,9 +277,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="42" systemname="IOBox (String)">
-   <BOUNDS type="Node" left="6900" top="4455" width="7080" height="270">
+   <BOUNDS type="Node" left="6765" top="4455" width="7080" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="6900" top="4455" width="4860" height="990">
+   <BOUNDS type="Box" left="6765" top="4455" width="4860" height="990">
    </BOUNDS>
    <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; The technique&cr;&lf;ThreshDistance: Remove pixels outside the threshold range&cr;&lf;ThreshPlayer: Remove pixels outside the player texture&cr;&lf;ThreshDistanceAndPlayer: Combines both|">
    </PIN>
@@ -383,13 +291,13 @@
    </PIN>
    </NODE>
    <NODE systemname="DepthFilter (DX11.Pointcloud Kinect)" filename="DepthFilter (DX11.Pointcloud Kinect).v4p" nodename="DepthFilter (DX11.Pointcloud Kinect)" componentmode="Hidden" id="33">
-   <BOUNDS type="Node" left="2970" top="5310" width="100" height="100">
+   <BOUNDS type="Node" left="2835" top="5310" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="2970" top="5310" width="3100" height="3100">
+   <BOUNDS type="Box" left="2835" top="5310" width="3100" height="3100">
    </BOUNDS>
    <BOUNDS type="Window" left="9345" top="9885" width="9420" height="3645">
    </BOUNDS>
-   <PIN pinname="Texture In" visible="1">
+   <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
@@ -403,39 +311,39 @@
    </PIN>
    <PIN pinname="Technique" visible="1">
    </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="0">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="7" srcpinname="Texture" dstnodeid="33" dstpinname="Texture In">
-   </LINK>
    <LINK srcnodeid="33" srcpinname="Texture Out" dstnodeid="12" dstpinname="Depth">
    </LINK>
    <LINK srcnodeid="34" srcpinname="Y Output Value" dstnodeid="33" dstpinname="Min Distance" linkstyle="Bezier">
-   <LINKPOINT x="5235" y="4290">
+   <LINKPOINT x="5100" y="4290">
    </LINKPOINT>
-   <LINKPOINT x="3225" y="4290">
+   <LINKPOINT x="3090" y="4290">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="35" srcpinname="Y Output Value" dstnodeid="33" dstpinname="Max Distance" linkstyle="Bezier">
-   <LINKPOINT x="5250" y="4448">
+   <LINKPOINT x="5115" y="4448">
    </LINKPOINT>
-   <LINKPOINT x="3435" y="4448">
+   <LINKPOINT x="3300" y="4448">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="36" srcpinname="Y Output Value" dstnodeid="33" dstpinname="Default Distance" linkstyle="Bezier">
-   <LINKPOINT x="5250" y="4643">
+   <LINKPOINT x="5115" y="4643">
    </LINKPOINT>
-   <LINKPOINT x="3645" y="4643">
+   <LINKPOINT x="3510" y="4643">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="37" srcpinname="Output Node" dstnodeid="33" dstpinname="Texture In Player" linkstyle="Bezier">
-   <LINKPOINT x="5250" y="4830">
+   <LINKPOINT x="5115" y="4830">
    </LINKPOINT>
-   <LINKPOINT x="3840" y="4830">
+   <LINKPOINT x="3705" y="4830">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="38" srcpinname="Output Enum" dstnodeid="33" dstpinname="Technique" linkstyle="Bezier">
-   <LINKPOINT x="5250" y="5018">
+   <LINKPOINT x="5115" y="5018">
    </LINKPOINT>
-   <LINKPOINT x="4035" y="5018">
+   <LINKPOINT x="3900" y="5018">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Constant (DX11.Pointcloud PointcloudBuffer)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Visualization\Constant (DX11.Pointcloud PointcloudBuffer).v4p" nodename="Constant (DX11.Pointcloud PointcloudBuffer)" componentmode="Hidden" id="13" hiddenwhenlocked="1">
@@ -464,4 +372,56 @@
    </LINK>
    <LINK srcnodeid="12" srcpinname="PointcloudBuffer" dstnodeid="13" dstpinname="PointcloudBuffer">
    </LINK>
+   <NODE systemname="Kinect (DX11.Pointcloud)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Setup\Kinect (DX11.Pointcloud).v4p" nodename="Kinect (DX11.Pointcloud)" componentmode="Hidden" id="43">
+   <BOUNDS type="Node" left="2475" top="1710" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="RGB" visible="1">
+   </PIN>
+   <PIN pinname="Depth" visible="1">
+   </PIN>
+   <PIN pinname="RGBDepth" visible="1">
+   </PIN>
+   <PIN pinname="Depth FOVXY" visible="1">
+   </PIN>
+   <PIN pinname="Reset" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="43" srcpinname="RGB" dstnodeid="12" dstpinname="RGB" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="2820" y="4095">
+   </LINKPOINT>
+   <LINKPOINT x="2715" y="4095">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="43" srcpinname="Depth" dstnodeid="33" dstpinname="Texture In" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="2955" y="3645">
+   </LINKPOINT>
+   <LINKPOINT x="2910" y="3645">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="43" srcpinname="RGBDepth" dstnodeid="12" dstpinname="RGBDepth" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="3165" y="4088">
+   </LINKPOINT>
+   <LINKPOINT x="3345" y="4088">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="43" srcpinname="Depth FOVXY" dstnodeid="12" dstpinname="Depth FOVXY" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="3330" y="4103">
+   </LINKPOINT>
+   <LINKPOINT x="3660" y="4103">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="44" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="3900" top="1740" width="3690" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3900" top="1740" width="3690" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; replace with Kinect2 if you dont have a Kinect1|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
    </PATCH>

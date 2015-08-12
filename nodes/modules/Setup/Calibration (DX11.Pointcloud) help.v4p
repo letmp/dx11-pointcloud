@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\dev\git\dx11-pointcloud\nodes\modules\Setup\Calibration (DX11.Pointcloud) help.v4p" scrollx="0" scrolly="1665">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Setup\Calibration (DX11.Pointcloud) help.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="1260" top="1365" width="13455" height="11970">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
@@ -45,7 +45,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="930" top="2415" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="320,240">
+   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="512,424">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -653,7 +653,7 @@
    </BOUNDS>
    <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="FoVXY" visible="1">
+   <PIN pinname="FoVXY" visible="1" slicecount="2" values="0.196111111621269,0.166666670702398">
    </PIN>
    <PIN pinname="Near Plane" slicecount="1" values="0.5">
    </PIN>
@@ -695,9 +695,9 @@
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="29" srcpinname="Y Output Value" dstnodeid="34" dstpinname="Resolution" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="1760" y="3973">
+   <LINKPOINT x="990" y="3765">
    </LINKPOINT>
-   <LINKPOINT x="3700" y="3573">
+   <LINKPOINT x="4470" y="3765">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="34" srcpinname="Lookup Texture" dstnodeid="13" dstpinname="Input Node" linkstyle="VHV">
@@ -828,32 +828,6 @@
    <LINKPOINT x="8320" y="4070">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="Kinect2 (DX11.Pointcloud)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Setup\Kinect2 (DX11.Pointcloud).v4p" nodename="Kinect2 (DX11.Pointcloud)" componentmode="Hidden" id="69" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="2190" top="1755" width="1560" height="270">
-   </BOUNDS>
-   <PIN pinname="Resolution" visible="1">
-   </PIN>
-   <PIN pinname="RGB" visible="1">
-   </PIN>
-   <PIN pinname="Depth" visible="1">
-   </PIN>
-   <PIN pinname="RGBDepth" visible="1">
-   </PIN>
-   <PIN pinname="Depth FOVXY" visible="1">
-   </PIN>
-   <PIN pinname="RayTable" visible="1">
-   </PIN>
-   <PIN pinname="Raw Data" visible="1" slicecount="1" values="0">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="69" srcpinname="Resolution" dstnodeid="29" dstpinname="Y Input Value" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="2415" y="2193">
-   </LINKPOINT>
-   <LINKPOINT x="930" y="2218">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="69" srcpinname="Depth FOVXY" dstnodeid="5" dstpinname="FoVXY" linkstyle="PolyLine" hiddenwhenlocked="1">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="70" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="8265" top="15405" width="540" height="240">
    </BOUNDS>
@@ -935,7 +909,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="4335" top="1710" width="2625" height="780">
    </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; if you use kinect1 replace kinect2 (dx11.pointcloud) with kinect (dx11.pointcloud)|">
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; replace with Kinect2 if you dont have a Kinect1|">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>
@@ -957,7 +931,7 @@
    </PIN>
    <PIN pinname="PointcloudBuffer" visible="1">
    </PIN>
-   <PIN pinname="Depth FOVXY" visible="1" slicecount="1" values="0">
+   <PIN pinname="Depth FOVXY" visible="1" slicecount="2" values="0.196111111621269,0.166666670702398">
    </PIN>
    <BOUNDS type="Box" left="2325" top="3570">
    </BOUNDS>
@@ -971,7 +945,7 @@
    <LINK srcnodeid="29" srcpinname="Y Output Value" dstnodeid="28" dstpinname="Resolution" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="990" y="3218">
    </LINKPOINT>
-   <LINKPOINT x="2550" y="3218">
+   <LINKPOINT x="2490" y="3218">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="28" srcpinname="PointcloudBuffer" dstnodeid="34" dstpinname="PointcloudBuffer" linkstyle="VHV">
@@ -979,14 +953,6 @@
    </LINKPOINT>
    <LINKPOINT x="4665" y="4238">
    </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="69" srcpinname="RGB" dstnodeid="28" dstpinname="RGB" linkstyle="PolyLine" hiddenwhenlocked="1">
-   </LINK>
-   <LINK srcnodeid="69" srcpinname="Depth" dstnodeid="28" dstpinname="Depth" linkstyle="PolyLine" hiddenwhenlocked="1">
-   </LINK>
-   <LINK srcnodeid="69" srcpinname="RGBDepth" dstnodeid="28" dstpinname="RGBDepth" linkstyle="PolyLine" hiddenwhenlocked="1">
-   </LINK>
-   <LINK srcnodeid="69" srcpinname="Depth FOVXY" dstnodeid="28" dstpinname="Depth FOVXY" hiddenwhenlocked="1" linkstyle="PolyLine">
    </LINK>
    <NODE systemname="PointcloudBuffer (DX11.Pointcloud Kinect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Data\PointcloudBuffer (DX11.Pointcloud Kinect).v4p" nodename="PointcloudBuffer (DX11.Pointcloud Kinect)" componentmode="Hidden" id="58" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="4515" top="18015" width="100" height="100">
@@ -1001,13 +967,13 @@
    </PIN>
    <PIN pinname="PointcloudBuffer" visible="1">
    </PIN>
-   <PIN pinname="Depth FOVXY" visible="1" slicecount="1" values="0">
+   <PIN pinname="Depth FOVXY" visible="1" slicecount="2" values="0.196111111621269,0.166666670702398">
    </PIN>
    <BOUNDS type="Box" left="4515" top="18015">
    </BOUNDS>
    <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="RayTable" visible="1">
+   <PIN pinname="RayTable" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Raw Data" slicecount="1" values="0">
    </PIN>
@@ -1023,14 +989,6 @@
    </LINKPOINT>
    <LINKPOINT x="4590" y="17688">
    </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="69" srcpinname="RGB" dstnodeid="58" dstpinname="RGB" linkstyle="PolyLine" hiddenwhenlocked="1">
-   </LINK>
-   <LINK srcnodeid="69" srcpinname="Depth" dstnodeid="58" dstpinname="Depth" linkstyle="PolyLine" hiddenwhenlocked="1">
-   </LINK>
-   <LINK srcnodeid="69" srcpinname="RGBDepth" dstnodeid="58" dstpinname="RGBDepth" linkstyle="PolyLine" hiddenwhenlocked="1">
-   </LINK>
-   <LINK srcnodeid="69" srcpinname="Depth FOVXY" dstnodeid="58" dstpinname="Depth FOVXY" linkstyle="PolyLine" hiddenwhenlocked="1">
    </LINK>
    <NODE id="19" systemname="Constant (DX11.Pointcloud PointcloudBuffer)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Visualization\Constant (DX11.Pointcloud PointcloudBuffer).v4p" nodename="Constant (DX11.Pointcloud PointcloudBuffer)" componentmode="Hidden" hiddenwhenlocked="1" managers="">
    <PIN pinname="Technique" visible="1" pintype="Input" slicecount="1" values="RGB">
@@ -1186,4 +1144,72 @@
    </LINK>
    <LINK srcnodeid="76" srcpinname="Output" dstnodeid="73" dstpinname="Update">
    </LINK>
+   <NODE systemname="Kinect (DX11.Pointcloud)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Setup\Kinect (DX11.Pointcloud).v4p" nodename="Kinect (DX11.Pointcloud)" componentmode="Hidden" id="69" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="2190" top="1755" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Resolution" visible="1">
+   </PIN>
+   <PIN pinname="RGB" visible="1">
+   </PIN>
+   <PIN pinname="Depth" visible="1">
+   </PIN>
+   <PIN pinname="RGBDepth" visible="1">
+   </PIN>
+   <PIN pinname="Depth FOVXY" visible="1">
+   </PIN>
+   <PIN pinname="RayTable" visible="1">
+   </PIN>
+   <PIN pinname="Raw Data" visible="1" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="69" srcpinname="Resolution" dstnodeid="29" dstpinname="Y Input Value" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="2355" y="2205">
+   </LINKPOINT>
+   <LINKPOINT x="990" y="2205">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="69" srcpinname="Depth FOVXY" dstnodeid="5" dstpinname="FoVXY" linkstyle="PolyLine" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="69" srcpinname="RGB" dstnodeid="28" dstpinname="RGB" linkstyle="PolyLine" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="69" srcpinname="Depth" dstnodeid="28" dstpinname="Depth" linkstyle="PolyLine" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="69" srcpinname="RGBDepth" dstnodeid="28" dstpinname="RGBDepth" linkstyle="PolyLine" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="69" srcpinname="Depth FOVXY" dstnodeid="28" dstpinname="Depth FOVXY" hiddenwhenlocked="1" linkstyle="PolyLine">
+   </LINK>
+   <LINK srcnodeid="69" srcpinname="RGB" dstnodeid="58" dstpinname="RGB" linkstyle="PolyLine" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="69" srcpinname="Depth" dstnodeid="58" dstpinname="Depth" linkstyle="PolyLine" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="69" srcpinname="RGBDepth" dstnodeid="58" dstpinname="RGBDepth" linkstyle="PolyLine" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="69" srcpinname="Depth FOVXY" dstnodeid="58" dstpinname="Depth FOVXY" linkstyle="PolyLine" hiddenwhenlocked="1">
+   </LINK>
+   <NODE systemname="Reader (DX11.Pointcloud Transform)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Setup\Reader (DX11.Pointcloud Transform).v4p" nodename="Reader (DX11.Pointcloud Transform)" componentmode="Hidden" id="80">
+   <BOUNDS type="Node" left="8250" top="18045" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="8250" top="18045">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Writer (DX11.Pointcloud Transform)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Setup\Writer (DX11.Pointcloud Transform).v4p" nodename="Writer (DX11.Pointcloud Transform)" componentmode="Hidden" id="81">
+   <BOUNDS type="Node" left="9300" top="18045" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="9300" top="18045">
+   </BOUNDS>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="82" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="10215" top="18030" width="11070" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="10215" top="18030" width="2715" height="1185">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; Instead of doing the calibration on every project-restart, you can also use these nodes to write/read the transform you just calculated|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
    </PATCH>

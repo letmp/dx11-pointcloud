@@ -17,7 +17,7 @@
    <NODE nodename="IOBox (String)" componentmode="InABox" id="2" systemname="IOBox (String)">
    <BOUNDS type="Node" left="225" top="600" width="5100" height="600">
    </BOUNDS>
-   <BOUNDS type="Box" left="225" top="600" width="5100" height="600">
+   <BOUNDS type="Box" left="225" top="600" width="5115" height="360">
    </BOUNDS>
    <PIN pinname="Input String" slicecount="1" visible="0" values="|Calculates the centroid for each group of points in a pointcloud.|">
    </PIN>
@@ -349,7 +349,7 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="50">
-   <BOUNDS type="Node" left="4320" top="1830" width="100" height="100">
+   <BOUNDS type="Node" left="4170" top="1830" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input 2" slicecount="1" values="3">
    </PIN>
@@ -359,7 +359,7 @@
    </PIN>
    </NODE>
    <NODE systemname="GaussianSpread (Spreads)" nodename="GaussianSpread (Spreads)" componentmode="Hidden" id="49" filename="">
-   <BOUNDS type="Node" left="3225" top="2220" width="100" height="100">
+   <BOUNDS type="Node" left="3075" top="2220" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Spread Count" visible="1">
    </PIN>
@@ -375,9 +375,9 @@
    <LINK srcnodeid="50" srcpinname="Output" dstnodeid="49" dstpinname="Spread Count">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="48" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="2895" top="1155" width="795" height="240">
+   <BOUNDS type="Box" left="2820" top="1125" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="2895" top="1155" width="0" height="0">
+   <BOUNDS type="Node" left="2820" top="1125" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="10000">
    </PIN>
@@ -391,23 +391,23 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="48" srcpinname="Y Output Value" dstnodeid="50" dstpinname="Input 1" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="2955" y="1598">
+   <LINKPOINT x="2855" y="1578">
    </LINKPOINT>
-   <LINKPOINT x="4320" y="1598">
+   <LINKPOINT x="4195" y="1588">
    </LINKPOINT>
    </LINK>
    <NODE systemname="DynamicBuffer (DX11.Buffer 3d)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer 3d)" componentmode="Hidden" id="47">
-   <BOUNDS type="Node" left="3225" top="3150" width="100" height="100">
+   <BOUNDS type="Node" left="3075" top="3150" width="100" height="100">
    </BOUNDS>
    <PIN pinname="DataXYZ" visible="1">
    </PIN>
    <PIN pinname="Buffer" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="3225" top="3150">
+   <BOUNDS type="Box" left="3075" top="3150">
    </BOUNDS>
    </NODE>
    <NODE systemname="HSL (Color Join)" nodename="HSL (Color Join)" componentmode="Hidden" id="46">
-   <BOUNDS type="Node" left="4605" top="2670" width="100" height="100">
+   <BOUNDS type="Node" left="4455" top="2670" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Hue" visible="1">
    </PIN>
@@ -417,7 +417,7 @@
    </PIN>
    </NODE>
    <NODE systemname="LinearSpread (Spreads)" nodename="LinearSpread (Spreads)" componentmode="Hidden" id="45">
-   <BOUNDS type="Node" left="4605" top="2220" width="100" height="100">
+   <BOUNDS type="Node" left="4455" top="2220" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Spread Count" visible="1">
    </PIN>
@@ -429,27 +429,27 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="48" srcpinname="Y Output Value" dstnodeid="45" dstpinname="Spread Count" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="2955" y="1793">
+   <LINKPOINT x="2855" y="1773">
    </LINKPOINT>
-   <LINKPOINT x="5505" y="1793">
+   <LINKPOINT x="5380" y="1783">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="45" srcpinname="Output" dstnodeid="46" dstpinname="Hue">
    </LINK>
    <NODE systemname="DynamicBuffer (DX11.Buffer Color)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Color)" componentmode="Hidden" id="44">
-   <BOUNDS type="Node" left="4605" top="3150" width="100" height="100">
+   <BOUNDS type="Node" left="4455" top="3150" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Data" visible="1">
    </PIN>
    <PIN pinname="Buffer" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="4605" top="3150">
+   <BOUNDS type="Box" left="4455" top="3150">
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="46" srcpinname="Output" dstnodeid="44" dstpinname="Data">
    </LINK>
    <NODE systemname="Damper (Animation)" nodename="Damper (Animation)" componentmode="Hidden" id="43">
-   <BOUNDS type="Node" left="3225" top="2670" width="100" height="100">
+   <BOUNDS type="Node" left="3075" top="2670" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Go To Position" visible="1">
    </PIN>
@@ -487,13 +487,13 @@
    <LINK srcnodeid="48" srcpinname="Y Output Value" dstnodeid="42" dstpinname="Element Count">
    </LINK>
    <LINK srcnodeid="44" srcpinname="Buffer" dstnodeid="42" dstpinname="Color Buffer" linkstyle="VHV">
-   <LINKPOINT x="4605" y="3503">
+   <LINKPOINT x="4505" y="3503">
    </LINKPOINT>
-   <LINKPOINT x="3630" y="3503">
+   <LINKPOINT x="3580" y="3503">
    </LINKPOINT>
    </LINK>
    <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="41">
-   <BOUNDS type="Node" left="3240" top="1470" width="100" height="100">
+   <BOUNDS type="Node" left="3090" top="1470" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Cycles" visible="1">
    </PIN>
@@ -593,7 +593,7 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="WaveShaper (Value)" nodename="WaveShaper (Value)" componentmode="Hidden" id="52">
-   <BOUNDS type="Node" left="3225" top="1845" width="100" height="100">
+   <BOUNDS type="Node" left="3075" top="1845" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>

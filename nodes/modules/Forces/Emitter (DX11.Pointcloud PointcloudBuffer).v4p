@@ -432,6 +432,6 @@
    <LINKPOINT x="3040" y="4845">
    </LINKPOINT>
    </LINK>
-   <INFO author="tmp" description="Emitts particles of a given PointcloudBuffer. That can be constrained to certain groupIds too." tags="Forces">
+   <INFO author="tmp" description="Emitts particles of a given PointcloudBuffer." tags="Forces">
    </INFO>
    </PATCH>

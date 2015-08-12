@@ -1,8 +1,8 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Filters\DepthRepair (DX11.Pointcloud Kinect) help.v4p">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Filters\DepthRepair (DX11.Pointcloud Kinect) help.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="2550" top="3420" width="10935" height="7425">
    </BOUNDS>
-   <PACK Name="addonpack" Version="33.7.0">
+   <PACK Name="addonpack" Version="33.8.0">
    </PACK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="10" systemname="IOBox (String)">
    <BOUNDS type="Node" left="375" top="300" width="5100" height="450">
@@ -213,12 +213,12 @@
    <LINK srcnodeid="11" srcpinname="Texture Out" dstnodeid="20" dstpinname="Texture In">
    </LINK>
    <LINK srcnodeid="22" srcpinname="Y Output Value" dstnodeid="11" dstpinname="Enabled" linkstyle="Bezier">
-   <LINKPOINT x="2920" y="4643">
+   <LINKPOINT x="2760" y="4643">
    </LINKPOINT>
-   <LINKPOINT x="1910" y="4643">
+   <LINKPOINT x="1980" y="4643">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="Kinect2 (DX11.Pointcloud)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Setup\Kinect2 (DX11.Pointcloud).v4p" nodename="Kinect2 (DX11.Pointcloud)" componentmode="Hidden" id="15" hiddenwhenlocked="1">
+   <NODE systemname="Kinect (DX11.Pointcloud)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Setup\Kinect (DX11.Pointcloud).v4p" nodename="Kinect (DX11.Pointcloud)" componentmode="Hidden" id="15" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="375" top="2640" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Enabled" visible="1" slicecount="1" values="1">
@@ -246,4 +246,18 @@
    </NODE>
    <LINK srcnodeid="15" srcpinname="Depth" dstnodeid="11" dstpinname="Texture In">
    </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="25" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="1740" top="2655" width="3690" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1740" top="2655" width="3690" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; replace with Kinect2 if you dont have a Kinect1|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
    </PATCH>

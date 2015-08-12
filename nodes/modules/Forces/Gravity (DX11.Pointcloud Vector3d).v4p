@@ -63,6 +63,10 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
+   <PIN pinname="Default" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="-1">
+   </PIN>
    </NODE>
    <NODE id="14" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="|Layer Force|">
@@ -170,6 +174,6 @@
    <LINKPOINT x="3930" y="2535">
    </LINKPOINT>
    </LINK>
-   <INFO author="tmp" description="Adds gravity to particles." tags="Forces">
+   <INFO author="tmp" description="Applies gravity to particles." tags="Forces">
    </INFO>
    </PATCH>

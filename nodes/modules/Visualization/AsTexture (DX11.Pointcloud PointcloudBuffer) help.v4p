@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\dev\git\dx11-pointcloud\nodes\modules\Visualization\AsTexture (DX11.Pointcloud PointcloudBuffer) help.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Visualization\AsTexture (DX11.Pointcloud PointcloudBuffer) help.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="3585" top="2490" width="11925" height="11805">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
@@ -123,7 +123,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="1425" top="2190" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="320,240">
+   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="512,424">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -317,7 +317,7 @@
    </PIN>
    </NODE>
    <NODE systemname="PointcloudBuffer (DX11.Pointcloud Kinect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Data\PointcloudBuffer (DX11.Pointcloud Kinect).v4p" nodename="PointcloudBuffer (DX11.Pointcloud Kinect)" componentmode="Hidden" id="28" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="2415" top="3225" width="100" height="100">
+   <BOUNDS type="Node" left="2400" top="3225" width="100" height="100">
    </BOUNDS>
    <PIN pinname="RGB" visible="1" slicecount="1" values="||">
    </PIN>
@@ -329,23 +329,23 @@
    </PIN>
    <PIN pinname="Resolution" visible="1">
    </PIN>
-   <PIN pinname="Depth FOVXY" visible="1">
+   <PIN pinname="Depth FOVXY" visible="1" slicecount="2" values="0.196111111621269,0.166666670702398">
    </PIN>
    <PIN pinname="Max Element Count" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="2415" top="3225">
+   <BOUNDS type="Box" left="2400" top="3225">
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="21" srcpinname="Y Output Value" dstnodeid="28" dstpinname="Resolution" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="1470" y="2933">
+   <LINKPOINT x="1465" y="2933">
    </LINKPOINT>
-   <LINKPOINT x="2625" y="2933">
+   <LINKPOINT x="2615" y="2933">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Camera (DX11.Pointcloud)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Setup\Camera (DX11.Pointcloud).v4p" nodename="Camera (DX11.Pointcloud)" componentmode="Hidden" id="33" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="4110" top="3225" width="100" height="100">
+   <BOUNDS type="Node" left="4260" top="3225" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="FoVXY" visible="1">
+   <PIN pinname="FoVXY" visible="1" slicecount="2" values="0.196111111621269,0.166666670702398">
    </PIN>
    <PIN pinname="Near Plane" slicecount="1" values="0.5">
    </PIN>
@@ -353,7 +353,7 @@
    </PIN>
    <PIN pinname="Layer Out" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="4110" top="3225">
+   <BOUNDS type="Box" left="4260" top="3225">
    </BOUNDS>
    <PIN pinname="ViewProjection" visible="1">
    </PIN>
@@ -361,15 +361,15 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="33" srcpinname="Layer Out" dstnodeid="23" dstpinname="Layer 3" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="4190" y="6298">
+   <LINKPOINT x="4275" y="6698">
    </LINKPOINT>
-   <LINKPOINT x="2110" y="7098">
+   <LINKPOINT x="2145" y="6698">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="33" srcpinname="ViewProjection" dstnodeid="37" dstpinname="Input Node" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="4980" y="5535">
+   <LINKPOINT x="5280" y="5528">
    </LINKPOINT>
-   <LINKPOINT x="5880" y="5535">
+   <LINKPOINT x="5880" y="5528">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Filter (DX11.Pointcloud Transform)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Tools\Filter (DX11.Pointcloud Transform).v4p" nodename="Filter (DX11.Pointcloud Transform)" componentmode="Hidden" id="39" hiddenwhenlocked="1">
@@ -403,15 +403,15 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="28" srcpinname="PointcloudBuffer" dstnodeid="39" dstpinname="PointcloudBuffer" linkstyle="VHV">
-   <LINKPOINT x="1785" y="3788">
+   <LINKPOINT x="1775" y="3788">
    </LINKPOINT>
-   <LINKPOINT x="4320" y="3788">
+   <LINKPOINT x="4315" y="3788">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="28" srcpinname="Max Element Count" dstnodeid="39" dstpinname="Max Element Count" linkstyle="VHV">
-   <LINKPOINT x="3150" y="3788">
+   <LINKPOINT x="3140" y="3788">
    </LINKPOINT>
-   <LINKPOINT x="4485" y="3788">
+   <LINKPOINT x="4480" y="3788">
    </LINKPOINT>
    </LINK>
    <NODE nodename="AsTexture (DX11.Pointcloud PointcloudBuffer)" componentmode="Hidden" id="0" systemname="AsTexture (DX11.Pointcloud PointcloudBuffer)" filename="AsTexture (DX11.Pointcloud PointcloudBuffer).v4p">
@@ -482,40 +482,6 @@
    <LINKPOINT x="4170" y="7335">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="Kinect2 (DX11.Pointcloud)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Setup\Kinect2 (DX11.Pointcloud).v4p" nodename="Kinect2 (DX11.Pointcloud)" componentmode="Hidden" id="49" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="2490" top="1410" width="1185" height="270">
-   </BOUNDS>
-   <PIN pinname="Resolution" visible="1">
-   </PIN>
-   <PIN pinname="RGB" visible="1">
-   </PIN>
-   <PIN pinname="Depth" visible="1">
-   </PIN>
-   <PIN pinname="RGBDepth" visible="1">
-   </PIN>
-   <PIN pinname="Depth FOVXY" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="49" srcpinname="Resolution" dstnodeid="21" dstpinname="Y Input Value" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="2685" y="1920">
-   </LINKPOINT>
-   <LINKPOINT x="1485" y="1920">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="49" srcpinname="RGB" dstnodeid="28" dstpinname="RGB" hiddenwhenlocked="1">
-   </LINK>
-   <LINK srcnodeid="49" srcpinname="Depth" dstnodeid="28" dstpinname="Depth" hiddenwhenlocked="1">
-   </LINK>
-   <LINK srcnodeid="49" srcpinname="RGBDepth" dstnodeid="28" dstpinname="RGBDepth" hiddenwhenlocked="1">
-   </LINK>
-   <LINK srcnodeid="49" srcpinname="Depth FOVXY" dstnodeid="33" dstpinname="FoVXY" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="3495" y="2453">
-   </LINKPOINT>
-   <LINKPOINT x="4440" y="2453">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="49" srcpinname="Depth FOVXY" dstnodeid="28" dstpinname="Depth FOVXY" hiddenwhenlocked="1">
-   </LINK>
    <NODE id="16" systemname="Constant (DX11.Pointcloud PointcloudBuffer)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Visualization\Constant (DX11.Pointcloud PointcloudBuffer).v4p" nodename="Constant (DX11.Pointcloud PointcloudBuffer)" componentmode="Hidden" hiddenwhenlocked="1" managers="">
    <PIN pinname="Technique" visible="1" pintype="Input" slicecount="1" values="RGB">
    </PIN>
@@ -565,5 +531,69 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="28" srcpinname="PointcloudBuffer" dstnodeid="16" dstpinname="PointcloudBuffer" hiddenwhenlocked="0">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="50" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="3765" top="1410" width="3690" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3765" top="1410" width="3690" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; replace with Kinect2 if you dont have a Kinect1|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE systemname="Kinect (DX11.Pointcloud)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Setup\Kinect (DX11.Pointcloud).v4p" nodename="Kinect (DX11.Pointcloud)" componentmode="Hidden" id="49" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="2490" top="1410" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Resolution" visible="1">
+   </PIN>
+   <PIN pinname="RGB" visible="1">
+   </PIN>
+   <PIN pinname="Depth" visible="1">
+   </PIN>
+   <PIN pinname="RGBDepth" visible="1">
+   </PIN>
+   <PIN pinname="Depth FOVXY" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="49" srcpinname="Resolution" dstnodeid="21" dstpinname="Y Input Value" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="2655" y="1920">
+   </LINKPOINT>
+   <LINKPOINT x="1485" y="1920">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="49" srcpinname="RGB" dstnodeid="28" dstpinname="RGB" hiddenwhenlocked="1" linkstyle="Bezier">
+   <LINKPOINT x="2830" y="2453">
+   </LINKPOINT>
+   <LINKPOINT x="2750" y="2453">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="49" srcpinname="Depth" dstnodeid="28" dstpinname="Depth" hiddenwhenlocked="1" linkstyle="Bezier">
+   <LINKPOINT x="2995" y="2445">
+   </LINKPOINT>
+   <LINKPOINT x="2915" y="2445">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="49" srcpinname="RGBDepth" dstnodeid="28" dstpinname="RGBDepth" hiddenwhenlocked="1" linkstyle="Bezier">
+   <LINKPOINT x="3175" y="2453">
+   </LINKPOINT>
+   <LINKPOINT x="3380" y="2453">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="49" srcpinname="Depth FOVXY" dstnodeid="33" dstpinname="FoVXY" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="3425" y="2438">
+   </LINKPOINT>
+   <LINKPOINT x="4540" y="2438">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="49" srcpinname="Depth FOVXY" dstnodeid="28" dstpinname="Depth FOVXY" hiddenwhenlocked="1" linkstyle="Bezier">
+   <LINKPOINT x="3340" y="2445">
+   </LINKPOINT>
+   <LINKPOINT x="3695" y="2445">
+   </LINKPOINT>
    </LINK>
    </PATCH>
