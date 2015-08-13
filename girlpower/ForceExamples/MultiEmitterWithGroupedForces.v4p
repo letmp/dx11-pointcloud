@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\girlpower\ForceExamples\root_group_example.v4p" systemname="root_without_kinect" filename="C:\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\girlpower\forces\root_without_kinect.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\girlpower\ForceExamples\MultiEmitterWithGroupedForces.v4p" systemname="root_without_kinect" filename="C:\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\girlpower\forces\root_without_kinect.v4p" scrollx="0" scrolly="1920">
    <BOUNDS type="Window" left="255" top="345" width="18705" height="14610">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.8.0">
@@ -951,9 +951,9 @@
    <LINK srcnodeid="523" srcpinname="Output" dstnodeid="514" dstpinname="Input">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="527" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="31185" top="9915" width="285" height="240">
+   <BOUNDS type="Box" left="31485" top="9915" width="285" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="31185" top="9915" width="0" height="0">
+   <BOUNDS type="Node" left="31485" top="9915" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
@@ -1405,6 +1405,10 @@
    </PIN>
    <PIN pinname="Transform In" visible="1">
    </PIN>
+   <PIN pinname="Change Group" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Bounce" slicecount="1" values="0">
+   </PIN>
    </NODE>
    <LINK srcnodeid="526" srcpinname="Layer Force" dstnodeid="253" dstpinname="Layer 7">
    </LINK>
@@ -1423,9 +1427,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="545" srcpinname="Y Output Value" dstnodeid="526" dstpinname="New Group IDs" linkstyle="Bezier">
-   <LINKPOINT x="31410" y="9555">
+   <LINKPOINT x="31425" y="9548">
    </LINKPOINT>
-   <LINKPOINT x="30705" y="9555">
+   <LINKPOINT x="31020" y="9548">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="526" srcpinname="Help Layer" dstnodeid="8" dstpinname="Layer 5" linkstyle="Bezier" hiddenwhenlocked="1">
@@ -1435,9 +1439,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="558" srcpinname="Output Enum" dstnodeid="526" dstpinname="Technique" linkstyle="Bezier">
-   <LINKPOINT x="33315" y="9255">
+   <LINKPOINT x="33630" y="9533">
    </LINKPOINT>
-   <LINKPOINT x="31200" y="9255">
+   <LINKPOINT x="31215" y="9533">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="559" srcpinname="Transform Out" dstnodeid="526" dstpinname="Transform In">
@@ -2311,7 +2315,7 @@
    </BOUNDS>
    <PIN pinname="Change" visible="1">
    </PIN>
-   <PIN pinname="Period" slicecount="1" values="2" visible="1">
+   <PIN pinname="Period" slicecount="1" visible="1" values="2">
    </PIN>
    </NODE>
    <LINK srcnodeid="628" srcpinname="Change" dstnodeid="611" dstpinname="Y Input Value">
