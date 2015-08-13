@@ -1,0 +1,1197 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Forces\SelfRepulsion (DX11.Pointcloud ForceBuffer) help.v4p" scrollx="0" scrolly="0">
+   <BOUNDS type="Window" left="375" top="1110" width="18060" height="13065">
+   </BOUNDS>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="225" top="225" width="5100" height="450">
+   </BOUNDS>
+   <BOUNDS type="Box" left="225" top="225" width="8025" height="390">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|SelfRepulsion (DX11.Pointcloud Vector3d)|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" visible="1" values="14">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="2" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="225" top="600" width="5100" height="600">
+   </BOUNDS>
+   <BOUNDS type="Box" left="225" top="600" width="6840" height="540">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|A very simple selfrepulsion implementation. (does not scale very well)|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="4" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="9600" top="225" width="3840" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="9600" top="225" width="2460" height="945">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|copyright: intolight 2015&cr;&lf;Creative Commons 4.0 BY-NC-SA&cr;&lf;&cr;&lf;contact: robert@intolight.de|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE systemname="Rasterizer (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Rasterizer (DX11.RenderState)" componentmode="Hidden" id="10" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="1350" top="14235" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Mode" slicecount="1" values="NoCullSimple">
+   </PIN>
+   <BOUNDS type="Box" left="1350" top="14235">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="8" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="1755" top="16875" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1755" top="16875" width="6000" height="4500">
+   </BOUNDS>
+   <BOUNDS type="Window" left="18525" top="1140" width="9150" height="7800">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Depth Buffer Mode" slicecount="1" values="Standard">
+   </PIN>
+   <PIN pinname="Depth Buffer Format" slicecount="1" values="D32_Float">
+   </PIN>
+   </NODE>
+   <NODE systemname="Camera (Transform Softimage)" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden" id="7" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="3030" top="16425" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="View Projection" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="3030" top="16425">
+   </BOUNDS>
+   <PIN pinname="Inital Distance" slicecount="1" values="7">
+   </PIN>
+   <PIN pinname="Initial Pitch" slicecount="1" values="0.13" visible="1">
+   </PIN>
+   <PIN pinname="Initial Yaw" slicecount="1" values="-0.125" visible="1">
+   </PIN>
+   <PIN pinname="Initial Interest" visible="1" slicecount="3" values="0,0,0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="View Projection" dstnodeid="8" dstpinname="View">
+   </LINK>
+   <NODE systemname="Group (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Group (DX11.Layer)" componentmode="Hidden" id="6" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="1920" top="16425" width="780" height="270">
+   </BOUNDS>
+   <PIN pinname="Layer 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer 1" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="1920" top="16425">
+   </BOUNDS>
+   <PIN pinname="Input Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Layer 3" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer 4" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Layer Out" dstnodeid="8" dstpinname="Layers">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="14" systemname="IOBox (Value Advanced)" hiddenwhenlocked="1">
+   <BOUNDS type="Box" left="2850" top="1245" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2850" top="1245" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="20">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="DynamicBuffer (DX11.Buffer 3d)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer 3d)" componentmode="Hidden" id="15" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="3120" top="3990" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="DataXYZ" visible="1">
+   </PIN>
+   <PIN pinname="Buffer" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="3120" top="3990">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="HSL (Color Join)" nodename="HSL (Color Join)" componentmode="Hidden" id="16" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="4500" top="3510" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Hue" visible="1" slicecount="1" values="0.117375378758879">
+   </PIN>
+   <PIN pinname="Lightness" slicecount="1" values="0.5">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="DynamicBuffer (DX11.Buffer Color)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Color)" componentmode="Hidden" id="18" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="4500" top="3990" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Data" visible="1">
+   </PIN>
+   <PIN pinname="Buffer" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="4500" top="3990">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="16" srcpinname="Output" dstnodeid="18" dstpinname="Data">
+   </LINK>
+   <NODE systemname="Damper (Animation)" nodename="Damper (Animation)" componentmode="Hidden" id="19" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="3120" top="3555" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Go To Position" visible="1" slicecount="60" values="-0.0181001005394504,0.22443129083587,0.270685057809129,-0.094225463749355,0.0712555677872182,-0.134823391685179,0.00522101785791532,0.0970653415040976,0.104552065103922,-0.093455262007205,-0.0547339166905913,0.13401637989198,-0.106665005721541,-0.251487151690327,-0.0220225269234135,-0.253227372267252,-0.340398175700847,0.0198051213995842,0.105693532635499,0.302618716522794,0.323906333517594,-0.415250344097238,-0.229449120696212,0.00556534028184862,0.219004432279607,-0.290732741111787,-0.218072408226928,-0.216416219082719,0.142393558462294,0.0369586247659071,0.199511303632362,0.0446229889345321,0.148242984143563,0.1437194920999,0.0439574459127123,0.0201018630895825,-0.173256092720935,-0.195500162630966,0.162179542348633,0.41522861344675,0.266493285597697,-0.0147804362703112,0.322624519566042,0.126671231214762,0.021951256575428,-0.0472259320393122,0.0289101264341582,0.0113209417103687,0.269141048999036,-0.00855170358878847,0.0678645970128318,0.0752619081514621,0.424555430141681,-0.00445685828671273,0.00104246750723261,-0.193787339255027,0.119266537275921,0.400545755518834,0.172249696367552,-0.116901566531757">
+   </PIN>
+   <PIN pinname="Position Out" visible="1">
+   </PIN>
+   <PIN pinname="FilterTime" slicecount="1" values="5">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="19" srcpinname="Position Out" dstnodeid="15" dstpinname="DataXYZ">
+   </LINK>
+   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="20" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="4695" top="1620" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Cycles" visible="1">
+   </PIN>
+   <PIN pinname="Change" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Period" slicecount="1" values="0.2">
+   </PIN>
+   </NODE>
+   <PACK Name="addonpack" Version="33.8.0">
+   </PACK>
+   <NODE nodename="PointcloudBuffer (DX11.Pointcloud DynamicBuffer)" componentmode="Hidden" id="0" systemname="PointcloudBuffer (DX11.Pointcloud DynamicBuffer)" filename="PointcloudBuffer (DX11.Pointcloud DynamicBuffer).v4p" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="2595" top="4455" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2595" top="4455" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="PointcloudBuffer" visible="1">
+   </PIN>
+   <PIN pinname="Position Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Element Count" visible="1">
+   </PIN>
+   <PIN pinname="Color Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Max Element Count" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="IdOffset" visible="1" slicecount="1" values="0">
+   </PIN>
+   <BOUNDS type="Window" left="14310" top="1020" width="10875" height="10545">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="Buffer" dstnodeid="0" dstpinname="Position Buffer">
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Element Count">
+   </LINK>
+   <LINK srcnodeid="18" srcpinname="Buffer" dstnodeid="0" dstpinname="Color Buffer" linkstyle="VHV">
+   <LINKPOINT x="4450" y="4343">
+   </LINKPOINT>
+   <LINKPOINT x="3530" y="4343">
+   </LINKPOINT>
+   </LINK>
+   <INFO author="" description="" tags="">
+   </INFO>
+   <NODE systemname="Constant (DX11.Pointcloud PointcloudBuffer)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Visualization\Constant (DX11.Pointcloud PointcloudBuffer).v4p" nodename="Constant (DX11.Pointcloud PointcloudBuffer)" componentmode="Hidden" id="11" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="2115" top="14775" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="PointcloudBuffer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Render State" visible="1">
+   </PIN>
+   <PIN pinname="Geometry" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <BOUNDS type="Box" left="2115" top="14775">
+   </BOUNDS>
+   <PIN pinname="Technique" slicecount="1" visible="1" values="GroupId">
+   </PIN>
+   <PIN pinname="groupFilter" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="ForceBuffer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="ForceIndexBuffer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Enable Heading" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Render State" dstnodeid="11" dstpinname="Render State" linkstyle="VHV">
+   <LINKPOINT x="1410" y="14625">
+   </LINKPOINT>
+   <LINKPOINT x="2115" y="14625">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Emitter (DX11.Pointcloud PointcloudBuffer)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Forces\Emitter (DX11.Pointcloud PointcloudBuffer).v4p" nodename="Emitter (DX11.Pointcloud PointcloudBuffer)" componentmode="Hidden" id="31" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="2610" top="5565" width="2595" height="270">
+   </BOUNDS>
+   <PIN pinname="PointcloudBuffer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Max Element Count" visible="1" slicecount="1" values="10">
+   </PIN>
+   <PIN pinname="RingBufferSize" visible="1">
+   </PIN>
+   <PIN pinname="Emit" visible="1">
+   </PIN>
+   <PIN pinname="Reset" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Layer PointcloudRingBuffer" visible="1">
+   </PIN>
+   <PIN pinname="Layer ForcesRingBuffer" visible="1">
+   </PIN>
+   <PIN pinname="UpdateBuffer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="34" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="3885" top="5205" width="510" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3885" top="5205" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="3000">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="34" srcpinname="Y Output Value" dstnodeid="31" dstpinname="RingBufferSize" linkstyle="VHV">
+   <LINKPOINT x="4580" y="5700">
+   </LINKPOINT>
+   <LINKPOINT x="3250" y="5280">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="35" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="4515" top="5220" width="285" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4515" top="5220" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="35" srcpinname="Y Output Value" dstnodeid="31" dstpinname="Emit" linkstyle="VHV">
+   <LINKPOINT x="5000" y="5648">
+   </LINKPOINT>
+   <LINKPOINT x="4090" y="5348">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="41" systemname="IOBox (Value Advanced)" hiddenwhenlocked="1">
+   <BOUNDS type="Box" left="5055" top="12510" width="285" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5055" top="12510" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Group (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Group (DX11.Layer)" componentmode="Hidden" id="40" hiddenwhenlocked="0">
+   <BOUNDS type="Node" left="6150" top="7425" width="540" height="270">
+   </BOUNDS>
+   <PIN pinname="Layer 1" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Input Count" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Layer 3" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Render State" visible="-1" pintype="Input" slicecount="1" values="||">
+   </PIN>
+   <BOUNDS type="Box" left="6150" top="7425">
+   </BOUNDS>
+   <PIN pinname="Layer 4" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer 5" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer 6" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer 7" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="UpdateForces (DX11.Pointcloud ForceBuffer)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Forces\UpdateForces (DX11.Pointcloud ForceBuffer).v4p" nodename="UpdateForces (DX11.Pointcloud ForceBuffer)" componentmode="Hidden" id="39" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="3885" top="12885" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Max Element Count" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Layer ForcesRingBuffer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="pcBuffer" visible="1">
+   </PIN>
+   <PIN pinname="Layer Force" visible="1" slicecount="1" values="||">
+   </PIN>
+   <BOUNDS type="Window" left="18570" top="6540" width="8130" height="5715">
+   </BOUNDS>
+   <PIN pinname="Apply" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="41" srcpinname="Y Output Value" dstnodeid="39" dstpinname="Apply">
+   </LINK>
+   <NODE systemname="ApplyForce (DX11.Pointcloud ForceBuffer)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Forces\ApplyForce (DX11.Pointcloud ForceBuffer).v4p" nodename="ApplyForce (DX11.Pointcloud ForceBuffer)" componentmode="Hidden" id="37" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="2610" top="13335" width="3210" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2610" top="13335" width="11635" height="9340">
+   </BOUNDS>
+   <BOUNDS type="Window" left="2505" top="1380" width="14655" height="10725">
+   </BOUNDS>
+   <PIN pinname="CopyGroupIds" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Apply" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Layer PointcloudRingBuffer" visible="1">
+   </PIN>
+   <PIN pinname="Max Element Count" visible="1">
+   </PIN>
+   <PIN pinname="PointcloudBuffer" visible="1">
+   </PIN>
+   <PIN pinname="ForceBuffer" visible="1">
+   </PIN>
+   <PIN pinname="ForceIndexBuffer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="39" srcpinname="Layer Force" dstnodeid="37" dstpinname="Layer Force">
+   </LINK>
+   <LINK srcnodeid="31" srcpinname="Layer PointcloudRingBuffer" dstnodeid="37" dstpinname="Layer PointcloudRingBuffer">
+   </LINK>
+   <LINK srcnodeid="31" srcpinname="Max Element Count" dstnodeid="37" dstpinname="Max Element Count">
+   </LINK>
+   <LINK srcnodeid="31" srcpinname="Max Element Count" dstnodeid="39" dstpinname="Max Element Count" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="3270" y="8928">
+   </LINKPOINT>
+   <LINKPOINT x="3900" y="9778">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="31" srcpinname="Layer ForcesRingBuffer" dstnodeid="40" dstpinname="Layer 1" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="4535" y="6983">
+   </LINKPOINT>
+   <LINKPOINT x="5545" y="6278">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="37" srcpinname="PointcloudBuffer" dstnodeid="11" dstpinname="PointcloudBuffer">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="PointcloudBuffer" dstnodeid="31" dstpinname="PointcloudBuffer">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Max Element Count" dstnodeid="31" dstpinname="Max Element Count">
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="90" systemname="IOBox (Enumerations)">
+   <BOUNDS type="Box" left="3405" top="14235" width="1590" height="270">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3405" top="14235" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="RGB">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="90" srcpinname="Output Enum" dstnodeid="11" dstpinname="Technique">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="91" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="7545" top="6555" width="285" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7545" top="6555" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="92" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="8340" top="4995" width="4680" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="8340" top="4995" width="4680" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; apply to particles with this groupId (or to all when set to -1)|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="93" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="6615" top="4995" width="735" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6615" top="4995" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="-1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <NODE systemname="SelfRepulsion (DX11.Pointcloud ForceBuffer)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Forces\SelfRepulsion (DX11.Pointcloud ForceBuffer).v4p" nodename="SelfRepulsion (DX11.Pointcloud ForceBuffer)" componentmode="Hidden" id="77">
+   <BOUNDS type="Node" left="6405" top="6930" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer Force" visible="1">
+   </PIN>
+   <PIN pinname="Max Element Count" visible="1">
+   </PIN>
+   <PIN pinname="Group IDs" slicecount="1" visible="1" values="-1">
+   </PIN>
+   <PIN pinname="gravityXYZ" visible="1">
+   </PIN>
+   <PIN pinname="Apply" slicecount="1" visible="1" values="1">
+   </PIN>
+   <BOUNDS type="Box" left="6405" top="6930">
+   </BOUNDS>
+   <PIN pinname="Gamma" visible="1" slicecount="1" values="0.5">
+   </PIN>
+   <PIN pinname="damp" visible="1">
+   </PIN>
+   <PIN pinname="radius" visible="1">
+   </PIN>
+   <PIN pinname="RepulseAmount" visible="1">
+   </PIN>
+   <BOUNDS type="Window" left="15810" top="8415" width="8580" height="5820">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="31" srcpinname="Max Element Count" dstnodeid="77" dstpinname="Max Element Count" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="3650" y="6723">
+   </LINKPOINT>
+   <LINKPOINT x="6055" y="6043">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="77" srcpinname="Layer Force" dstnodeid="40" dstpinname="Layer 2">
+   </LINK>
+   <LINK srcnodeid="91" srcpinname="Y Output Value" dstnodeid="77" dstpinname="Apply">
+   </LINK>
+   <LINK srcnodeid="93" srcpinname="Y Output Value" dstnodeid="77" dstpinname="Group IDs">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="96" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="6870" top="5400" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6870" top="5400" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.04">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="96" srcpinname="Y Output Value" dstnodeid="77" dstpinname="Radius">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="97" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="7350" top="6135" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7350" top="6135" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="4">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="97" srcpinname="Y Output Value" dstnodeid="77" dstpinname="Multiplier">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="98" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="7080" top="5760" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7080" top="5760" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.2">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0.5">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="98" srcpinname="Y Output Value" dstnodeid="77" dstpinname="Elasticity">
+   </LINK>
+   <NODE systemname="Sphere (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Sphere (DX11.Geometry)" componentmode="Hidden" id="9" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="2280" top="14235" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Geometry Out" visible="1">
+   </PIN>
+   <PIN pinname="SizeXYZ" slicecount="3" visible="1" values="0.2,0.2,0.2">
+   </PIN>
+   <PIN pinname="SizeXY">
+   </PIN>
+   <BOUNDS type="Box" left="2280" top="14235">
+   </BOUNDS>
+   <PIN pinname="Radius" visible="1" slicecount="1" values="0.01">
+   </PIN>
+   <PIN pinname="Resolution X" slicecount="1" values="15">
+   </PIN>
+   <PIN pinname="Resolution Y" slicecount="1" values="15">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Geometry Out" dstnodeid="11" dstpinname="Geometry">
+   </LINK>
+   <LINK srcnodeid="96" srcpinname="Y Output Value" dstnodeid="9" dstpinname="Radius" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="6505" y="9143">
+   </LINKPOINT>
+   <LINKPOINT x="2690" y="10718">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="99" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="8340" top="5400" width="1440" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="8340" top="5400" width="1440" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; size of particle|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="100" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="8340" top="5760" width="1440" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="8340" top="5760" width="2265" height="240">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; elasticity of self repulsion|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="101" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="8340" top="6090" width="1440" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="8340" top="6090" width="2265" height="240">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; velocity multiplier|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE systemname="Collision (DX11.Pointcloud Transform)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Forces\Collision (DX11.Pointcloud Transform).v4p" nodename="Collision (DX11.Pointcloud Transform)" componentmode="Hidden" id="102" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="9945" top="10470" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Help Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   <PIN pinname="Layer Force" visible="1">
+   </PIN>
+   <PIN pinname="Max Element Count" visible="1">
+   </PIN>
+   <PIN pinname="New Group IDs" visible="1" slicecount="1" values="1">
+   </PIN>
+   <BOUNDS type="Window" left="12090" top="1020" width="12885" height="6045">
+   </BOUNDS>
+   <PIN pinname="Technique" slicecount="1" visible="1" values="IsOutside">
+   </PIN>
+   <PIN pinname="Bounce" visible="1">
+   </PIN>
+   <PIN pinname="Change Group" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="9945" top="10470">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="UniformScale (Transform)" nodename="UniformScale (Transform)" componentmode="Hidden" id="103" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="11955" top="8445" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" slicecount="1" values="5">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="103" srcpinname="Transform Out" dstnodeid="102" dstpinname="Transform In" linkstyle="Bezier">
+   <LINKPOINT x="12090" y="9525">
+   </LINKPOINT>
+   <LINKPOINT x="10035" y="9525">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="31" srcpinname="Max Element Count" dstnodeid="102" dstpinname="Max Element Count" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="3300" y="8138">
+   </LINKPOINT>
+   <LINKPOINT x="9930" y="8138">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Gravity (DX11.Pointcloud Vector3d)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Forces\Gravity (DX11.Pointcloud Vector3d).v4p" nodename="Gravity (DX11.Pointcloud Vector3d)" componentmode="Hidden" id="116" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="13725" top="10470" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer Force" visible="1">
+   </PIN>
+   <PIN pinname="Max Element Count" visible="1">
+   </PIN>
+   <PIN pinname="Apply" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="gravityXYZ" visible="1">
+   </PIN>
+   <PIN pinname="Group IDs" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="13725" top="10470">
+   </BOUNDS>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="117" systemname="IOBox (Value Advanced)" hiddenwhenlocked="1">
+   <BOUNDS type="Box" left="10065" top="9090" width="285" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="10065" top="9090" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="117" srcpinname="Y Output Value" dstnodeid="102" dstpinname="Bounce" linkstyle="Bezier">
+   <LINKPOINT x="10110" y="9848">
+   </LINKPOINT>
+   <LINKPOINT x="10440" y="9848">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="31" srcpinname="Max Element Count" dstnodeid="116" dstpinname="Max Element Count" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="3300" y="8138">
+   </LINKPOINT>
+   <LINKPOINT x="13725" y="8138">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="119" systemname="IOBox (Value Advanced)" hiddenwhenlocked="1">
+   <BOUNDS type="Box" left="14190" top="9480" width="795" height="720">
+   </BOUNDS>
+   <BOUNDS type="Node" left="14190" top="9480" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0,-0.001,0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="119" srcpinname="Y Output Value" dstnodeid="116" dstpinname="gravityXYZ">
+   </LINK>
+   <NODE systemname="Deceleration (DX11.Pointcloud Value)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Forces\Deceleration (DX11.Pointcloud Value).v4p" nodename="Deceleration (DX11.Pointcloud Value)" componentmode="Hidden" id="120" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="15585" top="10470" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer Force" visible="1">
+   </PIN>
+   <PIN pinname="Max Element Count" visible="1">
+   </PIN>
+   <PIN pinname="Apply" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Deceleration Multiplicator" slicecount="1" visible="1" values="0.001">
+   </PIN>
+   <PIN pinname="Group IDs" slicecount="1" visible="1" values="-1">
+   </PIN>
+   <BOUNDS type="Box" left="15585" top="10470">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="31" srcpinname="Max Element Count" dstnodeid="120" dstpinname="Max Element Count" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="3300" y="8138">
+   </LINKPOINT>
+   <LINKPOINT x="15585" y="8138">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="122" systemname="IOBox (Value Advanced)" hiddenwhenlocked="1">
+   <BOUNDS type="Box" left="16305" top="9900" width="405" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="16305" top="9900" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.02">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="122" srcpinname="Y Output Value" dstnodeid="120" dstpinname="Deceleration Multiplicator">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="123" systemname="IOBox (Value Advanced)" hiddenwhenlocked="1">
+   <BOUNDS type="Box" left="13965" top="9090" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="13965" top="9090" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="123" srcpinname="Y Output Value" dstnodeid="116" dstpinname="Group IDs">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="124" systemname="IOBox (Value Advanced)" hiddenwhenlocked="1">
+   <BOUNDS type="Box" left="10410" top="9090" width="285" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="10410" top="9090" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="124" srcpinname="Y Output Value" dstnodeid="102" dstpinname="Change Group" linkstyle="Bezier">
+   <LINKPOINT x="10440" y="9840">
+   </LINKPOINT>
+   <LINKPOINT x="10605" y="9840">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Collision (DX11.Pointcloud Transform)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Forces\Collision (DX11.Pointcloud Transform).v4p" nodename="Collision (DX11.Pointcloud Transform)" componentmode="Hidden" id="125" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="11805" top="10470" width="1350" height="270">
+   </BOUNDS>
+   <PIN pinname="Help Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer Force" visible="1">
+   </PIN>
+   <PIN pinname="Max Element Count" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="New Group IDs" visible="1" slicecount="1" values="1">
+   </PIN>
+   <BOUNDS type="Window" left="12090" top="1020" width="12885" height="6045">
+   </BOUNDS>
+   <PIN pinname="Technique" slicecount="1" visible="1" values="IsInside">
+   </PIN>
+   <PIN pinname="Bounce" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Change Group" visible="1" slicecount="1" values="1">
+   </PIN>
+   <BOUNDS type="Box" left="11805" top="10470">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="31" srcpinname="Max Element Count" dstnodeid="125" dstpinname="Max Element Count" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="3300" y="8138">
+   </LINKPOINT>
+   <LINKPOINT x="11805" y="8138">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="103" srcpinname="Transform Out" dstnodeid="125" dstpinname="Transform In">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="126" systemname="IOBox (Value Advanced)" hiddenwhenlocked="1">
+   <BOUNDS type="Box" left="12615" top="9090" width="285" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="12615" top="9090" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="126" srcpinname="Y Output Value" dstnodeid="125" dstpinname="New Group IDs">
+   </LINK>
+   <NODE systemname="Attractor (DX11.Pointcloud Vector3d)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Forces\Attractor (DX11.Pointcloud Vector3d).v4p" nodename="Attractor (DX11.Pointcloud Vector3d)" componentmode="Hidden" id="127" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="8055" top="10470" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer Force" visible="1">
+   </PIN>
+   <PIN pinname="Max Element Count" visible="1">
+   </PIN>
+   <PIN pinname="Help Layer" visible="1">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="0.76">
+   </PIN>
+   <PIN pinname="Position" visible="1">
+   </PIN>
+   <PIN pinname="Force" slicecount="1" values="-0.04">
+   </PIN>
+   <PIN pinname="Apply" visible="1" slicecount="1" values="1">
+   </PIN>
+   <BOUNDS type="Box" left="8055" top="10470">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="31" srcpinname="Max Element Count" dstnodeid="127" dstpinname="Max Element Count" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="3300" y="8130">
+   </LINKPOINT>
+   <LINKPOINT x="8040" y="8130">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="RandomSpread (Spreads)" nodename="RandomSpread (Spreads)" componentmode="Hidden" id="128" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="8355" top="9255" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Spread Count" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="5">
+   </PIN>
+   <PIN pinname="Random Seed" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Random (Value)" nodename="Random (Value)" componentmode="Hidden" id="129" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="9060" top="8760" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Scale" slicecount="1" values="200">
+   </PIN>
+   <PIN pinname="Is Integer" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="129" srcpinname="Output" dstnodeid="128" dstpinname="Random Seed">
+   </LINK>
+   <NODE systemname="Damper (Animation)" nodename="Damper (Animation)" componentmode="Hidden" id="130" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="8385" top="10050" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Go To Position" visible="1" slicecount="3" values="-1.79835070273839,1.97931224713102,2.28794011636637">
+   </PIN>
+   <PIN pinname="Position Out" visible="1">
+   </PIN>
+   <PIN pinname="FilterTime" slicecount="1" values="2">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="130" srcpinname="Position Out" dstnodeid="127" dstpinname="Position">
+   </LINK>
+   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="131" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="8730" top="8355" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Change" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="131" srcpinname="Change" dstnodeid="129" dstpinname="Enabled">
+   </LINK>
+   <NODE systemname="xYz (3d XZ)" nodename="xYz (3d XZ)" componentmode="Hidden" id="133" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="8370" top="9645" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="XY" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="-2.5">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="128" srcpinname="Output" dstnodeid="133" dstpinname="XY">
+   </LINK>
+   <LINK srcnodeid="133" srcpinname="XYZ" dstnodeid="130" dstpinname="Go To Position">
+   </LINK>
+   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="135" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="4170" top="4830" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Period" slicecount="1" values="0.1">
+   </PIN>
+   <PIN pinname="Change" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="135" srcpinname="Change" dstnodeid="35" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="Group (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Group (DX11.Layer)" componentmode="Hidden" id="137" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="4275" top="10995" width="13260" height="270">
+   </BOUNDS>
+   <PIN pinname="Input Count" slicecount="1" values="6">
+   </PIN>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer 3" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer 4" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer 5" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer 6" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="40" srcpinname="Layer Out" dstnodeid="137" dstpinname="Layer 1">
+   </LINK>
+   <LINK srcnodeid="137" srcpinname="Layer Out" dstnodeid="39" dstpinname="Layer ForcesRingBuffer">
+   </LINK>
+   <LINK srcnodeid="120" srcpinname="Layer Force" dstnodeid="137" dstpinname="Layer 6">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="138" systemname="IOBox (Value Advanced)" hiddenwhenlocked="1">
+   <BOUNDS type="Box" left="12270" top="9090" width="285" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="12270" top="9090" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="138" srcpinname="Y Output Value" dstnodeid="125" dstpinname="Change Group" linkstyle="Bezier">
+   <LINKPOINT x="12300" y="9855">
+   </LINKPOINT>
+   <LINKPOINT x="12465" y="9855">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="139" systemname="IOBox (Value Advanced)" hiddenwhenlocked="1">
+   <BOUNDS type="Box" left="10755" top="9090" width="285" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="10755" top="9090" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="139" srcpinname="Y Output Value" dstnodeid="102" dstpinname="New Group IDs">
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="140" systemname="IOBox (Enumerations)" hiddenwhenlocked="1">
+   <BOUNDS type="Box" left="12795" top="9900" width="915" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="12795" top="9900" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="IsInside">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="140" srcpinname="Output Enum" dstnodeid="125" dstpinname="Technique">
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="141" systemname="IOBox (Enumerations)" hiddenwhenlocked="1">
+   <BOUNDS type="Box" left="10935" top="9900" width="915" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="10935" top="9900" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="IsOutside">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="141" srcpinname="Output Enum" dstnodeid="102" dstpinname="Technique">
+   </LINK>
+   <LINK srcnodeid="127" srcpinname="Layer Force" dstnodeid="137" dstpinname="Layer 2">
+   </LINK>
+   <LINK srcnodeid="102" srcpinname="Layer Force" dstnodeid="137" dstpinname="Layer 3">
+   </LINK>
+   <LINK srcnodeid="125" srcpinname="Layer Force" dstnodeid="137" dstpinname="Layer 4">
+   </LINK>
+   <LINK srcnodeid="116" srcpinname="Layer Force" dstnodeid="137" dstpinname="Layer 5">
+   </LINK>
+   <LINK srcnodeid="102" srcpinname="Help Layer" dstnodeid="6" dstpinname="Layer 4" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="11245" y="13393">
+   </LINKPOINT>
+   <LINKPOINT x="2495" y="13743">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="142" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="4515" top="3105" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Period" slicecount="1" values="5">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="142" srcpinname="Output" dstnodeid="16" dstpinname="Hue">
+   </LINK>
+   <NODE systemname="GaussianSpread (Spreads)" nodename="GaussianSpread (Spreads)" componentmode="Hidden" id="147" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="3120" top="1980" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Random Seed" visible="1">
+   </PIN>
+   <PIN pinname="Spread Count" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Standard Deviation" slicecount="1" values="0.2">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="20" srcpinname="Cycles" dstnodeid="147" dstpinname="Random Seed" linkstyle="PolyLine">
+   </LINK>
+   <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="148" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="4230" top="1620" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="14" srcpinname="Y Output Value" dstnodeid="148" dstpinname="Input 1" linkstyle="VHV">
+   <LINKPOINT x="2910" y="1538">
+   </LINKPOINT>
+   <LINKPOINT x="4230" y="1538">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="148" srcpinname="Output" dstnodeid="147" dstpinname="Spread Count">
+   </LINK>
+   <NODE systemname="Add (Value)" nodename="Add (Value)" componentmode="Hidden" id="149" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="3105" top="3150" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="147" srcpinname="Output" dstnodeid="149" dstpinname="Input 1">
+   </LINK>
+   <NODE systemname="xYz (3d XZ)" nodename="xYz (3d XZ)" componentmode="Hidden" id="150" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="3390" top="2760" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Y" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="XY" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="RandomSpread (Spreads)" nodename="RandomSpread (Spreads)" componentmode="Hidden" id="151" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="3405" top="2400" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Random Seed" visible="1">
+   </PIN>
+   <PIN pinname="Spread Count" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="5">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="20" srcpinname="Cycles" dstnodeid="151" dstpinname="Random Seed" linkstyle="Bezier">
+   <LINKPOINT x="5385" y="2130">
+   </LINKPOINT>
+   <LINKPOINT x="4170" y="2130">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="151" srcpinname="Output" dstnodeid="150" dstpinname="XY">
+   </LINK>
+   <LINK srcnodeid="150" srcpinname="XYZ" dstnodeid="149" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="149" srcpinname="Output" dstnodeid="19" dstpinname="Go To Position">
+   </LINK>
+   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="152" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="3450" top="15315" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Period" slicecount="1" values="20">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="152" srcpinname="Output" dstnodeid="7" dstpinname="Initial Yaw" linkstyle="Bezier">
+   <LINKPOINT x="3465" y="16005">
+   </LINKPOINT>
+   <LINKPOINT x="3270" y="16005">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="WaveShaper (Value)" nodename="WaveShaper (Value)" componentmode="Hidden" id="153" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="3450" top="15645" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Shape" slicecount="1" values="Sine">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="152" srcpinname="Output" dstnodeid="153" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="154" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="3450" top="15975" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" slicecount="1" values="0.1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="153" srcpinname="Output" dstnodeid="154" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="154" srcpinname="Output" dstnodeid="7" dstpinname="Initial Pitch">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Layer" dstnodeid="6" dstpinname="Layer 1">
+   </LINK>
+   <LINK srcnodeid="127" srcpinname="Help Layer" dstnodeid="6" dstpinname="Layer 2" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="9245" y="13568">
+   </LINKPOINT>
+   <LINKPOINT x="2290" y="13568">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="102" srcpinname="Help Layer" dstnodeid="6" dstpinname="Layer 3" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="11285" y="13568">
+   </LINKPOINT>
+   <LINKPOINT x="2470" y="13568">
+   </LINKPOINT>
+   </LINK>
+   </PATCH>
