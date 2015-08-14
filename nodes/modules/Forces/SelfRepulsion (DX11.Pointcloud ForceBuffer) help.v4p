@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Forces\SelfRepulsion (DX11.Pointcloud ForceBuffer) help.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="D:\workspace\dev\git\dx11-pointcloud\nodes\modules\Forces\SelfRepulsion (DX11.Pointcloud ForceBuffer) help.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="375" top="1110" width="18060" height="13065">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
@@ -53,7 +53,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="1755" top="16875" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="18525" top="1140" width="9150" height="7800">
+   <BOUNDS type="Window" left="35685" top="4275" width="9150" height="7800">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
@@ -73,9 +73,9 @@
    </BOUNDS>
    <PIN pinname="Inital Distance" slicecount="1" values="7">
    </PIN>
-   <PIN pinname="Initial Pitch" slicecount="1" values="0.13" visible="1">
+   <PIN pinname="Initial Pitch" slicecount="1" visible="1" values="0.13">
    </PIN>
-   <PIN pinname="Initial Yaw" slicecount="1" values="-0.125" visible="1">
+   <PIN pinname="Initial Yaw" slicecount="1" visible="1" values="-0.125">
    </PIN>
    <PIN pinname="Initial Interest" visible="1" slicecount="3" values="0,0,0">
    </PIN>
