@@ -7,6 +7,7 @@ float4x4 Rotation;
 int groupId = -1;
 int onEventGroup = -1;
 bool Bounce;
+float BounceMultiplicator = 1.0f;
 bool ChangeGroup;
 bool Apply;
 
@@ -30,9 +31,9 @@ void CS_IsInside( uint3 i : SV_DispatchThreadID)
 				}
 				
 				if (Bounce){
-					if( !(pointCoord.x < -0.5 || pointCoord.x > 0.5)) rwForceBuffer[i.x].velocity *= float3(-1,1,1);
-					if( !(pointCoord.y < -0.5 || pointCoord.y > 0.5)) rwForceBuffer[i.x].velocity *= float3(1,-1,1);
-					if( !(pointCoord.z < -0.5 || pointCoord.z > 0.5)) rwForceBuffer[i.x].velocity *= float3(1,1,-1);
+					if( !(pointCoord.x < -0.5 || pointCoord.x > 0.5)) rwForceBuffer[i.x].velocity *= float3(-BounceMultiplicator,BounceMultiplicator,BounceMultiplicator);
+					if( !(pointCoord.y < -0.5 || pointCoord.y > 0.5)) rwForceBuffer[i.x].velocity *= float3(BounceMultiplicator,-BounceMultiplicator,BounceMultiplicator);
+					if( !(pointCoord.z < -0.5 || pointCoord.z > 0.5)) rwForceBuffer[i.x].velocity *= float3(BounceMultiplicator,BounceMultiplicator,-BounceMultiplicator);
 					rwForceBuffer[i.x].velocity = mul(float4(rwForceBuffer[i.x].velocity,1), Rotation).xyz;
 				}
 			}
