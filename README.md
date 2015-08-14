@@ -16,6 +16,7 @@ When dealing with pointclouds and depthcameras (like Kinect) as input device for
 * Extract parts of the pointcloud data and provide a realtime rendering.
 * Detect events or occurences based on the pointcloud data.
 * Find components that are connected to each other.
+* Apply forces to the particlesystem.
 
 This pack attempts to provide a modular foundation that can be extended and reused very easily. It included some nodes for all of the listed needs and is designed to be extended in a clear manner.
 Nonetheless, the purpose of this project is to bundle the power of the vvvv community and build a comprehensive toolkit we all benefit from.
@@ -29,10 +30,12 @@ Features
 
 * clean and modular design
 * visualize pointclouds in many ways
-* hittests, centroids, bounds
-* blobdetection and tracking
+* kinect calibration for mapping realworld data to the virtual scene
 * jitter filter for the depth image of the kinect device
-* kinect calibration for mapping realworld data to your virtual scene
+* blobdetection and tracking
+* hittests, centroids, bounds
+* dynamic emission of particles
+* apply forces to particles (attractors, collision-detection, deceleration, gravity, self repulsion, turbulences, vectorfields and more)
 
 Getting Started
 ===============
@@ -44,15 +47,15 @@ You need:
 If you want to create pointclouds with real world data:
 * Kinect/Kinect2
 
-There are help patches for all included nodes that give small examples how to use them. Just highlight a node of your choice and press F1.
+There are help patches for all included nodes that give small examples how to use them. Just highlight a node of your choice and press F1. You can also find more complex examples under /dx11.pointcloud/girlpower/
 
 Best Practise
 ============
 
 * When you start to develop additional nodes (or nodes on top of existing nodes) try to stay as modular as possible for further usage.
-* Stick to the existing folder structure. (dx11 for shaders, geom11 for geometryshaders, plugins for plugins, texture11 for texture effects)
+* Stick to the existing folder structure. (dx11 for shaders, geom11 for geometryshaders, modules for nodes,  plugins for plugins, texture11 for texture effects)
 * Try to build simple helppatches that show the purpose of the developed node. You can also use the girlpower folder for more complex setups.
-* Besides the existing categories (Analysis, Data, Filters, Setup, Tools, Visualization) there are alot more (Segmentation, Classification, Clustering, FeatureDetection, and so on). Don't be shy to create new folders for that.
+* Besides the existing categories (Analysis, Data, Filters, Forces, Setup, Tools, Visualization) there are alot more (Segmentation, Classification, Clustering, FeatureDetection, and so on). Don't be shy to create new folders for that.
 
 
 Further development ideas
@@ -67,6 +70,14 @@ These are more sophisticated (especially on the GPU) but also very interesting:
 * Meshing the pointcloud. You can find a nice summary on this topic [here](http://meshlabstuff.blogspot.de/2009/09/meshing-point-clouds.html).
 * Clustering points to entities and classifying them (for example as living,lifeless,..).
 * [3D Reconstruction of Indoor Environments](http://www.cs.unc.edu/~doums/pdfs/slides-3D-Room-Reconstruction-with-One-Kinect.pdf)
+
+
+Problems? Questions?
+====================
+
+Feel free to ask questions in the [original thread](http://vvvv.org/contribution/dx11.pointcloud) of this pack. You can also post as guest there.
+You can also contact me via skype (le-tmp) or email (robert@intolight.de).
+
 
 License
 =======
