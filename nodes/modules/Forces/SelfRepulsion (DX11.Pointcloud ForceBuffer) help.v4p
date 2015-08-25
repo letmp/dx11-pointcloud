@@ -1,6 +1,6 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\dev\git\dx11-pointcloud\nodes\modules\Forces\SelfRepulsion (DX11.Pointcloud ForceBuffer) help.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="375" top="1110" width="18060" height="13065">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.1.dtd" >
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta34.1_x64\packs\dx11-pointcloud\nodes\modules\Forces\SelfRepulsion (DX11.Pointcloud ForceBuffer) help.v4p" scrollx="0" scrolly="0">
+   <BOUNDS type="Window" left="4725" top="1380" width="13650" height="13065">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
    <BOUNDS type="Node" left="225" top="225" width="5100" height="450">
@@ -53,7 +53,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="1755" top="16875" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="35685" top="4275" width="9150" height="7800">
+   <BOUNDS type="Window" left="18705" top="1350" width="9150" height="7800">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
@@ -174,7 +174,7 @@
    <PIN pinname="Period" slicecount="1" values="0.2">
    </PIN>
    </NODE>
-   <PACK Name="addonpack" Version="33.8.0">
+   <PACK Name="addonpack" Version="34.1.0">
    </PACK>
    <NODE nodename="PointcloudBuffer (DX11.Pointcloud DynamicBuffer)" componentmode="Hidden" id="0" systemname="PointcloudBuffer (DX11.Pointcloud DynamicBuffer)" filename="PointcloudBuffer (DX11.Pointcloud DynamicBuffer).v4p" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="2595" top="4455" width="100" height="100">
@@ -687,9 +687,9 @@
    </BOUNDS>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="117" systemname="IOBox (Value Advanced)" hiddenwhenlocked="1">
-   <BOUNDS type="Box" left="10065" top="9090" width="285" height="240">
+   <BOUNDS type="Box" left="10185" top="9090" width="285" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="10065" top="9090" width="0" height="0">
+   <BOUNDS type="Node" left="10185" top="9090" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
@@ -703,9 +703,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="117" srcpinname="Y Output Value" dstnodeid="102" dstpinname="Bounce" linkstyle="Bezier">
-   <LINKPOINT x="10110" y="9848">
+   <LINKPOINT x="10215" y="9893">
    </LINKPOINT>
-   <LINKPOINT x="10440" y="9848">
+   <LINKPOINT x="10440" y="9893">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="31" srcpinname="Max Element Count" dstnodeid="116" dstpinname="Max Element Count" linkstyle="Bezier" hiddenwhenlocked="1">
@@ -787,9 +787,9 @@
    <LINK srcnodeid="123" srcpinname="Y Output Value" dstnodeid="116" dstpinname="Group IDs">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="124" systemname="IOBox (Value Advanced)" hiddenwhenlocked="1">
-   <BOUNDS type="Box" left="10410" top="9090" width="285" height="240">
+   <BOUNDS type="Box" left="10530" top="9090" width="285" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="10410" top="9090" width="0" height="0">
+   <BOUNDS type="Node" left="10530" top="9090" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
@@ -805,9 +805,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="124" srcpinname="Y Output Value" dstnodeid="102" dstpinname="Change Group" linkstyle="Bezier">
-   <LINKPOINT x="10440" y="9840">
+   <LINKPOINT x="10560" y="9900">
    </LINKPOINT>
-   <LINKPOINT x="10605" y="9840">
+   <LINKPOINT x="10755" y="9900">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Collision (DX11.Pointcloud Transform)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Forces\Collision (DX11.Pointcloud Transform).v4p" nodename="Collision (DX11.Pointcloud Transform)" componentmode="Hidden" id="125" hiddenwhenlocked="1">
@@ -843,9 +843,9 @@
    <LINK srcnodeid="103" srcpinname="Transform Out" dstnodeid="125" dstpinname="Transform In">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="126" systemname="IOBox (Value Advanced)" hiddenwhenlocked="1">
-   <BOUNDS type="Box" left="12615" top="9090" width="285" height="240">
+   <BOUNDS type="Box" left="12765" top="9090" width="285" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="12615" top="9090" width="0" height="0">
+   <BOUNDS type="Node" left="12765" top="9090" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
@@ -856,7 +856,11 @@
    <PIN pinname="Value Type" slicecount="1" values="Integer">
    </PIN>
    </NODE>
-   <LINK srcnodeid="126" srcpinname="Y Output Value" dstnodeid="125" dstpinname="New Group IDs">
+   <LINK srcnodeid="126" srcpinname="Y Output Value" dstnodeid="125" dstpinname="New Group IDs" linkstyle="VHV">
+   <LINKPOINT x="12745" y="9893">
+   </LINKPOINT>
+   <LINKPOINT x="12830" y="9893">
+   </LINKPOINT>
    </LINK>
    <NODE systemname="Attractor (DX11.Pointcloud Vector3d)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Forces\Attractor (DX11.Pointcloud Vector3d).v4p" nodename="Attractor (DX11.Pointcloud Vector3d)" componentmode="Hidden" id="127" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="8055" top="10470" width="100" height="100">
@@ -997,15 +1001,15 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="138" srcpinname="Y Output Value" dstnodeid="125" dstpinname="Change Group" linkstyle="Bezier">
-   <LINKPOINT x="12300" y="9855">
+   <LINKPOINT x="12300" y="9900">
    </LINKPOINT>
-   <LINKPOINT x="12465" y="9855">
+   <LINKPOINT x="12615" y="9900">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="139" systemname="IOBox (Value Advanced)" hiddenwhenlocked="1">
-   <BOUNDS type="Box" left="10755" top="9090" width="285" height="240">
+   <BOUNDS type="Box" left="10905" top="9090" width="285" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="10755" top="9090" width="0" height="0">
+   <BOUNDS type="Node" left="10905" top="9090" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
@@ -1016,12 +1020,16 @@
    <PIN pinname="Value Type" slicecount="1" values="Integer">
    </PIN>
    </NODE>
-   <LINK srcnodeid="139" srcpinname="Y Output Value" dstnodeid="102" dstpinname="New Group IDs">
+   <LINK srcnodeid="139" srcpinname="Y Output Value" dstnodeid="102" dstpinname="New Group IDs" linkstyle="VHV">
+   <LINKPOINT x="10885" y="9885">
+   </LINKPOINT>
+   <LINKPOINT x="10970" y="9885">
+   </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="140" systemname="IOBox (Enumerations)" hiddenwhenlocked="1">
-   <BOUNDS type="Box" left="12795" top="9900" width="915" height="240">
+   <BOUNDS type="Box" left="12945" top="9900" width="915" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="12795" top="9900" width="0" height="0">
+   <BOUNDS type="Node" left="12945" top="9900" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input Enum" slicecount="1" visible="1" values="IsInside">
    </PIN>
@@ -1029,9 +1037,9 @@
    <LINK srcnodeid="140" srcpinname="Output Enum" dstnodeid="125" dstpinname="Technique">
    </LINK>
    <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="141" systemname="IOBox (Enumerations)" hiddenwhenlocked="1">
-   <BOUNDS type="Box" left="10935" top="9900" width="915" height="240">
+   <BOUNDS type="Box" left="11055" top="9900" width="915" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="10935" top="9900" width="0" height="0">
+   <BOUNDS type="Node" left="11055" top="9900" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input Enum" slicecount="1" visible="1" values="IsOutside">
    </PIN>
