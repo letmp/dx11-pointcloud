@@ -3,8 +3,11 @@
 //@tags: DX11, Kinect, Pointcloud
 //@credits: vvvv
 
-#include "_PointData.fxh"
+#include "../fxh/_PointData.fxh"
 StructuredBuffer<pointData> pcBuffer;
+
+#include "../fxh/Helper.fxh"
+
 float maxElementCount;
 float diff;
 
@@ -50,7 +53,7 @@ vs2ps VS(vsInput input)
 	}
 	
 	else if( (maxElementCount + diff) <= index && index < (maxElementCount * 2) + diff){
-		col = pcBuffer[index - maxElementCount - diff].col;
+		col = decodeColor( pcBuffer[index - maxElementCount - diff].col );
 	}
 	
 	else if( (maxElementCount + diff) * 2 <= index && index < (maxElementCount * 3) + (diff * 2)){

@@ -3,11 +3,15 @@ float4x4 tW : WORLD;
 int drawIndex : DRAWINDEX;
 int IdOffset;
 int elementcount;
+bool useEncodedColor = false;
 StructuredBuffer<float3> posBuffer <string uiname="Position Buffer";>;
 StructuredBuffer<float4> colBuffer <string uiname="Color Buffer";>;
+StructuredBuffer<int> colBufferEncoded <string uiname="Encoded Color Buffer";>;
 
-#include "_PointData.fxh"
+#include "../fxh/_PointData.fxh"
 AppendStructuredBuffer<pointData> pcBuffer : BACKBUFFER;
+
+#include "../fxh/Helper.fxh"
 
 //==============================================================================
 //COMPUTE SHADER ===============================================================
@@ -23,9 +27,16 @@ void CSBuildPointcloudBuffer( uint3 DTid : SV_DispatchThreadID )
 	pos = mul(pos, tW);
 	
 	uint cnt, stride;
-	colBuffer.GetDimensions(cnt,stride);
-	float4 col = colBuffer[DTid.x % cnt];
-
+	int col;
+	if(useEncodedColor){
+		colBufferEncoded.GetDimensions(cnt,stride);
+		col = colBufferEncoded[DTid.x % cnt];
+	} 
+	else{
+		colBuffer.GetDimensions(cnt,stride);
+		col = encodeColor( colBuffer[DTid.x % cnt] );
+	} 
+	
 	pointData pd = {pos.xyz, col, drawIndex + IdOffset};
 	pcBuffer.Append(pd);
 }

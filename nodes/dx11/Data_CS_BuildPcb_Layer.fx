@@ -16,8 +16,10 @@ SamplerState sPoint : IMMUTABLE
     AddressV = Border;
 };
 
-#include "_PointData.fxh"
+#include "../fxh/_PointData.fxh"
 AppendStructuredBuffer<pointData> pcBuffer : BACKBUFFER;
+
+#include "../fxh/Helper.fxh"
 
 //==============================================================================
 //COMPUTE SHADER ===============================================================
@@ -45,7 +47,7 @@ void CSBuildPointcloudBuffer( uint3 i : SV_DispatchThreadID )
 		pos.z = depth;
 		pos = mul(pos, tW);
 		
-		pointData pd = {pos.xyz, col, drawIndex + IdOffset};
+		pointData pd = {pos.xyz, encodeColor(col), drawIndex + IdOffset};
 		pcBuffer.Append(pd);
 	}
 }

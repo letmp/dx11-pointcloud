@@ -1,7 +1,7 @@
 float4x4 tVP: VIEWPROJECTION;
 int groupIds;
 
-#include "_PointData.fxh"
+#include "../fxh/_PointData.fxh"
 StructuredBuffer<pointData> pcBuffer;
 ByteAddressBuffer InputCountBuffer;
 

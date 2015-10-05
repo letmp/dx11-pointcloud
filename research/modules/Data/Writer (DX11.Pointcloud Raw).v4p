@@ -1,8 +1,8 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\dev\packs\dx11-pointcloud\research\modules\Data\Writer (DX11.Pointcloud Raw).v4p" scrollx="0" scrolly="0" systemname="Client (DX11.Pointcloud Network)" filename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\Client (DX11.Pointcloud Network).v4p">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\research\modules\Data\Writer (DX11.Pointcloud Raw).v4p" scrollx="0" scrolly="2700" systemname="Client (DX11.Pointcloud Network)" filename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\Client (DX11.Pointcloud Network).v4p">
    <BOUNDS type="Window" left="7860" top="480" width="12945" height="16230">
    </BOUNDS>
-   <PACK Name="addonpack" Version="33.7.0">
+   <PACK Name="addonpack" Version="33.8.0">
    </PACK>
    <NODE systemname="CopyCounter (DX11.Buffer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="CopyCounter (DX11.Buffer)" componentmode="Hidden" id="30">
    <BOUNDS type="Node" left="6300" top="2445" width="100" height="100">
@@ -31,7 +31,7 @@
    <NODE systemname="ReadBack (DX11.Buffer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="ReadBack (DX11.Buffer)" componentmode="Hidden" id="28">
    <BOUNDS type="Node" left="3750" top="3885" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Layout" slicecount="1" values="|float3,float4,uint|">
+   <PIN pinname="Layout" slicecount="1" values="|float3,int,uint|">
    </PIN>
    <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
@@ -43,11 +43,13 @@
    </BOUNDS>
    <PIN pinname="Output 3" visible="1">
    </PIN>
+   <PIN pinname="Output 2" visible="1">
+   </PIN>
    </NODE>
    <NODE systemname="SplitAt (Value)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="SplitAt (Value)" componentmode="Hidden" id="27">
    <BOUNDS type="Node" left="4380" top="4410" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Input" visible="1" slicecount="9" values="0.611660957336426,-0.200350016355515,0.0208180919289589,0,0.802851855754852,0.201676800847054,1,0,-0.421390205621719">
+   <PIN pinname="Input" visible="1">
    </PIN>
    <PIN pinname="Index" visible="1" slicecount="1" values="10000">
    </PIN>
@@ -77,7 +79,7 @@
    <NODE systemname="SplitAt (Value)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="SplitAt (Value)" componentmode="Hidden" id="25">
    <BOUNDS type="Node" left="5775" top="4410" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Input" visible="1" slicecount="12" values="0,1,0.306058973073959,1,-0.10543542355299,0,0.973941028118134,1,-0.0224630981683731,0.0643668845295906,0,0.253941029310226">
+   <PIN pinname="Input" visible="1">
    </PIN>
    <PIN pinname="Index" visible="1" slicecount="1" values="10000">
    </PIN>
@@ -97,12 +99,6 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="24" srcpinname="Output" dstnodeid="25" dstpinname="Index">
-   </LINK>
-   <LINK srcnodeid="28" srcpinname="Output 2XYZW" dstnodeid="25" dstpinname="Input" linkstyle="VHV" hiddenwhenlocked="0">
-   <LINKPOINT x="4185" y="4268">
-   </LINKPOINT>
-   <LINKPOINT x="5775" y="4268">
-   </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="22" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="5070" top="3390" width="285" height="240">
@@ -129,7 +125,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="6450" top="3390" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="4">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -165,7 +161,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="4650" top="10845" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input Enum" slicecount="1" visible="1" values="Int16">
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="Single">
    </PIN>
    <PIN pinname="Output Enum" visible="1">
    </PIN>
@@ -174,36 +170,6 @@
    <LINKPOINT x="4860" y="11170">
    </LINKPOINT>
    <LINKPOINT x="4260" y="11180">
-   </LINKPOINT>
-   </LINK>
-   <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="1">
-   <BOUNDS type="Node" left="4410" top="6510" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input 2" slicecount="1" visible="1" values="10000">
-   </PIN>
-   <PIN pinname="Input 1" visible="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="0" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="4680" top="5970" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="4680" top="5970" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1000">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="0" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Input 2" linkstyle="VHV" hiddenwhenlocked="0">
-   <LINKPOINT x="5000" y="6345">
-   </LINKPOINT>
-   <LINKPOINT x="4420" y="6345">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="29" srcpinname="Output 1" dstnodeid="26" dstpinname="Input 1" linkstyle="Bezier">
@@ -413,17 +379,11 @@
    <NODE systemname="Count (Value)" nodename="Count (Value)" componentmode="Hidden" id="152">
    <BOUNDS type="Node" left="4050" top="7020" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Input" visible="1">
+   <PIN pinname="Input" visible="1" slicecount="2000" values="">
    </PIN>
    <PIN pinname="Count" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="1" srcpinname="Output" dstnodeid="152" dstpinname="Input" linkstyle="VHV">
-   <LINKPOINT x="4490" y="6885">
-   </LINKPOINT>
-   <LINKPOINT x="4030" y="6885">
-   </LINKPOINT>
-   </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="156" systemname="IOBox (String)">
    <BOUNDS type="Node" left="870" top="7530" width="2925" height="270">
    </BOUNDS>
@@ -485,7 +445,7 @@
    <LINK srcnodeid="160" srcpinname="Y Output Value" dstnodeid="157" dstpinname="Append">
    </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="161" systemname="IOBox (String)">
-   <BOUNDS type="Box" left="5490" top="9990" width="795" height="240">
+   <BOUNDS type="Box" left="5490" top="9990" width="1305" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="5490" top="9990" width="0" height="0">
    </BOUNDS>
@@ -729,7 +689,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="1455" top="8535" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="736">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="368">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -855,12 +815,12 @@
    <NODE systemname="Zip (Value Bin)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Zip (Value Bin)" componentmode="Hidden" id="189">
    <BOUNDS type="Node" left="4395" top="4905" width="2130" height="270">
    </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="22" srcpinname="Y Output Value" dstnodeid="189" dstpinname="Input 1 Bin Size">
    </LINK>
    <LINK srcnodeid="21" srcpinname="Y Output Value" dstnodeid="189" dstpinname="Input 2 Bin Size">
-   </LINK>
-   <LINK srcnodeid="189" srcpinname="Output" dstnodeid="1" dstpinname="Input 1">
    </LINK>
    <LINK srcnodeid="27" srcpinname="Left" dstnodeid="189" dstpinname="Input 1">
    </LINK>
@@ -871,17 +831,13 @@
    </BOUNDS>
    <BOUNDS type="Box" left="4050" top="7530">
    </BOUNDS>
+   <PIN pinname="Input 2" visible="1" slicecount="2000" values="">
+   </PIN>
    </NODE>
    <LINK srcnodeid="152" srcpinname="Count" dstnodeid="190" dstpinname="Input 1" linkstyle="VHV">
    <LINKPOINT x="4015" y="7460">
    </LINKPOINT>
    <LINKPOINT x="4145" y="7360">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="1" srcpinname="Output" dstnodeid="190" dstpinname="Input 2" linkstyle="VHV">
-   <LINKPOINT x="4320" y="7198">
-   </LINKPOINT>
-   <LINKPOINT x="4545" y="7098">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="190" srcpinname="Output" dstnodeid="20" dstpinname="Input">
@@ -891,5 +847,19 @@
    </LINKPOINT>
    <LINKPOINT x="3390" y="8160">
    </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="28" srcpinname="Output 2" dstnodeid="25" dstpinname="Input" linkstyle="VHV">
+   <LINKPOINT x="4185" y="4268">
+   </LINKPOINT>
+   <LINKPOINT x="5775" y="4268">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="189" srcpinname="Output" dstnodeid="152" dstpinname="Input" linkstyle="VHV">
+   <LINKPOINT x="4410" y="6083">
+   </LINKPOINT>
+   <LINKPOINT x="4080" y="6083">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="189" srcpinname="Output" dstnodeid="190" dstpinname="Input 2">
    </LINK>
    </PATCH>

@@ -1,7 +1,7 @@
 float4x4 tVP: VIEWPROJECTION;
 float2 textureSize;
 
-#include "_PointData.fxh"
+#include "../fxh/_PointData.fxh"
 StructuredBuffer<pointData> pcBuffer;
 
 StructuredBuffer<int> labelBuffer;

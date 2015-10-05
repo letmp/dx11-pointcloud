@@ -2,7 +2,7 @@
 struct pointData
 {
     float3 pos;
-    float4 col;
+    int col;
     int groupId;
 };
 

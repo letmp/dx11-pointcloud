@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Analysis\Centroid (DX11.Pointcloud PointcloudBuffer) help.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="D:\workspace\dev\git\dx11-pointcloud\nodes\modules\Analysis\Centroid (DX11.Pointcloud PointcloudBuffer) help.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="3525" top="1740" width="11640" height="12000">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
@@ -232,18 +232,10 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
-   <NODE id="18" systemname="Blend (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Blend (DX11.RenderState)" componentmode="Hidden" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="1260" top="7380" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Mode" slicecount="1" values="Blend">
-   </PIN>
-   </NODE>
    <NODE id="20" systemname="Box (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Box (DX11.Geometry)" componentmode="Hidden" hiddenwhenlocked="1" managers="">
-   <BOUNDS type="Node" left="2205" top="7755" width="100" height="100">
+   <BOUNDS type="Node" left="2235" top="7755" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="2205" top="7755" width="2400" height="1800">
+   <BOUNDS type="Box" left="2235" top="7755" width="2400" height="1800">
    </BOUNDS>
    <PIN pinname="Geometry Out" visible="1" pintype="Output">
    </PIN>
@@ -261,15 +253,15 @@
    </PIN>
    </NODE>
    <NODE id="23" systemname="AxisAndGrid (DX11)" filename="%VVVV%\packs\dx11\nodes\modules\AxisAndGrid\AxisAndGrid (DX11).v4p" nodename="AxisAndGrid (DX11)" componentmode="Hidden" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="705" top="8295" width="100" height="100">
+   <BOUNDS type="Node" left="735" top="8295" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="705" top="8295">
+   <BOUNDS type="Box" left="735" top="8295">
    </BOUNDS>
    <PIN pinname="Layer" visible="1">
    </PIN>
    </NODE>
    <NODE id="24" systemname="Group (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Group (DX11.Layer)" componentmode="Hidden" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="1680" top="8895" width="780" height="270">
+   <BOUNDS type="Node" left="1710" top="8895" width="780" height="270">
    </BOUNDS>
    <PIN pinname="Layer 2" visible="1" slicecount="1" values="||">
    </PIN>
@@ -277,7 +269,7 @@
    </PIN>
    <PIN pinname="Layer Out" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="1680" top="8895">
+   <BOUNDS type="Box" left="1710" top="8895">
    </BOUNDS>
    <PIN pinname="Input Count" slicecount="1" values="4">
    </PIN>
@@ -287,11 +279,11 @@
    </PIN>
    </NODE>
    <NODE id="25" systemname="Camera (Transform Softimage)" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="2790" top="8895" width="100" height="100">
+   <BOUNDS type="Node" left="2820" top="8895" width="100" height="100">
    </BOUNDS>
    <PIN pinname="View Projection" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="2790" top="8895">
+   <BOUNDS type="Box" left="2820" top="8895">
    </BOUNDS>
    <PIN pinname="Inital Distance" slicecount="1" values="4.56">
    </PIN>
@@ -305,9 +297,9 @@
    <NODE id="26" systemname="Renderer (DX11)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" hiddenwhenlocked="1">
    <BOUNDS type="Window" left="15210" top="1725" width="9150" height="7800">
    </BOUNDS>
-   <BOUNDS type="Node" left="1515" top="9345" width="100" height="100">
+   <BOUNDS type="Node" left="1545" top="9345" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="1515" top="9345" width="6000" height="4500">
+   <BOUNDS type="Box" left="1545" top="9345" width="6000" height="4500">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
@@ -321,31 +313,29 @@
    </PIN>
    </NODE>
    <NODE id="27" systemname="Rasterizer (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Rasterizer (DX11.RenderState)" componentmode="Hidden" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="1260" top="7755" width="100" height="100">
+   <BOUNDS type="Node" left="1290" top="7755" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Render State" visible="1">
+   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Mode" slicecount="1" values="NoCullSimple">
    </PIN>
-   <BOUNDS type="Box" left="1260" top="7755">
+   <BOUNDS type="Box" left="1290" top="7755">
    </BOUNDS>
    </NODE>
-   <LINK srcnodeid="18" srcpinname="Render State" dstnodeid="27" dstpinname="Render State">
-   </LINK>
    <LINK srcnodeid="24" srcpinname="Layer Out" dstnodeid="26" dstpinname="Layers">
    </LINK>
    <LINK srcnodeid="25" srcpinname="View Projection" dstnodeid="26" dstpinname="View">
    </LINK>
    <LINK srcnodeid="35" srcpinname="Output Node" dstnodeid="24" dstpinname="Layer 4" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5975" y="7898">
+   <LINKPOINT x="5985" y="7898">
    </LINKPOINT>
-   <LINKPOINT x="2545" y="7898">
+   <LINKPOINT x="2565" y="7898">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="23" srcpinname="Layer" dstnodeid="24" dstpinname="Layer 1" linkstyle="VHV">
-   <LINKPOINT x="775" y="8730">
+   <LINKPOINT x="805" y="8730">
    </LINKPOINT>
-   <LINKPOINT x="1850" y="8730">
+   <LINKPOINT x="1880" y="8730">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="50">
@@ -529,9 +519,9 @@
    <LINK srcnodeid="17" srcpinname="Group IDs" dstnodeid="40" dstpinname="Y Input Value">
    </LINK>
    <LINK srcnodeid="17" srcpinname="Help Layer" dstnodeid="24" dstpinname="Layer 3" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="4105" y="6613">
+   <LINKPOINT x="4115" y="6613">
    </LINKPOINT>
-   <LINKPOINT x="2570" y="6963">
+   <LINKPOINT x="2590" y="6963">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="42" srcpinname="PointcloudBuffer" dstnodeid="17" dstpinname="PointcloudBuffer" linkstyle="Bezier">
@@ -615,9 +605,9 @@
    </PIN>
    <PIN pinname="Alpha" visible="1" pintype="Input" slicecount="1" values="1">
    </PIN>
-   <BOUNDS type="Node" left="2025" top="8295" width="100" height="100">
+   <BOUNDS type="Node" left="2055" top="8295" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="2025" top="8295" width="4800" height="3600">
+   <BOUNDS type="Box" left="2055" top="8295" width="4800" height="3600">
    </BOUNDS>
    <PIN pinname="PointcloudBuffer" visible="1" pintype="Input" slicecount="1" values="||">
    </PIN>
@@ -643,17 +633,17 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="27" srcpinname="Render State" dstnodeid="21" dstpinname="Render State" linkstyle="VHV">
-   <LINKPOINT x="1320" y="8145">
+   <LINKPOINT x="1350" y="8145">
    </LINKPOINT>
-   <LINKPOINT x="2025" y="8145">
+   <LINKPOINT x="2055" y="8145">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="21" srcpinname="Layer" dstnodeid="24" dstpinname="Layer 2">
    </LINK>
    <LINK srcnodeid="20" srcpinname="Geometry Out" dstnodeid="21" dstpinname="Geometry" linkstyle="VHV">
-   <LINKPOINT x="2815" y="8418">
+   <LINKPOINT x="2845" y="8418">
    </LINKPOINT>
-   <LINKPOINT x="1640" y="7813">
+   <LINKPOINT x="1670" y="7813">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="42" srcpinname="PointcloudBuffer" dstnodeid="21" dstpinname="PointcloudBuffer">

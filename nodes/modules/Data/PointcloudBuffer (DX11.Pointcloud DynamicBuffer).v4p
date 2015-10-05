@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\PointcloudBuffer (DX11.Pointcloud DynamicBuffer).v4p" systemname="Pointcloud (DX11.Buffer)" filename="D:\workspace\dev\packs\KinectToolkitDX11\nodes\modules\IO\Pointcloud (DX11.Buffer).v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="6705" top="885" width="11040" height="11940">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\PointcloudBuffer (DX11.Pointcloud DynamicBuffer).v4p" systemname="Pointcloud (DX11.Buffer)" filename="D:\workspace\dev\packs\KinectToolkitDX11\nodes\modules\IO\Pointcloud (DX11.Buffer).v4p" scrollx="3210" scrolly="0">
+   <BOUNDS type="Window" left="9330" top="1815" width="12750" height="10545">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.8.0">
    </PACK>
@@ -171,7 +171,7 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Color)" componentmode="InABox" id="105" systemname="IOBox (Color)">
-   <BOUNDS type="Box" left="600" top="1860" width="9285" height="240">
+   <BOUNDS type="Box" left="600" top="1860" width="11520" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="600" top="1860" width="0" height="0">
    </BOUNDS>
@@ -319,9 +319,9 @@
    <INFO author="tmp" description="Creates a pointcloud buffer by dynamic 3d and dynamic color buffers." tags="Data">
    </INFO>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="126" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="7710" top="510" width="795" height="240">
+   <BOUNDS type="Box" left="10260" top="510" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="7710" top="510" width="0" height="0">
+   <BOUNDS type="Node" left="10260" top="510" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
@@ -363,9 +363,9 @@
    <LINK srcnodeid="127" srcpinname="Output" dstnodeid="128" dstpinname="Input 1">
    </LINK>
    <LINK srcnodeid="126" srcpinname="Y Output Value" dstnodeid="128" dstpinname="Input 2" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="7725" y="4940">
+   <LINKPOINT x="10260" y="5123">
    </LINKPOINT>
-   <LINKPOINT x="5355" y="5290">
+   <LINKPOINT x="5370" y="5123">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="129" systemname="IOBox (Value Advanced)">
@@ -396,52 +396,10 @@
    </NODE>
    <LINK srcnodeid="130" srcpinname="Stride" dstnodeid="36" dstpinname="Y Input Value">
    </LINK>
-   <NODE systemname="Data_CS_BuildPcb_DynamicBuffer (DX11.Effect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\dx11\Data_CS_BuildPcb_DynamicBuffer.fx" nodename="Data_CS_BuildPcb_DynamicBuffer (DX11.Effect)" componentmode="Hidden" id="125">
-   <BOUNDS type="Node" left="1335" top="7065" width="5820" height="270">
-   </BOUNDS>
-   <PIN pinname="IdOffset" visible="1">
-   </PIN>
-   <PIN pinname="Enabled" visible="1" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Layer" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="29" srcpinname="Geometry Out" dstnodeid="125" dstpinname="Geometry">
-   </LINK>
-   <LINK srcnodeid="44" srcpinname="Output Node" dstnodeid="125" dstpinname="Transform In" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="1530" y="3908">
-   </LINKPOINT>
-   <LINKPOINT x="3270" y="3908">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="120" srcpinname="Output Node" dstnodeid="125" dstpinname="Position Buffer" hiddenwhenlocked="1" linkstyle="Bezier">
-   <LINKPOINT x="4950" y="3900">
-   </LINKPOINT>
-   <LINKPOINT x="5190" y="3900">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="121" srcpinname="Output Node" dstnodeid="125" dstpinname="Color Buffer" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="6105" y="3908">
-   </LINKPOINT>
-   <LINKPOINT x="5850" y="3908">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="123" srcpinname="Y Output Value" dstnodeid="125" dstpinname="elementcount" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="2710" y="3908">
-   </LINKPOINT>
-   <LINKPOINT x="4175" y="3908">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="126" srcpinname="Y Output Value" dstnodeid="125" dstpinname="IdOffset" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="7710" y="3908">
-   </LINKPOINT>
-   <LINKPOINT x="3945" y="3908">
-   </LINKPOINT>
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="131" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="9750" top="510" width="315" height="240">
+   <BOUNDS type="Box" left="11250" top="510" width="315" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="9750" top="510" width="0" height="0">
+   <BOUNDS type="Node" left="11250" top="510" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
@@ -463,31 +421,115 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="131" srcpinname="Y Output Value" dstnodeid="116" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="9735" y="4950">
+   <LINKPOINT x="11250" y="5018">
    </LINKPOINT>
-   <LINKPOINT x="2070" y="5100">
+   <LINKPOINT x="2070" y="5018">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Validator (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Validator (DX11.Layer)" componentmode="Hidden" id="132">
    <BOUNDS type="Node" left="1335" top="7785" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Layer In" visible="1">
+   <PIN pinname="Layer In" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Layer Out" visible="1">
    </PIN>
    <PIN pinname="Enabled" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="125" srcpinname="Layer" dstnodeid="132" dstpinname="Layer In">
-   </LINK>
    <LINK srcnodeid="132" srcpinname="Layer Out" dstnodeid="116" dstpinname="Layer">
    </LINK>
    <LINK srcnodeid="131" srcpinname="Y Output Value" dstnodeid="132" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="9750" y="4253">
+   <LINKPOINT x="11250" y="4253">
    </LINKPOINT>
    <LINKPOINT x="2040" y="4253">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="116" srcpinname="Buffers" dstnodeid="37" dstpinname="Input Node">
+   </LINK>
+   <NODE systemname="Data_CS_BuildPcb_DynamicBuffer (DX11.Effect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\dx11\Data_CS_BuildPcb_DynamicBuffer.fx" nodename="Data_CS_BuildPcb_DynamicBuffer (DX11.Effect)" componentmode="Hidden" id="133">
+   <BOUNDS type="Node" left="1335" top="7065" width="7095" height="270">
+   </BOUNDS>
+   <PIN pinname="Encoded Color Buffer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="useEncodedColor" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="29" srcpinname="Geometry Out" dstnodeid="133" dstpinname="Geometry">
+   </LINK>
+   <LINK srcnodeid="44" srcpinname="Output Node" dstnodeid="133" dstpinname="Transform In" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="1530" y="3908">
+   </LINKPOINT>
+   <LINKPOINT x="3270" y="3908">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="120" srcpinname="Output Node" dstnodeid="133" dstpinname="Position Buffer" hiddenwhenlocked="1" linkstyle="Bezier">
+   <LINKPOINT x="4950" y="3908">
+   </LINKPOINT>
+   <LINKPOINT x="5820" y="3908">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="121" srcpinname="Output Node" dstnodeid="133" dstpinname="Color Buffer" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="6120" y="3908">
+   </LINKPOINT>
+   <LINKPOINT x="6465" y="3908">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="123" srcpinname="Y Output Value" dstnodeid="133" dstpinname="elementcount" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="2655" y="3900">
+   </LINKPOINT>
+   <LINKPOINT x="4545" y="3900">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="126" srcpinname="Y Output Value" dstnodeid="133" dstpinname="IdOffset" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="10245" y="3908">
+   </LINKPOINT>
+   <LINKPOINT x="3960" y="3908">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="133" srcpinname="Layer" dstnodeid="132" dstpinname="Layer In">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="134" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="7140" top="510" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7140" top="510" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Encoded Color Buffer|">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="134" srcpinname="Output Node" dstnodeid="133" dstpinname="Encoded Color Buffer" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="7155" y="3900">
+   </LINKPOINT>
+   <LINKPOINT x="7125" y="3900">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="135" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="8775" top="510" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="8775" top="510" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Use Encoded Color|">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="135" srcpinname="Y Output Value" dstnodeid="133" dstpinname="useEncodedColor" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="8775" y="4028">
+   </LINKPOINT>
+   <LINKPOINT x="5220" y="4028">
+   </LINKPOINT>
    </LINK>
    </PATCH>

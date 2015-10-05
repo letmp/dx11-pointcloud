@@ -3,8 +3,10 @@
 //@tags: DX11, Kinect, Pointcloud
 //@credits: vvvv
 
-#include "_PointData.fxh"
+#include "../fxh/_PointData.fxh"
 StructuredBuffer<pointData> pcBuffer;
+
+#include "../fxh/Helper.fxh"
 
 cbuffer cbPerDraw : register( b0 )
 {
@@ -34,13 +36,6 @@ struct vs2ps
 
 /* ===================== VERTEX SHADER ===================== */
 
-float4 randColor(in float id) {
-    float noiseX = (frac(sin(dot(float2(id,id), float2(12.9898,78.233) 	 )) * 43758.5453));
-	float noiseY = (frac(sin(dot(float2(id,id), float2(12.9898,78.233) * 2.0)) * 43758.5453));
-    float noiseZ = sqrt(1 - noiseX * noiseX);
-    return float4(noiseX, noiseY,noiseZ,1);
-}
-
 vs2ps VS(vsInput input)
 {
     vs2ps output = (vs2ps)0;
@@ -55,7 +50,7 @@ vs2ps VS(vsInput input)
 	output.pos = mul(p,mul(tW,tVP));
 	
 	
-	output.col = pcBuffer[idx].col;
+	output.col = decodeColor( pcBuffer[idx].col );
 	output.col_pos = float4(pcBuffer[idx].pos,1);
 	output.col_group = randColor(pcBuffer[idx].groupId);
 	

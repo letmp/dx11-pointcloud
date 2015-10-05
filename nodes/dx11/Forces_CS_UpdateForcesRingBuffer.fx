@@ -1,10 +1,10 @@
 ByteAddressBuffer InputCountBuffer;
 StructuredBuffer<uint> updatedBufferIn;
 
-#include "_PointData.fxh"
+#include "../fxh/_PointData.fxh"
 StructuredBuffer<pointData> pcBufferIn;
 
-#include "_ForceData.fxh"
+#include "../fxh/_ForceData.fxh"
 RWStructuredBuffer<forceData> rwForceBuffer : BACKBUFFER;
 
 bool Update;

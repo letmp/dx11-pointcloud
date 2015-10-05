@@ -103,7 +103,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="5520" top="2820" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" visible="1" values="..\..\dx11\_PointData.fxh">
+   <PIN pinname="Input String" slicecount="1" visible="1" values="..\..\fxh\_PointData.fxh">
    </PIN>
    <PIN pinname="Default" slicecount="1" values="file.txt">
    </PIN>

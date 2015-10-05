@@ -175,7 +175,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="3840" top="5520" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" visible="1" values="..\..\dx11\_PointData.fxh">
+   <PIN pinname="Input String" slicecount="1" visible="1" values="..\..\fxh\_PointData.fxh">
    </PIN>
    <PIN pinname="Default" slicecount="1" values="file.txt">
    </PIN>
@@ -319,7 +319,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="9840" top="2055" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" visible="1" values="..\..\dx11\_ForceData.fxh">
+   <PIN pinname="Input String" slicecount="1" visible="1" values="..\..\fxh\_ForceData.fxh">
    </PIN>
    <PIN pinname="Default" slicecount="1" values="file.txt">
    </PIN>

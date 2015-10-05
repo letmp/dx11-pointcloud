@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Analysis\Bounds (DX11.Pointcloud PointcloudBuffer) help.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="D:\workspace\dev\git\dx11-pointcloud\nodes\modules\Analysis\Bounds (DX11.Pointcloud PointcloudBuffer) help.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="2850" top="1845" width="12090" height="12540">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
@@ -43,7 +43,7 @@
    <NODE systemname="Rasterizer (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Rasterizer (DX11.RenderState)" componentmode="Hidden" id="25" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="1020" top="8715" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Render State" visible="1">
+   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Mode" slicecount="1" values="NoCullSimple">
    </PIN>
@@ -55,7 +55,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="1275" top="10305" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="14955" top="1860" width="9150" height="7800">
+   <BOUNDS type="Window" left="34875" top="4890" width="9150" height="7800">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
@@ -154,16 +154,6 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
-   <NODE systemname="Blend (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Blend (DX11.RenderState)" componentmode="Hidden" id="16" hiddenwhenlocked="1">
-   <BOUNDS type="Node" left="1020" top="8340" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Mode" slicecount="1" values="Blend">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="16" srcpinname="Render State" dstnodeid="25" dstpinname="Render State">
-   </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="7" systemname="IOBox (String)">
    <BOUNDS type="Node" left="7200" top="6795" width="1365" height="270">
    </BOUNDS>
@@ -382,6 +372,8 @@
    <PIN pinname="Lightness" slicecount="1" values="0.5">
    </PIN>
    <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Alpha" slicecount="1" values="1">
    </PIN>
    </NODE>
    <NODE systemname="LinearSpread (Spreads)" nodename="LinearSpread (Spreads)" componentmode="Hidden" id="45">

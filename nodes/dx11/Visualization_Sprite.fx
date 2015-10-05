@@ -3,8 +3,10 @@
 //@tags: DX11.Pointcloud
 //@credits: vvvv
 
-#include "_PointData.fxh"
+#include "../fxh/_PointData.fxh"
 StructuredBuffer<pointData> pcBuffer;
+
+#include "../fxh/Helper.fxh"
 
 Texture2D texture2d <string uiname="Texture";>;
 
@@ -49,13 +51,6 @@ struct vs2ps
 
 /* ===================== VERTEX SHADER ===================== */
 
-float4 randColor(in float id) {
-	float noiseX = (frac(sin(dot(float2(id,id), float2(12.9898,78.233) 	 )) * 43758.5453));
-	float noiseY = (frac(sin(dot(float2(id,id), float2(12.9898,78.233) * 2.0)) * 43758.5453));
-	float noiseZ = sqrt(1 - noiseX * noiseX);
-	return float4(noiseX, noiseY,noiseZ,1);
-}
-
 vs2ps VS_SPRITE(vsInput input)
 {
 	vs2ps output = (vs2ps)0;
@@ -72,7 +67,7 @@ vs2ps VS_SPRITE(vsInput input)
 	
 	output.pos =  mul(finalPos, tWVP);
 
-	output.col = pcBuffer[idx].col;
+	output.col = decodeColor( pcBuffer[idx].col );
 	output.col_pos.xyz = pcBuffer[idx].pos;
 	output.col_group = randColor(pcBuffer[idx].groupId);
 	output.TexCd = input.TexCd;

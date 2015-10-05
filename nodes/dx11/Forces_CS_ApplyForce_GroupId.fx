@@ -1,7 +1,7 @@
-#include "_PointData.fxh"
+#include "../fxh/_PointData.fxh"
 RWStructuredBuffer<pointData> rwPcBufferOut : BACKBUFFER;
 
-#include "_ForceData.fxh"
+#include "../fxh/_ForceData.fxh"
 StructuredBuffer<forceData> rwForceBufferIn;
 
 int groupId = -1;

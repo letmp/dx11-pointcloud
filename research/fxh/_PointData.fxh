@@ -1,9 +1,9 @@
-//stride: 32
+//stride: 20
 
 struct pointData
 {
     float3 pos;
-    float4 col;
+    int col;
     int groupId;
 };
 
@@ -16,4 +16,5 @@ struct pointData
 // 		- dx11/Data_CS_BuildPcb_Kinect.fx
 // 		- dx11/Data_CS_BuildPcb_Layer.fx
 // * you have to update plugins/LinkedList/effects/LinkedList.fx and recompile LinkedListNode
-// * you have to update plugins/RwToAppendBuffer/effects/RwToAppendBuffer.fx and recompile RwToAppendBufferNode
+// * you have to update plugins/RingBuffer/effects/RingBuffer.fx and recompile RingBuffer
+// * you have to update plugins/RingBufferIndexing/effects/RingBufferIndexing.fx and recompile RingBufferIndexing

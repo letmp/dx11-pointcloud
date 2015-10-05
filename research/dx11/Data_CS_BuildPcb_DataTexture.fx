@@ -8,8 +8,10 @@ SamplerState sPoint : IMMUTABLE
     AddressV = Border;
 };
 
-#include "_PointData.fxh"
+#include "../fxh/_PointData.fxh"
 AppendStructuredBuffer<pointData> pcBuffer : BACKBUFFER;
+
+#include "../fxh/Helper.fxh"
 
 //==============================================================================
 //COMPUTE SHADER ===============================================================
@@ -27,7 +29,7 @@ void CSBuildPointcloudBuffer( uint3 DTid : SV_DispatchThreadID )
 	if(pos.x != 0 && pos.y != 0 && pos.z != 0){
 		sX = uv[DTid.x + elementcount].x;
 		sY = uv[DTid.x + elementcount].y;
-		float4 col =  tex.SampleLevel(sPoint,float2(sX , sY),0);
+		int col =  encodeColor( tex.SampleLevel(sPoint,float2(sX , sY),0) );
 		
 		sX = uv[DTid.x].x;
 		sY = uv[DTid.x].y;

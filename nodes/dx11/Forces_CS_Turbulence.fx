@@ -1,11 +1,10 @@
-#include "_ForceData.fxh"
+#include "../fxh/_ForceData.fxh"
 RWStructuredBuffer<forceData> rwForceBuffer : BACKBUFFER;
 StructuredBuffer<uint> updatedBufferIn;
 
 int groupId = -1;
 
-//Nice 3D-Perlin-Noise by dottore == natan sinigaglia
-#include "_NoiseFunction.fxh"
+#include "../fxh/NoiseFunction.fxh"
 
 SamplerState sPoint : IMMUTABLE
 {
