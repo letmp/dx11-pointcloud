@@ -76,6 +76,10 @@ float4 PS_RGB(vs2ps input): SV_Target
 	float4 col = input.col * cAmb;
     return col;
 }
+float4 PS_COLOR(vs2ps input): SV_Target
+{
+    return cAmb;
+}
 
 float4 PS_POS(vs2ps input): SV_Target
 {
@@ -105,6 +109,15 @@ technique10 RGB
 	{
 		SetVertexShader( CompileShader( vs_4_0, VS() ) );
 		SetPixelShader( CompileShader( ps_4_0, PS_RGB() ) );
+	}
+}
+
+technique10 Color
+{
+	pass P0
+	{
+		SetVertexShader( CompileShader( vs_4_0, VS() ) );
+		SetPixelShader( CompileShader( ps_4_0, PS_COLOR() ) );
 	}
 }
 
