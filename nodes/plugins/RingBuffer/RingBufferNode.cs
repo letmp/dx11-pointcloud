@@ -58,7 +58,7 @@ namespace RingBuffer
         private DX11ShaderInstance shader;
         private DX11Resource<DX11RawBuffer> bOffset;
         private DX11Resource<IDX11RWStructureBuffer> bCounter;
-        private static double currentFrame;
+        private double currentFrame;
 
         [Import()]
         protected IPluginHost FHost;
