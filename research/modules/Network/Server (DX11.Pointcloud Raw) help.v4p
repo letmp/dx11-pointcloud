@@ -1,0 +1,313 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
+   <PATCH nodename="D:\workspace\dev\git\dx11-pointcloud\research\modules\Network\Server (DX11.Pointcloud Raw) help.v4p" scrollx="0" scrolly="0" systemname="Client (DX11.Pointcloud Network)" filename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\Client (DX11.Pointcloud Network).v4p">
+   <BOUNDS type="Window" left="3465" top="390" width="10485" height="7065">
+   </BOUNDS>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="165" top="225" width="5100" height="450">
+   </BOUNDS>
+   <BOUNDS type="Box" left="165" top="225" width="4260" height="405">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|Server (DX11.Pointcloud Raw)|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" visible="1" values="14">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="2" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="165" top="720" width="5100" height="600">
+   </BOUNDS>
+   <BOUNDS type="Box" left="165" top="720" width="5100" height="330">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="||">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="4" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="7200" top="225" width="3840" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7200" top="225" width="2460" height="945">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|copyright: intolight 2015&cr;&lf;Creative Commons 4.0 BY-NC-SA&cr;&lf;&cr;&lf;contact: robert@intolight.de|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="8" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="1455" top="6000" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1455" top="6000" width="6000" height="4500">
+   </BOUNDS>
+   <BOUNDS type="Window" left="14070" top="375" width="9420" height="7800">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Depth Buffer Mode" slicecount="1" values="Standard">
+   </PIN>
+   <PIN pinname="Depth Buffer Format" slicecount="1" values="D32_Float">
+   </PIN>
+   </NODE>
+   <NODE systemname="Camera (Transform Softimage)" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden" id="7" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="2730" top="5550" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="View Projection" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="2730" top="5550">
+   </BOUNDS>
+   <PIN pinname="Inital Distance" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Initial Pitch" slicecount="1" values="0.07">
+   </PIN>
+   <PIN pinname="Initial Yaw" slicecount="1" values="-0.06">
+   </PIN>
+   <PIN pinname="Initial Interest" visible="1" slicecount="3" values="0,0,0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="View Projection" dstnodeid="8" dstpinname="View">
+   </LINK>
+   <NODE systemname="Group (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Group (DX11.Layer)" componentmode="Hidden" id="6" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="1620" top="5550" width="780" height="270">
+   </BOUNDS>
+   <PIN pinname="Layer 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="1620" top="5550">
+   </BOUNDS>
+   <PIN pinname="Input Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Layer 3" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="AxisAndGrid (DX11)" filename="%VVVV%\packs\dx11\nodes\modules\AxisAndGrid\AxisAndGrid (DX11).v4p" nodename="AxisAndGrid (DX11)" componentmode="Hidden" id="5" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="675" top="4950" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="675" top="4950">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Layer" dstnodeid="6" dstpinname="Layer 1" linkstyle="VHV">
+   <LINKPOINT x="735" y="5385">
+   </LINKPOINT>
+   <LINKPOINT x="1800" y="5385">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Layer Out" dstnodeid="8" dstpinname="Layers">
+   </LINK>
+   <PACK Name="addonpack" Version="33.8.0">
+   </PACK>
+   <INFO author="" description="" tags="">
+   </INFO>
+   <NODE systemname="PerfMeter (DX11.Debug)" filename="%VVVV%\packs\dx11\nodes\modules\PerfMeter (DX11.Debug).v4p" nodename="PerfMeter (DX11.Debug)" componentmode="Hidden" id="41" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="3810" top="4950" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="3810" top="4950">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="41" srcpinname="Layer" dstnodeid="6" dstpinname="Layer 3" linkstyle="VHV">
+   <LINKPOINT x="3660" y="5370">
+   </LINKPOINT>
+   <LINKPOINT x="2370" y="5370">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="44" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="3390" top="1740" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3390" top="1740" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="4444">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="47" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="3390" top="2145" width="885" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3390" top="2145" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="50" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="4725" top="1320" width="1080" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4725" top="1320" width="1590" height="240">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; Local IP|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="53" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="4725" top="2145" width="1920" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4725" top="2145" width="1920" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; enable/disable server|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE systemname="Constant (DX11.Pointcloud PointcloudBuffer)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Visualization\Constant (DX11.Pointcloud PointcloudBuffer).v4p" nodename="Constant (DX11.Pointcloud PointcloudBuffer)" componentmode="Hidden" id="62" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="1980" top="4950" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Geometry" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="PointcloudBuffer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="1980" top="4950">
+   </BOUNDS>
+   <PIN pinname="Technique" slicecount="1" values="RGB">
+   </PIN>
+   <BOUNDS type="Window" left="30585" top="5835" width="11730" height="4545">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="62" srcpinname="Layer" dstnodeid="6" dstpinname="Layer 2">
+   </LINK>
+   <NODE systemname="Box (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Box (DX11.Geometry)" componentmode="Hidden" id="63" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="1890" top="4470" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="SizeXYZ" slicecount="3" values="0.01,0.01,0.01">
+   </PIN>
+   <PIN pinname="Geometry Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="63" srcpinname="Geometry Out" dstnodeid="62" dstpinname="Geometry" linkstyle="VHV">
+   <LINKPOINT x="1950" y="4838">
+   </LINKPOINT>
+   <LINKPOINT x="2145" y="4838">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="67" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="3390" top="1320" width="885" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3390" top="1320" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="1" values="localhost">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="localhost">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="68" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="4710" top="1740" width="1080" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4710" top="1740" width="1590" height="240">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; Local Port|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE systemname="Server (DX11.Pointcloud Raw)" filename="Server (DX11.Pointcloud Raw).v4p" nodename="Server (DX11.Pointcloud Raw)" componentmode="Hidden" id="61">
+   <BOUNDS type="Node" left="2235" top="2745" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Window" left="3870" top="0" width="9915" height="7410">
+   </BOUNDS>
+   <PIN pinname="PointcloudBuffer" visible="1">
+   </PIN>
+   <PIN pinname="Server" visible="1">
+   </PIN>
+   <PIN pinname="Enable" visible="1">
+   </PIN>
+   <PIN pinname="Raw Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="44" srcpinname="Y Output Value" dstnodeid="61" dstpinname="Local Port" linkstyle="Bezier">
+   <LINKPOINT x="3375" y="2348">
+   </LINKPOINT>
+   <LINKPOINT x="2640" y="2348">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="47" srcpinname="Y Output Value" dstnodeid="61" dstpinname="Enable" linkstyle="Bezier">
+   <LINKPOINT x="3390" y="2550">
+   </LINKPOINT>
+   <LINKPOINT x="2985" y="2550">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="67" srcpinname="Output String" dstnodeid="61" dstpinname="Server" linkstyle="Bezier">
+   <LINKPOINT x="3375" y="2145">
+   </LINKPOINT>
+   <LINKPOINT x="2295" y="2145">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="FromRaw (DX11.Pointcloud Kinect)" filename="..\Data\FromRaw (DX11.Pointcloud Kinect).v4p" nodename="FromRaw (DX11.Pointcloud Kinect)" componentmode="Hidden" id="82">
+   <BOUNDS type="Node" left="2475" top="3660" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2475" top="3660" width="8505" height="5890">
+   </BOUNDS>
+   <BOUNDS type="Window" left="13740" top="4260" width="6150" height="6480">
+   </BOUNDS>
+   <PIN pinname="Raw Input" visible="1">
+   </PIN>
+   <PIN pinname="PointcloudBuffer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="61" srcpinname="Raw Output" dstnodeid="82" dstpinname="Raw Input" linkstyle="Bezier">
+   <LINKPOINT x="2295" y="3373">
+   </LINKPOINT>
+   <LINKPOINT x="3360" y="3273">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="82" srcpinname="PointcloudBuffer" dstnodeid="62" dstpinname="PointcloudBuffer">
+   </LINK>
+   <NODE systemname="FromRaw (DX11.Pointcloud PointcloudBuffer)" filename="..\Data\FromRaw (DX11.Pointcloud PointcloudBuffer).v4p" nodename="FromRaw (DX11.Pointcloud PointcloudBuffer)" componentmode="Hidden" id="81">
+   <BOUNDS type="Node" left="1275" top="3660" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1275" top="3660" width="7815" height="6810">
+   </BOUNDS>
+   <BOUNDS type="Window" left="-1" top="-1" width="7815" height="6810">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="61" srcpinname="Raw Output" dstnodeid="81" dstpinname="Raw Input" linkstyle="Bezier">
+   <LINKPOINT x="2220" y="3380">
+   </LINKPOINT>
+   <LINKPOINT x="1335" y="3280">
+   </LINKPOINT>
+   </LINK>
+   </PATCH>
