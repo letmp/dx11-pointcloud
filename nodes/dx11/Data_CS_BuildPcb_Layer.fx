@@ -29,7 +29,7 @@ AppendStructuredBuffer<pointData> pcBuffer : BACKBUFFER;
 [numthreads(8, 8, 1)]
 void CSBuildPointcloudBuffer( uint3 i : SV_DispatchThreadID )
 {
-	if (i.x >= asuint(Resolution.x) || i.y >= asuint(Resolution.y)) { return; }
+	if (i.x >= (uint)Resolution.x || i.y >= (uint) Resolution.y) { return; }
 	
 	float2 coord = i.xy / Resolution;
 	float4 col = texRGB.SampleLevel(sPoint,coord,0);

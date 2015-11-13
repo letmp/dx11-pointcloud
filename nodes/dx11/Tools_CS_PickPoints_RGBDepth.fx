@@ -17,7 +17,7 @@ SamplerState sPoint : IMMUTABLE
 [numthreads(1, 1, 1)]
 void CS( uint3 i : SV_DispatchThreadID)
 { 
-	if (i.x >=  asuint(count)) { return;}
+	if (i.x >=  (uint) count ) { return;}
 	float2 coords = texRGBDepth.SampleLevel(sPoint,uv[i.x],0).rg;
 	
 	float depth =  texDepth.SampleLevel(sPoint,coords,0).r * 65.535 ;

@@ -31,7 +31,7 @@ void CSBuildPointcloudBuffer( uint3 i : SV_DispatchThreadID )
 {
 	uint w,h, dummy;
 	texDepth.GetDimensions(0,w,h,dummy);
-	if (i.x >= asuint(Resolution.x) || i.y >= asuint(Resolution.y)) { return; }
+	if (i.x >= (uint) Resolution.x || i.y >= (uint) Resolution.y) { return; }
 	
 	float2 coord = i.xy * float2(w / Resolution.x, h / Resolution.y) / float2(w,h);
 	float depth =  texDepth.SampleLevel(sPoint, coord,0 ).r * 65.535 ;

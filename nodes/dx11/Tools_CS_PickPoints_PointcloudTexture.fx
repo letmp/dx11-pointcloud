@@ -14,7 +14,7 @@ SamplerState sPoint : IMMUTABLE
 [numthreads(1, 1, 1)]
 void CS( uint3 i : SV_DispatchThreadID)
 { 
-	if (i.x >=  asuint(count)) { return;}
+	if (i.x >=  (uint) count ) { return;}
 	float3 pos = posTex.SampleLevel(sPoint,uv[i.x],0).xyz;
 	rwbuffer[i.x] = pos;
 }

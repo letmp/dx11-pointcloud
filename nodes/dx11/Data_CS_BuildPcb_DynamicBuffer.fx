@@ -30,7 +30,7 @@ AppendStructuredBuffer<pointData> pcBuffer : BACKBUFFER;
 void CSBuildPointcloudBuffer( uint3 DTid : SV_DispatchThreadID )
 {
 	
-	if(DTid.x >= asuint(elementcount)){return;}
+	if(DTid.x >= (uint) elementcount){return;}
 	
 	// ======= SET POSITION =======
 	float4 pos;
