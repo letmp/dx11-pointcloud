@@ -1,4 +1,4 @@
-//stride: 48
+//stride: 52
 
 struct forceData
 {	
@@ -8,4 +8,5 @@ struct forceData
 	float mass;
 	int age;
 	int groupId;
+	bool alive;
 };

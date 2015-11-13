@@ -15,7 +15,7 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 	rwPcBufferOut.GetDimensions(cnt,stride);
 	if (i.x >= cnt) { return; }
 	
-	if(Apply){
+	if (Apply && rwForceBufferIn[i.x].alive == true) {
 		pointData pd = rwPcBufferOut[i.x];
 		if ( groupId == -1 || pd.groupId == groupId){
 			forceData fd = rwForceBufferIn[i.x];			

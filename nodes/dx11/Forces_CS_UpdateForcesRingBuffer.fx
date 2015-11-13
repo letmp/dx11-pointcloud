@@ -26,7 +26,7 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 		float3 acceleration = float3(0,0,0);
 		float mass = 1.0;
 		int age = 0;
-		forceData fd = {position, velocity, acceleration, mass, age, groupId};
+		forceData fd = {position, velocity, acceleration, mass, age, groupId, true};
 		rwForceBuffer[i.x]  = fd;
 	}
 	
@@ -35,7 +35,7 @@ void CS_Apply( uint3 i : SV_DispatchThreadID)
 		float3 acceleration = float3(0,0,0);
 		float mass = 1.0;
 		int age = 0;
-		forceData fd = {position, velocity, acceleration, mass, age, groupId};
+		forceData fd = {position, velocity, acceleration, mass, age, groupId, false};
 		rwForceBuffer[i.x]  = fd;
 	}
 	
