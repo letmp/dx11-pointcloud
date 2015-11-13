@@ -1,8 +1,8 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Filters\Filter (DX11.Pointcloud Transform).v4p" systemname="PointcloudFilter (KinectToolkit.Filter)" filename="C:\apps\code\vvvv_45beta33.3_x64\packs\KinectToolkitDX11\nodes\modules\Filters\PointcloudFilter (KinectToolkit.Filter).v4p" scrollx="0" scrolly="0">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta34.2_x64\packs\dx11.pointcloud\nodes\modules\Filters\Filter (DX11.Pointcloud Transform).v4p" systemname="PointcloudFilter (KinectToolkit.Filter)" filename="C:\apps\code\vvvv_45beta33.3_x64\packs\KinectToolkitDX11\nodes\modules\Filters\PointcloudFilter (KinectToolkit.Filter).v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="6705" top="885" width="12615" height="8805">
    </BOUNDS>
-   <PACK Name="addonpack" Version="33.8.0">
+   <PACK Name="addonpack" Version="34.1.0">
    </PACK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="6" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="2550" top="7245" width="795" height="240">
@@ -398,42 +398,6 @@
    </LINK>
    <LINK srcnodeid="0" srcpinname="Buffer Out" dstnodeid="36" dstpinname="InputCountBuffer">
    </LINK>
-   <NODE systemname="GS_SuppressDiagonals (DX11.Effect)" filename="%VVVV%\packs\dx11-pointcloud\nodes\geom11\GS_SuppressDiagonals.fx" nodename="GS_SuppressDiagonals (DX11.Effect)" componentmode="Hidden" id="27">
-   <BOUNDS type="Node" left="8040" top="4320" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Render State" visible="1">
-   </PIN>
-   <PIN pinname="Geometry" visible="1">
-   </PIN>
-   <PIN pinname="Color" visible="1">
-   </PIN>
-   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Layer" visible="1">
-   </PIN>
-   <PIN pinname="Technique" slicecount="1" values="RenderNoDiagonals">
-   </PIN>
-   <BOUNDS type="Box" left="8040" top="4320">
-   </BOUNDS>
-   </NODE>
-   <LINK srcnodeid="19" srcpinname="Render State" dstnodeid="27" dstpinname="Render State" linkstyle="VHV">
-   <LINKPOINT x="7860" y="3613">
-   </LINKPOINT>
-   <LINKPOINT x="8340" y="3813">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="11" srcpinname="Geometry Out" dstnodeid="27" dstpinname="Geometry">
-   </LINK>
-   <LINK srcnodeid="16" srcpinname="Color Output" dstnodeid="27" dstpinname="Color">
-   </LINK>
-   <LINK srcnodeid="8" srcpinname="Output Node" dstnodeid="27" dstpinname="Transform In" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5580" y="2435">
-   </LINKPOINT>
-   <LINKPOINT x="8175" y="2635">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="27" srcpinname="Layer" dstnodeid="12" dstpinname="Input Node">
-   </LINK>
    <NODE systemname="AvoidNIL (Node)" filename="%VVVV%\lib\nodes\modules\Node\AvoidNIL (Node).v4p" nodename="AvoidNIL (Node)" componentmode="Hidden" id="46">
    <BOUNDS type="Node" left="4755" top="1305" width="100" height="100">
    </BOUNDS>
@@ -517,5 +481,41 @@
    </LINKPOINT>
    <LINKPOINT x="2850" y="6270">
    </LINKPOINT>
+   </LINK>
+   <NODE systemname="GS_SuppressDiagonals (DX11.Effect)" filename="%VVVV%\packs\dx11.pointcloud\nodes\geom11\GS_SuppressDiagonals.fx" nodename="GS_SuppressDiagonals (DX11.Effect)" componentmode="Hidden" id="27">
+   <BOUNDS type="Node" left="8040" top="4320" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Render State" visible="1">
+   </PIN>
+   <PIN pinname="Geometry" visible="1">
+   </PIN>
+   <PIN pinname="Color" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Technique" slicecount="1" values="RenderNoDiagonals">
+   </PIN>
+   <BOUNDS type="Box" left="8040" top="4320">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="19" srcpinname="Render State" dstnodeid="27" dstpinname="Render State" linkstyle="VHV">
+   <LINKPOINT x="7860" y="3613">
+   </LINKPOINT>
+   <LINKPOINT x="8340" y="3813">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Geometry Out" dstnodeid="27" dstpinname="Geometry">
+   </LINK>
+   <LINK srcnodeid="16" srcpinname="Color Output" dstnodeid="27" dstpinname="Color">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Output Node" dstnodeid="27" dstpinname="Transform In" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="5580" y="2435">
+   </LINKPOINT>
+   <LINKPOINT x="8175" y="2635">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="27" srcpinname="Layer" dstnodeid="12" dstpinname="Input Node">
    </LINK>
    </PATCH>

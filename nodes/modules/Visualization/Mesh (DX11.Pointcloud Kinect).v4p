@@ -1,8 +1,8 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Visualization\AsMesh (DX11.Pointcloud Kinect).v4p" systemname="Mesh (DX11.Buffer)" filename="D:\workspace\dev\packs\KinectToolkitDX11\nodes\modules\Pointcloud\Mesh (DX11.Buffer).v4p" scrollx="0" scrolly="0">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta34.2_x64\packs\dx11.pointcloud\nodes\modules\Visualization\Mesh (DX11.Pointcloud Kinect).v4p" systemname="Mesh (DX11.Buffer)" filename="D:\workspace\dev\packs\KinectToolkitDX11\nodes\modules\Pointcloud\Mesh (DX11.Buffer).v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="11895" top="5415" width="14025" height="8160">
    </BOUNDS>
-   <PACK Name="addonpack" Version="33.7.0">
+   <PACK Name="addonpack" Version="34.1.0">
    </PACK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="22" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="8325" top="645" width="1245" height="240">
@@ -389,6 +389,8 @@
    </BOUNDS>
    <BOUNDS type="Box" left="570" top="3120">
    </BOUNDS>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
    </NODE>
    <LINK srcnodeid="19" srcpinname="Radians" dstnodeid="51" dstpinname="FOVXY" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="5505" y="2325">
