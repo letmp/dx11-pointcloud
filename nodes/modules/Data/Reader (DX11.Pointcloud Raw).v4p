@@ -1,10 +1,10 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\dev\git\dx11-pointcloud\research\modules\Data\Reader (DX11.Pointcloud Raw).v4p" scrollx="0" scrolly="0" systemname="Client (DX11.Pointcloud Network)" filename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\Client (DX11.Pointcloud Network).v4p">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\Reader (DX11.Pointcloud Raw).v4p" scrollx="0" scrolly="0" systemname="Client (DX11.Pointcloud Network)" filename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\Client (DX11.Pointcloud Network).v4p">
    <BOUNDS type="Window" left="8160" top="255" width="15195" height="13635">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.8.0">
    </PACK>
-   <INFO author="tmp" description="Reads pointcloud data written in Raw format." tags="File, Data">
+   <INFO author="tmp" description="Reads a raw bytestream with pointclouddata and a file with metadata that is used as pointer to pointclouddata for a certain frame." tags="Data, File">
    </INFO>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="186" systemname="IOBox (String)">
    <BOUNDS type="Box" left="5055" top="330" width="1575" height="240">
@@ -193,9 +193,9 @@
    <LINK srcnodeid="244" srcpinname="Output" dstnodeid="245" dstpinname="Input">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="246" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="4275" top="7935" width="615" height="240">
+   <BOUNDS type="Box" left="4275" top="8685" width="615" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="4275" top="7935" width="0" height="0">
+   <BOUNDS type="Node" left="4275" top="8685" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -205,7 +205,7 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="99">
+   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="-1.5">
    </PIN>
    </NODE>
    <NODE systemname="Change (String)" nodename="Change (String)" componentmode="Hidden" id="248">
@@ -668,32 +668,10 @@
    <LINKPOINT x="9780" y="6503">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="Divide (Value)" nodename="Divide (Value)" componentmode="Hidden" id="281">
-   <BOUNDS type="Node" left="5475" top="9000" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   <PIN pinname="Input 2" visible="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="246" srcpinname="Y Output Value" dstnodeid="281" dstpinname="Input" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="4335" y="8573">
-   </LINKPOINT>
-   <LINKPOINT x="5460" y="8573">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="242" srcpinname="Y Output Value" dstnodeid="281" dstpinname="Input 2" hiddenwhenlocked="1" linkstyle="Bezier">
-   <LINKPOINT x="2865" y="8573">
-   </LINKPOINT>
-   <LINKPOINT x="5715" y="8573">
-   </LINKPOINT>
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="282" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="5475" top="9765" width="795" height="240">
+   <BOUNDS type="Box" left="5475" top="10215" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="5475" top="9765" width="0" height="0">
+   <BOUNDS type="Node" left="5475" top="10215" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Units" slicecount="1" values="s">
    </PIN>
@@ -701,9 +679,9 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Duration">
    </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="281" srcpinname="Output" dstnodeid="282" dstpinname="Y Input Value">
-   </LINK>
    <NODE systemname="PartialReader (Raw)" filename="..\..\plugins\RawPartialReader\RawPartialReader.csproj" nodename="PartialReader (Raw)" componentmode="Hidden" id="283">
    <BOUNDS type="Node" left="2820" top="6435" width="1515" height="270">
    </BOUNDS>
@@ -733,8 +711,6 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="245" srcpinname="Output" dstnodeid="286" dstpinname="Input 1">
-   </LINK>
-   <LINK srcnodeid="286" srcpinname="Output" dstnodeid="246" dstpinname="Y Input Value">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="287" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="2805" top="9765" width="795" height="240">
@@ -771,9 +747,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="246" srcpinname="Y Output Value" dstnodeid="288" dstpinname="Y Input Value" linkstyle="VHV" hiddenwhenlocked="1">
-   <LINKPOINT x="4490" y="8970">
+   <LINKPOINT x="4490" y="9470">
    </LINKPOINT>
-   <LINKPOINT x="4090" y="8970">
+   <LINKPOINT x="4090" y="9220">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Map (Value)" nodename="Map (Value)" componentmode="Hidden" id="289">
@@ -1083,5 +1059,81 @@
    <LINK srcnodeid="241" srcpinname="Output" dstnodeid="307" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="307" srcpinname="Output" dstnodeid="242" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="EQ (Value)" nodename="EQ (Value)" componentmode="Hidden" id="308">
+   <BOUNDS type="Node" left="5115" top="7695" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="283" srcpinname="File Length" dstnodeid="308" dstpinname="Input 1" linkstyle="Bezier">
+   <LINKPOINT x="4335" y="7193">
+   </LINKPOINT>
+   <LINKPOINT x="5115" y="7193">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Switch (Value Input)" nodename="Switch (Value Input)" componentmode="Hidden" id="309">
+   <BOUNDS type="Node" left="5100" top="8265" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Switch" visible="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="308" srcpinname="Output" dstnodeid="309" dstpinname="Switch">
+   </LINK>
+   <LINK srcnodeid="286" srcpinname="Output" dstnodeid="309" dstpinname="Input 1" linkstyle="VHV">
+   <LINKPOINT x="4335" y="8023">
+   </LINKPOINT>
+   <LINKPOINT x="5355" y="8073">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="309" srcpinname="Output" dstnodeid="246" dstpinname="Y Input Value" linkstyle="VHV">
+   <LINKPOINT x="5100" y="8595">
+   </LINKPOINT>
+   <LINKPOINT x="4335" y="8595">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Divide (Value)" nodename="Divide (Value)" componentmode="Hidden" id="310">
+   <BOUNDS type="Node" left="5730" top="9300" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="246" srcpinname="Y Output Value" dstnodeid="310" dstpinname="Input" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="4420" y="9173">
+   </LINKPOINT>
+   <LINKPOINT x="5630" y="9023">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="242" srcpinname="Y Output Value" dstnodeid="310" dstpinname="Input 2" hiddenwhenlocked="1" linkstyle="Bezier">
+   <LINKPOINT x="2950" y="8673">
+   </LINKPOINT>
+   <LINKPOINT x="5885" y="8773">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Switch (Value Input)" nodename="Switch (Value Input)" componentmode="Hidden" id="311">
+   <BOUNDS type="Node" left="5460" top="9705" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Switch" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="310" srcpinname="Output" dstnodeid="311" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="308" srcpinname="Output" dstnodeid="311" dstpinname="Switch" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="5145" y="8835">
+   </LINKPOINT>
+   <LINKPOINT x="5475" y="8835">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="311" srcpinname="Output" dstnodeid="282" dstpinname="Y Input Value">
    </LINK>
    </PATCH>
