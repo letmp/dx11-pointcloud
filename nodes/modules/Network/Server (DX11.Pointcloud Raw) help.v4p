@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\dev\git\dx11-pointcloud\research\modules\Network\Server (DX11.Pointcloud Raw) help.v4p" scrollx="0" scrolly="0" systemname="Client (DX11.Pointcloud Network)" filename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\Client (DX11.Pointcloud Network).v4p">
-   <BOUNDS type="Window" left="3465" top="390" width="10485" height="7065">
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Network\Server (DX11.Pointcloud Raw) help.v4p" scrollx="0" scrolly="0" systemname="Client (DX11.Pointcloud Network)" filename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\Client (DX11.Pointcloud Network).v4p">
+   <BOUNDS type="Window" left="3465" top="390" width="10485" height="6945">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
    <BOUNDS type="Node" left="165" top="225" width="5100" height="450">
@@ -15,11 +15,11 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="2" systemname="IOBox (String)">
-   <BOUNDS type="Node" left="165" top="720" width="5100" height="600">
+   <BOUNDS type="Node" left="165" top="660" width="5100" height="600">
    </BOUNDS>
-   <BOUNDS type="Box" left="165" top="720" width="5100" height="330">
+   <BOUNDS type="Box" left="165" top="660" width="5100" height="330">
    </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" visible="0" values="||">
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|Receives and buffers bytestreams. Multiple clients are possible.|">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>
@@ -123,9 +123,9 @@
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="44" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="3390" top="1740" width="795" height="240">
+   <BOUNDS type="Box" left="3390" top="1440" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="3390" top="1740" width="0" height="0">
+   <BOUNDS type="Node" left="3390" top="1440" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="4444">
    </PIN>
@@ -157,9 +157,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="50" systemname="IOBox (String)">
-   <BOUNDS type="Node" left="4725" top="1320" width="1080" height="270">
+   <BOUNDS type="Node" left="4725" top="1020" width="1080" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="4725" top="1320" width="1590" height="240">
+   <BOUNDS type="Box" left="4725" top="1020" width="1590" height="240">
    </BOUNDS>
    <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; Local IP|">
    </PIN>
@@ -217,9 +217,9 @@
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="67" systemname="IOBox (String)">
-   <BOUNDS type="Box" left="3390" top="1320" width="885" height="240">
+   <BOUNDS type="Box" left="3390" top="1020" width="885" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="3390" top="1320" width="0" height="0">
+   <BOUNDS type="Node" left="3390" top="1020" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input String" slicecount="1" visible="1" values="localhost">
    </PIN>
@@ -231,9 +231,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="68" systemname="IOBox (String)">
-   <BOUNDS type="Node" left="4710" top="1740" width="1080" height="270">
+   <BOUNDS type="Node" left="4725" top="1440" width="1080" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="4710" top="1740" width="1590" height="240">
+   <BOUNDS type="Box" left="4725" top="1440" width="1590" height="240">
    </BOUNDS>
    <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; Local Port|">
    </PIN>
@@ -247,7 +247,7 @@
    <NODE systemname="Server (DX11.Pointcloud Raw)" filename="Server (DX11.Pointcloud Raw).v4p" nodename="Server (DX11.Pointcloud Raw)" componentmode="Hidden" id="61">
    <BOUNDS type="Node" left="2235" top="2745" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Window" left="3870" top="0" width="9915" height="7410">
+   <BOUNDS type="Window" left="8940" top="2115" width="6390" height="10980">
    </BOUNDS>
    <PIN pinname="PointcloudBuffer" visible="1">
    </PIN>
@@ -257,11 +257,13 @@
    </PIN>
    <PIN pinname="Raw Output" visible="1">
    </PIN>
+   <PIN pinname="Max Clients" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="44" srcpinname="Y Output Value" dstnodeid="61" dstpinname="Local Port" linkstyle="Bezier">
-   <LINKPOINT x="3375" y="2348">
+   <LINKPOINT x="3375" y="2148">
    </LINKPOINT>
-   <LINKPOINT x="2640" y="2348">
+   <LINKPOINT x="2640" y="2248">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="47" srcpinname="Y Output Value" dstnodeid="61" dstpinname="Enable" linkstyle="Bezier">
@@ -271,9 +273,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="67" srcpinname="Output String" dstnodeid="61" dstpinname="Server" linkstyle="Bezier">
-   <LINKPOINT x="3375" y="2145">
+   <LINKPOINT x="3375" y="1945">
    </LINKPOINT>
-   <LINKPOINT x="2295" y="2145">
+   <LINKPOINT x="2295" y="2045">
    </LINKPOINT>
    </LINK>
    <NODE systemname="FromRaw (DX11.Pointcloud Kinect)" filename="..\Data\FromRaw (DX11.Pointcloud Kinect).v4p" nodename="FromRaw (DX11.Pointcloud Kinect)" componentmode="Hidden" id="82">
@@ -283,18 +285,18 @@
    </BOUNDS>
    <BOUNDS type="Window" left="13740" top="4260" width="6150" height="6480">
    </BOUNDS>
-   <PIN pinname="Raw Input" visible="1">
+   <PIN pinname="Raw Input" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="PointcloudBuffer" visible="1">
    </PIN>
+   <PIN pinname="ResolutionXY" visible="1" slicecount="2" values="512,424">
+   </PIN>
    </NODE>
    <LINK srcnodeid="61" srcpinname="Raw Output" dstnodeid="82" dstpinname="Raw Input" linkstyle="Bezier">
-   <LINKPOINT x="2295" y="3373">
+   <LINKPOINT x="2295" y="3323">
    </LINKPOINT>
-   <LINKPOINT x="3360" y="3273">
+   <LINKPOINT x="3375" y="3323">
    </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="82" srcpinname="PointcloudBuffer" dstnodeid="62" dstpinname="PointcloudBuffer">
    </LINK>
    <NODE systemname="FromRaw (DX11.Pointcloud PointcloudBuffer)" filename="..\Data\FromRaw (DX11.Pointcloud PointcloudBuffer).v4p" nodename="FromRaw (DX11.Pointcloud PointcloudBuffer)" componentmode="Hidden" id="81">
    <BOUNDS type="Node" left="1275" top="3660" width="0" height="0">
@@ -303,11 +305,85 @@
    </BOUNDS>
    <BOUNDS type="Window" left="-1" top="-1" width="7815" height="6810">
    </BOUNDS>
+   <PIN pinname="PointcloudBuffer" visible="1">
+   </PIN>
+   <PIN pinname="Raw Input" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="61" srcpinname="Raw Output" dstnodeid="81" dstpinname="Raw Input" linkstyle="Bezier">
-   <LINKPOINT x="2220" y="3380">
+   <LINKPOINT x="2235" y="3323">
    </LINKPOINT>
-   <LINKPOINT x="1335" y="3280">
+   <LINKPOINT x="1335" y="3323">
    </LINKPOINT>
    </LINK>
+   <LINK srcnodeid="81" srcpinname="PointcloudBuffer" dstnodeid="62" dstpinname="PointcloudBuffer" linkstyle="Bezier">
+   <LINKPOINT x="1335" y="4425">
+   </LINKPOINT>
+   <LINKPOINT x="2595" y="4425">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="84" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="3390" top="1785" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3390" top="1785" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="8">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="84" srcpinname="Y Output Value" dstnodeid="61" dstpinname="Max Clients" linkstyle="Bezier">
+   <LINKPOINT x="3375" y="2370">
+   </LINKPOINT>
+   <LINKPOINT x="2760" y="2370">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="85" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="4725" top="1800" width="1080" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4725" top="1800" width="2310" height="240">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; Maximum number of clients|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="87" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="4800" top="2880" width="5190" height="480">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4800" top="2880" width="3765" height="825">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|you need the zeroMQ implementation by velcrome in your packs folder! you can find it here:|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="10">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="86" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="4815" top="3690" width="3240" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4815" top="3690" width="3240" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="https://github.com/velcrome/vvvv-ZeroMQ">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="URL">
+   </PIN>
+   </NODE>
    </PATCH>
