@@ -12,7 +12,7 @@ using System.Linq;
 namespace VVVV.Nodes
 {
 	#region PluginInfo
-	[PluginInfo(Name = "Indexer", Category = "String", Help = "Basic template with one value in/out", Tags = "")]
+	[PluginInfo(Name = "Indexer", Category = "String", AutoEvaluate=true, Help = "Session Management based on unique sting-based Names. Outputs are useful for feeding a Buffer.", Tags = "Buffer", Author="velcrome")]
 	#endregion PluginInfo
 	public class StringIndexerNode : IPluginEvaluate, IPartImportsSatisfiedNotification
 	{
@@ -29,21 +29,20 @@ namespace VVVV.Nodes
 		[Input("Index Count", DefaultValue = 256, IsSingle = true)]
 		public IDiffSpread<int> FCount;
 
-		[Output("Former Id")]
-		public ISpread<int> FFormerId;
-
-
 		[Output("Index")]
-		public ISpread<int> FId;
-
-		[Output("Name")]
-		public ISpread<string> FOutput;
+		public ISpread<int> FFormerId;
 
 		[Output("Fresh")]
 		public ISpread<int> FIdFresh;
 
 		[Output("Removed")]
 		public ISpread<int> FIdRemoved;
+
+		[Output("Saved Index")]
+		public ISpread<int> FId;
+
+		[Output("Saved Name")]
+		public ISpread<string> FOutput;
 
 		[Import()]
 		public ILogger FLogger;
@@ -71,13 +70,12 @@ namespace VVVV.Nodes
 			for (int i=0;i<FCount[0];i++) FreeIndices.Add(i);
 		}
 		
-		//called when data for any output pin is requested
+
 		public void Evaluate(int SpreadMax)
 		{
 			FFormerId.SliceCount	=
 			FIdFresh.SliceCount		= 
 			FIdRemoved.SliceCount 	= 0;
-			
 			
 			for (int i = 0; i < FRemove.SliceCount; i++) {
 				var remove = FRemove[i];
@@ -147,13 +145,6 @@ namespace VVVV.Nodes
 						where Data[index] == key
 						select index
 					);
-			
-//			FOutput.AssignFrom(Data.Keys);
-			
-			
-			//FLogger.Log(LogType.Debug, "hi tty!");
-			
-		
 		}
 		
 		private int RemoveOldest() {

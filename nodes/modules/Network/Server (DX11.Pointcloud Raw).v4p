@@ -1,8 +1,8 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Network\Server (DX11.Pointcloud Raw).v4p" scrollx="0" scrolly="0" systemname="UDP (DX11.Pointcloud Server)" filename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\UDP (DX11.Pointcloud Server).v4p">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta34.2_x64\packs\dx11.pointcloud\nodes\modules\Network\Server (DX11.Pointcloud Raw).v4p" scrollx="0" scrolly="0" systemname="UDP (DX11.Pointcloud Server)" filename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\UDP (DX11.Pointcloud Server).v4p">
    <BOUNDS type="Window" left="8940" top="2115" width="6390" height="10980">
    </BOUNDS>
-   <PACK Name="addonpack" Version="33.8.0">
+   <PACK Name="addonpack" Version="34.1.0">
    </PACK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="33" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="3165" top="1650" width="495" height="240">
@@ -32,18 +32,6 @@
    <PIN pinname="Input Enum" slicecount="1" visible="1" values="tcp">
    </PIN>
    <PIN pinname="Output Enum" visible="1">
-   </PIN>
-   </NODE>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="46" systemname="IOBox (Node)">
-   <BOUNDS type="Box" left="1845" top="3690" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="1845" top="3690" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Descriptive Name" slicecount="1" values="ResponseSocket">
-   </PIN>
-   <PIN pinname="Output Node" visible="1">
-   </PIN>
-   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="55" systemname="IOBox (String)">
@@ -167,7 +155,7 @@
    <NODE systemname="Indexer (String)" filename="%VVVV%\packs\dx11-pointcloud\research\plugins\StringIndexer\StringIndexer.csproj" nodename="Indexer (String)" componentmode="Hidden" id="120">
    <BOUNDS type="Node" left="510" top="7035" width="780" height="270">
    </BOUNDS>
-   <PIN pinname="Name" visible="1" slicecount="1" values="efg">
+   <PIN pinname="Name" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Index Count" slicecount="1" visible="1" values="32">
    </PIN>
@@ -178,6 +166,8 @@
    <PIN pinname="Former Id" visible="1">
    </PIN>
    <PIN pinname="Timeout" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Saved Index" visible="1">
    </PIN>
    </NODE>
    <NODE systemname="AsString (Raw)" nodename="AsString (Raw)" componentmode="Hidden" id="121">
@@ -220,14 +210,12 @@
    <LINKPOINT x="1275" y="4470">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="121" srcpinname="Output" dstnodeid="120" dstpinname="Name">
-   </LINK>
    <NODE systemname="GetSlice (Node)" nodename="GetSlice (Node)" componentmode="Hidden" id="128">
    <BOUNDS type="Node" left="2235" top="7485" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input Node" visible="1">
    </PIN>
-   <PIN pinname="Index" visible="1">
+   <PIN pinname="Index" visible="1" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Output Node" visible="1">
    </PIN>
@@ -241,7 +229,7 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="GetSlice (Node)" nodename="GetSlice (Node)" componentmode="Hidden" id="131">
-   <BOUNDS type="Node" left="2205" top="9060" width="100" height="100">
+   <BOUNDS type="Node" left="2205" top="9210" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
@@ -250,12 +238,6 @@
    <PIN pinname="Output Node" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="120" srcpinname="Index" dstnodeid="131" dstpinname="Index" linkstyle="VHV">
-   <LINKPOINT x="720" y="8880">
-   </LINKPOINT>
-   <LINKPOINT x="2850" y="8880">
-   </LINKPOINT>
-   </LINK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="135" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="2190" top="9570" width="795" height="240">
    </BOUNDS>
@@ -308,8 +290,6 @@
    </LINK>
    <LINK srcnodeid="136" srcpinname="Valid" dstnodeid="89" dstpinname="Y Input Value">
    </LINK>
-   <LINK srcnodeid="136" srcpinname="Sockets" dstnodeid="46" dstpinname="Input Node">
-   </LINK>
    <NODE systemname="Receive (Network ZSocket)" filename="%VVVV%\packs\vvvv-ZeroMQ\nodes\plugins\vvvv.zeromq.dll" nodename="Receive (Network ZSocket)" componentmode="Hidden" id="54">
    <BOUNDS type="Node" left="1845" top="4500" width="1260" height="270">
    </BOUNDS>
@@ -330,8 +310,6 @@
    <BOUNDS type="Box" left="1845" top="4500">
    </BOUNDS>
    </NODE>
-   <LINK srcnodeid="46" srcpinname="Output Node" dstnodeid="54" dstpinname="Socket">
-   </LINK>
    <LINK srcnodeid="54" srcpinname="OnData" dstnodeid="82" dstpinname="Y Input Value">
    </LINK>
    <LINK srcnodeid="54" srcpinname="Frames" dstnodeid="97" dstpinname="Input">
@@ -343,30 +321,6 @@
    </LINKPOINT>
    <LINKPOINT x="2460" y="5070">
    </LINKPOINT>
-   </LINK>
-   <NODE systemname="Buffer (Raw)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Buffer (Raw)" componentmode="Hidden" id="137">
-   <BOUNDS type="Node" left="2220" top="8400" width="2010" height="270">
-   </BOUNDS>
-   <BOUNDS type="Box" left="2220" top="8400">
-   </BOUNDS>
-   </NODE>
-   <LINK srcnodeid="128" srcpinname="Output Node" dstnodeid="137" dstpinname="Input">
-   </LINK>
-   <LINK srcnodeid="120" srcpinname="Former Id" dstnodeid="137" dstpinname="Index" linkstyle="VHV">
-   <LINKPOINT x="570" y="7838">
-   </LINKPOINT>
-   <LINKPOINT x="2550" y="7838">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="123" srcpinname="Y Output Value" dstnodeid="137" dstpinname="Frame Count" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="4065" y="5138">
-   </LINKPOINT>
-   <LINKPOINT x="3360" y="5138">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="137" srcpinname="Output" dstnodeid="131" dstpinname="Input Node">
-   </LINK>
-   <LINK srcnodeid="71" srcpinname="Output" dstnodeid="137" dstpinname="Set">
    </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="139" systemname="IOBox (String)">
    <BOUNDS type="Node" left="705" top="150" width="5190" height="480">
@@ -398,4 +352,58 @@
    <PIN pinname="String Type" slicecount="1" values="URL">
    </PIN>
    </NODE>
+   <NODE systemname="AvoidNIL (Spreads)" filename="%VVVV%\lib\nodes\modules\Spreads\AvoidNIL (Spreads).v4p" nodename="AvoidNIL (Spreads)" componentmode="Hidden" id="143">
+   <BOUNDS type="Node" left="525" top="7755" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="136" srcpinname="Sockets" dstnodeid="54" dstpinname="Socket">
+   </LINK>
+   <NODE systemname="Buffer (Raw)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Buffer (Raw)" componentmode="Hidden" id="145">
+   <BOUNDS type="Node" left="2220" top="8400" width="2010" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2220" top="8400">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="123" srcpinname="Y Output Value" dstnodeid="145" dstpinname="Frame Count" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="4065" y="5138">
+   </LINKPOINT>
+   <LINKPOINT x="3360" y="5138">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="145" srcpinname="Output" dstnodeid="131" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="71" srcpinname="Output" dstnodeid="145" dstpinname="Set">
+   </LINK>
+   <LINK srcnodeid="143" srcpinname="Output" dstnodeid="145" dstpinname="Index" linkstyle="VHV">
+   <LINKPOINT x="585" y="8198">
+   </LINKPOINT>
+   <LINKPOINT x="2775" y="8198">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="128" srcpinname="Output Node" dstnodeid="145" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="120" srcpinname="Index" dstnodeid="143" dstpinname="Input">
+   </LINK>
+   <NODE systemname="AvoidNIL (Spreads)" filename="%VVVV%\lib\nodes\modules\Spreads\AvoidNIL (Spreads).v4p" nodename="AvoidNIL (Spreads)" componentmode="Hidden" id="146">
+   <BOUNDS type="Node" left="2835" top="8865" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="120" srcpinname="Saved Index" dstnodeid="146" dstpinname="Input" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="1110" y="8070">
+   </LINKPOINT>
+   <LINKPOINT x="2820" y="8070">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="146" srcpinname="Output" dstnodeid="131" dstpinname="Index">
+   </LINK>
+   <LINK srcnodeid="121" srcpinname="Output" dstnodeid="120" dstpinname="Name">
+   </LINK>
    </PATCH>
