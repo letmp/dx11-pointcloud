@@ -222,12 +222,6 @@
    </NODE>
    <LINK srcnodeid="105" srcpinname="Output" dstnodeid="128" dstpinname="Input Node">
    </LINK>
-   <LINK srcnodeid="120" srcpinname="Former Id" dstnodeid="128" dstpinname="Index" linkstyle="VHV">
-   <LINKPOINT x="570" y="7380">
-   </LINKPOINT>
-   <LINKPOINT x="2850" y="7380">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="GetSlice (Node)" nodename="GetSlice (Node)" componentmode="Hidden" id="131">
    <BOUNDS type="Node" left="2205" top="9210" width="100" height="100">
    </BOUNDS>
@@ -405,5 +399,11 @@
    <LINK srcnodeid="146" srcpinname="Output" dstnodeid="131" dstpinname="Index">
    </LINK>
    <LINK srcnodeid="121" srcpinname="Output" dstnodeid="120" dstpinname="Name">
+   </LINK>
+   <LINK srcnodeid="120" srcpinname="Saved Index" dstnodeid="128" dstpinname="Index" linkstyle="VHV">
+   <LINKPOINT x="1110" y="7380">
+   </LINKPOINT>
+   <LINKPOINT x="2850" y="7380">
+   </LINKPOINT>
    </LINK>
    </PATCH>

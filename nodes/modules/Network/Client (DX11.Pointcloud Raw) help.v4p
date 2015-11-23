@@ -1,6 +1,6 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Network\Client (DX11.Pointcloud Raw) help.v4p" scrollx="0" scrolly="0" systemname="Client (DX11.Pointcloud Network)" filename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\Client (DX11.Pointcloud Network).v4p">
-   <BOUNDS type="Window" left="3480" top="7320" width="10515" height="8265">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta34.2_x64\packs\dx11.pointcloud\nodes\modules\Network\Client (DX11.Pointcloud Raw) help.v4p" scrollx="0" scrolly="0" systemname="Client (DX11.Pointcloud Network)" filename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\Client (DX11.Pointcloud Network).v4p">
+   <BOUNDS type="Window" left="4605" top="5160" width="10515" height="9210">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
    <BOUNDS type="Node" left="165" top="225" width="5100" height="450">
@@ -38,7 +38,7 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
-   <PACK Name="addonpack" Version="33.8.0">
+   <PACK Name="addonpack" Version="34.1.0">
    </PACK>
    <INFO author="" description="" tags="">
    </INFO>
@@ -255,7 +255,7 @@
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
-   <PIN pinname="Standard Deviation" slicecount="1" visible="1" values="0.44">
+   <PIN pinname="Standard Deviation" slicecount="1" visible="1" values="0.4">
    </PIN>
    <PIN pinname="Input" slicecount="1" values="0">
    </PIN>
@@ -344,54 +344,6 @@
    <BOUNDS type="Box" left="3045" top="3855">
    </BOUNDS>
    </NODE>
-   <NODE id="60" componentmode="Hidden" systemname="Client (DX11.Pointcloud Raw)" filename="Client (DX11.Pointcloud Raw).v4p" nodename="Client (DX11.Pointcloud Raw)" hiddenwhenlocked="0" managers="">
-   <BOUNDS type="Window" left="10410" top="7200" width="7680" height="6090">
-   </BOUNDS>
-   <BOUNDS type="Node" left="1920" top="7350" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="PointcloudBuffer" visible="1" slicecount="1" pintype="Input" values="||">
-   </PIN>
-   <BOUNDS type="Box" left="0" top="480" width="4800" height="3600">
-   </BOUNDS>
-   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Do Send" pintype="Input" visible="1">
-   </PIN>
-   <PIN pinname="Remote Host" pintype="Input" visible="1">
-   </PIN>
-   <PIN pinname="Remote Port" pintype="Input" visible="1">
-   </PIN>
-   <PIN pinname="Evaluate" pintype="Input" visible="-1" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Window Handle" pintype="Output" visible="-1">
-   </PIN>
-   <PIN pinname="Patch" pintype="Output" visible="-1">
-   </PIN>
-   <PIN pinname="ID" pintype="Output" visible="-1">
-   </PIN>
-   <PIN pinname="Raw Input" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Package Size" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="35" srcpinname="Y Output Value" dstnodeid="60" dstpinname="Do Send" linkstyle="Bezier">
-   <LINKPOINT x="3285" y="6825">
-   </LINKPOINT>
-   <LINKPOINT x="2310" y="6825">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="36" srcpinname="Output String" dstnodeid="60" dstpinname="Remote Host" linkstyle="Bezier">
-   <LINKPOINT x="3300" y="7020">
-   </LINKPOINT>
-   <LINKPOINT x="2490" y="7020">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="37" srcpinname="Y Output Value" dstnodeid="60" dstpinname="Remote Port" linkstyle="Bezier">
-   <LINKPOINT x="3300" y="7230">
-   </LINKPOINT>
-   <LINKPOINT x="2655" y="7230">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="AsRaw (DX11.Pointcloud Kinect)" filename="..\Data\AsRaw (DX11.Pointcloud Kinect).v4p" nodename="AsRaw (DX11.Pointcloud Kinect)" componentmode="Hidden" id="148" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="3210" top="4890" width="100" height="100">
    </BOUNDS>
@@ -462,12 +414,6 @@
    <LINKPOINT x="3780" y="4493">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="147" srcpinname="Raw Output" dstnodeid="60" dstpinname="Raw Input" linkstyle="Bezier">
-   <LINKPOINT x="520" y="6215">
-   </LINKPOINT>
-   <LINKPOINT x="2255" y="6265">
-   </LINKPOINT>
-   </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="151" systemname="IOBox (String)">
    <BOUNDS type="Node" left="5550" top="1755" width="5190" height="480">
    </BOUNDS>
@@ -512,12 +458,6 @@
    <PIN pinname="Value Type" slicecount="1" values="Integer">
    </PIN>
    </NODE>
-   <LINK srcnodeid="152" srcpinname="Y Output Value" dstnodeid="60" dstpinname="Package Size" linkstyle="Bezier">
-   <LINKPOINT x="3285" y="6593">
-   </LINKPOINT>
-   <LINKPOINT x="2145" y="6593">
-   </LINKPOINT>
-   </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="153" systemname="IOBox (String)">
    <BOUNDS type="Node" left="4635" top="5625" width="3525" height="270">
    </BOUNDS>
@@ -532,4 +472,64 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
+   <NODE id="60" componentmode="Hidden" systemname="Client (DX11.Pointcloud Raw)" filename="Client (DX11.Pointcloud Raw).v4p" nodename="Client (DX11.Pointcloud Raw)" hiddenwhenlocked="0" managers="">
+   <BOUNDS type="Window" left="10410" top="7200" width="7680" height="6090">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1920" top="7350" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="PointcloudBuffer" visible="1" slicecount="1" pintype="Input" values="||">
+   </PIN>
+   <BOUNDS type="Box" left="0" top="480" width="4800" height="3600">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Do Send" pintype="Input" visible="1">
+   </PIN>
+   <PIN pinname="Remote Host" pintype="Input" visible="1">
+   </PIN>
+   <PIN pinname="Remote Port" pintype="Input" visible="1">
+   </PIN>
+   <PIN pinname="Evaluate" pintype="Input" visible="-1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Window Handle" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Patch" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   <PIN pinname="Raw Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Package Size" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="35" srcpinname="Y Output Value" dstnodeid="60" dstpinname="Do Send" linkstyle="Bezier">
+   <LINKPOINT x="3285" y="6825">
+   </LINKPOINT>
+   <LINKPOINT x="2310" y="6825">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="36" srcpinname="Output String" dstnodeid="60" dstpinname="Remote Host" linkstyle="Bezier">
+   <LINKPOINT x="3300" y="7020">
+   </LINKPOINT>
+   <LINKPOINT x="2490" y="7020">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="37" srcpinname="Y Output Value" dstnodeid="60" dstpinname="Remote Port" linkstyle="Bezier">
+   <LINKPOINT x="3300" y="7230">
+   </LINKPOINT>
+   <LINKPOINT x="2655" y="7230">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="147" srcpinname="Raw Output" dstnodeid="60" dstpinname="Raw Input" linkstyle="Bezier">
+   <LINKPOINT x="520" y="6215">
+   </LINKPOINT>
+   <LINKPOINT x="2255" y="6265">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="152" srcpinname="Y Output Value" dstnodeid="60" dstpinname="Package Size" linkstyle="Bezier">
+   <LINKPOINT x="3285" y="6593">
+   </LINKPOINT>
+   <LINKPOINT x="2145" y="6593">
+   </LINKPOINT>
+   </LINK>
    </PATCH>
