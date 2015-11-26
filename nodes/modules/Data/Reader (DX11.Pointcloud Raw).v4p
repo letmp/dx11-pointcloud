@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
-   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta34.2_x64\packs\dx11.pointcloud\nodes\modules\Data\Reader (DX11.Pointcloud Raw).v4p" scrollx="0" scrolly="0" systemname="Client (DX11.Pointcloud Network)" filename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\Client (DX11.Pointcloud Network).v4p">
-   <BOUNDS type="Window" left="8160" top="255" width="15195" height="13635">
+   <PATCH nodename="D:\workspace\dev\git\dx11-pointcloud\research\modules\Data\Reader (DX11.Pointcloud Raw).v4p" scrollx="0" scrolly="-360" systemname="Client (DX11.Pointcloud Network)" filename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\Client (DX11.Pointcloud Network).v4p">
+   <BOUNDS type="Window" left="7110" top="990" width="15195" height="13635">
    </BOUNDS>
    <PACK Name="addonpack" Version="34.1.0">
    </PACK>
@@ -57,17 +57,17 @@
    </PIN>
    </NODE>
    <NODE systemname="Add (String)" nodename="Add (String)" componentmode="Hidden" id="237">
-   <BOUNDS type="Node" left="2835" top="3195" width="2190" height="270">
+   <BOUNDS type="Node" left="2835" top="3195" width="1770" height="270">
    </BOUNDS>
    <PIN pinname="Input 1" visible="1">
    </PIN>
-   <PIN pinname="Input Count" slicecount="1" values="5">
+   <PIN pinname="Input Count" slicecount="1" values="4">
    </PIN>
    <PIN pinname="Input 2" visible="1">
    </PIN>
    <PIN pinname="Input 3" slicecount="1" visible="1" values="_info">
    </PIN>
-   <PIN pinname="Input 4" visible="1" slicecount="1" values="asd">
+   <PIN pinname="Input 4" visible="1" slicecount="1" values=".meta">
    </PIN>
    <PIN pinname="Input 5" visible="1">
    </PIN>
@@ -77,36 +77,6 @@
    <LINK srcnodeid="238" srcpinname="Path" dstnodeid="237" dstpinname="Input 1">
    </LINK>
    <LINK srcnodeid="238" srcpinname="Shortname" dstnodeid="237" dstpinname="Input 2">
-   </LINK>
-   <NODE systemname="EQ (String)" nodename="EQ (String)" componentmode="Hidden" id="236">
-   <BOUNDS type="Node" left="3885" top="2025" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input 1" visible="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="238" srcpinname="Extension" dstnodeid="236" dstpinname="Input 1" linkstyle="VHV">
-   <LINKPOINT x="3585" y="1845">
-   </LINKPOINT>
-   <LINKPOINT x="3885" y="1845">
-   </LINKPOINT>
-   </LINK>
-   <NODE systemname="Switch (String Input)" nodename="Switch (String Input)" componentmode="Hidden" id="235">
-   <BOUNDS type="Node" left="3885" top="2730" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Switch" visible="1">
-   </PIN>
-   <PIN pinname="Input 1" slicecount="1" values=".">
-   </PIN>
-   <PIN pinname="Input 2" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="236" srcpinname="Output" dstnodeid="235" dstpinname="Switch">
-   </LINK>
-   <LINK srcnodeid="235" srcpinname="Output" dstnodeid="237" dstpinname="Input 4">
    </LINK>
    <LINK srcnodeid="238" srcpinname="Extension" dstnodeid="237" dstpinname="Input 5" linkstyle="VHV">
    <LINKPOINT x="3570" y="2415">
@@ -181,7 +151,7 @@
    </PIN>
    </NODE>
    <NODE systemname="Divide (Value)" nodename="Divide (Value)" componentmode="Hidden" id="245">
-   <BOUNDS type="Node" left="4275" top="7215" width="100" height="100">
+   <BOUNDS type="Node" left="4275" top="7275" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input 2" slicecount="1" values="8">
    </PIN>
@@ -700,18 +670,6 @@
    </LINK>
    <LINK srcnodeid="254" srcpinname="Output" dstnodeid="283" dstpinname="Read">
    </LINK>
-   <NODE systemname="Subtract (Value)" nodename="Subtract (Value)" componentmode="Hidden" id="286">
-   <BOUNDS type="Node" left="4275" top="7590" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input 1" visible="1">
-   </PIN>
-   <PIN pinname="Input 2" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="245" srcpinname="Output" dstnodeid="286" dstpinname="Input 1">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="287" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="2805" top="9765" width="795" height="240">
    </BOUNDS>
@@ -1057,13 +1015,15 @@
    </PIN>
    <PIN pinname="Default" slicecount="1" values="0.001">
    </PIN>
+   <BOUNDS type="Box" left="2820" top="7275">
+   </BOUNDS>
    </NODE>
    <LINK srcnodeid="241" srcpinname="Output" dstnodeid="307" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="307" srcpinname="Output" dstnodeid="242" dstpinname="Y Input Value">
    </LINK>
    <NODE systemname="EQ (Value)" nodename="EQ (Value)" componentmode="Hidden" id="308">
-   <BOUNDS type="Node" left="5115" top="7695" width="100" height="100">
+   <BOUNDS type="Node" left="5115" top="7275" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input 1" visible="1">
    </PIN>
@@ -1071,33 +1031,31 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="283" srcpinname="File Length" dstnodeid="308" dstpinname="Input 1" linkstyle="Bezier">
-   <LINKPOINT x="4335" y="7193">
+   <LINKPOINT x="4335" y="7093">
    </LINKPOINT>
-   <LINKPOINT x="5115" y="7193">
+   <LINKPOINT x="5115" y="6993">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Switch (Value Input)" nodename="Switch (Value Input)" componentmode="Hidden" id="309">
-   <BOUNDS type="Node" left="5100" top="8265" width="100" height="100">
+   <BOUNDS type="Node" left="4275" top="7815" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Switch" visible="1">
    </PIN>
-   <PIN pinname="Input 1" visible="1">
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="49">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="308" srcpinname="Output" dstnodeid="309" dstpinname="Switch">
-   </LINK>
-   <LINK srcnodeid="286" srcpinname="Output" dstnodeid="309" dstpinname="Input 1" linkstyle="VHV">
-   <LINKPOINT x="4335" y="8023">
+   <LINK srcnodeid="308" srcpinname="Output" dstnodeid="309" dstpinname="Switch" linkstyle="Bezier">
+   <LINKPOINT x="5115" y="7665">
    </LINKPOINT>
-   <LINKPOINT x="5355" y="8073">
+   <LINKPOINT x="4335" y="7665">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="309" srcpinname="Output" dstnodeid="246" dstpinname="Y Input Value" linkstyle="VHV">
-   <LINKPOINT x="5100" y="8595">
+   <LINKPOINT x="4550" y="8295">
    </LINKPOINT>
-   <LINKPOINT x="4335" y="8595">
+   <LINKPOINT x="4060" y="8445">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Divide (Value)" nodename="Divide (Value)" componentmode="Hidden" id="310">
@@ -1131,11 +1089,19 @@
    <LINK srcnodeid="310" srcpinname="Output" dstnodeid="311" dstpinname="Input 1">
    </LINK>
    <LINK srcnodeid="308" srcpinname="Output" dstnodeid="311" dstpinname="Switch" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="5145" y="8835">
+   <LINKPOINT x="5145" y="8635">
    </LINKPOINT>
-   <LINKPOINT x="5475" y="8835">
+   <LINKPOINT x="5475" y="8735">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="311" srcpinname="Output" dstnodeid="282" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="238" srcpinname="Extension" dstnodeid="237" dstpinname="Input 3">
+   </LINK>
+   <LINK srcnodeid="245" srcpinname="Output" dstnodeid="309" dstpinname="Input 1" linkstyle="Bezier">
+   <LINKPOINT x="4335" y="7673">
+   </LINKPOINT>
+   <LINKPOINT x="4530" y="7673">
+   </LINKPOINT>
    </LINK>
    </PATCH>

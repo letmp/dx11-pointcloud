@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
-   <PATCH nodename="D:\workspace\dev\git\dx11-pointcloud\research\modules\Data\Writer (DX11.Pointcloud Raw) help.v4p" scrollx="0" scrolly="0" systemname="Client (DX11.Pointcloud Network)" filename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\Client (DX11.Pointcloud Network).v4p">
+   <PATCH nodename="D:\workspace\dev\git\dx11-pointcloud\research\modules\Data\Writer (DX11.Pointcloud Raw) help.v4p" scrollx="30" scrolly="150" systemname="Client (DX11.Pointcloud Network)" filename="C:\apps\code\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Data\Client (DX11.Pointcloud Network).v4p">
    <BOUNDS type="Window" left="1725" top="2805" width="13080" height="9120">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
@@ -67,7 +67,7 @@
    <NODE systemname="Writer (DX11.Pointcloud Raw)" filename="%VVVV%\packs\dx11-pointcloud\research\Writer (DX11.Pointcloud Raw).v4p" nodename="Writer (DX11.Pointcloud Raw)" componentmode="Hidden" id="56" hiddenwhenlocked="0">
    <BOUNDS type="Node" left="4365" top="4890" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Window" left="5610" top="750" width="19005" height="13755">
+   <BOUNDS type="Window" left="30150" top="3480" width="19005" height="13755">
    </BOUNDS>
    <PIN pinname="PointcloudBuffer" visible="1" slicecount="1" values="||">
    </PIN>
@@ -80,6 +80,12 @@
    <BOUNDS type="Box" left="4365" top="4890">
    </BOUNDS>
    <PIN pinname="Content" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Count" visible="1">
+   </PIN>
+   <PIN pinname="Progress" visible="1">
+   </PIN>
+   <PIN pinname="Frames written" visible="1">
    </PIN>
    </NODE>
    <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="61" hiddenwhenlocked="0">
@@ -267,7 +273,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="6225" top="7965" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="15255" top="7605" width="7470" height="6780">
+   <BOUNDS type="Window" left="15195" top="7575" width="7470" height="6780">
    </BOUNDS>
    <PIN pinname="Depth Buffer Mode" slicecount="1" values="Standard">
    </PIN>
@@ -331,7 +337,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="10170" top="4230" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -343,7 +349,7 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Manual Frame Selection|">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
+   <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="85" systemname="IOBox (Value Advanced)" hiddenwhenlocked="1">
@@ -351,7 +357,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="12000" top="4230" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="45">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="54">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -397,7 +403,7 @@
    <NODE systemname="Reader (DX11.Pointcloud Raw)" filename="%VVVV%\packs\dx11-pointcloud\research\Reader (DX11.Pointcloud Raw).v4p" nodename="Reader (DX11.Pointcloud Raw)" componentmode="Hidden" id="90" hiddenwhenlocked="1">
    <BOUNDS type="Node" left="8250" top="5040" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Window" left="8160" top="255" width="15195" height="13635">
+   <BOUNDS type="Window" left="7110" top="990" width="15195" height="13635">
    </BOUNDS>
    <BOUNDS type="Box" left="8250" top="5040">
    </BOUNDS>
@@ -467,7 +473,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="8265" top="3570" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" visible="1" values="C:\Users\le_tmp\Desktop\Pointcloudtest">
+   <PIN pinname="Input String" slicecount="1" visible="1" values="||">
    </PIN>
    <PIN pinname="Default" slicecount="1" values="file.foo">
    </PIN>
@@ -485,7 +491,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="4590" top="3570" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" visible="1" values="C:\Users\le_tmp\Desktop\Pointcloudtest">
+   <PIN pinname="Input String" slicecount="1" visible="1" values="||">
    </PIN>
    <PIN pinname="Default" slicecount="1" values="file.foo">
    </PIN>
@@ -640,6 +646,8 @@
    <PIN pinname="RGBDepth" visible="1">
    </PIN>
    <PIN pinname="Depth FOVXY" visible="1">
+   </PIN>
+   <PIN pinname="Reset" slicecount="1" values="0">
    </PIN>
    </NODE>
    <LINK srcnodeid="86" srcpinname="Resolution" dstnodeid="88" dstpinname="Resolution" linkstyle="Bezier" hiddenwhenlocked="1">
