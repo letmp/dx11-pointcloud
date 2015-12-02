@@ -1,0 +1,839 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta34.2_x64\packs\dx11.pointcloud\nodes\modules\Forces\Target (DX11.Pointcloud DynamicBuffer) help.v4p" scrollx="0" scrolly="0">
+   <BOUNDS type="Window" left="3240" top="480" width="12750" height="14805">
+   </BOUNDS>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="225" top="225" width="5100" height="450">
+   </BOUNDS>
+   <BOUNDS type="Box" left="225" top="225" width="8025" height="390">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|Target (DX11.Pointcloud DynamicBuffer)|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" visible="1" values="14">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="2" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="225" top="600" width="5100" height="600">
+   </BOUNDS>
+   <BOUNDS type="Box" left="225" top="600" width="6840" height="540">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="0" values="|Attracts particles and keeps them in a specific landing radius.|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="4" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="9600" top="225" width="3840" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="9600" top="225" width="2460" height="945">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|copyright: intolight 2015&cr;&lf;Creative Commons 4.0 BY-NC-SA&cr;&lf;&cr;&lf;contact: robert@intolight.de|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE systemname="Rasterizer (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Rasterizer (DX11.RenderState)" componentmode="Hidden" id="10" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="1350" top="11745" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Mode" slicecount="1" values="NoCullSimple">
+   </PIN>
+   <BOUNDS type="Box" left="1350" top="11745">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Box (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Box (DX11.Geometry)" componentmode="Hidden" id="9" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="2280" top="11745" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Geometry Out" visible="1">
+   </PIN>
+   <PIN pinname="SizeXYZ" slicecount="3" visible="1" values="0.005,0.005,0.005">
+   </PIN>
+   <PIN pinname="SizeXY">
+   </PIN>
+   <BOUNDS type="Box" left="2280" top="11745">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="8" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="1575" top="13335" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1575" top="13335" width="6000" height="4500">
+   </BOUNDS>
+   <BOUNDS type="Window" left="16005" top="945" width="9150" height="7800">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Depth Buffer Mode" slicecount="1" values="Standard">
+   </PIN>
+   <PIN pinname="Depth Buffer Format" slicecount="1" values="D32_Float">
+   </PIN>
+   </NODE>
+   <NODE systemname="CAMERA (TRANSFORM SOFTIMAGE)" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden" id="7" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="3000" top="12885" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="View Projection" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="3000" top="12885">
+   </BOUNDS>
+   <PIN pinname="Initial Distance" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Initial Pitch" slicecount="1" values="0.07">
+   </PIN>
+   <PIN pinname="Initial Yaw" slicecount="1" values="-0.06">
+   </PIN>
+   <PIN pinname="Initial Interest" visible="1" slicecount="3" values="0,0,0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="View Projection" dstnodeid="8" dstpinname="View">
+   </LINK>
+   <NODE systemname="Group (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Group (DX11.Layer)" componentmode="Hidden" id="6" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="1740" top="12885" width="780" height="270">
+   </BOUNDS>
+   <PIN pinname="Layer 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="1740" top="12885">
+   </BOUNDS>
+   <PIN pinname="Input Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Layer 3" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="AxisAndGrid (DX11)" filename="%VVVV%\packs\dx11\nodes\modules\AxisAndGrid\AxisAndGrid (DX11).v4p" nodename="AxisAndGrid (DX11)" componentmode="Hidden" id="5" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="795" top="12285" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="795" top="12285">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Layer" dstnodeid="6" dstpinname="Layer 1" linkstyle="VHV">
+   <LINKPOINT x="855" y="12720">
+   </LINKPOINT>
+   <LINKPOINT x="1920" y="12720">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Layer Out" dstnodeid="8" dstpinname="Layers">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="14" systemname="IOBox (Value Advanced)" hiddenwhenlocked="1">
+   <BOUNDS type="Box" left="2985" top="1095" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2985" top="1095" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1000">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="DynamicBuffer (DX11.Buffer 3d)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer 3d)" componentmode="Hidden" id="15" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="3255" top="2640" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="DataXYZ" visible="1" slicecount="300" values="0.5,1.20691607305774E-070,1.19976664474611E-070,0.499013364214136,0.0313952597646567,7.51545507698105E-010,0.496057350657239,0.0626666167821521,1.50012500862581E-009,0.491143625364344,0.0936906572928623,2.24278420148639E-009,0.484291580564316,0.124344943582427,2.97659214973434E-009,0.475528258147577,0.154508497187474,3.6986528486429E-009,0.464888242944126,0.184062276342339,4.40611665451161E-009,0.45241352623301,0.212889645782536,5.09619153090818E-009,0.438153340021932,0.240876837050858,5.76615406756072E-009,0.422163962751008,0.267913397489498,6.41336022841379E-009,0.404508497187474,0.293892626146237,7.03525578643092E-009,0.385256621387895,0.318711994874345,7.62938640396163E-009,0.364484313710706,0.342273552964344,8.19340731889099E-009,0.342273552964344,0.364484313710706,8.72509259834446E-009,0.318711994874345,0.385256621387895,9.2223439234279E-009,0.293892626146237,0.404508497187474,9.68319887033372E-009,0.267913397489498,0.422163962751008,1.01058386551311E-008,0.240876837050858,0.438153340021932,1.04885953116752E-008,0.212889645782536,0.45241352623301,1.08299582743075E-008,0.184062276342339,0.464888242944126,1.11285803393684E-008,0.154508497187474,0.475528258147577,1.13832829819946E-008,0.124344943582427,0.484291580564316,1.15930610072182E-008,0.0936906572928624,0.491143625364344,1.1757086517012E-008,0.0626666167821521,0.496057350657239,1.18747121776251E-008,0.0313952597646568,0.499013364214136,1.1945473774313E-008,3.06161699786838E-017,0.5,1.19690920433816E-008,-0.0313952597646567,0.499013364214136,1.1945473774313E-008,-0.0626666167821522,0.496057350657239,1.18747121776251E-008,-0.0936906572928624,0.491143625364344,1.1757086517012E-008,-0.124344943582427,0.484291580564316,1.15930610072182E-008,-0.154508497187474,0.475528258147577,1.13832829819946E-008,-0.184062276342339,0.464888242944126,1.11285803393684E-008,-0.212889645782536,0.45241352623301,1.08299582743075E-008,-0.240876837050858,0.438153340021932,1.04885953116752E-008,-0.267913397489498,0.422163962751007,1.01058386551311E-008,-0.293892626146237,0.404508497187474,9.68319887033372E-009,-0.318711994874345,0.385256621387895,9.2223439234279E-009,-0.342273552964344,0.364484313710706,8.72509259834446E-009,-0.364484313710706,0.342273552964344,8.193407318891E-009,-0.385256621387895,0.318711994874345,7.62938640396163E-009,-0.404508497187474,0.293892626146237,7.03525578643092E-009,-0.422163962751007,0.267913397489498,6.41336022841379E-009,-0.438153340021932,0.240876837050858,5.76615406756072E-009,-0.45241352623301,0.212889645782536,5.09619153090818E-009,-0.464888242944126,0.184062276342339,4.40611665451161E-009,-0.475528258147577,0.154508497187474,3.6986528486429E-009,-0.484291580564316,0.124344943582427,2.97659214973434E-009,-0.491143625364344,0.0936906572928625,2.24278420148639E-009,-0.496057350657239,0.0626666167821523,1.50012500862581E-009,-0.499013364214136,0.0313952597646568,7.51545507698107E-010,-0.5,6.12323399573677E-017,1.46579102596274E-024,-0.499013364214136,-0.0313952597646567,-7.51545507698105E-010,-0.496057350657239,-0.0626666167821521,-1.50012500862581E-009,-0.491143625364344,-0.0936906572928624,-2.24278420148639E-009,-0.484291580564316,-0.124344943582428,-2.97659214973435E-009,-0.475528258147577,-0.154508497187474,-3.6986528486429E-009,-0.464888242944126,-0.184062276342339,-4.40611665451161E-009,-0.45241352623301,-0.212889645782536,-5.09619153090818E-009,-0.438153340021932,-0.240876837050858,-5.76615406756072E-009,-0.422163962751008,-0.267913397489498,-6.41336022841379E-009,-0.404508497187474,-0.293892626146237,-7.03525578643092E-009,-0.385256621387895,-0.318711994874345,-7.62938640396163E-009,-0.364484313710706,-0.342273552964344,-8.193407318891E-009,-0.342273552964344,-0.364484313710706,-8.72509259834446E-009,-0.318711994874345,-0.385256621387895,-9.2223439234279E-009,-0.293892626146237,-0.404508497187474,-9.68319887033372E-009,-0.267913397489498,-0.422163962751008,-1.01058386551311E-008,-0.240876837050858,-0.438153340021932,-1.04885953116752E-008,-0.212889645782536,-0.45241352623301,-1.08299582743075E-008,-0.184062276342339,-0.464888242944126,-1.11285803393684E-008,-0.154508497187474,-0.475528258147577,-1.13832829819946E-008,-0.124344943582428,-0.484291580564315,-1.15930610072181E-008,-0.0936906572928623,-0.491143625364344,-1.1757086517012E-008,-0.0626666167821523,-0.496057350657239,-1.18747121776251E-008,-0.0313952597646566,-0.499013364214136,-1.1945473774313E-008,-9.18485099360515E-017,-0.5,-1.19690920433816E-008,0.0313952597646564,-0.499013364214136,-1.1945473774313E-008,0.0626666167821521,-0.496057350657239,-1.18747121776251E-008,0.0936906572928621,-0.491143625364344,-1.1757086517012E-008,0.124344943582427,-0.484291580564316,-1.15930610072182E-008,0.154508497187474,-0.475528258147577,-1.13832829819946E-008,0.184062276342339,-0.464888242944126,-1.11285803393684E-008,0.212889645782536,-0.45241352623301,-1.08299582743075E-008,0.240876837050857,-0.438153340021932,-1.04885953116752E-008,0.267913397489498,-0.422163962751008,-1.01058386551311E-008,0.293892626146236,-0.404508497187474,-9.68319887033372E-009,0.318711994874345,-0.385256621387895,-9.2223439234279E-009,0.342273552964344,-0.364484313710706,-8.72509259834446E-009,0.364484313710706,-0.342273552964344,-8.193407318891E-009,0.385256621387895,-0.318711994874345,-7.62938640396163E-009,0.404508497187474,-0.293892626146237,-7.03525578643092E-009,0.422163962751008,-0.267913397489498,-6.41336022841379E-009,0.438153340021932,-0.240876837050858,-5.76615406756072E-009,0.45241352623301,-0.212889645782536,-5.09619153090818E-009,0.464888242944126,-0.184062276342339,-4.40611665451161E-009,0.475528258147577,-0.154508497187474,-3.6986528486429E-009,0.484291580564315,-0.124344943582428,-2.97659214973436E-009,0.491143625364344,-0.0936906572928623,-2.24278420148639E-009,0.496057350657239,-0.0626666167821523,-1.50012500862581E-009,0.499013364214136,-0.0313952597646566,-7.51545507698103E-010">
+   </PIN>
+   <PIN pinname="Buffer" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="3255" top="2640">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="HSL (Color Join)" nodename="HSL (Color Join)" componentmode="Hidden" id="16" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="4635" top="2160" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Hue" visible="1" slicecount="1" values="0.333333333333333">
+   </PIN>
+   <PIN pinname="Lightness" slicecount="1" values="0.5">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="DynamicBuffer (DX11.Buffer Color)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Color)" componentmode="Hidden" id="18" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="4635" top="2640" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Data" visible="1">
+   </PIN>
+   <PIN pinname="Buffer" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="4635" top="2640">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="16" srcpinname="Output" dstnodeid="18" dstpinname="Data">
+   </LINK>
+   <PACK Name="addonpack" Version="34.1.0">
+   </PACK>
+   <NODE nodename="PointcloudBuffer (DX11.Pointcloud DynamicBuffer)" componentmode="Hidden" id="0" systemname="PointcloudBuffer (DX11.Pointcloud DynamicBuffer)" filename="PointcloudBuffer (DX11.Pointcloud DynamicBuffer).v4p" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="2730" top="3105" width="1425" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2730" top="3105" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="PointcloudBuffer" visible="1">
+   </PIN>
+   <PIN pinname="Position Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Element Count" visible="1">
+   </PIN>
+   <PIN pinname="Color Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Max Element Count" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="IdOffset" visible="1" slicecount="1" values="0">
+   </PIN>
+   <BOUNDS type="Window" left="14310" top="1020" width="10875" height="10545">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="Buffer" dstnodeid="0" dstpinname="Position Buffer">
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Element Count">
+   </LINK>
+   <LINK srcnodeid="18" srcpinname="Buffer" dstnodeid="0" dstpinname="Color Buffer" linkstyle="VHV">
+   <LINKPOINT x="4585" y="2993">
+   </LINKPOINT>
+   <LINKPOINT x="3665" y="2993">
+   </LINKPOINT>
+   </LINK>
+   <INFO author="" description="" tags="">
+   </INFO>
+   <NODE systemname="Constant (DX11.Pointcloud PointcloudBuffer)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Visualization\Constant (DX11.Pointcloud PointcloudBuffer).v4p" nodename="Constant (DX11.Pointcloud PointcloudBuffer)" componentmode="Hidden" id="11" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="2115" top="12285" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="PointcloudBuffer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Render State" visible="1">
+   </PIN>
+   <PIN pinname="Geometry" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <BOUNDS type="Box" left="2115" top="12285">
+   </BOUNDS>
+   <PIN pinname="Technique" slicecount="1" values="RGB">
+   </PIN>
+   <PIN pinname="groupFilter" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="ForceBuffer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="ForceIndexBuffer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Enable Heading" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Render State" dstnodeid="11" dstpinname="Render State" linkstyle="VHV">
+   <LINKPOINT x="1410" y="12135">
+   </LINKPOINT>
+   <LINKPOINT x="2115" y="12135">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Geometry Out" dstnodeid="11" dstpinname="Geometry">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Layer" dstnodeid="6" dstpinname="Layer 2">
+   </LINK>
+   <NODE systemname="Emitter (DX11.Pointcloud PointcloudBuffer)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Forces\Emitter (DX11.Pointcloud PointcloudBuffer).v4p" nodename="Emitter (DX11.Pointcloud PointcloudBuffer)" componentmode="Hidden" id="31" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="2745" top="4215" width="2700" height="270">
+   </BOUNDS>
+   <PIN pinname="PointcloudBuffer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Max Element Count" visible="1" slicecount="1" values="10">
+   </PIN>
+   <PIN pinname="RingBufferSize" visible="1" slicecount="1" values="200">
+   </PIN>
+   <PIN pinname="Emit" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Reset" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Layer PointcloudRingBuffer" visible="1">
+   </PIN>
+   <PIN pinname="Layer ForcesRingBuffer" visible="1">
+   </PIN>
+   <PIN pinname="UpdateBuffer" visible="1">
+   </PIN>
+   <PIN pinname="PointcloudRingBuffer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Group (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Group (DX11.Layer)" componentmode="Hidden" id="40" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="4440" top="10785" width="540" height="270">
+   </BOUNDS>
+   <PIN pinname="Layer 1" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Input Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Layer 3" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Render State" visible="-1" pintype="Input" slicecount="1" values="||">
+   </PIN>
+   <BOUNDS type="Box" left="4440" top="10785">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="UpdateForces (DX11.Pointcloud ForceBuffer)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Forces\UpdateForces (DX11.Pointcloud ForceBuffer).v4p" nodename="UpdateForces (DX11.Pointcloud ForceBuffer)" componentmode="Hidden" id="39" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="4035" top="11280" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Max Element Count" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Layer ForcesRingBuffer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="pcBuffer" visible="1">
+   </PIN>
+   <PIN pinname="Layer Force" visible="1" slicecount="1" values="||">
+   </PIN>
+   <BOUNDS type="Window" left="18570" top="6540" width="8130" height="5715">
+   </BOUNDS>
+   <PIN pinname="Apply" visible="1" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="40" srcpinname="Layer Out" dstnodeid="39" dstpinname="Layer ForcesRingBuffer">
+   </LINK>
+   <NODE systemname="ApplyForce (DX11.Pointcloud ForceBuffer)" filename="%VVVV%\packs\dx11-pointcloud\nodes\modules\Forces\ApplyForce (DX11.Pointcloud ForceBuffer).v4p" nodename="ApplyForce (DX11.Pointcloud ForceBuffer)" componentmode="Hidden" id="37" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="2760" top="11730" width="3270" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2760" top="11730" width="11635" height="9340">
+   </BOUNDS>
+   <BOUNDS type="Window" left="2505" top="1380" width="14655" height="10725">
+   </BOUNDS>
+   <PIN pinname="CopyGroupIds" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Apply" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Layer PointcloudRingBuffer" visible="1">
+   </PIN>
+   <PIN pinname="Max Element Count" visible="1">
+   </PIN>
+   <PIN pinname="PointcloudBuffer" visible="1">
+   </PIN>
+   <PIN pinname="ForceBuffer" visible="1">
+   </PIN>
+   <PIN pinname="ForceIndexBuffer" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="39" srcpinname="Layer Force" dstnodeid="37" dstpinname="Layer Force">
+   </LINK>
+   <LINK srcnodeid="31" srcpinname="Layer PointcloudRingBuffer" dstnodeid="37" dstpinname="Layer PointcloudRingBuffer">
+   </LINK>
+   <LINK srcnodeid="31" srcpinname="Max Element Count" dstnodeid="37" dstpinname="Max Element Count">
+   </LINK>
+   <LINK srcnodeid="31" srcpinname="Max Element Count" dstnodeid="39" dstpinname="Max Element Count" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="3425" y="7043">
+   </LINKPOINT>
+   <LINKPOINT x="4045" y="8708">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="31" srcpinname="Layer ForcesRingBuffer" dstnodeid="40" dstpinname="Layer 1" linkstyle="Bezier">
+   <LINKPOINT x="4095" y="7635">
+   </LINKPOINT>
+   <LINKPOINT x="4455" y="7635">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="37" srcpinname="PointcloudBuffer" dstnodeid="11" dstpinname="PointcloudBuffer">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="PointcloudBuffer" dstnodeid="31" dstpinname="PointcloudBuffer">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Max Element Count" dstnodeid="31" dstpinname="Max Element Count">
+   </LINK>
+   <NODE systemname="CircularSpread (Spreads)" nodename="CircularSpread (Spreads)" componentmode="Hidden" id="12" filename="" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="3255" top="1695" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Spread Count" visible="1" slicecount="1" values="300">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Standard Deviation" slicecount="1" visible="1" values="0.44">
+   </PIN>
+   <PIN pinname="Input" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Random Seed" slicecount="1" visible="1" values="7">
+   </PIN>
+   <PIN pinname="Output X" visible="1">
+   </PIN>
+   <PIN pinname="Output Y" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="14" srcpinname="Y Output Value" dstnodeid="12" dstpinname="Spread Count" linkstyle="VHV">
+   <LINKPOINT x="3045" y="1500">
+   </LINKPOINT>
+   <LINKPOINT x="4260" y="1500">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Vector (3d Join)" nodename="Vector (3d Join)" componentmode="Hidden" id="97" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="3255" top="2145" width="570" height="270">
+   </BOUNDS>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Z" visible="1" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="12" srcpinname="Output X" dstnodeid="97" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Output Y" dstnodeid="97" dstpinname="Y" linkstyle="VHV">
+   <LINKPOINT x="4260" y="2040">
+   </LINKPOINT>
+   <LINKPOINT x="3570" y="2040">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="97" srcpinname="XYZ" dstnodeid="15" dstpinname="DataXYZ">
+   </LINK>
+   <NODE systemname="Target (DX11.Pointcloud DynamicBuffer)" filename="%VVVV%\packs\dx11.pointcloud\nodes\modules\Forces\Target (DX11.Pointcloud DynamicBuffer).v4p" nodename="Target (DX11.Pointcloud DynamicBuffer)" componentmode="Hidden" id="98">
+   <BOUNDS type="Node" left="4620" top="8445" width="3510" height="270">
+   </BOUNDS>
+   <PIN pinname="Help Layer" visible="1">
+   </PIN>
+   <BOUNDS type="Window" left="9735" top="4245" width="12705" height="7755">
+   </BOUNDS>
+   <PIN pinname="Max Element Count" visible="1">
+   </PIN>
+   <PIN pinname="Layer Force" visible="1">
+   </PIN>
+   <PIN pinname="Apply" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="UpdatedOnly" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="UpdateBuffer" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Target" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="4620" top="8445">
+   </BOUNDS>
+   <PIN pinname="Group IDs" visible="1">
+   </PIN>
+   <PIN pinname="MaxSpeed" visible="1">
+   </PIN>
+   <PIN pinname="MaxForce" visible="1">
+   </PIN>
+   <PIN pinname="LandingRadius" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="98" srcpinname="Help Layer" dstnodeid="6" dstpinname="Layer 3">
+   </LINK>
+   <LINK srcnodeid="31" srcpinname="Max Element Count" dstnodeid="98" dstpinname="Max Element Count" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="3465" y="6058">
+   </LINKPOINT>
+   <LINKPOINT x="4620" y="6858">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="98" srcpinname="Layer Force" dstnodeid="40" dstpinname="Layer 2">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Max Element Count" dstnodeid="31" dstpinname="RingBufferSize" linkstyle="VHV">
+   <LINKPOINT x="3465" y="3788">
+   </LINKPOINT>
+   <LINKPOINT x="4065" y="3788">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="DynamicBuffer (DX11.Buffer 3d)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer 3d)" componentmode="Hidden" id="100" hiddenwhenlocked="0">
+   <BOUNDS type="Node" left="5490" top="5415" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="DataXYZ" visible="1" slicecount="3000" values="-0.4995,-0.4995,0,-0.4985,-0.4985,0,-0.4975,-0.4975,0,-0.4965,-0.4965,0,-0.4955,-0.4955,0,-0.4945,-0.4945,0,-0.4935,-0.4935,0,-0.4925,-0.4925,0,-0.4915,-0.4915,0,-0.4905,-0.4905,0,-0.4895,-0.4895,0,-0.4885,-0.4885,0,-0.4875,-0.4875,0,-0.4865,-0.4865,0,-0.4855,-0.4855,0,-0.4845,-0.4845,0,-0.4835,-0.4835,0,-0.4825,-0.4825,0,-0.4815,-0.4815,0,-0.4805,-0.4805,0,-0.4795,-0.4795,0,-0.4785,-0.4785,0,-0.4775,-0.4775,0,-0.4765,-0.4765,0,-0.4755,-0.4755,0,-0.4745,-0.4745,0,-0.4735,-0.4735,0,-0.4725,-0.4725,0,-0.4715,-0.4715,0,-0.4705,-0.4705,0,-0.4695,-0.4695,0,-0.4685,-0.4685,0,-0.4675,-0.4675,0,-0.4665,-0.4665,0,-0.4655,-0.4655,0,-0.4645,-0.4645,0,-0.4635,-0.4635,0,-0.4625,-0.4625,0,-0.4615,-0.4615,0,-0.4605,-0.4605,0,-0.4595,-0.4595,0,-0.4585,-0.4585,0,-0.4575,-0.4575,0,-0.4565,-0.4565,0,-0.4555,-0.4555,0,-0.4545,-0.4545,0,-0.4535,-0.4535,0,-0.4525,-0.4525,0,-0.4515,-0.4515,0,-0.4505,-0.4505,0,-0.4495,-0.4495,0,-0.4485,-0.4485,0,-0.4475,-0.4475,0,-0.4465,-0.4465,0,-0.4455,-0.4455,0,-0.4445,-0.4445,0,-0.4435,-0.4435,0,-0.4425,-0.4425,0,-0.4415,-0.4415,0,-0.4405,-0.4405,0,-0.4395,-0.4395,0,-0.4385,-0.4385,0,-0.4375,-0.4375,0,-0.4365,-0.4365,0,-0.4355,-0.4355,0,-0.4345,-0.4345,0,-0.4335,-0.4335,0,-0.4325,-0.4325,0,-0.4315,-0.4315,0,-0.4305,-0.4305,0,-0.4295,-0.4295,0,-0.4285,-0.4285,0,-0.4275,-0.4275,0,-0.4265,-0.4265,0,-0.4255,-0.4255,0,-0.4245,-0.4245,0,-0.4235,-0.4235,0,-0.4225,-0.4225,0,-0.4215,-0.4215,0,-0.4205,-0.4205,0,-0.4195,-0.4195,0,-0.4185,-0.4185,0,-0.4175,-0.4175,0,-0.4165,-0.4165,0,-0.4155,-0.4155,0,-0.4145,-0.4145,0,-0.4135,-0.4135,0,-0.4125,-0.4125,0,-0.4115,-0.4115,0,-0.4105,-0.4105,0,-0.4095,-0.4095,0,-0.4085,-0.4085,0,-0.4075,-0.4075,0,-0.4065,-0.4065,0,-0.4055,-0.4055,0,-0.4045,-0.4045,0,-0.4035,-0.4035,0,-0.4025,-0.4025,0,-0.4015,-0.4015,0,-0.4005,-0.4005,0,-0.3995,-0.3995,0,-0.3985,-0.3985,0,-0.3975,-0.3975,0,-0.3965,-0.3965,0,-0.3955,-0.3955,0,-0.3945,-0.3945,0,-0.3935,-0.3935,0,-0.3925,-0.3925,0,-0.3915,-0.3915,0,-0.3905,-0.3905,0,-0.3895,-0.3895,0,-0.3885,-0.3885,0,-0.3875,-0.3875,0,-0.3865,-0.3865,0,-0.3855,-0.3855,0,-0.3845,-0.3845,0,-0.3835,-0.3835,0,-0.3825,-0.3825,0,-0.3815,-0.3815,0,-0.3805,-0.3805,0,-0.3795,-0.3795,0,-0.3785,-0.3785,0,-0.3775,-0.3775,0,-0.3765,-0.3765,0,-0.3755,-0.3755,0,-0.3745,-0.3745,0,-0.3735,-0.3735,0,-0.3725,-0.3725,0,-0.3715,-0.3715,0,-0.3705,-0.3705,0,-0.3695,-0.3695,0,-0.3685,-0.3685,0,-0.3675,-0.3675,0,-0.3665,-0.3665,0,-0.3655,-0.3655,0,-0.3645,-0.3645,0,-0.3635,-0.3635,0,-0.3625,-0.3625,0,-0.3615,-0.3615,0,-0.3605,-0.3605,0,-0.3595,-0.3595,0,-0.3585,-0.3585,0,-0.3575,-0.3575,0,-0.3565,-0.3565,0,-0.3555,-0.3555,0,-0.3545,-0.3545,0,-0.3535,-0.3535,0,-0.3525,-0.3525,0,-0.3515,-0.3515,0,-0.3505,-0.3505,0,-0.3495,-0.3495,0,-0.3485,-0.3485,0,-0.3475,-0.3475,0,-0.3465,-0.3465,0,-0.3455,-0.3455,0,-0.3445,-0.3445,0,-0.3435,-0.3435,0,-0.3425,-0.3425,0,-0.3415,-0.3415,0,-0.3405,-0.3405,0,-0.3395,-0.3395,0,-0.3385,-0.3385,0,-0.3375,-0.3375,0,-0.3365,-0.3365,0,-0.3355,-0.3355,0,-0.3345,-0.3345,0,-0.3335,-0.3335,0,-0.3325,-0.3325,0,-0.3315,-0.3315,0,-0.3305,-0.3305,0,-0.3295,-0.3295,0,-0.3285,-0.3285,0,-0.3275,-0.3275,0,-0.3265,-0.3265,0,-0.3255,-0.3255,0,-0.3245,-0.3245,0,-0.3235,-0.3235,0,-0.3225,-0.3225,0,-0.3215,-0.3215,0,-0.3205,-0.3205,0,-0.3195,-0.3195,0,-0.3185,-0.3185,0,-0.3175,-0.3175,0,-0.3165,-0.3165,0,-0.3155,-0.3155,0,-0.3145,-0.3145,0,-0.3135,-0.3135,0,-0.3125,-0.3125,0,-0.3115,-0.3115,0,-0.3105,-0.3105,0,-0.3095,-0.3095,0,-0.3085,-0.3085,0,-0.3075,-0.3075,0,-0.3065,-0.3065,0,-0.3055,-0.3055,0,-0.3045,-0.3045,0,-0.3035,-0.3035,0,-0.3025,-0.3025,0,-0.3015,-0.3015,0,-0.3005,-0.3005,0,-0.2995,-0.2995,0,-0.2985,-0.2985,0,-0.2975,-0.2975,0,-0.2965,-0.2965,0,-0.2955,-0.2955,0,-0.2945,-0.2945,0,-0.2935,-0.2935,0,-0.2925,-0.2925,0,-0.2915,-0.2915,0,-0.2905,-0.2905,0,-0.2895,-0.2895,0,-0.2885,-0.2885,0,-0.2875,-0.2875,0,-0.2865,-0.2865,0,-0.2855,-0.2855,0,-0.2845,-0.2845,0,-0.2835,-0.2835,0,-0.2825,-0.2825,0,-0.2815,-0.2815,0,-0.2805,-0.2805,0,-0.2795,-0.2795,0,-0.2785,-0.2785,0,-0.2775,-0.2775,0,-0.2765,-0.2765,0,-0.2755,-0.2755,0,-0.2745,-0.2745,0,-0.2735,-0.2735,0,-0.2725,-0.2725,0,-0.2715,-0.2715,0,-0.2705,-0.2705,0,-0.2695,-0.2695,0,-0.2685,-0.2685,0,-0.2675,-0.2675,0,-0.2665,-0.2665,0,-0.2655,-0.2655,0,-0.2645,-0.2645,0,-0.2635,-0.2635,0,-0.2625,-0.2625,0,-0.2615,-0.2615,0,-0.2605,-0.2605,0,-0.2595,-0.2595,0,-0.2585,-0.2585,0,-0.2575,-0.2575,0,-0.2565,-0.2565,0,-0.2555,-0.2555,0,-0.2545,-0.2545,0,-0.2535,-0.2535,0,-0.2525,-0.2525,0,-0.2515,-0.2515,0,-0.2505,-0.2505,0,-0.2495,-0.2495,0,-0.2485,-0.2485,0,-0.2475,-0.2475,0,-0.2465,-0.2465,0,-0.2455,-0.2455,0,-0.2445,-0.2445,0,-0.2435,-0.2435,0,-0.2425,-0.2425,0,-0.2415,-0.2415,0,-0.2405,-0.2405,0,-0.2395,-0.2395,0,-0.2385,-0.2385,0,-0.2375,-0.2375,0,-0.2365,-0.2365,0,-0.2355,-0.2355,0,-0.2345,-0.2345,0,-0.2335,-0.2335,0,-0.2325,-0.2325,0,-0.2315,-0.2315,0,-0.2305,-0.2305,0,-0.2295,-0.2295,0,-0.2285,-0.2285,0,-0.2275,-0.2275,0,-0.2265,-0.2265,0,-0.2255,-0.2255,0,-0.2245,-0.2245,0,-0.2235,-0.2235,0,-0.2225,-0.2225,0,-0.2215,-0.2215,0,-0.2205,-0.2205,0,-0.2195,-0.2195,0,-0.2185,-0.2185,0,-0.2175,-0.2175,0,-0.2165,-0.2165,0,-0.2155,-0.2155,0,-0.2145,-0.2145,0,-0.2135,-0.2135,0,-0.2125,-0.2125,0,-0.2115,-0.2115,0,-0.2105,-0.2105,0,-0.2095,-0.2095,0,-0.2085,-0.2085,0,-0.2075,-0.2075,0,-0.2065,-0.2065,0,-0.2055,-0.2055,0,-0.2045,-0.2045,0,-0.2035,-0.2035,0,-0.2025,-0.2025,0,-0.2015,-0.2015,0,-0.2005,-0.2005,0,-0.1995,-0.1995,0,-0.1985,-0.1985,0,-0.1975,-0.1975,0,-0.1965,-0.1965,0,-0.1955,-0.1955,0,-0.1945,-0.1945,0,-0.1935,-0.1935,0,-0.1925,-0.1925,0,-0.1915,-0.1915,0,-0.1905,-0.1905,0,-0.1895,-0.1895,0,-0.1885,-0.1885,0,-0.1875,-0.1875,0,-0.1865,-0.1865,0,-0.1855,-0.1855,0,-0.1845,-0.1845,0,-0.1835,-0.1835,0,-0.1825,-0.1825,0,-0.1815,-0.1815,0,-0.1805,-0.1805,0,-0.1795,-0.1795,0,-0.1785,-0.1785,0,-0.1775,-0.1775,0,-0.1765,-0.1765,0,-0.1755,-0.1755,0,-0.1745,-0.1745,0,-0.1735,-0.1735,0,-0.1725,-0.1725,0,-0.1715,-0.1715,0,-0.1705,-0.1705,0,-0.1695,-0.1695,0,-0.1685,-0.1685,0,-0.1675,-0.1675,0,-0.1665,-0.1665,0,-0.1655,-0.1655,0,-0.1645,-0.1645,0,-0.1635,-0.1635,0,-0.1625,-0.1625,0,-0.1615,-0.1615,0,-0.1605,-0.1605,0,-0.1595,-0.1595,0,-0.1585,-0.1585,0,-0.1575,-0.1575,0,-0.1565,-0.1565,0,-0.1555,-0.1555,0,-0.1545,-0.1545,0,-0.1535,-0.1535,0,-0.1525,-0.1525,0,-0.1515,-0.1515,0,-0.1505,-0.1505,0,-0.1495,-0.1495,0,-0.1485,-0.1485,0,-0.1475,-0.1475,0,-0.1465,-0.1465,0,-0.1455,-0.1455,0,-0.1445,-0.1445,0,-0.1435,-0.1435,0,-0.1425,-0.1425,0,-0.1415,-0.1415,0,-0.1405,-0.1405,0,-0.1395,-0.1395,0,-0.1385,-0.1385,0,-0.1375,-0.1375,0,-0.1365,-0.1365,0,-0.1355,-0.1355,0,-0.1345,-0.1345,0,-0.1335,-0.1335,0,-0.1325,-0.1325,0,-0.1315,-0.1315,0,-0.1305,-0.1305,0,-0.1295,-0.1295,0,-0.1285,-0.1285,0,-0.1275,-0.1275,0,-0.1265,-0.1265,0,-0.1255,-0.1255,0,-0.1245,-0.1245,0,-0.1235,-0.1235,0,-0.1225,-0.1225,0,-0.1215,-0.1215,0,-0.1205,-0.1205,0,-0.1195,-0.1195,0,-0.1185,-0.1185,0,-0.1175,-0.1175,0,-0.1165,-0.1165,0,-0.1155,-0.1155,0,-0.1145,-0.1145,0,-0.1135,-0.1135,0,-0.1125,-0.1125,0,-0.1115,-0.1115,0,-0.1105,-0.1105,0,-0.1095,-0.1095,0,-0.1085,-0.1085,0,-0.1075,-0.1075,0,-0.1065,-0.1065,0,-0.1055,-0.1055,0,-0.1045,-0.1045,0,-0.1035,-0.1035,0,-0.1025,-0.1025,0,-0.1015,-0.1015,0,-0.1005,-0.1005,0,-0.0995,-0.0995,0,-0.0985,-0.0985,0,-0.0975,-0.0975,0,-0.0965,-0.0965,0,-0.0955,-0.0955,0,-0.0945,-0.0945,0,-0.0935,-0.0935,0,-0.0925,-0.0925,0,-0.0915,-0.0915,0,-0.0905,-0.0905,0,-0.0895,-0.0895,0,-0.0885,-0.0885,0,-0.0875,-0.0875,0,-0.0865,-0.0865,0,-0.0855,-0.0855,0,-0.0845,-0.0845,0,-0.0835,-0.0835,0,-0.0825,-0.0825,0,-0.0815,-0.0815,0,-0.0805,-0.0805,0,-0.0795,-0.0795,0,-0.0785,-0.0785,0,-0.0775,-0.0775,0,-0.0765,-0.0765,0,-0.0755,-0.0755,0,-0.0745,-0.0745,0,-0.0735,-0.0735,0,-0.0725,-0.0725,0,-0.0715,-0.0715,0,-0.0705,-0.0705,0,-0.0695,-0.0695,0,-0.0685,-0.0685,0,-0.0675,-0.0675,0,-0.0665,-0.0665,0,-0.0655,-0.0655,0,-0.0645,-0.0645,0,-0.0635,-0.0635,0,-0.0625,-0.0625,0,-0.0615,-0.0615,0,-0.0605,-0.0605,0,-0.0595,-0.0595,0,-0.0585,-0.0585,0,-0.0575,-0.0575,0,-0.0565,-0.0565,0,-0.0555,-0.0555,0,-0.0545,-0.0545,0,-0.0535,-0.0535,0,-0.0525,-0.0525,0,-0.0515,-0.0515,0,-0.0505,-0.0505,0,-0.0495,-0.0495,0,-0.0485,-0.0485,0,-0.0475,-0.0475,0,-0.0465,-0.0465,0,-0.0455,-0.0455,0,-0.0445,-0.0445,0,-0.0435,-0.0435,0,-0.0425,-0.0425,0,-0.0415,-0.0415,0,-0.0405,-0.0405,0,-0.0395,-0.0395,0,-0.0385,-0.0385,0,-0.0375,-0.0375,0,-0.0365,-0.0365,0,-0.0355,-0.0355,0,-0.0345,-0.0345,0,-0.0335,-0.0335,0,-0.0325,-0.0325,0,-0.0315,-0.0315,0,-0.0305,-0.0305,0,-0.0295,-0.0295,0,-0.0285,-0.0285,0,-0.0275,-0.0275,0,-0.0265,-0.0265,0,-0.0255,-0.0255,0,-0.0245,-0.0245,0,-0.0235,-0.0235,0,-0.0225,-0.0225,0,-0.0215,-0.0215,0,-0.0205,-0.0205,0,-0.0195,-0.0195,0,-0.0185,-0.0185,0,-0.0175,-0.0175,0,-0.0165,-0.0165,0,-0.0155,-0.0155,0,-0.0145,-0.0145,0,-0.0135,-0.0135,0,-0.0125,-0.0125,0,-0.0115,-0.0115,0,-0.0105,-0.0105,0,-0.00950000000000001,-0.00950000000000001,0,-0.00850000000000001,-0.00850000000000001,0,-0.00750000000000001,-0.00750000000000001,0,-0.00650000000000001,-0.00650000000000001,0,-0.00550000000000001,-0.00550000000000001,0,-0.0045,-0.0045,0,-0.0035,-0.0035,0,-0.0025,-0.0025,0,-0.0015,-0.0015,0,-0.0005,-0.0005,0,0.000499999999999945,0.000499999999999945,0,0.00149999999999995,0.00149999999999995,0,0.00249999999999995,0.00249999999999995,0,0.00349999999999995,0.00349999999999995,0,0.00449999999999995,0.00449999999999995,0,0.00549999999999995,0.00549999999999995,0,0.00649999999999995,0.00649999999999995,0,0.00749999999999995,0.00749999999999995,0,0.00849999999999995,0.00849999999999995,0,0.00949999999999995,0.00949999999999995,0,0.0105,0.0105,0,0.0115,0.0115,0,0.0125,0.0125,0,0.0135,0.0135,0,0.0145,0.0145,0,0.0155,0.0155,0,0.0165,0.0165,0,0.0175,0.0175,0,0.0185,0.0185,0,0.0195,0.0195,0,0.0205,0.0205,0,0.0215,0.0215,0,0.0225,0.0225,0,0.0235,0.0235,0,0.0245,0.0245,0,0.0255,0.0255,0,0.0265,0.0265,0,0.0275,0.0275,0,0.0285,0.0285,0,0.0295,0.0295,0,0.0305,0.0305,0,0.0315,0.0315,0,0.0325,0.0325,0,0.0335,0.0335,0,0.0345,0.0345,0,0.0355,0.0355,0,0.0365,0.0365,0,0.0375,0.0375,0,0.0385,0.0385,0,0.0395,0.0395,0,0.0405,0.0405,0,0.0415,0.0415,0,0.0425,0.0425,0,0.0435,0.0435,0,0.0445,0.0445,0,0.0455,0.0455,0,0.0465,0.0465,0,0.0475,0.0475,0,0.0485,0.0485,0,0.0495,0.0495,0,0.0505,0.0505,0,0.0515,0.0515,0,0.0525,0.0525,0,0.0535,0.0535,0,0.0545,0.0545,0,0.0555,0.0555,0,0.0565,0.0565,0,0.0575,0.0575,0,0.0585,0.0585,0,0.0595,0.0595,0,0.0605,0.0605,0,0.0615,0.0615,0,0.0625,0.0625,0,0.0634999999999999,0.0634999999999999,0,0.0644999999999999,0.0644999999999999,0,0.0654999999999999,0.0654999999999999,0,0.0664999999999999,0.0664999999999999,0,0.0674999999999999,0.0674999999999999,0,0.0684999999999999,0.0684999999999999,0,0.0694999999999999,0.0694999999999999,0,0.0704999999999999,0.0704999999999999,0,0.0714999999999999,0.0714999999999999,0,0.0724999999999999,0.0724999999999999,0,0.0734999999999999,0.0734999999999999,0,0.0744999999999999,0.0744999999999999,0,0.0754999999999999,0.0754999999999999,0,0.0764999999999999,0.0764999999999999,0,0.0774999999999999,0.0774999999999999,0,0.0784999999999999,0.0784999999999999,0,0.0794999999999999,0.0794999999999999,0,0.0804999999999999,0.0804999999999999,0,0.0814999999999999,0.0814999999999999,0,0.0824999999999999,0.0824999999999999,0,0.0834999999999999,0.0834999999999999,0,0.0844999999999999,0.0844999999999999,0,0.0854999999999999,0.0854999999999999,0,0.0864999999999999,0.0864999999999999,0,0.0874999999999999,0.0874999999999999,0,0.0884999999999999,0.0884999999999999,0,0.0894999999999999,0.0894999999999999,0,0.0904999999999999,0.0904999999999999,0,0.0914999999999999,0.0914999999999999,0,0.0924999999999999,0.0924999999999999,0,0.0934999999999999,0.0934999999999999,0,0.0944999999999999,0.0944999999999999,0,0.0954999999999999,0.0954999999999999,0,0.0964999999999999,0.0964999999999999,0,0.0974999999999999,0.0974999999999999,0,0.0984999999999999,0.0984999999999999,0,0.0994999999999999,0.0994999999999999,0,0.1005,0.1005,0,0.1015,0.1015,0,0.1025,0.1025,0,0.1035,0.1035,0,0.1045,0.1045,0,0.1055,0.1055,0,0.1065,0.1065,0,0.1075,0.1075,0,0.1085,0.1085,0,0.1095,0.1095,0,0.1105,0.1105,0,0.1115,0.1115,0,0.1125,0.1125,0,0.1135,0.1135,0,0.1145,0.1145,0,0.1155,0.1155,0,0.1165,0.1165,0,0.1175,0.1175,0,0.1185,0.1185,0,0.1195,0.1195,0,0.1205,0.1205,0,0.1215,0.1215,0,0.1225,0.1225,0,0.1235,0.1235,0,0.1245,0.1245,0,0.1255,0.1255,0,0.1265,0.1265,0,0.1275,0.1275,0,0.1285,0.1285,0,0.1295,0.1295,0,0.1305,0.1305,0,0.1315,0.1315,0,0.1325,0.1325,0,0.1335,0.1335,0,0.1345,0.1345,0,0.1355,0.1355,0,0.1365,0.1365,0,0.1375,0.1375,0,0.1385,0.1385,0,0.1395,0.1395,0,0.1405,0.1405,0,0.1415,0.1415,0,0.1425,0.1425,0,0.1435,0.1435,0,0.1445,0.1445,0,0.1455,0.1455,0,0.1465,0.1465,0,0.1475,0.1475,0,0.1485,0.1485,0,0.1495,0.1495,0,0.1505,0.1505,0,0.1515,0.1515,0,0.1525,0.1525,0,0.1535,0.1535,0,0.1545,0.1545,0,0.1555,0.1555,0,0.1565,0.1565,0,0.1575,0.1575,0,0.1585,0.1585,0,0.1595,0.1595,0,0.1605,0.1605,0,0.1615,0.1615,0,0.1625,0.1625,0,0.1635,0.1635,0,0.1645,0.1645,0,0.1655,0.1655,0,0.1665,0.1665,0,0.1675,0.1675,0,0.1685,0.1685,0,0.1695,0.1695,0,0.1705,0.1705,0,0.1715,0.1715,0,0.1725,0.1725,0,0.1735,0.1735,0,0.1745,0.1745,0,0.1755,0.1755,0,0.1765,0.1765,0,0.1775,0.1775,0,0.1785,0.1785,0,0.1795,0.1795,0,0.1805,0.1805,0,0.1815,0.1815,0,0.1825,0.1825,0,0.1835,0.1835,0,0.1845,0.1845,0,0.1855,0.1855,0,0.1865,0.1865,0,0.1875,0.1875,0,0.1885,0.1885,0,0.1895,0.1895,0,0.1905,0.1905,0,0.1915,0.1915,0,0.1925,0.1925,0,0.1935,0.1935,0,0.1945,0.1945,0,0.1955,0.1955,0,0.1965,0.1965,0,0.1975,0.1975,0,0.1985,0.1985,0,0.1995,0.1995,0,0.2005,0.2005,0,0.2015,0.2015,0,0.2025,0.2025,0,0.2035,0.2035,0,0.2045,0.2045,0,0.2055,0.2055,0,0.2065,0.2065,0,0.2075,0.2075,0,0.2085,0.2085,0,0.2095,0.2095,0,0.2105,0.2105,0,0.2115,0.2115,0,0.2125,0.2125,0,0.2135,0.2135,0,0.2145,0.2145,0,0.2155,0.2155,0,0.2165,0.2165,0,0.2175,0.2175,0,0.2185,0.2185,0,0.2195,0.2195,0,0.2205,0.2205,0,0.2215,0.2215,0,0.2225,0.2225,0,0.2235,0.2235,0,0.2245,0.2245,0,0.2255,0.2255,0,0.2265,0.2265,0,0.2275,0.2275,0,0.2285,0.2285,0,0.2295,0.2295,0,0.2305,0.2305,0,0.2315,0.2315,0,0.2325,0.2325,0,0.2335,0.2335,0,0.2345,0.2345,0,0.2355,0.2355,0,0.2365,0.2365,0,0.2375,0.2375,0,0.2385,0.2385,0,0.2395,0.2395,0,0.2405,0.2405,0,0.2415,0.2415,0,0.2425,0.2425,0,0.2435,0.2435,0,0.2445,0.2445,0,0.2455,0.2455,0,0.2465,0.2465,0,0.2475,0.2475,0,0.2485,0.2485,0,0.2495,0.2495,0,0.2505,0.2505,0,0.2515,0.2515,0,0.2525,0.2525,0,0.2535,0.2535,0,0.2545,0.2545,0,0.2555,0.2555,0,0.2565,0.2565,0,0.2575,0.2575,0,0.2585,0.2585,0,0.2595,0.2595,0,0.2605,0.2605,0,0.2615,0.2615,0,0.2625,0.2625,0,0.2635,0.2635,0,0.2645,0.2645,0,0.2655,0.2655,0,0.2665,0.2665,0,0.2675,0.2675,0,0.2685,0.2685,0,0.2695,0.2695,0,0.2705,0.2705,0,0.2715,0.2715,0,0.2725,0.2725,0,0.2735,0.2735,0,0.2745,0.2745,0,0.2755,0.2755,0,0.2765,0.2765,0,0.2775,0.2775,0,0.2785,0.2785,0,0.2795,0.2795,0,0.2805,0.2805,0,0.2815,0.2815,0,0.2825,0.2825,0,0.2835,0.2835,0,0.2845,0.2845,0,0.2855,0.2855,0,0.2865,0.2865,0,0.2875,0.2875,0,0.2885,0.2885,0,0.2895,0.2895,0,0.2905,0.2905,0,0.2915,0.2915,0,0.2925,0.2925,0,0.2935,0.2935,0,0.2945,0.2945,0,0.2955,0.2955,0,0.2965,0.2965,0,0.2975,0.2975,0,0.2985,0.2985,0,0.2995,0.2995,0,0.3005,0.3005,0,0.3015,0.3015,0,0.3025,0.3025,0,0.3035,0.3035,0,0.3045,0.3045,0,0.3055,0.3055,0,0.3065,0.3065,0,0.3075,0.3075,0,0.3085,0.3085,0,0.3095,0.3095,0,0.3105,0.3105,0,0.3115,0.3115,0,0.3125,0.3125,0,0.3135,0.3135,0,0.3145,0.3145,0,0.3155,0.3155,0,0.3165,0.3165,0,0.3175,0.3175,0,0.3185,0.3185,0,0.3195,0.3195,0,0.3205,0.3205,0,0.3215,0.3215,0,0.3225,0.3225,0,0.3235,0.3235,0,0.3245,0.3245,0,0.3255,0.3255,0,0.3265,0.3265,0,0.3275,0.3275,0,0.3285,0.3285,0,0.3295,0.3295,0,0.3305,0.3305,0,0.3315,0.3315,0,0.3325,0.3325,0,0.3335,0.3335,0,0.3345,0.3345,0,0.3355,0.3355,0,0.3365,0.3365,0,0.3375,0.3375,0,0.3385,0.3385,0,0.3395,0.3395,0,0.3405,0.3405,0,0.3415,0.3415,0,0.3425,0.3425,0,0.3435,0.3435,0,0.3445,0.3445,0,0.3455,0.3455,0,0.3465,0.3465,0,0.3475,0.3475,0,0.3485,0.3485,0,0.3495,0.3495,0,0.3505,0.3505,0,0.3515,0.3515,0,0.3525,0.3525,0,0.3535,0.3535,0,0.3545,0.3545,0,0.3555,0.3555,0,0.3565,0.3565,0,0.3575,0.3575,0,0.3585,0.3585,0,0.3595,0.3595,0,0.3605,0.3605,0,0.3615,0.3615,0,0.3625,0.3625,0,0.3635,0.3635,0,0.3645,0.3645,0,0.3655,0.3655,0,0.3665,0.3665,0,0.3675,0.3675,0,0.3685,0.3685,0,0.3695,0.3695,0,0.3705,0.3705,0,0.3715,0.3715,0,0.3725,0.3725,0,0.3735,0.3735,0,0.3745,0.3745,0,0.3755,0.3755,0,0.3765,0.3765,0,0.3775,0.3775,0,0.3785,0.3785,0,0.3795,0.3795,0,0.3805,0.3805,0,0.3815,0.3815,0,0.3825,0.3825,0,0.3835,0.3835,0,0.3845,0.3845,0,0.3855,0.3855,0,0.3865,0.3865,0,0.3875,0.3875,0,0.3885,0.3885,0,0.3895,0.3895,0,0.3905,0.3905,0,0.3915,0.3915,0,0.3925,0.3925,0,0.3935,0.3935,0,0.3945,0.3945,0,0.3955,0.3955,0,0.3965,0.3965,0,0.3975,0.3975,0,0.3985,0.3985,0,0.3995,0.3995,0,0.4005,0.4005,0,0.4015,0.4015,0,0.4025,0.4025,0,0.4035,0.4035,0,0.4045,0.4045,0,0.4055,0.4055,0,0.4065,0.4065,0,0.4075,0.4075,0,0.4085,0.4085,0,0.4095,0.4095,0,0.4105,0.4105,0,0.4115,0.4115,0,0.4125,0.4125,0,0.4135,0.4135,0,0.4145,0.4145,0,0.4155,0.4155,0,0.4165,0.4165,0,0.4175,0.4175,0,0.4185,0.4185,0,0.4195,0.4195,0,0.4205,0.4205,0,0.4215,0.4215,0,0.4225,0.4225,0,0.4235,0.4235,0,0.4245,0.4245,0,0.4255,0.4255,0,0.4265,0.4265,0,0.4275,0.4275,0,0.4285,0.4285,0,0.4295,0.4295,0,0.4305,0.4305,0,0.4315,0.4315,0,0.4325,0.4325,0,0.4335,0.4335,0,0.4345,0.4345,0,0.4355,0.4355,0,0.4365,0.4365,0,0.4375,0.4375,0,0.4385,0.4385,0,0.4395,0.4395,0,0.4405,0.4405,0,0.4415,0.4415,0,0.4425,0.4425,0,0.4435,0.4435,0,0.4445,0.4445,0,0.4455,0.4455,0,0.4465,0.4465,0,0.4475,0.4475,0,0.4485,0.4485,0,0.4495,0.4495,0,0.4505,0.4505,0,0.4515,0.4515,0,0.4525,0.4525,0,0.4535,0.4535,0,0.4545,0.4545,0,0.4555,0.4555,0,0.4565,0.4565,0,0.4575,0.4575,0,0.4585,0.4585,0,0.4595,0.4595,0,0.4605,0.4605,0,0.4615,0.4615,0,0.4625,0.4625,0,0.4635,0.4635,0,0.4645,0.4645,0,0.4655,0.4655,0,0.4665,0.4665,0,0.4675,0.4675,0,0.4685,0.4685,0,0.4695,0.4695,0,0.4705,0.4705,0,0.4715,0.4715,0,0.4725,0.4725,0,0.4735,0.4735,0,0.4745,0.4745,0,0.4755,0.4755,0,0.4765,0.4765,0,0.4775,0.4775,0,0.4785,0.4785,0,0.4795,0.4795,0,0.4805,0.4805,0,0.4815,0.4815,0,0.4825,0.4825,0,0.4835,0.4835,0,0.4845,0.4845,0,0.4855,0.4855,0,0.4865,0.4865,0,0.4875,0.4875,0,0.4885,0.4885,0,0.4895,0.4895,0,0.4905,0.4905,0,0.4915,0.4915,0,0.4925,0.4925,0,0.4935,0.4935,0,0.4945,0.4945,0,0.4955,0.4955,0,0.4965,0.4965,0,0.4975,0.4975,0,0.4985,0.4985,0,0.4995,0.4995,0">
+   </PIN>
+   <PIN pinname="Buffer" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="5490" top="5415">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="100" srcpinname="Buffer" dstnodeid="98" dstpinname="Target">
+   </LINK>
+   <NODE systemname="ReadBack (DX11.Buffer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="ReadBack (DX11.Buffer)" componentmode="Hidden" id="106">
+   <BOUNDS type="Node" left="5490" top="5070" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layout" slicecount="1" values="|float3,int,int|">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output 1XYZ" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="31" srcpinname="PointcloudRingBuffer" dstnodeid="106" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="4785" y="4763">
+   </LINKPOINT>
+   <LINKPOINT x="5475" y="4763">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="106" srcpinname="Output 1XYZ" dstnodeid="100" dstpinname="DataXYZ">
+   </LINK>
+   <NODE systemname="ForceByBuffer (DX11.Pointcloud DynamicBuffer)" filename="%VVVV%\packs\dx11.pointcloud\nodes\modules\Forces\ForceByBuffer (DX11.Pointcloud DynamicBuffer).v4p" nodename="ForceByBuffer (DX11.Pointcloud DynamicBuffer)" componentmode="Hidden" id="110" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="4800" top="10215" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer Force" visible="1">
+   </PIN>
+   <PIN pinname="Max Element Count" visible="1">
+   </PIN>
+   <PIN pinname="VelocityBuffer" visible="1">
+   </PIN>
+   <BOUNDS type="Box" left="4800" top="10215">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="110" srcpinname="Layer Force" dstnodeid="40" dstpinname="Layer 3" linkstyle="VHV">
+   <LINKPOINT x="5760" y="10818">
+   </LINKPOINT>
+   <LINKPOINT x="3900" y="10423">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="31" srcpinname="Max Element Count" dstnodeid="110" dstpinname="Max Element Count" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="3450" y="6978">
+   </LINKPOINT>
+   <LINKPOINT x="4815" y="7723">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="DynamicBuffer (DX11.Buffer 3d)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer 3d)" componentmode="Hidden" id="111" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="5115" top="9780" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="DataXYZ" visible="1">
+   </PIN>
+   <PIN pinname="Buffer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="RandomSpread (Spreads)" nodename="RandomSpread (Spreads)" componentmode="Hidden" id="112" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="5115" top="9405" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Spread Count" slicecount="1" visible="1" values="120">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="0.0001">
+   </PIN>
+   <PIN pinname="Random Seed" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="112" srcpinname="Output" dstnodeid="111" dstpinname="DataXYZ">
+   </LINK>
+   <NODE systemname="Random (Value)" nodename="Random (Value)" componentmode="Hidden" id="113" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="5820" top="9045" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Scale" slicecount="1" values="200">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="113" srcpinname="Output" dstnodeid="112" dstpinname="Random Seed">
+   </LINK>
+   <LINK srcnodeid="111" srcpinname="Buffer" dstnodeid="110" dstpinname="VelocityBuffer">
+   </LINK>
+   <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="114" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="6600" top="9045" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Max Element Count" dstnodeid="114" dstpinname="Input 1" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="3465" y="6210">
+   </LINKPOINT>
+   <LINKPOINT x="6600" y="6210">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="114" srcpinname="Output" dstnodeid="112" dstpinname="Spread Count" linkstyle="VHV">
+   <LINKPOINT x="6600" y="9345">
+   </LINKPOINT>
+   <LINKPOINT x="6240" y="9345">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="115" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="8055" top="8055" width="285" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="8055" top="8055" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="115" srcpinname="Y Output Value" dstnodeid="98" dstpinname="Apply">
+   </LINK>
+   <NODE id="103" systemname="LinearSpread (Spreads)" nodename="LinearSpread (Spreads)" componentmode="Hidden" hiddenwhenlocked="1" managers="">
+   <PIN pinname="Output" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="Spread Count" visible="1" pintype="Input" slicecount="1" values="1">
+   </PIN>
+   <BOUNDS type="Node" left="4635" top="1695" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Input" pintype="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Width" pintype="Input" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Alignment" pintype="Input" visible="1" slicecount="1" values="Centered">
+   </PIN>
+   <PIN pinname="Phase" pintype="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="103" srcpinname="Output" dstnodeid="16" dstpinname="Hue">
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Y Output Value" dstnodeid="103" dstpinname="Spread Count" linkstyle="VHV">
+   <LINKPOINT x="3045" y="1500">
+   </LINKPOINT>
+   <LINKPOINT x="5535" y="1500">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="116">
+   <BOUNDS type="Node" left="8070" top="7605" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="BlinkStyle" slicecount="1" values="BlinkSlow">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Period" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="116" srcpinname="Output" dstnodeid="115" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="119" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="5205" top="10845" width="285" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5205" top="10845" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="119" srcpinname="Y Output Value" dstnodeid="39" dstpinname="Apply">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="125" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="6120" top="4620" width="5115" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6120" top="4620" width="5115" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; limit target to specific groupIds ( or -1 to apply to all particles)|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="124" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="7770" top="5850" width="5115" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7770" top="5850" width="5115" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; maximum speed of particles|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="123" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="7770" top="6150" width="5115" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7770" top="6150" width="5115" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; maximum force applied to particles|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="122" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="7770" top="6435" width="5115" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7770" top="6435" width="5115" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; landing radius|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="121" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="8520" top="6960" width="5115" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="8520" top="6960" width="3015" height="450">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; enable UpdatedOnly pin to apply force only to newly added particles. |">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="120" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="6720" top="5415" width="5115" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6720" top="5415" width="5115" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; the target ( in this example the original positions after emission)|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="126" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="5070" top="4620" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5070" top="4620" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="-1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="126" srcpinname="Y Output Value" dstnodeid="98" dstpinname="Group IDs">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="127" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="5925" top="5850" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5925" top="5850" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.00999999977648258">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="127" srcpinname="Y Output Value" dstnodeid="98" dstpinname="MaxSpeed">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="128" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="6360" top="6150" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6360" top="6150" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.00100000004749745">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="128" srcpinname="Y Output Value" dstnodeid="98" dstpinname="MaxForce">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="129" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="6795" top="6435" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6795" top="6435" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.100000001490116">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="129" srcpinname="Y Output Value" dstnodeid="98" dstpinname="LandingRadius">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="130" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="7230" top="6960" width="285" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7230" top="6960" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="130" srcpinname="Y Output Value" dstnodeid="98" dstpinname="UpdatedOnly">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="131" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="7635" top="6960" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7635" top="6960" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="131" srcpinname="Output Node" dstnodeid="98" dstpinname="UpdateBuffer">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="134" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="4725" top="3420" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4725" top="3420" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="134" srcpinname="Y Output Value" dstnodeid="31" dstpinname="Emit">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="135" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="5340" top="3480" width="1110" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5340" top="3480" width="2070" height="330">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;&lt; emit first!|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="11">
+   </PIN>
+   </NODE>
+   </PATCH>
