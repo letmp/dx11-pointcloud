@@ -449,6 +449,8 @@
    </PIN>
    <BOUNDS type="Box" left="5490" top="5415">
    </BOUNDS>
+   <PIN pinname="Apply" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="100" srcpinname="Buffer" dstnodeid="98" dstpinname="Target">
    </LINK>
@@ -817,6 +819,8 @@
    </PIN>
    <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="134" srcpinname="Y Output Value" dstnodeid="31" dstpinname="Emit">
    </LINK>
@@ -836,4 +840,10 @@
    <PIN pinname="Size" slicecount="1" values="11">
    </PIN>
    </NODE>
+   <LINK srcnodeid="134" srcpinname="Y Output Value" dstnodeid="100" dstpinname="Apply" linkstyle="Bezier" hiddenwhenlocked="0">
+   <LINKPOINT x="4785" y="4643">
+   </LINKPOINT>
+   <LINKPOINT x="6495" y="4643">
+   </LINKPOINT>
+   </LINK>
    </PATCH>
