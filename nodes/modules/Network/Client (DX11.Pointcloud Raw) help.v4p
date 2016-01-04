@@ -121,7 +121,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="3300" top="6480" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" visible="1" values="localhost">
+   <PIN pinname="Input String" slicecount="1" visible="1" values="192.168.2.108">
    </PIN>
    <PIN pinname="Default" slicecount="1" values="192.168.1.1">
    </PIN>

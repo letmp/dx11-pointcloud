@@ -64,8 +64,8 @@ namespace LinkedList
 				this.FOutOffsetBuffer[0] = new DX11Resource<IDX11RWStructureBuffer>();
             }
 		}
-		
-		public void Update(IPluginIO pin, DX11RenderContext context)
+
+        public void Update(IPluginIO pin, DX11RenderContext context)
         {
             Device device = context.Device;
             DeviceContext ctx = context.CurrentDeviceContext;

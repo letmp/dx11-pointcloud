@@ -7,7 +7,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>LinkedList</RootNamespace>
     <AssemblyName>LinkedList</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <ReferencePath>..\..\..\..\..\lib\core\;..\..\..\..\..\lib\nodes\plugins\</ReferencePath>
