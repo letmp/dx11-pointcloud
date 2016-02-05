@@ -1,8 +1,8 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta33.7_x64\packs\dx11-pointcloud\nodes\modules\Visualization\AsTexture (DX11.Pointcloud PointcloudBuffer).v4p" systemname="AsTexture (DX11.Pointcloud.Vis PointcloudBuffer)" filename="D:\workspace\dev\packs\dx11-pointcloud\nodes\modules\Visualization\AsTexture (DX11.Pointcloud.Vis PointcloudBuffer).v4p" scrollx="0" scrolly="-360">
-   <BOUNDS type="Window" left="18585" top="3345" width="5730" height="6510">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
+   <PATCH nodename="D:\workspace\vvvv\vvvv_45beta34.2_x64\packs\dx11.pointcloud\nodes\modules\Visualization\AsTexture (DX11.Pointcloud PointcloudBuffer).v4p" systemname="AsTexture (DX11.Pointcloud.Vis PointcloudBuffer)" filename="D:\workspace\dev\packs\dx11-pointcloud\nodes\modules\Visualization\AsTexture (DX11.Pointcloud.Vis PointcloudBuffer).v4p" scrollx="0" scrolly="-360">
+   <BOUNDS type="Window" left="9930" top="1455" width="5730" height="6510">
    </BOUNDS>
-   <PACK Name="addonpack" Version="33.7.0">
+   <PACK Name="addonpack" Version="34.1.0">
    </PACK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="4" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="1530" top="390" width="795" height="240">
@@ -83,7 +83,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="2385" top="2280" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input Enum" slicecount="1" visible="1" values="Position">
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="Color">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Technique">
    </PIN>
@@ -320,6 +320,22 @@
    <LINKPOINT x="2175" y="2385">
    </LINKPOINT>
    <LINKPOINT x="1950" y="2385">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="67" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="330" top="390" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="330" top="390" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Render State|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="67" srcpinname="Output Node" dstnodeid="9" dstpinname="Render State" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="360" y="1778">
+   </LINKPOINT>
+   <LINKPOINT x="765" y="1778">
    </LINKPOINT>
    </LINK>
    </PATCH>
